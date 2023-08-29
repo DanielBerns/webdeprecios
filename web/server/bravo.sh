@@ -6,7 +6,7 @@ rm -rf ~/.server/store
 rm -rf ./migrations    
 mkdir ~/.server/store
 
-# source ~/.venvs/web/bin/activate
+source ~/.venvs/web/bin/activate
 export FLASK_APP=server.py
 flask db init
 flask db migrate -m "start"
