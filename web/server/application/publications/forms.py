@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 from wtforms import StringField, PasswordField, BooleanField, IntegerField, SelectField, TextAreaField, SubmitField
-from wtforms.fields.html5 import DateField
+from wtforms.fields import DateField
 from wtforms.validators import ValidationError, DataRequired, NumberRange, Length
 
 from application.operations import ALLOWED_IMAGES
