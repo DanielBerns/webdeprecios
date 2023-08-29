@@ -1,0 +1,242 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 class="w3-center"><b>Register publisher</b></h2>
+  
+    <form action="{{ url_for('authentication.register_publisher', user_url_suffix=user.url_suffix) }}" method="post" 
+          enctype="multipart/form-data" 
+          class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
+        <div>
+        
+        <!-- hidden tag -->
+        {{ form.hidden_tag() }}
+        {% for error in form.hidden_tag.errors %}
+        <div class="w3-row w3-section">
+            <span><b>[{{ error }}]</b></span>
+        </div>
+        {% endfor %}
+        </div>     
+        <!-- firstname -->
+        <div class="w3-row w3-section">
+            <div class="w3-col">
+            <label for="firstname">First name</label>
+            </div>
+        </div>
+        <div class="w3-row w3-section">
+            <div class="w3-rest">
+            <input class="w3-input w3-border" id="firstname" name="firstname" type="text" required>
+            </div>
+        </div>
+        {% if form.firstname.errors %}
+        <div class="w3-row w3-section">
+            <i class="fa fa-exclamation-circle w3-red"></i>
+            {% for error in form.firstname.errors %}
+                 <small><b>{{ error}}<b></small>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <!-- lastname -->
+        <div class="w3-row w3-section">
+            <div class="w3-col">
+            <label for="lastname">Last name</label>
+            </div>
+        </div>        
+        <div class="w3-row w3-section">
+            <div class="w3-rest">
+            <input class="w3-input w3-border" id="lastname" name="lastname" type="text" required>
+            </div>
+        </div>
+        {% if form.lastname.errors %}
+        <div class="w3-row w3-section">
+            <i class="fa fa-exclamation-circle w3-red"></i>
+            {% for error in form.lastname.errors %}
+            <small><b>{{ error }}</b></small>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- birthdate -->
+        
+        <div class="w3-row w3-section">
+             <div class="w3-col">
+                  <label>Birth date</label>
+             </div>
+             <div class="w3-col s12 m8 l3 w3-margin-right">
+                  <label>Year (1920 to 2020)</label>
+                  <input class="w3-input w3-border" name="birthdate_year" type="number" min="1920" max="2020">
+             </div>
+             <div class="w3-col s12 m8 l3 w3-margin-right">
+                 <label>Month (1 to 12)</label>
+                 <input class="w3-input w3-border" name="birthdate_month" type="number" min="1" max="12">
+             </div>
+             <div class="w3-col s12 m8 l3">
+                 <label>Day (1 to 31)</label>             
+                 <input class="w3-input w3-border" name="birthdate_day" type="number" min="1" max="31">
+             </div>
+
+            {% for error in form.birthdate_year.errors %}
+            <div class="w3-row w3-section">
+                <div class="w3-col s12 m8 l4">
+                <span class="w3-blue w3-text-light-grey"><b>Year: [{{ error }}]</b></span>
+                </div>
+            </div>
+            {% endfor %}
+            {% for error in form.birthdate_month.errors %}
+            <div class="w3-row w3-section">
+                  <div class="w3-col s12 m8 l4">
+                <span class="w3-blue w3-text-light-grey"><b>Month: [{{ error }}]</b></span>
+                </div>
+            </div>
+            {% endfor %}
+            {% for error in form.birthdate_day.errors %}
+            <div class="w3-row w3-section">
+                  <div class="w3-col s12 m8 l4">
+                <span class="w3-blue w3-text-light-grey"><b>Day: [{{ error }}]</b></span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        
+        <!-- ============================================================================================================= -->
+        <div class="w3-row w3-section">
+            <div class="w3-col">
+            <label for="country">Country</label>
+            </div>
+        </div>        
+        <div class="w3-row w3-section">
+            <div class="w3-rest">
+            <input class="w3-input w3-border" id="country" name="country" type="text" required>
+            </div>
+        </div>
+        {% if form.country.errors %}
+        <div class="w3-row w3-section">
+            <i class="fa fa-exclamation-circle w3-red"></i>
+            {% for error in form.country.errors %}
+            <small><b>{{ error }}</b></small>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        <div class="w3-row w3-section">
+            <div class="w3-col">
+            <label for="state">State</label>
+            </div>
+        </div>        
+        <div class="w3-row w3-section">
+            <div class="w3-rest">
+            <input class="w3-input w3-border" id="state" name="state" type="text" required>
+            </div>
+        </div>
+        {% if form.state.errors %}
+        <div class="w3-row w3-section">
+            <i class="fa fa-exclamation-circle w3-red"></i>
+            {% for error in form.state.errors %}
+            <small><b>{{ error }}</b></small>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="w3-row w3-section">
+            <div class="w3-col">
+            <label for="cityy">City</label>
+            </div>
+        </div>        
+        <div class="w3-row w3-section">
+            <div class="w3-rest">
+            <input class="w3-input w3-border" id="city" name="city" type="text" required>
+            </div>
+        </div>
+        {% if form.city.errors %}
+        <div class="w3-row w3-section">
+            <i class="fa fa-exclamation-circle w3-red"></i>
+            {% for error in form.city.errors %}
+            <small><b>{{ error }}</b></small>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        
+        <div class="w3-row w3-section">
+            <div class="w3-col">
+            <label for="street">Street</label>
+            </div>
+        </div>        
+        <div class="w3-row w3-section">
+            <div class="w3-rest">
+             <input class="w3-input w3-border" id="street" name="street" type="text" required>
+            </div>
+        </div>
+        {% if form.street.errors %}
+        <div class="w3-row w3-section">
+            <i class="fa fa-exclamation-circle w3-red"></i>
+            {% for error in form.street.errors %}
+            <small><b>{{ error }}</b></small>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="w3-row w3-section">
+            <div class="w3-col">
+            <label for="door">Door</label>
+            </div>
+        </div>
+        <div class="w3-row w3-section">
+            <div class="w3-rest">
+            <input class="w3-input w3-border" id="door" name="door" type="text" required>
+            </div>
+        </div>
+        {% if form.door.errors %}
+        <div class="w3-row w3-section">
+            <i class="fa fa-exclamation-circle w3-red"></i>
+            {% for error in form.door.errors %}
+            <small><b>{{ error }}</b></small>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="w3-row w3-section">
+            <div class="w3-col">
+            <label for="photo">Photo</label>
+            </div>
+        </div>
+        
+        <div class="w3-row w3-section">
+            <div class="w3-rest">
+            <input class="w3-input w3-border" name="photo" type="file">
+            </div>
+        </div>
+        
+        {% if form.photo.errors %}
+        <div class="w3-row w3-section">
+            <i class="fa fa-exclamation-circle w3-red"></i>
+            {% for error in form.photo.errors %}
+            <small><b>{{ error }}</b></small>
+            {% endfor %}
+        </div>
+        {% endif %}        
+
+        <div class="w3-row w3-section">
+          <div class="w3-col">
+             <p>
+             <input name="send" type="submit" value="Submit" class="w3-button w3-block w3-blue w3-ripple">
+             </p>
+          </div>
+        </div>        
+</form>
+<div class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
+        <div class="w3-row w3-section">
+          <div class="w3-third">
+             <a href="{{ url_for('authentication.register_user') }}">Register user</a>
+          </div>
+          <div class="w3-third">
+             <a href="/authentication.forgot_street">Forgot street</a>
+          </div>
+          <div class="w3-third">
+             <a href="/authentication.goodbye">Goodbye</a>
+          </div>
+        </div>
+</div>
+{% endblock %} 
+
+
+

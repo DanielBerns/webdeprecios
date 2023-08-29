@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
+<h2 class="w3-center"><b>Review your info</b></h2>
+<article class="w3-container w3-card-4 w3-light-gray w3-text-blue w3-margin">
+    <div class="w3-row w3-section">
+        <div class="w3-rest">
+        <ul class="w3-ul">
+            <li>Identifiers: {{ user.identifier }} - {{ publisher.identifier }}</li>                        
+            <li>url suffix: {{ user.url_suffix }}</li>                
+            <li>rights: {{ format_user_rights(user.rights) }}</li>                    
+            <li>email: {{ user.email }}</li>
+            <li>phone: {{ user.phone }}</li>
+            <li>username: {{ user.username }}</li>            
+            <li>enabled: {{ user.enabled }}, {{ user.enabled_reason }}</li>        
+            <li>Name: {{publisher.lastname}}, {{ publisher.firstname }}</li>                
+            <li>birthdate: {{ publisher.birthdate2str() }}</li>                    
+            <li>address: {{ publisher.address() }}</li>
+            <li>photo: <img src="/pics/{{ publisher.photo_url() }}" alt="Photo" width="256"></li>            
+        </ul>
+        </div>
+    </div>
+</article>
+<article class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
+        <div class="w3-row w3-section">
+          <div class="w3-third w3-left">
+             <a href="{{ url_for('main.index') }}">Index</a>
+          </div>
+          <div class="w3-third w3-right">
+             <a href="/authentication.logout">Logout</a>
+          </div>
+        <div>
+</article>
+</section>
+{% endblock %} 
+

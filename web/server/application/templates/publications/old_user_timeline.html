@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<title>user timeline</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+<body>
+
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="#food" onclick="w3_close()" class="w3-bar-item w3-button">Posts</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">Publisher</a>
+</nav>
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+    <div class="w3-right w3-padding-16">XXXX</div>
+    <div class="w3-center w3-padding-16">User timeline</div>
+  </div>
+</div>
+  
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      {% if post_0 %}
+      <img src="/pics/{{ post_0.photo_url() }}" alt="{{post_0.title}}" width="256" >
+      <h3>{{ post_0.title }}</h3>
+      <p>{{ post_0.body }}</p>
+      {% else %}
+      {% endif %}
+    </div>
+    <div class="w3-quarter">
+      {% if post_1 %}
+      <img src="/pics/{{ post_1.photo_url() }}" alt="{{post_1.title}}" width="256" >
+      <h3>{{ post_1.title }}</h3>
+      <p>{{ post_1.body }}</p>
+      {% else %}
+      {% endif %}
+    </div>
+    <div class="w3-quarter">
+      {% if post_2 %}
+      <img src="/pics/{{ post_2.photo_url() }}" alt="{{post_2.title}}" width="256" >
+      <h3>{{ post_2.title }}</h3>
+      <p>{{ post_2.body }}</p>
+      {% else %}
+      {% endif %}
+    </div>
+    <div class="w3-quarter">
+      {% if post_3 %}
+      <img src="/pics/{{ post_3.photo_url() }}" alt="{{post_3.title}}" width="256" >
+      <h3>{{ post_3.title }}</h3>
+      <p>{{ post_3.body }}</p>
+      {% else %}
+      {% endif %}
+    </div>
+  </div>
+  
+  <!-- Pagination-->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      {% if previous_url %}
+      <a href="{{ previous_url }}" class="w3-bar-item w3-button w3-hover-black">Previous page</a>
+      {% endif %}
+      {% if next_url %}
+      <a href="{{ next_url }}" class="w3-bar-item w3-button w3-hover-black">Next page</a>
+      {% endif %}
+    </div>
+  </div>
+  
+  <hr id="about">
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32 w3-center">  
+    <h3><b>Mostrame!</b></h3><br>
+    <img src="/static/img/avatar-1.png" alt="Us" class="w3-image" style="display:block;margin:auto" width="256">
+    <div class="w3-padding-32">
+      <h4><i>Advertising for everybody!</i></h6>
+      <p>Enjoy!</p>
+    </div>
+  </div>
+  <hr>
+  
+  <!-- Footer -->
+  <footer class="w3-row-padding w3-padding-32">
+  
+    
+    <div class="w3-half">
+      <h3>Where can you go?</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <a href="/" class="w3-large">Home</a>
+        </li>
+        {% if user %}
+        <li class="w3-padding-16">
+          <a href="{{ url_for('publications.create', user_url_suffix=user.url_suffix)}}" class="w3-large">Create a new post</a>
+        </li>
+        {% endif %}
+        <li class="w3-padding-16">
+          <a href="/" class="w3-large">Search</a>
+        </li> 
+      </ul>
+    </div>
+
+    <div class="w3-half">
+      <h3>FOOTER</h3>
+      <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </div>
+
+    <!--
+    <div class="w3-third w3-serif">
+      <h3>POPULAR TAGS</h3>
+      <p>
+        <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Salmon</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">France</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Flavors</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cuisine</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Chicken</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dressing</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fried</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fish</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Duck</span>
+      </p>
+    </div>
+    -->
+  </footer>
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+ 
