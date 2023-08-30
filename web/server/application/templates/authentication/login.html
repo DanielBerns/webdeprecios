@@ -1,58 +1,51 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2 class="w3-center"><b>Login</b></h2>
+    <h2><b>Acceso con usuario y contraseña</b></h2>
   
-    <form id="form" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
-        <div class="w3-row w3-section">
-            <div class="w3-col">
-            <i class="w3-xxlarge fa fa-envelope-o"></i>
+    <form id="form">
+    <fieldset>
+        <div>
+            <div>
+            <!--<i class="w3-xxlarge fa fa-envelope-o"></i>-->
             <label for="email">Email</label>
             </div>
         </div>
-        <div class="w3-row w3-section">
-            <div class="w3-rest">
-            <input class="w3-input w3-border"  type="email" id="email" class="email" required/>
+        <div>
+            <div>
+            <input type="email" id="email" class="email" required/>
             </div>
         </div>
-        <div class="w3-row w3-section">
-            <i class="fa fa-exclamation-circle w3-red"></i>
-            <small>Error message</small>
-        </div>
-
-        <div class="w3-row w3-section">
-            <div class="w3-col">
-            <i class="w3-xxlarge fa fa-key"></i>
+        <div>
+            <div>
+            <!--<i class="w3-xxlarge fa fa-key"></i>-->
             <label for="password">Password</label>
             </div>
         </div>        
-        <div class="w3-row w3-section">
-            <div class="w3-rest">
-            <input class="w3-input w3-border"  type="password" id="password" class="password" required/>
+        <div>
+            <div>
+            <input type="password" id="password" class="password" required/>
             </div>
         </div>
-        <div class="w3-row w3-section">
-            <i class="fa fa-exclamation-circle w3-red"></i>
-            <small>Error message</small>
-        </div>
-        <div class="w3-row w3-section">
-          <div class="w3-col">
+        <div>
+          <div>
              <p>
-             <input class="w3-button w3-border w3-block w3-blue w3-ripple"  name="send" type="submit" value="Submit">
+             <input class="button"  name="send" type="submit" value="Submit">
              </p>
           </div>
         </div>
+    </fieldset>
 </form>
-<div class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
-        <div class="w3-row w3-section">
-          <div class="w3-third">
-             <a href="{{ url_for('authentication.register_user') }}">Register user</a>
+<div class="container">
+        <div>
+          <div>
+             <a href="{{ url_for('authentication.register_user') }}">Crear cuenta de usuario</a>
           </div>
-          <div class="w3-third">
-             <a href="/authentication.forgot_password">Forgot password</a>
+          <div>
+             <a href="/authentication.forgot_password">¿Olvidó la contraseña?</a>
           </div>
-          <div class="w3-third">
-             <a href="/authentication.goodbye">Goodbye</a>
+          <div>
+             <a href="/authentication.goodbye">Adiós</a>
           </div>
         </div>
 </div>
