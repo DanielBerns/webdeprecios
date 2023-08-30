@@ -20,7 +20,7 @@
   <p><a href="{{ url_for('authentication.register_user') }}">Creación de usuario y contraseña</a></p>  
   {% endif %}
   {% if current_user.is_authenticated %}
-  <p><a href="{{ url_for('advertisements.create', useruuid=current_user.useruuid) }}">Create advertisements</a></p>
+  <!--<p><a href="{{ url_for('advertisements.create', useruuid=current_user.useruuid) }}">Create advertisements</a></p>-->
   <p><a href="{{ url_for('authentication.logout') }}">Logout</a></p>  
   {% endif %}
   
