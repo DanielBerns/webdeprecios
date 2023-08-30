@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ html_title }}</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="/static/img/favicon.ico" rel="shortcut icon">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui"> 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+<link href="/static/img/favicon.ico" rel="shortcut icon">
+
 </head>
 <body>
-<header class="w3-container w3-center w3-deep-purple w3-text-white w3-bottombar w3-border-gray">
-   <h1><b>{{ website() }}</b></h1>
-   <p><b>Publish and search</b></p>
-   <p><b>from your smartphone</b></p>
+<header class="container">
+   <h1><b>Observatorio de Precios - FCE - UNPSJB</b></h1>
+   <p><b>La info para la gente</b></p>
 </header>
 
 {% with messages = get_flashed_messages() %}
 {% if messages %}
-<div class="w3-container w3-card-4 w3-pale-red w3-text-black w3-margin">
-    <div class="w3-row w3-section">
-        <div class="w3-rest">
-        <ul class="w3-ul">
-            {% for m in messages %}
-            <li>{{ m }}</li>
-            {% endfor %}
-        </ul>
-        </div>
-    </div>
+<div class="container">
 </div>
 {% endif %}
 {% endwith %}
@@ -33,10 +25,8 @@
 {% block content %}
 {% endblock %}
 
-<footer class="w3-container w3-center w3-deep-purple w3-text-white w3-topbar w3-border-gray">
-<div class="w3-row-padding">
-  <h6  class="w3-center"><b>{{ website() }}</b></h2>
-</div>
+<footer class="container">
+  <h6><b>UNPSJB</b></h2>
 </footer>
 
 {% block scripts %}
