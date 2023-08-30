@@ -187,10 +187,7 @@ def login():
             return redirect(next_page)
         else:
             return redirect(url_for('debug.show', state='authentication.login'))
-    return render_template('authentication/login.html', 
-                           form=form, 
-                           html_title='authentication-login',
-                           website=current_app.config['WEBSITE'])
+    return render_template('authentication/login.html', form=form)
 
 
 @bp.route('/logout')
@@ -207,10 +204,7 @@ def review(user_url_suffix):
     if user and publisher:
         if user == current_user:
             return render_template('authentication/review.html', 
-                                    publisher=publisher, 
-                                    user=user, 
-                                    html_title='authentication-review',
-                                    website=current_app.config['WEBSITE'])  
+                                    publisher=publisher, user=user)  
     abort(404)
 
 
@@ -222,9 +216,7 @@ def show_users(url_suffix):
             all_the_users = User.query.order_by(User.identifier)            
             return render_template(
                 'authentication/show_users.html', 
-                users=all_the_users, 
-                html_title='authentication-show_users',
-                website=current_app.config['WEBSITE'])
+                users=all_the_users)
     abort(404)
 
 
