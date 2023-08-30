@@ -63,10 +63,7 @@ def register_user():
                                     user_url_suffix=user.url_suffix))
         else:
             return redirect(url_for('debug.show', state='authentication.register_user'))
-    return render_template('authentication/register_user.html', 
-                           form=form, 
-                           html_title='authentication-register_user', 
-                           website=current_app.config['WEBSITE'])
+    return render_template('authentication/register_user.html', form=form)
 
 
 @bp.route('/goodbye', methods=['GET'])
