@@ -14,5 +14,9 @@ def before_request():
 
 
 @bp.route('/', methods=['GET'])
-def index():
-    return render_template('main/home.html', title='Home')
+def home():
+    return render_template('main/home.html')
+
+@bp.route('/info.html', methods=['GET'])
+def info():
+    return render_template('main/info.html')
