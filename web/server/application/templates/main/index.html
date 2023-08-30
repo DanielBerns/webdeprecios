@@ -4,17 +4,17 @@
 
 {% block content %}
 <div class="container">
-  <button class="button" onclick="openTab('Home')"><b>Home</b></button>
-  <button class="button" onclick="openTab('Publish')"><b>Publish</b></button>
-  <button class="button" onclick="openTab('Search')"><b>Search</b></button>
-  <button class="button" onclick="openTab('Help')"><b>Help</b></button>
+  <button class="button" onclick="openTab('Inicio')"><b>Home</b></button>
+  <button class="button" onclick="openTab('Tablas')"><b>Publish</b></button>
+  <button class="button" onclick="openTab('Búsqueda')"><b>Search</b></button>
+  <button class="button" onclick="openTab('Ayuda')"><b>Help</b></button>
 </div>
 
-<div id="Home" class="container tab">
-  <h2>Home</h2>
-  <p>Here, you can publish and search advertisements of products and services.</p>
-  <p>First, make an user account, with username, email and phone</p>
-  <p>Next, give us some info about your identity in the real world.</p>
+<div id="Inicio" class="container tab">
+  <h2>Inicio</h2>
+  <p>Aquí podrá encontrar tablas de datos sobre precios en las ciudades de la región y buscar información relacionada.</p>
+  <p>Puede hacerlo por computadora o teléfono, con acceso libre o con usuario y contraseña.</p>
+  <p>Para más información, consulte la ayuda.</p>
   {% if current_user.is_anonymous %}
   <p><a href="{{ url_for('authentication.login') }}">Login</a></p>
   <p><a href="{{ url_for('authentication.register_user') }}">Register</a></p>  
@@ -26,17 +26,17 @@
   
 </div>
 
-<div id="Publish" class="container tab" style="display:none">
+<div id="Tablas" class="container tab" style="display:none">
   <h2>Publish</h2>
   <p>Publish your advertisements.</p> 
 </div>
 
-<div id="Search" class="container tab" style="display:none">
+<div id="Búsqueda" class="container tab" style="display:none">
   <h2>Search</h2>
   <p>Search advertisements.</p>
 </div>
 
-<div id="Help" class="container tab" style="display:none">
+<div id="Ayuda" class="container tab" style="display:none">
   <h2>Help</h2>
   <p>Help me.</p>
 </div>
@@ -45,6 +45,6 @@
 {% block footer %}
 {% endblock %}
 
-{% block js_scripts %}
+{% block scripts %}
 <script src="static/js/manage_tabs.js"></script>
 {% endblock %}
