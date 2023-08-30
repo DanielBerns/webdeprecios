@@ -1,12 +1,50 @@
 {% extends "base.html" %}
 
-{% block content %}
-<section>
+{% block title %}Index{% endblock %}
 
-
-<!-- Top menu -->
+{% block body %}
 <div class="container">
-<h1>Hola</h1>
+  <button class="button" onclick="openTab('Home')"><b>Home</b></button>
+  <button class="button" onclick="openTab('Publish')"><b>Publish</b></button>
+  <button class="button" onclick="openTab('Search')"><b>Search</b></button>
+  <button class="button" onclick="openTab('Help')"><b>Help</b></button>
 </div>
-</section>
+
+<div id="Home" class="container tab">
+  <h2>Home</h2>
+  <p>Here, you can publish and search advertisements of products and services.</p>
+  <p>First, make an user account, with username, email and phone</p>
+  <p>Next, give us some info about your identity in the real world.</p>
+  {% if current_user.is_anonymous %}
+  <p><a href="{{ url_for('authentication.login') }}">Login</a></p>
+  <p><a href="{{ url_for('authentication.register_user') }}">Register</a></p>  
+  {% endif %}
+  {% if current_user.is_authenticated %}
+  <p><a href="{{ url_for('advertisements.create', useruuid=current_user.useruuid) }}">Create advertisements</a></p>
+  <p><a href="{{ url_for('authentication.logout') }}">Logout</a></p>  
+  {% endif %}
+  
+</div>
+
+<div id="Publish" class="container tab" style="display:none">
+  <h2>Publish</h2>
+  <p>Publish your advertisements.</p> 
+</div>
+
+<div id="Search" class="container tab" style="display:none">
+  <h2>Search</h2>
+  <p>Search advertisements.</p>
+</div>
+
+<div id="Help" class="container tab" style="display:none">
+  <h2>Help</h2>
+  <p>Help me.</p>
+</div>
 {% endblock %} 
+
+{% block footer %}
+{% endblock %}
+
+{% block js_scripts %}
+<script src="static/js/manage_tabs.js"></script>
+{% endblock %}
