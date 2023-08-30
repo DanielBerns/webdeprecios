@@ -71,9 +71,7 @@ def register_user():
 
 @bp.route('/goodbye', methods=['GET'])
 def goodbye():
-    return render_template('authentication/goodbye.html', 
-                           html_title='authentication-goodbye',
-                           website=current_app.config['WEBSITE'])
+    return render_template('authentication/goodbye.html')
 
 
 def process_publisher_form(form, user):
