@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-rm -rf ~/Data/remote-electric-lab/website/logs/
-rm -rf ~/Data/remote-electric-lab/website/store/
+rm -rf ~/Data/web/website/logs/
+rm -rf ~/Data/web/website/store/
 rm -rf ./migrations    
 
 mkdir -p ~/Data/remote-electric-lab/website/logs/
