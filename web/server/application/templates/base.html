@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui"> 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+<link href="/static/img/favicon.ico" rel="shortcut icon">
+</head>
+<body>
+<header class="container">
+   <h1><b>Observatorio de Precios - FCE - UNPSJB</b></h1>
+   <p><b>La info para la gente</b></p>
+</header>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="container">
+</div>
+{% endif %}
+{% endwith %}
+
+{% block content %}
+{% endblock %}
+
+<footer class="container">
+  <h6><b>UNPSJB</b></h2>
+</footer>
+
+{% block title %}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+</body>
+</html>

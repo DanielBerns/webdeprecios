@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <h1>Enviar mensaje a {{recipient}}</h1>
+    <div class="w3-container w3-border w3-border-blue">
+        <form action="" method="post" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <div class="w3-container">
+                <p><label>{{ form.message.label }}</label></p>
+                <p><textarea class="w3-input w3-border w3-round" name="message"></textarea></p>
+                {% for error in form.message.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            <div class="w3-container">{{ form.submit() }}</div>
+            <div class="w3-container"><br></div>
+        </form>
+    </div>
+{% endblock %}
