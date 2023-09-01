@@ -14,7 +14,7 @@ class ConfigException(Exception):
 class Config:
     DATA_PATH = app_data_path
     SECRET_KEY = os.environ.get('SECRET_KEY') or '1123581235711'
-    IDENTIFIER = os.environ.get('IDENTIFIER') or app_identifier
+    IDENTIFIER = create_storage.BASE
     LOGGING_LEVEL = os.environ.get('LOGGING_LEVEL') or 'DEBUG'
     PICTURES = Path(app_data_path, 'pictures')
     LOGS = Path(app_data_path, 'logs')
