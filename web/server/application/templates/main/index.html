@@ -26,7 +26,7 @@
   <p>Para más información, consulte la ayuda.</p>
   {% if current_user.is_anonymous %}
   <p><a href="{{ url_for('auth.login') }}">Acceso con usuario y contraseña</a></p>
-  <p><a href="{{ url_for('auth.register_user') }}">Creación de usuario y contraseña</a></p>  
+  <p><a href="{{ url_for('auth.register') }}">Creación de usuario y contraseña</a></p>  
   {% endif %}
   {% if current_user.is_authenticated %}
   <!--<p><a href="{{ url_for('advertisements.create', useruuid=current_user.useruuid) }}">Create advertisements</a></p>-->
