@@ -1,6 +1,6 @@
 from flask import jsonify, request, url_for, abort, current_app
 from application import db
-from application.models import User, Message, Post, Store, Experiment, save_image
+from application.models import User, Message, Post
 from application.api import bp
 from application.api.auth import token_auth
 from application.api.errors import bad_request
@@ -143,87 +143,4 @@ def publish():
     db.session.add(new_post)
     db.session.commit()
     return jsonify(current_user.to_dict())
-
-
-@bp.route('/experiment', methods=['POST'])
-@token_auth.login_required
-def upload_experiment():
-    current_user = token_auth.current_user()
-    current_app.logger.info(f"request {request != None}")
-    _title = '1'
-    _body = '1'
-    _sender_id = '1'
-    error = False
-    try:
-        data = request.get_json() or {}
-        current_app.logger.info(str(data))
-    except Exception as message:
-        current_app.logger.error(str(message))
-        error = True
-    try:
-        current_app.logger.info(str(data))
-        _title = data.get('title') or '2'
-        _body = data.get('body') or '2'
-        _sender_id = data.get('sender_id') or '2'
-        current_app.logger.info(_title)
-        current_app.logger.info(_body)
-        current_app.logger.info(_sender_id)        
-    except Exception as message:
-        current_app.logger.error(str(message))
-        error = True
-    if error:
-        result = {'title': _title, 'body': _body, 'sender_id': sender_id}
-        current_app.logger.error(result)
-        return jsonify(result)
-    else:
-        current_app.logger.info("new_experiment start")
-        _resource_uuid = uuid.uuid4().hex
-        store = Store.create(current_user)        
-        new_experiment = Experiment(resource_uuid=_resource_uuid,
-                                    user_id=_sender_id,
-                                    title=_title,
-                                    body=_body,
-                                    store_id=store.id)
-        db.session.add(new_experiment)
-        db.session.commit()
-        current_app.logger.info("new_experiment done")
-        return jsonify(new_experiment.to_dict())
-
-
-@bp.route('/experiment/picture/<string:resource_uuid>', methods=['POST'])
-@token_auth.login_required
-def upload_experiment_picture(resource_uuid):
-    current_app.logger.info(f"/experiment/picture/{resource_uuid:s} start")
-    current_user = token_auth.current_user()
-    current_app.logger.info(f"request {request != None}")
-    error = False
-    reason = 0
-    try:
-        image = request.files['image']
-        current_app.logger.info("got image file")
-    except Exception as message:
-        current_app.logger.error(str(message))
-        error = True
-        reason = 1
-    if image == None:
-        current_app.logger.error('image == None')
-        error = True
-        reason = 2
-    else:
-        current_app.logger.info("image != None")
-        resource = Experiment.query.filter_by(resource_uuid=resource_uuid).first_or_404()
-        current_app.logger.info(f"got resource {resource_uuid:s} - {resource.id:d}")        
-        store = Store.query.filter_by(id=resource.store_id).first_or_404()
-        current_app.logger.info(f"got store {store.id:d}")        
-        try:
-            save_image(image, store)
-            current_app.logger.info(f"save image")                    
-        except Exception as message:
-            current_app.logger.error(str(message))
-            error = True
-            reason = 3
-    current_app.logger.info(f"done")                    
-    result = {'error': error, 'reason': reason}
-    current_app.logger.info(f"/experiment/picture/{resource_uuid:s} done")
-    return jsonify(result)
 
