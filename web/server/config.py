@@ -2,10 +2,10 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-base_path = Path(__file__).parent
+from storage import Storage
+from create_storage import BASE
 
-app_identifier = 'webdeprecios'
-app_data_path = Path('~', 'Data', app_identifier, 'website').expanduser()
+app_data_path = Storage.create_app_data_path(BASE)
 load_dotenv(Path(app_data_path, 'env'))
 
 class ConfigException(Exception):

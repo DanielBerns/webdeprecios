@@ -12,6 +12,7 @@ from flask_login import LoginManager
 
 from config import Config
 
+
 db = SQLAlchemy()
 migrate = Migrate()
 login = LoginManager()

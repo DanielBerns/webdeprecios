@@ -110,4 +110,11 @@ class Storage:
         print(f"         base: {base:s}")
         print(f"app_data_path: {str(app_data_path):s}")           
         print(f"   store_path: {str(store_path):s}")           
-        print(f"    logs_path: {str(logs_path):s}")           
+        print(f"    logs_path: {str(logs_path):s}")   
+
+    @staticmethod    
+    def main(base: str) -> None:
+        Storage.initialize(base, 'server')
+        Storage.initialize(base, 'client')
+        Storage.initialize(base, 'ccc')
+
