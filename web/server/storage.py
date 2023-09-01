@@ -60,8 +60,8 @@ def get_custom_keys(file_identifier):
 class Storage:
     
     @staticmethod
-    def home_path(base: str, app_name: str) -> Path:
-        _path = Path('~', 'Data', base, app_name).expanduser()
+    def home_path(base: str, identifier: str) -> Path:
+        _path = Path('~', 'Data', base, identifier).expanduser()
         _path.mkdir(mode=0o700, parents=True, exist_ok=True)
         return _path
     
@@ -96,8 +96,9 @@ class Storage:
 
     
     @staticmethod
-    def initialize(base: str, app_name: str) -> None:
-        home_path = Storage.home_path(base, app_name)
+    def initialize(base: str, identifier: str) -> None:
+        print(f'{identifier} parameters')
+        home_path = Storage.home_path(base, identifier)
         store_path = Storage.container(home_path, 'store')
         logs_path = Storage.container(home_path, 'logs')
         Storage.dotenv(home_path)
@@ -105,6 +106,7 @@ class Storage:
         print(f" home_path: {str(home_path):s}")           
         print(f"store_path: {str(store_path):s}")           
         print(f" logs_path: {str(logs_path):s}")   
+        print('-'*80)
 
     @staticmethod    
     def create(base: str) -> None:
