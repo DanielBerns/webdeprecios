@@ -5,19 +5,21 @@ from dotenv import load_dotenv
 from storage import Storage
 from create_storage import BASE
 
-app_data_path = Storage.create_app_data_path(BASE)
-load_dotenv(Path(app_data_path, 'env'))
+home_path = Path(Storage.home_path(BASE), 'server')
+load_dotenv(Path(home_path, 'env'))
 
 class ConfigException(Exception):
     pass
 
 class Config:
-    DATA_PATH = app_data_path
+    IDENTIFIER = BASE
+    HOME_PATH = home_path
+    STORE_PATH = Path(home_path, 'store')
+    LOGS_PATH = Path(home_path, 'logs')
+    PICTURES = Path(store_path, 'pictures')
     SECRET_KEY = os.environ.get('SECRET_KEY') or '1123581235711'
-    IDENTIFIER = create_storage.BASE
     LOGGING_LEVEL = os.environ.get('LOGGING_LEVEL') or 'DEBUG'
-    PICTURES = Path(app_data_path, 'pictures')
-    LOGS = Path(app_data_path, 'logs')
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///' + str(Path(app_data_path, 'store', 'app.db'))
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+        'sqlite:///' + str(Path(store_path, 'app.db'))
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     POSTS_PER_PAGE=10

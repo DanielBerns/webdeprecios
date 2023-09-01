@@ -28,7 +28,6 @@ def create_app(config_class=Config):
     migrate.init_app(app, db)
     login.init_app(app)
 
-
     from application.errors import bp as errors_bp
     app.register_blueprint(errors_bp)
 
@@ -42,14 +41,15 @@ def create_app(config_class=Config):
     app.register_blueprint(api_bp, url_prefix='/api')
 
     if not app.debug and not app.testing:
-        file_handler = RotatingFileHandler(Path(app.config['LOGS'], 'application.log'), maxBytes=10240, backupCount=10)
+        file_handler = RotatingFileHandler(
+            Path(app.config['LOGS_PATH'], 'application.log'), 
+            maxBytes=10240, 
+            backupCount=10)
         file_handler.setFormatter(logging.Formatter(
             '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
-        # Check this
         file_handler.setLevel(logging.DEBUG)
         app.logger.addHandler(file_handler)
         app.logger.setLevel(logging.DEBUG)
-        # Check this
         app.logger.info('Started')
 
     return app
