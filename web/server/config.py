@@ -7,6 +7,7 @@ from create_storage import BASE
 
 home_path = Storage.home_path(BASE, 'server')
 load_dotenv(Path(home_path, 'env'))
+store_path = Storage.store_path(home_path, 'store')
 
 class ConfigException(Exception):
     pass
@@ -14,7 +15,7 @@ class ConfigException(Exception):
 class Config:
     IDENTIFIER = BASE
     HOME_PATH = home_path
-    STORE_PATH = Path(home_path, 'store')
+    STORE_PATH = store_path
     LOGS_PATH = Path(home_path, 'logs')
     PICTURES = Path(store_path, 'pictures')
     SECRET_KEY = os.environ.get('SECRET_KEY') or '1123581235711'
