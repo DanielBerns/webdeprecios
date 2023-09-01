@@ -57,17 +57,12 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
                             foreign_keys='Post.user_id',
                             backref='author', 
                             lazy='dynamic')
-    experiments = db.relationship('Experiment', 
-                                  foreign_keys='Experiment.user_id',
-                                  backref='origin', 
-                                  lazy='dynamic')
     messages_sent = db.relationship('Message',
                                     foreign_keys='Message.sender_id',
                                     backref='author', lazy='dynamic')
     messages_received = db.relationship('Message',
                                         foreign_keys='Message.recipient_id',
                                         backref='recipient', lazy='dynamic')
-
     notifications = db.relationship('Notification', 
                                     foreign_keys='Notification.user_id', 
                                     backref='user',
@@ -219,8 +214,7 @@ class Notification(db.Model):
         return json.loads(str(self.payload_json))
 
 
-
-FILESYSTEM_DEPTH = 2
+STORE_DEPTH = 2
 FILES_PER_FOLDER = 256
 
 
@@ -234,9 +228,9 @@ class Store(db.Model):
     
     def id2FS(self):
         number = self.id
-        digits = [0]*(FILESYSTEM_DEPTH + 1)
-        for i in range(FILESYSTEM_DEPTH + 1):
-            digits[FILESYSTEM_DEPTH - i] = number % FILES_PER_FOLDER
+        digits = [0]*(STORE_DEPTH + 1)
+        for i in range(STORE_DEPTH + 1):
+            digits[STORE_DEPTH - i] = number % FILES_PER_FOLDER
             number = number // FILES_PER_FOLDER
         parts = [f'{v:>03d}' for v in digits]
         name = ''.join(parts)
@@ -251,26 +245,6 @@ class Store(db.Model):
         db.session.commit()
         return store
 
-
-class Experiment(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    resource_uuid = db.Column(db.String(32))
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    title = db.Column(db.String(64), nullable=False)
-    body = db.Column(db.String(256), nullable=False)
-    store_id = db.Column(db.Integer, db.ForeignKey('store.id'), nullable=False)
-
-    def image_url(self):
-        return f'/pictures/{self.resource_uuid:s}'
-
-    def alternative(self):
-        return "Experiment"
-    
-    def to_dict(self):
-        return {'id': self.id, 'timestamp': self.timestamp, 'resource_uuid': self.resource_uuid,
-                'user_id': self.user_id, 
-                'title': self.title, 'body': self.body, 'store_id': self.store_id}
 
 ALLOWED_IMAGES = set(['png', 'jpg', 'jpeg'])
 
