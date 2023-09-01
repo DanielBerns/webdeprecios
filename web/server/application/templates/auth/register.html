@@ -1,11 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="w3-row-padding">
-    <div class="w3-cell w3-col" style="width:15%"><br></div>
-    <div class="w3-cell w3-col w3-white" style="width:70%">
-    <div class="w3-content w3-center"><h3>Regístrese</h3></div>
-    <div class="w3-container"> 
+    <div class="container">
+    <h3>Regístrese</h3>
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <p>
@@ -31,8 +28,6 @@
         </p>
         <p>{{ form.submit() }}</p>
     </form>
-    </div>
-    </div>
     </div>
 {% endblock %}
 
