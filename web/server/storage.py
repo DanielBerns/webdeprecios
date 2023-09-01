@@ -6,7 +6,7 @@ from pathlib import Path
 import json
 import uuid
 import getpass
-from typing import List
+from typing import List, Tuple
 import logging
 
 def get_constant(key: str, 
@@ -61,21 +61,15 @@ class Storage:
     
     @staticmethod
     def home_path(base: str, app_name: str) -> Path:
-        home_path = Path('~', 'Data', base, app_name).expanduser()
-        home_path.mkdir(mode=0o700, parents=True, exist_ok=True)
-        return home_path
+        _path = Path('~', 'Data', base, app_name).expanduser()
+        _path.mkdir(mode=0o700, parents=True, exist_ok=True)
+        return _path
     
-    @staticmethod
-    def store_path(home_path: Path) -> Path:
-        store_path = Path(home_path, 'store')
-        store_path.mkdir(mode=0o700, parents=True, exist_ok=True)
-        return store_path
-    
-    @staticmethod
-    def logs_path(home_path: Path) -> Path:
-        logs_path = Path(home_path, 'logs')
-        logs_path.mkdir(mode=0o700, parents=True, exist_ok=True)
-        return logs_path
+    @staticmethod    
+    def container(root: Path, identifier: str) -> Path:
+        _path = Path(root, identifier)
+        _path.mkdir(mode=0o700, parents=True, exist_ok=True)
+        return _path
     
     @staticmethod
     def dotenv(home_path: Path) -> Path:
@@ -104,8 +98,8 @@ class Storage:
     @staticmethod
     def initialize(base: str, app_name: str) -> None:
         home_path = Storage.home_path(base, app_name)
-        store_path = Storage.store_path(home_path)
-        logs_path = Storage.logs_path(home_path)
+        store_path = Storage.container(home_path, 'store')
+        logs_path = Storage.container(home_path, 'logs')
         Storage.dotenv(home_path)
         print(f"      base: {base:s}")
         print(f" home_path: {str(home_path):s}")           
@@ -113,8 +107,14 @@ class Storage:
         print(f" logs_path: {str(logs_path):s}")   
 
     @staticmethod    
-    def main(base: str) -> None:
+    def create(base: str) -> None:
         Storage.initialize(base, 'server')
         Storage.initialize(base, 'client')
         Storage.initialize(base, 'ccc')
 
+    @staticmethod
+    def start(base: str) -> Tuple[Path, Path, Path]:
+        home_path = Storage.home_path(BASE, 'server')
+        store_path = Storage.container(home_path, 'store')
+        logs_path = Storage.container(home_path, 'logs')
+        return home_path, store_path, logs_path

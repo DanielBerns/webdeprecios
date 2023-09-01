@@ -5,9 +5,8 @@ from dotenv import load_dotenv
 from storage import Storage
 from create_storage import BASE
 
-home_path = Storage.home_path(BASE, 'server')
+home_path, store_path, logs_path = Storage.start(BASE)
 load_dotenv(Path(home_path, 'env'))
-store_path = Storage.store_path(home_path, 'store')
 
 class ConfigException(Exception):
     pass
@@ -16,8 +15,8 @@ class Config:
     IDENTIFIER = BASE
     HOME_PATH = home_path
     STORE_PATH = store_path
-    LOGS_PATH = Path(home_path, 'logs')
-    PICTURES = Path(store_path, 'pictures')
+    LOGS_PATH = logs_path
+    PICTURES = Storage.container(store_path, 'pictures')
     SECRET_KEY = os.environ.get('SECRET_KEY') or '1123581235711'
     LOGGING_LEVEL = os.environ.get('LOGGING_LEVEL') or 'DEBUG'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
