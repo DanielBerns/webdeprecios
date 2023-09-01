@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from storage import Storage
 from create_storage import BASE
 
-home_path = Path(Storage.home_path(BASE), 'server')
+home_path = Storage.home_path(BASE, 'server')
 load_dotenv(Path(home_path, 'env'))
 
 class ConfigException(Exception):
