@@ -7,14 +7,14 @@ from application.models import User
 
 
 class PostForm(FlaskForm):
-    content = TextAreaField('Escriba', validators=[DataRequired(), Length(min=1, max=140)])
-    submit = SubmitField('Publique')
+    content = TextAreaField('Content', validators=[DataRequired(), Length(min=1, max=140)])
+    submit = SubmitField('Send')
 
 
 class EditProfileForm(FlaskForm):
-    username = StringField('Usuario', validators=[DataRequired()])
-    about_me = TextAreaField('Sobre mi', validators=[Length(min=0, max=140)])
-    submit = SubmitField('Publique')
+    username = StringField('Username', validators=[DataRequired()])
+    about_me = TextAreaField('About me', validators=[Length(min=0, max=140)])
+    submit = SubmitField('Send')
 
     def __init__(self, original_username, *args, **kwargs):
         super(EditProfileForm, self).__init__(*args, **kwargs)
@@ -24,27 +24,15 @@ class EditProfileForm(FlaskForm):
         if username.data != self.original_username:
             user = User.query.filter_by(username=self.username.data).first()
             if user is not None:
-                raise ValidationError('Escriba un nombre de usuario diferente.')
+                raise ValidationError('Write a different username')
 
 
 class EmptyForm(FlaskForm):
-    submit = SubmitField('Aceptar')
+    submit = SubmitField('Accept')
 
 
 class MessageForm(FlaskForm):
-    message = TextAreaField('Mensaje', 
+    message = TextAreaField('Message', 
                             validators=[DataRequired(), Length(min=1, max=140)])
-    submit = SubmitField('Enviar')
+    submit = SubmitField('Send')
 
-
-class NetlistForm(FlaskForm):
-    left_1 = RadioField('left_1', choices = [('N0','N0'),('N1','N1'), ('N2','N2'),('N3','N3'), ('N4','N4')])
-    left_2 = RadioField('left_2', choices = [('N0','N0'),('N1','N1'), ('N2','N2'),('N3','N3'), ('N4','N4')])
-    left_3 = RadioField('left_3', choices = [('N0','N0'),('N1','N1'), ('N2','N2'),('N3','N3'), ('N4','N4')])
-    left_4 = RadioField('left_4', choices = [('N0','N0'),('N1','N1'), ('N2','N2'),('N3','N3'), ('N4','N4')])
-    
-    right_1 = RadioField('right_1', choices = [('N0','N0'),('N1','N1'), ('N2','N2'),('N3','N3'), ('N4','N4')])
-    right_2 = RadioField('right_2', choices = [('N0','N0'),('N1','N1'), ('N2','N2'),('N3','N3'), ('N4','N4')])
-    right_3 = RadioField('right_3', choices = [('N0','N0'),('N1','N1'), ('N2','N2'),('N3','N3'), ('N4','N4')])
-    right_4 = RadioField('right_4', choices = [('N0','N0'),('N1','N1'), ('N2','N2'),('N3','N3'), ('N4','N4')])
-    submit = SubmitField('Submit')    

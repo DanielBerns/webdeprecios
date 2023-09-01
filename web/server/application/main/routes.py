@@ -35,7 +35,7 @@ def info():
 
 @bp.route('/help', methods=['GET'])
 def help():
-    return render_template('main/help.html', title='Help')
+    return render_template('main/help.html', title='help')
 
 @bp.route('/user/<username>')
 @login_required
