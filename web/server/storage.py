@@ -114,7 +114,7 @@ class Storage:
 
     @staticmethod
     def start(base: str) -> Tuple[Path, Path, Path]:
-        home_path = Storage.home_path(BASE, 'server')
+        home_path = Storage.home_path(base, 'server')
         store_path = Storage.container(home_path, 'store')
         logs_path = Storage.container(home_path, 'logs')
         return home_path, store_path, logs_path
