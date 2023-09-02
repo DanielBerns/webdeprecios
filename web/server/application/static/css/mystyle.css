@@ -1,0 +1,14 @@
+.solidred {
+    border-style: solid;
+    border-color: red;
+} 
+
+.solidblue {
+    border-style: solid;
+    border-color: blue;
+} 
+
+.dottedgreen {
+  border-style: dotted;
+  border-color: green;
+}
