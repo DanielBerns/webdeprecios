@@ -45,8 +45,7 @@
 </div>
 {% endblock %} 
 
-{% block footer %}
-<footer class="container">
+<div class="container">
   {% if current_user.is_anonymous %}
   <div class="row">
   <div class="column">
@@ -60,8 +59,7 @@
   {% if current_user.is_authenticated %}
   <p><a href="{{ url_for('auth.logout') }}">Logout</a></p>  
   {% endif %}
-</footer>
-{% endblock %}
+</div>
 
 {% block scripts %}
 <script src="static/js/manage_tabs.js"></script>
