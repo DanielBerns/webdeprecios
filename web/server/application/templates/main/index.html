@@ -21,9 +21,40 @@
 
 <div id="Inicio" class="container tab">
   <h2>Inicio</h2>
+<div class="container">
   <p>Aquí podrá encontrar tablas de datos sobre precios en las ciudades de la región y buscar información relacionada.</p>
   <p>Puede hacerlo por computadora o teléfono, con acceso libre o con usuario y contraseña.</p>
   <p>Para más información, consulte la ayuda.</p>
+</div>
+<div class="container">
+  {% if current_user.is_anonymous %}
+  <div class="row">
+  <div class="column">
+  <p><a href="{{ url_for('auth.login') }}">Acceso con usuario y contraseña</a></p>
+  </div>
+  <div class="column">
+  <p><a href="{{ url_for('auth.register') }}">Creación de usuario y contraseña</a></p>
+  </div>  
+  </div>
+  {% endif %}
+  {% if current_user.is_authenticated %}
+  <p><a href="{{ url_for('auth.logout') }}">Logout</a></p>  
+  {% endif %}
+</div>  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 </div>
 
 <div id="Tablas" class="container tab" style="display:none">
@@ -45,21 +76,7 @@
 </div>
 {% endblock %} 
 
-<div class="container">
-  {% if current_user.is_anonymous %}
-  <div class="row">
-  <div class="column">
-  <p><a href="{{ url_for('auth.login') }}">Acceso con usuario y contraseña</a></p>
-  </div>
-  <div class="column">
-  <p><a href="{{ url_for('auth.register') }}">Creación de usuario y contraseña</a></p>
-  </div>  
-  </div>
-  {% endif %}
-  {% if current_user.is_authenticated %}
-  <p><a href="{{ url_for('auth.logout') }}">Logout</a></p>  
-  {% endif %}
-</div>
+
 
 {% block scripts %}
 <script src="static/js/manage_tabs.js"></script>
