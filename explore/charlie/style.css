@@ -1,0 +1,17 @@
+#burst-8 {
+      background: red;
+      width: 30px;
+      height: 90px;
+      position: relative;
+      text-align: center;
+    }
+#burst-8:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 90px;
+      width: 30px;
+      background: red;
+      transform: rotate(90deg);
+}
