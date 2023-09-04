@@ -37,6 +37,10 @@ def info():
 def help():
     return render_template('main/help.html', title='help')
 
+@bp.route('/chakana', methods=['GET'])
+def help():
+    return render_template('main/chakana.html', title='chakana')
+
 @bp.route('/user/<username>')
 @login_required
 def user(username):
