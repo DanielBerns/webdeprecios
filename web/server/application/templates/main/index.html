@@ -24,10 +24,9 @@
 <h2>Inicio</h2>
 <div class="container">
 <ul>
-  <li>Aquí podrá encontrar tablas de datos sobre precios en las ciudades de la región y buscar información relacionada.</li>
-  <li>Puede hacerlo por computadora o teléfono, con acceso libre o con usuario y contraseña.</li>
+  <li>Aquí podrá encontrar información sobre precios en las ciudades de la región y buscar información relacionada.</li>
+  <li>Puede hacerlo por computadora o teléfono.</li>
   <li>Para más información, consulte la ayuda.</li>
-  <li><a href="{{ url_for('main.chakana') }}">Chakana</a></li>  
   {% if current_user.is_anonymous %}
   <li><a href="{{ url_for('auth.login') }}">Acceso con usuario y contraseña</a></li>
   <li><a href="{{ url_for('auth.register') }}">Creación de usuario y contraseña</a></li>
