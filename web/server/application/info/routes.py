@@ -10,17 +10,17 @@ def cba():
     return render_template('info/cba.html')
 
 @bp.route('/nlp', methods=['GET'])
-def index():
+def nlp():
     return render_template('info/nlp.html')
 
 @bp.route('/price_ranges', methods=['GET'])
-def info():
+def price_ranges():
     return render_template('info/price_ranges.html')
 
 @bp.route('/oil_stats', methods=['GET'])
-def info():
+def oil_stats():
     return render_template('info/oil_stats.html')
 
 @bp.route('/about_us', methods=['GET'])
-def info():
+def about_us():
     return render_template('info/about_us.html')
