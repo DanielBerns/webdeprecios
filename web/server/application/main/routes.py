@@ -23,11 +23,11 @@ def before_request():
 
 @bp.route('/', methods=['GET'])
 def frontpage():
-    return render_template('main/frontpage.html', title='frontpage')
+    return render_template('main/frontpage.html')
 
 @bp.route('/index', methods=['GET'])
 def index():
-    return render_template('main/index.html', title='index')
+    return render_template('main/index.html')
 
 @bp.route('/info', methods=['GET'])
 def info():
