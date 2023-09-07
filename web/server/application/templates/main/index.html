@@ -25,7 +25,7 @@
   <div class="w3-card w3-container" style="min-height:460px">
   <h3>Canasta Básica Alimentaria</h3><br>
   <p>Calculada mes a mes</p>
-  <p>Ir a <a href="/cba">CBA</a></p>
+  <p>Ir a <a href="{{ url_for('info.cba') }}">CBA</a></p>
   </div>
 </div>
 
@@ -35,7 +35,7 @@
   <p>Seguimos las noticias día a día</p>
   <p>Analizamos las palabras y frases usadas para comunicar los eventos cotidianos</p>
   <p>Te mostramos nubes de palabras</p>
-  <p>Ir a <a href="/nlp">NLP</a></p>  
+  <p>Ir a <a href="{{ url_for('info.nlp') }}">NLP</a></p>  
   </div>
 </div>
 
@@ -44,7 +44,7 @@
   <h3>Rangos de Precios</h3><br>
   <p>Aquí mostramos los precios mínimos, indicativos y máximos que 
   encontramos en las ciudades de la región.</p>
-  <p>Ir a <a href="/pminindmax">Rangos de precios</a></p>    
+  <p>Ir a <a href="{{ url_for('info.price_ranges') }}">Rangos de precios</a></p>    
   </div>
 </div>
 </div>
@@ -53,7 +53,7 @@
 <div class="w3-third">
   <div class="w3-card w3-container" style="min-height:460px">
   <h3>Info sobre actividad petrolera</h3><br>
-  <p>Estadisticas</p>
+  <p>Ir a <a href="{{ url_for('info.oil_stats') }}">Estadísticas de petroleo</a></p>    
   </div>
 </div>
 
@@ -61,7 +61,7 @@
   <div class="w3-card w3-container" style="min-height:460px">
   <h3>Quienes somos</h3><br>
   <p>Los integrantes del grupo</p>
-  <p>Ir a <a href="/group">integrantes del grupo</a></p>
+  <p>Ir a <a href="{{ url_for('info.about_us') }}">integrantes del grupo</a></p>
   </div>
 </div>
 
