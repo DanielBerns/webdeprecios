@@ -15,39 +15,10 @@ from pathlib import Path
 def load_user(id):
     return User.query.get(int(id))
 
-
-followers = db.Table('followers',
-    db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
-    db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
-)
-
-
-class PaginatedAPIMixin:
-    @staticmethod
-    def to_collection_dict(query, page, per_page, endpoint, **kwargs):
-        resources = query.paginate(page, per_page, False)
-        data = {
-            'items': [item.to_dict() for item in resources.items],
-            '_meta': {
-                'page': page,
-                'per_page': per_page,
-                'total_pages': resources.pages,
-                'total_items': resources.total
-            },
-            '_links': {
-                'self': url_for(endpoint, page=page, per_page=per_page, **kwargs),
-                'next': url_for(endpoint, page=page + 1, per_page=per_page, **kwargs) if resources.has_next else None,
-                'prev': url_for(endpoint, page=page - 1, per_page=per_page, **kwargs) if resources.has_prev else None
-            }
-        }
-        return data
-    
-
-class User(UserMixin, PaginatedAPIMixin, db.Model):
+class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
     password_hash = db.Column(db.String(128))
-    about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     token = db.Column(db.String(32), index=True, unique=True)
     token_expiration = db.Column(db.DateTime)
@@ -67,12 +38,6 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
                                     foreign_keys='Notification.user_id', 
                                     backref='user',
                                     lazy='dynamic')
-
-    followed = db.relationship(
-        'User', secondary=followers,
-        primaryjoin=(followers.c.follower_id == id),
-        secondaryjoin=(followers.c.followed_id == id),
-        backref=db.backref('followers', lazy='dynamic'), lazy='dynamic')
     
     def __repr__(self):
         return f'<User {self.username:s}>'
@@ -82,25 +47,6 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
-
-    def follow(self, user):
-        if not self.is_following(user):
-            self.followed.append(user)
-
-    def unfollow(self, user):
-        if self.is_following(user):
-            self.followed.remove(user)
-
-    def is_following(self, user):
-        return self.followed.filter(
-            followers.c.followed_id == user.id).count() > 0
-    
-    def followed_posts(self):
-        followed = Post.query.join(
-            followers, (followers.c.followed_id == Post.user_id)).filter(
-                followers.c.follower_id == self.id)
-        own = Post.query.filter_by(user_id=self.id)
-        return followed.union(own).order_by(Post.timestamp.desc())
 
     def get_reset_password_token(self, expires_in=600):
         return jwt.encode(
@@ -118,7 +64,8 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
 
     def new_messages(self):
         last_read_time = self.last_message_read_time or datetime(1900, 1, 1)
-        return Message.query.filter_by(recipient=self).filter(Message.timestamp > last_read_time).count()
+        return Message.query.filter_by(recipient=self).filter(
+            Message.timestamp > last_read_time).count()
 
     def add_notification(self, name, data):
         self.notifications.filter_by(name=name).delete()
@@ -145,31 +92,6 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
             return None
         return user
 
-    def to_dict(self, include_email=False):
-        data = {
-            'id': self.id,
-            'username': self.username,
-            'last_seen': self.last_seen.isoformat() + 'Z',
-            'about_me': self.about_me,
-            'post_count': self.posts.count(),
-            'follower_count': self.followers.count(),
-            'followed_count': self.followed.count(),
-            '_links': {
-                'self': url_for('api.get_user', id=self.id),
-                'followers': url_for('api.get_followers', id=self.id),
-                'followed': url_for('api.get_followed', id=self.id),
-                'all_the_messages': url_for('api.all_the_messages')
-            }
-        }
-        return data
-
-    def from_dict(self, data, new_user=False):
-        for field in ['username', 'about_me']:
-            if field in data:
-                setattr(self, field, data[field])
-        if new_user and 'password' in data:
-            self.set_password(data['password'])
-            
     
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -181,23 +103,12 @@ class Post(db.Model):
         return f'<Post {self.content:s}>'
 
 
-class Message(PaginatedAPIMixin, db.Model):
+class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(140))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     sender_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     recipient_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
-    def to_dict(self, include_email=False):
-        data = {
-            'id': self.id,
-            'content': self.content,
-            'timestamp': self.timestamp.isoformat() + 'Z',
-            'sender_id': self.sender_id,
-            'recipient_id': self.recipient_id,
-            'self': url_for('api.get_message', id=self.id),
-        }
-        return data
 
     def __repr__(self):
         return f'<Message {self.content:s}>'
@@ -206,12 +117,12 @@ class Message(PaginatedAPIMixin, db.Model):
 class Notification(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(128), index=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    payload = db.Column(db.Text)
     timestamp = db.Column(db.Float, index=True, default=time)
-    payload_json = db.Column(db.Text)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def get_data(self):
-        return json.loads(str(self.payload_json))
+        return json.loads(str(self.payload))
 
 
 STORE_DEPTH = 2
@@ -248,23 +159,6 @@ class Store(db.Model):
 
 ALLOWED_IMAGES = set(['png', 'jpg', 'jpeg'])
 
-
-# def save_image(image, store):
-#     try:
-#         current_app.logger.info('0 save_image start')
-#         _folder, _name = store.id2FS()
-#         current_app.logger.info(f'1 save_image {str(_folder):s} {_name:s}')
-#         _image_path = Path(_folder, f'{_name:s}.png')
-#         current_app.logger.info(f'2 save_image {_name:s} {str(_image_path):s}')
-#         _image_file = io.BytesIO(image.read())
-#         current_app.logger.info(f'3 save_image {_name:s} image_file')
-#         _image = Image.open(_image_file)
-#         current_app.logger.info(f'4 save_image {_name:s} image open')        
-#         _image.save(_image_path, 'png')
-#         current_app.logger.info(f'5 save_image {_name:s} image save')                
-#     except Exception as message:
-#         current_app.logger.error(f'6 save_image {_name:s} crash: {str(message):s}')        
-#         abort(500)
 
 def save_image(image, store):
     try:
