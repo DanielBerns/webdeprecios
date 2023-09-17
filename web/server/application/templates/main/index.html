@@ -3,66 +3,64 @@
 {% block content %}
 <div class="w3-row-padding w3-center w3-margin-top">
 
-<div class="w3-third">
-  <div class="w3-panel w3-cyan" style="min-height:460px">
-      <h3>Información por ciudades</h3><br>
-      <p>Aquí mostramos la información que 
-         encontramos en las ciudades de la región.</p>
-      <p>Ir a <a href="{{ url_for('info.caleta_olivia') }}">Caleta Olivia</a></p>             
-      <p>Ir a <a href="{{ url_for('info.comodoro_rivadavia') }}">Comodoro Rivadavia</a></p>    
-      <p>Ir a <a href="{{ url_for('info.esquel') }}">Esquel</a></p>
-      <p>Ir a <a href="{{ url_for('info.puerto_madryn') }}">Puerto Madryn</a></p>                  
-      <p>Ir a <a href="{{ url_for('info.rawson') }}">Rawson</a></p>                        
-      <p>Ir a <a href="{{ url_for('info.trelew') }}">Trelew</a></p>      
-  </div>
-</div>
-
-
-<div class="w3-third">
-  <div class="w3-panel w3-cyan" style="min-height:460px">
-    <h3>Comunidad de usuarios y colaboradores</h3><br>
-    <p>Aquí compartimos información sobre los sucesos cotidianos
-    de la ciudad y la región, con los aportes de cada uno de nosotros.</p>
-    <p>Ir a <a href="{{ url_for('info.comunidad') }}">comunidad</a></p>  
+    <div class="w3-third">
+      <div class="w3-panel w3-cyan" style="min-height:460px">
+          <h3>Información por ciudades</h3><br>
+          <p>Aquí mostramos la información que 
+             encontramos en las ciudades de la región.</p>
+          <p>Ir a <a href="{{ url_for('info.caleta_olivia') }}">Caleta Olivia</a></p>             
+          <p>Ir a <a href="{{ url_for('info.comodoro_rivadavia') }}">Comodoro Rivadavia</a></p>    
+          <p>Ir a <a href="{{ url_for('info.esquel') }}">Esquel</a></p>
+          <p>Ir a <a href="{{ url_for('info.puerto_madryn') }}">Puerto Madryn</a></p>                  
+          <p>Ir a <a href="{{ url_for('info.rawson') }}">Rawson</a></p>                        
+          <p>Ir a <a href="{{ url_for('info.trelew') }}">Trelew</a></p>      
+      </div>
     </div>
-</div>
 
-<div class="w3-third">
-  <div class="w3-panel w3-cyan" style="min-height:460px">
-  <h3>Categorías</h3><br>
-  <p><a href="{{ url_for('info.cba') }}">CBA</a></p>
-  <p><a href="{{ url_for('info.precios_de_referencia') }}">Precios indicativos de artículos en la CBA</a></p>
-  <p><a href="{{ url_for('info.industrias') }}">Precios industriales</a></p>
-  <p><a href="{{ url_for('info.casas') }}">Precios de servicios públicos para casas</a></p>
-  <p><a href="{{ url_for('info.noticias') }}">Análisis de noticias</a></p>    
-  </div>
-</div>
+    <div class="w3-third">
+      <div class="w3-panel w3-cyan" style="min-height:460px">
+        <h3>Comunidad de usuarios y colaboradores</h3><br>
+        <p>Aquí compartimos información sobre los sucesos cotidianos
+        de la ciudad y la región, con los aportes de cada uno de nosotros.</p>
+        <p>Ir a <a href="{{ url_for('info.comunidad') }}">comunidad</a></p>  
+        </div>
+    </div>
+
+    <div class="w3-third">
+      <div class="w3-panel w3-cyan" style="min-height:460px">
+      <h3>Categorías</h3><br>
+      <p><a href="{{ url_for('info.cba') }}">CBA</a></p>
+      <p><a href="{{ url_for('info.precios_de_referencia') }}">Precios indicativos de artículos en la CBA</a></p>
+      <p><a href="{{ url_for('info.industrias') }}">Precios industriales</a></p>
+      <p><a href="{{ url_for('info.casas') }}">Precios de servicios públicos para casas</a></p>
+      <p><a href="{{ url_for('info.noticias') }}">Análisis de noticias</a></p>    
+      </div>
+    </div>
 
 </div>
 
 <div class="w3-row-padding w3-center w3-margin-top">
 
-<div class="w3-third">
-  <div class="w3-panel w3-cyan" style="min-height:460px">
-  <h3>Quienes somos</h3><br>
-  <p>Los integrantes del grupo</p>
-  <p>Ir a <a href="{{ url_for('info.about_us') }}">integrantes del grupo</a></p>
-  </div>
-</div>
+    <div class="w3-third">
+      <div class="w3-panel w3-cyan" style="min-height:460px">
+      <h3>Quienes somos</h3><br>
+      <p>Los integrantes del grupo</p>
+      <p>Ir a <a href="{{ url_for('info.about_us') }}">integrantes del grupo</a></p>
+      </div>
+    </div>
 
-<div class="w3-third">
-  <div class="w3-panel w3-cyan" style="min-height:460px">
-  <h3>Ayuda</h3><br>
-  <p><a href="/help">Ayuda</a></p>
-  </div>
-</div>
-</div>
+    <div class="w3-third">
+      <div class="w3-panel w3-cyan" style="min-height:460px">
+      <h3>Ayuda</h3><br>
+      <p><a href="/help">Ayuda</a></p>
+      </div>
+    </div>
 
-<div class="w3-third">
-  <div class="w3-panel w3-cyan" style="min-height:460px">
-  <h3> Hello </h3>
-  </div>
-</div>
+    <div class="w3-third">
+      <div class="w3-panel w3-cyan" style="min-height:460px">
+      <h3> Hello </h3>
+      </div>
+    </div>
 
 </div>
 {% endblock %}
