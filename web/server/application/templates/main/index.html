@@ -5,15 +5,15 @@
 
 <div class="w3-third">
   <div class="w3-panel w3-cyan" style="min-height:460px">
-      <h3>Precios por ciudades</h3><br>
-      <p>Aquí mostramos los precios mínimos, indicativos y máximos que 
+      <h3>Información por ciudades</h3><br>
+      <p>Aquí mostramos la información que 
          encontramos en las ciudades de la región.</p>
-      <p>Ir a <a href="{{ url_for('info.price_ranges') }}">Precios en Caleta Olivia</a></p>             
-      <p>Ir a <a href="{{ url_for('info.price_ranges') }}">Precios en Comodoro Rivadavia</a></p>    
-      <p>Ir a <a href="{{ url_for('info.price_ranges') }}">Precios en Esquel</a></p>
-      <p>Ir a <a href="{{ url_for('info.price_ranges') }}">Precios en Puerto Madryn</a></p>                  
-      <p>Ir a <a href="{{ url_for('info.price_ranges') }}">Precios en Rawson</a></p>                        
-      <p>Ir a <a href="{{ url_for('info.price_ranges') }}">Precios en Trelew</a></p>      
+      <p>Ir a <a href="{{ url_for('info.caleta_olivia') }}">Caleta Olivia</a></p>             
+      <p>Ir a <a href="{{ url_for('info.comodoro_rivadavia') }}">Comodoro Rivadavia</a></p>    
+      <p>Ir a <a href="{{ url_for('info.esquel') }}">Esquel</a></p>
+      <p>Ir a <a href="{{ url_for('info.puerto_madryn') }}">Puerto Madryn</a></p>                  
+      <p>Ir a <a href="{{ url_for('info.rawson') }}">Rawson</a></p>                        
+      <p>Ir a <a href="{{ url_for('info.trelew') }}">Trelew</a></p>      
   </div>
 </div>
 
@@ -21,32 +21,26 @@
 <div class="w3-third">
   <div class="w3-panel w3-cyan" style="min-height:460px">
   <h3>Comunidad de usuarios y colaboradores</h3><br>
-  <p>Aquí compartimos información sobre los sucesos cotidianos</p>
-  <p>de la ciudad y la región</p>
-  <p>con los aportes de cada uno de nosotros.</p>
-  <p>Ir a <a href="{{ url_for('info.nlp') }}">NLP</a></p>  
+  <p>Aquí compartimos información sobre los sucesos cotidianos
+  de la ciudad y la región, con los aportes de cada uno de nosotros.</p>
+  <p>Ir a <a href="{{ url_for('info.comunidad') }}">comunidad</a></p>  
   </div>
 </div>
 
 <div class="w3-third">
   <div class="w3-panel w3-cyan" style="min-height:460px">
-  <h3>Canasta Básica Alimentaria</h3><br>
-  <p>Calculada mes a mes</p>
-  <p>Ir a <a href="{{ url_for('info.cba') }}">CBA</a></p>
+  <h3>Categorías</h3><br>
+  <p><a href="{{ url_for('info.cba') }}">CBA</a></p>
+  <p><a href="{{ url_for('info.precios_de_referencia') }}">Precios indicativos de artículos en la CBA</a></p>
+  <p><a href="{{ url_for('info.industrias') }}">Precios industriales</a></p>
+  <p><a href="{{ url_for('info.casas') }}">Precios de servicios públicos para casas</a></p>
+  <p><a href="{{ url_for('info.noticias') }}">Análisis de noticias</a></p>    
   </div>
 </div>
 
 </div>
 
 <div class="w3-row-padding w3-center w3-margin-top">
-<div class="w3-third">
-  <div class="w3-panel w3-cyan" style="min-height:460px">
-  <h3>Otros precios</h3><br>
-  <p>Ir a <a href="{{ url_for('info.oil_stats') }}"></a>Petróleo, Gas y Electricidad (industrial)</a></p>
-  <p>Ir a <a href="{{ url_for('info.oil_stats') }}"></a>Electricidad, Gas y Agua (hogares)</p>    
-  <p>Ir a <a href="{{ url_for('info.oil_stats') }}"></a>Transporte Público</p>  
-  </div>
-</div>
 
 <div class="w3-third">
   <div class="w3-panel w3-cyan" style="min-height:460px">
@@ -59,9 +53,14 @@
 <div class="w3-third">
   <div class="w3-panel w3-cyan" style="min-height:460px">
   <h3>Ayuda</h3><br>
-  <p>Ir a <a href="/help">Ayuda</a></p>
+  <p><a href="/help">Ayuda</a></p>
   </div>
 </div>
 </div>
 
+<div class="w3-third">
+  <div class="w3-panel w3-cyan" style="min-height:460px">
+
+  </div>
+</div>
 {% endblock %}
