@@ -10,7 +10,7 @@ def frontpage():
 
 @bp.route('/index', methods=['GET'])
 def index():
-    return render_template('main/index.html')
+    return render_template('main/index.html', title='Indice')
 
 @bp.route('/help', methods=['GET'])
 def help():

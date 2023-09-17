@@ -1,45 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui"> 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
-<link rel="stylesheet" href="/static/css/mystyle.css">
-<link href="/static/img/favicon.ico" rel="shortcut icon">
 <title>{{ title }}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href="/static/img/favicon.ico" rel="shortcut icon">
 </head>
 <body>
-<header class="container">
-   <img src="/static/img/chakana.svg" alt="chakana" width="100" height="100">
-   <h1><b>Observatorio de Precios - FCE - UNPSJB</b></h1>
-   <p><b>El sur de la información</b></p>
+
+<!-- Side Navigation -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="sidebar">
+  <h1 class="w3-text-theme">Vos sabes que hacer</h1>
+  <button class="w3-bar-item w3-button" onclick="w3_close()">Cerrar<i class="fa fa-remove"></i></button>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+</nav>
+
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <img src="./static/img/chakana.svg" width="100" height="100">  
+  <div class="w3-center">
+  <h4 class="w3-xxxlarge">Observatorio de precios - FCE - UNPSJB</h4>
+  <h1 class="w3-animate-bottom">El sur de la información</h1>
+  </div>
 </header>
 
 {% with messages = get_flashed_messages() %}
 {% if messages %}
-<div class="container">
+<div class="w3-container">
 </div>
 {% endif %}
 {% endwith %}
 
-<hr>
-
 {% block content %}
 {% endblock %}
 
-<div class="container">
-  <div class="row">
-    <div class="column">FCE - UNPSJB</div>
-    <div class="column column-offset-75">GIPIS - DIE - FI - UNPSJB</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-dark w3-padding-16">
+  <h3>Pie de página</h3>
+  <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-theme-light w3-padding">Ir arriba</span>    
+    <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
   </div>
-</div>
+</footer>
 
-{% block footer %}
-{% endblock %}
+<script>
+// Side navigation
+function w3_open() {
+  var x = document.getElementById("sidebar");
+  x.style.width = "100%";
+  x.style.fontSize = "40px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+function w3_close() {
+  document.getElementById("sidebar").style.display = "none";
+}
 
-{% block scripts %}
-{% endblock %}
+</script>
+
 </body>
 </html>
+ 
