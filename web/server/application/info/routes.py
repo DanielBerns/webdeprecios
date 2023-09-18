@@ -49,6 +49,10 @@ def industrias():
 def casas():
     return render_template('info/houses.html')
 
+@bp.route('/noticias', methods=['GET'])
+def noticias():
+    return render_template('info/news.html')
+
 @bp.route('/comunidad', methods=['GET'])
 def comunidad():
     return render_template('info/community.html')
