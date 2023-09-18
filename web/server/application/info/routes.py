@@ -61,3 +61,5 @@ def comunidad():
 def sobre_nosotros():
     return render_template('info/about_us.html')
 
+# Header #4caf50
+# Card #3cd400
