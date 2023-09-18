@@ -10,7 +10,7 @@ def community():
     return render_template('info/community.html')
 
 @bp.route('/caleta_olivia', methods=['GET'])
-def city_caleta_olivia():
+def caleta_olivia():
     return render_template('info/city.html')
 
 @bp.route('/comodoro_rivadavia', methods=['GET'])
