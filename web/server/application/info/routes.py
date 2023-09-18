@@ -22,7 +22,7 @@ def city_esquel():
     return render_template('info/city.html')
 
 @bp.route('/puerto_madryn', methods=['GET'])
-def city_esquel():
+def city_puerto_madryn():
     return render_template('info/city.html')
 
 @bp.route('/rawson', methods=['GET'])
@@ -30,7 +30,7 @@ def city_rawson():
     return render_template('info/city.html')
 
 @bp.route('/trelew', methods=['GET'])
-def cityesquel():
+def city_trelew():
     return render_template('info/city.html')
 
 @bp.route('/cba', methods=['GET'])
@@ -38,16 +38,20 @@ def cba():
     return render_template('info/cba.html')
 
 @bp.route('/precios_de_referencia', methods=['GET'])
-def cba():
+def precios_de_referencia():
     return render_template('info/precios_de_referencia.html')
 
 @bp.route('/industrias', methods=['GET'])
-def industries_stats():
+def industrias():
     return render_template('info/industries.html')
 
 @bp.route('/casas', methods=['GET'])
-def houses_stats():
+def houses():
     return render_template('info/houses.html')
+
+@bp.route('/comunidad', methods=['GET'])
+def comunidad():
+    return render_template('info/community.html')
 
 @bp.route('/sobre_nosotros', methods=['GET'])
 def about_us():
