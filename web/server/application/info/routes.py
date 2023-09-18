@@ -14,23 +14,23 @@ def caleta_olivia():
     return render_template('info/city.html')
 
 @bp.route('/comodoro_rivadavia', methods=['GET'])
-def city_comodoro_rivadavia():
+def comodoro_rivadavia():
     return render_template('info/city.html')
 
 @bp.route('/esquel', methods=['GET'])
-def city_esquel():
+def esquel():
     return render_template('info/city.html')
 
 @bp.route('/puerto_madryn', methods=['GET'])
-def city_puerto_madryn():
+def puerto_madryn():
     return render_template('info/city.html')
 
 @bp.route('/rawson', methods=['GET'])
-def city_rawson():
+def rawson():
     return render_template('info/city.html')
 
 @bp.route('/trelew', methods=['GET'])
-def city_trelew():
+def trelew():
     return render_template('info/city.html')
 
 @bp.route('/cba', methods=['GET'])
@@ -46,7 +46,7 @@ def industrias():
     return render_template('info/industries.html')
 
 @bp.route('/casas', methods=['GET'])
-def houses():
+def casas():
     return render_template('info/houses.html')
 
 @bp.route('/comunidad', methods=['GET'])
@@ -54,6 +54,6 @@ def comunidad():
     return render_template('info/community.html')
 
 @bp.route('/sobre_nosotros', methods=['GET'])
-def about_us():
+def sobre_nosotros():
     return render_template('info/about_us.html')
 
