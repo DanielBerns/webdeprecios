@@ -15,23 +15,27 @@ def caleta_olivia():
 
 @bp.route('/comodoro_rivadavia', methods=['GET'])
 def comodoro_rivadavia():
-    return render_template('info/city.html')
+    return render_template('info/ar-u_comodoro_rivadavia.html')
+
+@bp.route('/rada_tilly', methods=['GET'])
+def rada_tilly():
+    return render_template('info/ar-u_rada_tilly.html')
 
 @bp.route('/esquel', methods=['GET'])
 def esquel():
-    return render_template('info/city.html')
+    return render_template('info/ar-u_esquel.html')
 
 @bp.route('/puerto_madryn', methods=['GET'])
 def puerto_madryn():
-    return render_template('info/city.html')
+    return render_template('info/ar-u_puerto_madryn.html')
 
 @bp.route('/rawson', methods=['GET'])
 def rawson():
-    return render_template('info/city.html')
+    return render_template('info/ar-u_rawson.html')
 
 @bp.route('/trelew', methods=['GET'])
 def trelew():
-    return render_template('info/city.html')
+    return render_template('info/ar-u_trelew.html')
 
 @bp.route('/cba', methods=['GET'])
 def cba():
