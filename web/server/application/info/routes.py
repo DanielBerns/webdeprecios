@@ -11,35 +11,35 @@ def community():
 
 @bp.route('/caleta_olivia', methods=['GET'])
 def caleta_olivia():
-    return render_template('info/ar-z_caleta_olivia.html')
+    return render_template('info/caleta_olivia.html')
 
 @bp.route('/rio_gallegos', methods=['GET'])
 def rio_gallegos():
-    return render_template('info/ar-z_rio_gallegos.html')
+    return render_template('info/rio_gallegos.html')
 
 @bp.route('/comodoro_rivadavia', methods=['GET'])
 def comodoro_rivadavia():
-    return render_template('info/ar-u_comodoro_rivadavia.html')
+    return render_template('info/comodoro_rivadavia.html')
 
 @bp.route('/rada_tilly', methods=['GET'])
 def rada_tilly():
-    return render_template('info/ar-u_rada_tilly.html')
+    return render_template('info/rada_tilly.html')
 
 @bp.route('/esquel', methods=['GET'])
 def esquel():
-    return render_template('info/ar-u_esquel.html')
+    return render_template('info/esquel.html')
 
 @bp.route('/puerto_madryn', methods=['GET'])
 def puerto_madryn():
-    return render_template('info/ar-u_puerto_madryn.html')
+    return render_template('info/puerto_madryn.html')
 
 @bp.route('/rawson', methods=['GET'])
 def rawson():
-    return render_template('info/ar-u_rawson.html')
+    return render_template('info/rawson.html')
 
 @bp.route('/trelew', methods=['GET'])
 def trelew():
-    return render_template('info/ar-u_trelew.html')
+    return render_template('info/trelew.html')
 
 @bp.route('/cba', methods=['GET'])
 def cba():
