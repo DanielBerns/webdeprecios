@@ -15,7 +15,7 @@
                   html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
                   .tableFixedHeader {
                     overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
-                    height: 320px; /* gives an initial height of 200px to the table */
+                    height: 320px; /* gives an initial height of 320px to the table */
                   }
                   .tableFixedHeader thead th {
                     position: sticky; /* make the table heads sticky */
@@ -77,8 +77,12 @@
                   </header>
                     <div class="w3-container">
                       <h5>Precios</h5>
+                      <p>Buscar un artículo</p>
+                      <input class="w3-input w3-border w3-padding" 
+                             type="text" placeholder="Buscar..." id="myInput" onkeyup="myFunction()">
+                      <hr>
                       <div class="tableFixedHeader">
-                      <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+                      <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white" id="myTable" >
                       <thead class="w3-pale-green">
                       <tr>
                         <th class="w3-center">Artículo</th>
@@ -2149,6 +2153,26 @@
                     mySidebar.style.display = "none";
                     overlayBg.style.display = "none";
                   }
+                  
+                  function myFunction() {
+                    var input, filter, table, tr, td, i;
+                    input = document.getElementById("myInput");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("myTable");
+                    tr = table.getElementsByTagName("tr");
+                    for (i = 0; i < tr.length; i++) {
+                      td = tr[i].getElementsByTagName("td")[0];
+                      if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                          tr[i].style.display = "";
+                        } else {
+                          tr[i].style.display = "none";
+                        }
+                      }
+                    }
+        }
+                  
                   </script>
                   
                   </body>
