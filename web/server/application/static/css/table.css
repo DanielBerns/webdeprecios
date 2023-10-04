@@ -1,0 +1,23 @@
+html,body,h1,h2,h3,h4,h5 {
+    font-family: "Raleway", sans-serif;
+}
+.tableFixedHeader {
+  overflow-y: auto; /* make the table scrollable if height is more than 280px  */
+  height: 280px; /* gives an initial height of 280px to the table */
+}
+.tableFixedHeader thead th {
+  position: sticky; /* make the table heads sticky */
+  top: 0px; /* table head will be placed from the top of the table and sticks to it */
+}
+table {
+  border-collapse: collapse; /* make the table borders collapse to each other */
+  width: 100%;
+}
+th,
+td {
+  padding: 8px 16px;
+  border: 1px solid #aaa;
+}
+th {
+  background: #eee;
+}
