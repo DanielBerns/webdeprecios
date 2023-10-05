@@ -11,7 +11,7 @@
 <link href="/static/img/favicon.ico" rel="shortcut icon">
 </head>
 <body>
-
+<div class="w3-container w3-pale-blue">
 <header class="w3-container w3-theme w3-padding">
 <div class="w3-row">
   <div class="w3-col m1">
@@ -34,25 +34,14 @@
 <div class="w3-container w3-pale-blue">
 {% block content %}
 {% endblock %}
+</div>
 
 <!-- Footer -->
 <footer class="w3-container w3-theme w3-padding-16 w3-bottom">
-    <span class="w3-text w3-right">Hecho por GIPIS - DIE - FI - UNPSJB</span>    
+    <span class="w3-text w3-right-align">Hecho por GIPIS - DIE - FI - UNPSJB</span>    
 </footer>
 </div>
-
-<script>
-function w3_open() {
-  var x = document.getElementById("sidebar");
-  x.style.width = "100%";
-  x.style.fontSize = "40px";
-  x.style.paddingTop = "10%";
-  x.style.display = "block";
-}
-function w3_close() {
-  document.getElementById("sidebar").style.display = "none";
-}
-</script>
+<script src="/static/js/base.js"></script>
 
 </body>
 </html>
