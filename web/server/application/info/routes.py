@@ -12,38 +12,6 @@ def category_city(category, city):
     _city = escape(city)
     return render_template(f'info/{_category:s}/{_city:s}.html')
 
-# @bp.route('/caleta_olivia', methods=['GET'])
-# def caleta_olivia():
-#     return render_template('info/cba/caleta_olivia.html')
-# 
-# @bp.route('/rio_gallegos', methods=['GET'])
-# def rio_gallegos():
-#     return render_template('info/cba/rio_gallegos.html')
-# 
-# @bp.route('/comodoro_rivadavia', methods=['GET'])
-# def comodoro_rivadavia():
-#     return render_template('info/cba/comodoro_rivadavia.html')
-# 
-# @bp.route('/rada_tilly', methods=['GET'])
-# def rada_tilly():
-#     return render_template('info/cba/rada_tilly.html')
-# 
-# @bp.route('/esquel', methods=['GET'])
-# def esquel():
-#     return render_template('info/cba/esquel.html')
-# 
-# @bp.route('/puerto_madryn', methods=['GET'])
-# def puerto_madryn():
-#     return render_template('info/cba/puerto_madryn.html')
-# 
-# @bp.route('/rawson', methods=['GET'])
-# def rawson():
-#     return render_template('info/cba/rawson.html')
-# 
-# @bp.route('/trelew', methods=['GET'])
-# def trelew():
-#     return render_template('info/cba/trelew.html')
-
 @bp.route('/cba', methods=['GET'])
 def cba():
     return render_template('info/cba.html')
