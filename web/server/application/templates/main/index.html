@@ -5,18 +5,17 @@
 
     <div class="w3-third">
       <div class="w3-panel w3-pale-green" style="min-height:460px">
-          <h3>Información por ciudades</h3><br>
-          <p>Aquí mostramos la información que 
-             encontramos en las ciudades de la región.</p>
+          <h3>Precios de referencia</h3><br>
+          <p>Aquí mostramos la información que encontramos en las ciudades de la región.</p>
           <ul class="w3-ul">
-          <li><a href="{{ url_for('info.caleta_olivia') }}">Caleta Olivia</a></li>             
-          <li><a href="{{ url_for('info.comodoro_rivadavia') }}">Comodoro Rivadavia</a></li>    
-          <li><a href="{{ url_for('info.esquel') }}">Esquel</a></li>
-          <li><a href="{{ url_for('info.puerto_madryn') }}">Puerto Madryn</a></li>                  
-          <li><a href="{{ url_for('info.rada_tilly') }}">Rada Tilly</a></li>
-          <li><a href="{{ url_for('info.rawson') }}">Rawson</a></li>                        
-          <li><a href="{{ url_for('info.rio_gallegos') }}">Rio Gallegos</a></li>                                    
-          <li><a href="{{ url_for('info.trelew') }}">Trelew</a></li>
+          <li><a href="{{ url_for('info.acba.caleta_olivia') }}">Caleta Olivia</a></li>             
+          <li><a href="{{ url_for('info.acba.comodoro_rivadavia') }}">Comodoro Rivadavia</a></li>    
+          <li><a href="{{ url_for('info.acba.esquel') }}">Esquel</a></li>
+          <li><a href="{{ url_for('info.acba.puerto_madryn') }}">Puerto Madryn</a></li>                  
+          <li><a href="{{ url_for('info.acba.rada_tilly') }}">Rada Tilly</a></li>
+          <li><a href="{{ url_for('info.acba.rawson') }}">Rawson</a></li>                        
+          <li><a href="{{ url_for('info.acba.rio_gallegos') }}">Rio Gallegos</a></li>                                    
+          <li><a href="{{ url_for('info.ref.trelew') }}">Trelew</a></li>
           </ul>
           <p></p>
       </div>
@@ -36,7 +35,6 @@
       <h3>Información por categorías</h3><br>
       <ul class="w3-ul">
       <li><a href="{{ url_for('info.cba') }}">CBA</a></li>
-      <li><a href="{{ url_for('info.precios_de_referencia') }}">Precios indicativos de artículos en la CBA</a></li>
       <li><a href="{{ url_for('info.industrias') }}">Precios industriales</a></li>
       <li><a href="{{ url_for('info.casas') }}">Precios de servicios públicos para casas</a></li>
       <li><a href="{{ url_for('info.noticias') }}">Análisis de noticias</a></li>    
