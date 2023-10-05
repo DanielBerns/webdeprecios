@@ -6,15 +6,15 @@
     <div class="w3-third">
       <div class="w3-panel w3-pale-green" style="min-height:460px">
           <h3>Precios de referencia</h3><br>
-          <p>Aquí mostramos la información que encontramos en las ciudades de la región.</p>
+          <p>Aquí mostramos los precios de referencia de la canasta básica de alimentos.</p>
           <ul class="w3-ul">
-          <li><a href="{{ url_for('info.acba.caleta_olivia') }}">Caleta Olivia</a></li>             
-          <li><a href="{{ url_for('info.acba.comodoro_rivadavia') }}">Comodoro Rivadavia</a></li>    
-          <li><a href="{{ url_for('info.acba.esquel') }}">Esquel</a></li>
-          <li><a href="{{ url_for('info.acba.puerto_madryn') }}">Puerto Madryn</a></li>                  
-          <li><a href="{{ url_for('info.acba.rada_tilly') }}">Rada Tilly</a></li>
-          <li><a href="{{ url_for('info.acba.rawson') }}">Rawson</a></li>                        
-          <li><a href="{{ url_for('info.acba.rio_gallegos') }}">Rio Gallegos</a></li>                                    
+          <li><a href="{{ url_for('info.category_city', category='acba', city='caleta_olivia') }}">Caleta Olivia</a></li>             
+          <li><a href="{{ url_for('info.category_city', category='acba', city='comodoro_rivadavia') }}">Comodoro Rivadavia</a></li>    
+          <li><a href="{{ url_for('info.category_city', category='acba', city='esquel') }}">Esquel</a></li>
+          <li><a href="{{ url_for('info.category_city', category='acba', city='puerto_madryn') }}">Puerto Madryn</a></li>                  
+          <li><a href="{{ url_for('info.category_city', category='acba', city='rada_tilly') }}">Rada Tilly</a></li>
+          <li><a href="{{ url_for('info.category_city', category='acba', city='rawson') }}">Rawson</a></li>                        
+          <li><a href="{{ url_for('info.category_city', category='acba', city='rio_gallegos') }}">Rio Gallegos</a></li>                                    
           <li><a href="{{ url_for('info.ref.trelew') }}">Trelew</a></li>
           </ul>
           <p></p>
