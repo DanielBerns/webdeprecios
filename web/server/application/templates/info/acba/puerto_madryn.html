@@ -55,24 +55,18 @@
      <h2 class="w3-center w3-padding-8">Precios acba en Puerto Madryn - 2023/10/09</h2>
    </header>
    <div class="w3-container">
-   <div class="w3-bar">
-      <div class="w3-bar-item">
-         <p>Búsqueda de artículos</p>
-         <input class="w3-input w3-border w3-padding" 
-                type="text" 
-                placeholder="Buscar..." 
-                id="searchInput" 
-                onkeyup="searchArticleTable()">
-      </div>
-      <div class="w3-bar-item">
-        <a href="/index">Volver al índice</a>
-      </div>
-      <div class="w3-bar-item w3-dropdown-hover w3-right">
-           <button class="w3-button w3-green">¿Que es esto?</button>
-           <div class="w3-dropdown-content w3-bar-block w3-panel w3-border">
-           <p>El precio indicativo es un tipo de promedio de los precios observados. Por lo tanto, si el precio mínimo es igual al precio máximo, solo se muestra el precio indicativo porque en este caso los tres son iguales.</p>
-           </div>
-      </div>
+     <div class="w3-bar">
+        <div class="w3-bar-item">
+           <p>Búsqueda de artículos</p>
+           <input class="w3-input w3-border w3-padding" 
+                  type="text" 
+                  placeholder="Buscar..." 
+                  id="searchInput" 
+                  onkeyup="searchArticleTable()">
+        </div>
+        <div class="w3-bar-item w3-right">
+          <a href="/index">Volver al índice</a>
+        </div>
      </div>
      <hr>
      <div class="tableFixedHeader">
@@ -81,7 +75,15 @@
        <thead class="w3-sand">
        <tr>
          <th class="w3-center">Artículo</th>
-         <th class="w3-center">Precio indicativo</th>
+         <th class="w3-center">
+         <p>Precio indicativo</p>
+         <div class="w3-dropdown-hover w3-right">
+           <button class="w3-button w3-green">¿Que es esto?</button>
+           <div class="w3-dropdown-content w3-panel w3-border">
+           <p>El precio indicativo es un promedio geométrico de los precios observados. Si el precio mínimo es igual al precio máximo, solo se muestra el precio indicativo porque en este caso los tres son iguales.</p>
+           </div>
+         </div>
+         </th>
          <th class="w3-center">Precio mínimo</th>
          <th class="w3-center">Precio máximo</th>
        </tr>
