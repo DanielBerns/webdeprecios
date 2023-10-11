@@ -49,14 +49,13 @@
 
 <!-- Main content container -->   
 <div class="w3-main" style="margin-left:300px;margin-top:65px;">
-   
    <!-- Header -->
    <header class="w3-container w3-sand">
      <h2 class="w3-center w3-padding-8">Precios carnes en Caleta Olivia - 2023/10/09</h2>
    </header>
    <div class="w3-container">
-     <div class="w3-bar">
-        <div class="w3-bar-item">
+     <div class="w3-row">
+        <div class="w3-twothird">
            <p>Búsqueda de artículos</p>
            <input class="w3-input w3-border w3-padding" 
                   type="text" 
@@ -64,21 +63,24 @@
                   id="searchInput" 
                   onkeyup="searchArticleTable()">
         </div>
-        <div class="w3-bar-item">
-             <button onclick="document.getElementById('id01').style.display='block'" 
-                     class="w3-button w3-pale-green">¿Precio indicativo?</button>
-             <div id="id01" class="w3-modal">
-               <div class="w3-modal-content">
-                 <div class="w3-container">
-                   <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                   <p>El precio indicativo es el promedio geométrico de los precios observados.</p>
-                   <p>Si todos los precios observados son iguales, solo se muestre el precio indicativo.</p>
+        <div class="w3-third">
+             <div class="w3-bar-block">
+             <div class="w3-bar-item>             
+                 <button onclick="document.getElementById('id01').style.display='block'" 
+                         class="w3-button w3-pale-green">¿Precio indicativo?</button>
+                 <div id="id01" class="w3-modal">
+                   <div class="w3-modal-content">
+                     <div class="w3-container">
+                       <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                       <p>El precio indicativo es el promedio geométrico de los precios observados.</p>
+                       <p>Si todos los precios observados son iguales, solo se muestre el precio indicativo.</p>
+                     </div>
+                   </div>
                  </div>
-               </div>
-             </div>         
-        </div>
-        <div class="w3-bar-item w3-right">
-          <p><a href="/index">Volver al índice</a></p>
+             </div>
+             <div class="w3-bar-item">
+             <p><a href="/index">Volver al índice</a></p>
+             </div>
         </div>
      </div>
      <hr>
