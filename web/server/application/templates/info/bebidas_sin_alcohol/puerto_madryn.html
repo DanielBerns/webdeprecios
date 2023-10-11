@@ -23,9 +23,6 @@
 
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <div class="w3-container">
-    <h5>Tipos de productos</h5>
-  </div>
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="cerrar menu"><i class="fa fa-remove fa-fw"></i>  Cerrar menú</a>
     <a href="/info/lacteos/puerto_madryn" class="w3-bar-item w3-button w3-padding"> Lácteos</a>
@@ -35,6 +32,22 @@
     <a href="/info/bebidas_con_alcohol/puerto_madryn" class="w3-bar-item w3-button w3-padding"> Bebidas con alcohol</a>
     <a href="/info/bebidas_sin_alcohol/puerto_madryn" class="w3-bar-item w3-button w3-padding"> Bebidas sin alcohol</a>
     <a href="/info/acba/puerto_madryn" class="w3-bar-item w3-button w3-padding"> Artículos de la canasta básica de alimentos</a>
+    <a href="/index" class="w3-bar-item w3-button w3-padding">Volver al índice</a>    
+    <div class="w3-bar-item">
+        <div class="w3-container w3-right">
+          <button onclick="document.getElementById('id01').style.display='block'" 
+                  class="w3-button w3-pale-green">¿Precio indicativo?</button>
+          <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+              <div class="w3-container">
+                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <p>El precio indicativo es el promedio geométrico de los precios observados.</p>
+                <p>Si todos los precios observados son iguales, solo se muestre el precio indicativo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
   </div>
 </nav>
 
@@ -65,28 +78,6 @@
                   onkeyup="searchArticleTable()">
         </div>
         <div class="w3-third">
-             <div class="w3-bar-block">
-               <div class="w3-bar-item">
-                   <div class="w3-container w3-right">
-                     <button onclick="document.getElementById('id01').style.display='block'" 
-                             class="w3-button w3-pale-green">¿Precio indicativo?</button>
-                     <div id="id01" class="w3-modal">
-                       <div class="w3-modal-content">
-                         <div class="w3-container">
-                           <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                           <p>El precio indicativo es el promedio geométrico de los precios observados.</p>
-                           <p>Si todos los precios observados son iguales, solo se muestre el precio indicativo.</p>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-               </div>
-               <div class="w3-bar-item">
-                 <div class="w3-container w3-right">
-                   <a href="/index" class="w3-button w3-pale-green">Volver al índice</a>
-                 </div>
-               </div>
-             </div>
         </div>
      </div>
    </div>
