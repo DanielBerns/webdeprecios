@@ -68,12 +68,17 @@
           <a href="/index">Volver al índice</a>
         </div>
         <div class="w3-bar-item w3-right">
-          <div class="w3-dropdown-hover w3-right">
-            <button class="w3-button w3-green">¿Qué es un precio indicativo?</button>
-            <div class="w3-dropdown-content w3-panel w3-border">
-            <p>El precio indicativo es un promedio geométrico de los precios observados. Si el precio mínimo es igual al precio máximo, solo se muestra el precio indicativo porque en este caso los tres son iguales.</p>
-            </div>
-          </div>
+             <button onclick="document.getElementById('id01').style.display='block'" 
+                     class="w3-button w3-pale-green">Precio indicativo</button>
+             <div id="id01" class="w3-modal">
+               <div class="w3-modal-content">
+                 <div class="w3-container">
+                   <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-middle">&times;</span>
+                   <p>El precio indicativo es el promedio geométrico de los precios observados.</p>
+                   <p>Si todos los precios observados son iguales, solo se muestre el precio indicativo.</p>
+                 </div>
+               </div>
+             </div>         
         </div>
      </div>
      <hr>
@@ -84,19 +89,7 @@
        <tr>
          <th class="w3-center">
          <p>Artículo</p></th>
-         <th class="w3-center">
-         <button onclick="document.getElementById('id01').style.display='block'" 
-                 class="w3-button w3-pale-yellow">Precio indicativo</button>
-         <div id="id01" class="w3-modal">
-           <div class="w3-modal-content">
-             <div class="w3-container">
-               <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-               <p>El precio indicativo es el promedio geométrico de los precios observados.</p>
-               <p>Si todos los precios observados son iguales, solo se muestre el precio indicativo.</p>
-             </div>
-           </div>
-         </div>         
-         </th>
+         <th class="w3-center"><p>Precio indicativo</p></th>
          <th class="w3-center"><p>Precio mínimo</p></th>
          <th class="w3-center"><p>Precio máximo</p></th>
        </tr>
