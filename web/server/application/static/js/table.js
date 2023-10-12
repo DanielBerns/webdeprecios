@@ -1,40 +1,38 @@
-// Get the Sidebar
-var mySidebar = document.getElementById("mySidebar");
+function w3_open(elementId) {
+  document.getElementById(elementId).style.display = "block";
+}
 
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
+function w3_close(elementId) {
+  document.getElementById(elementId).style.display = "none";
+}
 
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-    overlayBg.style.display = "none";
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
   } else {
-    mySidebar.style.display = 'block';
-    overlayBg.style.display = "block";
+    header.classList.remove("sticky");
   }
 }
 
-// Close the sidebar with the close button
-function w3_close() {
-  mySidebar.style.display = "none";
-  overlayBg.style.display = "none";
-}
-
 function searchArticleTable() {
-  var input, filter, table, tr, td, i;
+  var input, filter, table, article, label, i;
   input = document.getElementById("searchInput");
   filter = input.value.toUpperCase();
   table = document.getElementById("articleTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
+  article = table.getElementsByClassName("article");
+  for (i = 0; i < article.length; i++) {
+    label = article[i].getElementsByClassName("label")[0];
+    if (label) {
+      txtValue = label.textContent || label.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
+        article[i].style.display = "";
       } else {
-        tr[i].style.display = "none";
+        article[i].style.display = "none";
       }
     }
   }

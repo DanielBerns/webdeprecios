@@ -1,624 +1,1175 @@
 
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-<title>harinas en Trelew - 2023/10/09</title>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">               
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-<link href="/static/img/favicon.ico" rel="shortcut icon">
 <link rel="stylesheet" href="/static/css/table.css">
 </head>
-<body class="w3-pale-green">
+<body>
 
-<!-- Top container -->
-<div class="w3-bar w3-teal" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-green" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <div class="w3-bar-item w3-hide-small"><img src="/static/img/chakana.svg" width="50"></div>                    
-  <h1 class="w3-bar-item w3-right">Observatorio de precios - FCE - UNPSJB</h1>
-</div>
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <div class="w3-bar-block">
-    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="cerrar menu"><i class="fa fa-remove fa-fw"></i>  Cerrar menú</a>
-    <a href="/info/lacteos/trelew" class="w3-bar-item w3-button w3-padding"> Lácteos</a>
-    <a href="/info/harinas/trelew" class="w3-bar-item w3-button w3-padding"> Harinas</a>
-    <a href="/info/vegetales/trelew" class="w3-bar-item w3-button w3-padding"> Vegetales</a>
-    <a href="/info/carnes/trelew" class="w3-bar-item w3-button w3-padding"> Carnes</a>                      
-    <a href="/info/bebidas_con_alcohol/trelew" class="w3-bar-item w3-button w3-padding"> Bebidas con alcohol</a>
-    <a href="/info/bebidas_sin_alcohol/trelew" class="w3-bar-item w3-button w3-padding"> Bebidas sin alcohol</a>
-    <a href="/info/acba/trelew" class="w3-bar-item w3-button w3-padding"> Artículos de la canasta básica de alimentos</a>
-    <a href="/index" class="w3-bar-item w3-button w3-padding">Volver al índice</a>    
-    <div class="w3-bar-item">
-        <div class="w3-container w3-right">
-          <button onclick="document.getElementById('id01').style.display='block'" 
-                  class="w3-button w3-pale-green">¿Precio indicativo?</button>
-          <div id="id01" class="w3-modal">
-            <div class="w3-modal-content">
-              <div class="w3-container">
-                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                <p>El precio indicativo es el promedio geométrico de los precios observados.</p>
-                <p>Si todos los precios observados son iguales, solo se muestre el precio indicativo.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
+<div class="top-container">
+  <div class="w3-bar w3-teal" style="z-index:4">
+    <button class="w3-bar-item w3-button w3-hover-none w3-hover-text-light-green" onclick="w3_open('mySidebar');"><i class="fa fa-bars"></i>  Menu</button>
+    <div class="w3-bar-item"><img src="/static/img/chakana.svg" width="50"></div>                    
+    <h1 class="w3-bar-item w3-right">Observatorio de precios - FCE - UNPSJB</h1>
+      <div class="w3-bar-item">
+        <header class="w3-sand">
+          <h2 class="w3-center w3-padding-8">Precios harinas en Trelew - 2023/10/09</h2>
+        </header>
+      </div>
+      <div class="w3-bar-item">
+         <input class="w3-input w3-border w3-padding" 
+                type="text" 
+                placeholder="Buscar..." 
+                id="searchInput" 
+                onkeyup="searchArticleTable()">
+      </div>
   </div>
-</nav>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" 
-     onclick="w3_close()" 
-     style="cursor:pointer" 
-     title="Cerrar menú lateral" id="myOverlay">
 </div>
 
-<!-- Header -->
-
-<!-- Main content container -->   
-<div class="w3-main" style="margin-left:300px;margin-top:10px;">
-<div class="w3-bar-block">
-   <div class="w3-bar-item">
-     <header class="w3-sand">
-       <h2 class="w3-center w3-padding-8">Precios harinas en Trelew - 2023/10/09</h2>
-     </header>
-   </div>
-   <div class="w3-bar-item">
-     <div class="w3-row">
-        <div class="w3-twothird">
-           <input class="w3-input w3-border w3-padding" 
-                  type="text" 
-                  placeholder="Buscar..." 
-                  id="searchInput" 
-                  onkeyup="searchArticleTable()">
-        </div>
-        <div class="w3-third">
-        </div>
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close('mySidebar')" class="w3-bar-item w3-large">Cerrar &times;</button>
+  <a href="/info/lacteos/trelew"             class="w3-bar-item w3-button w3-padding"> Lácteos</a>  
+  <a href="/info/harinas/trelew"             class="w3-bar-item w3-button w3-padding"> Harinas</a>  
+  <a href="/info/vegetales/trelew"           class="w3-bar-item w3-button w3-padding"> Vegetales</a>  
+  <a href="/info/carnes/trelew"              class="w3-bar-item w3-button w3-padding"> Carnes</a>                        
+  <a href="/info/bebidas_con_alcohol/trelew" class="w3-bar-item w3-button w3-padding"> Bebidas con alcohol</a>  
+  <a href="/info/bebidas_sin_alcohol/trelew" class="w3-bar-item w3-button w3-padding"> Bebidas sin alcohol</a>  
+  <a href="/info/acba/trelew"                class="w3-bar-item w3-button w3-padding"> Artículos de la canasta básica de alimentos</a>  
+  <a href="/index"                                  class="w3-bar-item w3-button w3-padding">Volver al índice</a>
+  <div class="w3-bar-item">
+     <button onclick="w3_open('id01')" class="w3-button w3-pale-green">¿Precio indicativo?</button>
+     <div id="id01" class="w3-modal">
+       <div class="w3-modal-content">
+         <div class="w3-container">
+           <span onclick="w3_close('id01')" class="w3-button w3-display-topright">Cerrar &times;</span>
+           <p>El precio indicativo es el promedio geométrico de los precios observados.</p>
+           <p>Si todos los precios observados son iguales, solo se muestre el precio indicativo.</p>
+         </div>
+       </div>
      </div>
-   </div>
-   <div class="w3-bar-item">
-     <div class="tableFixedHeader">
-       <table class="w3-table w3-striped w3-border-black w3-hoverable w3-white" 
-              id="articleTable" >
-       <thead class="w3-sand">
-       <tr>
-         <th class="w3-center">
-         <p>Artículo</p></th>
-         <th class="w3-center"><p>Precio indicativo</p></th>
-         <th class="w3-center"><p>Precio mínimo</p></th>
-         <th class="w3-center"><p>Precio máximo</p></th>
-       </tr>
-       </thead>
-       <tbody>
-            
-            <tr>                      
-            <td>7790070506917: blancaflor - harina 000 con vitamina b6 y b12 blancaflor 1 kg</td>
-            <td class="w3-right-align">228.17</td>
-            <td class="w3-right-align">223.27</td>            
-            <td class="w3-right-align">238.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7792180134516: pureza - harina 100% integral pureza 1 kg</td>
-            <td class="w3-right-align">305.70</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7792180004901: pureza - harina con levadura para pan casero pureza 1 kg</td>
-            <td class="w3-right-align">442.81</td>
-            <td class="w3-right-align">432.10</td>            
-            <td class="w3-right-align">460.62</td>
-             </tr>
-            
-            <tr>                      
-            <td>7792180004567: pureza - harina con levadura pizza pureza 1 kg</td>
-            <td class="w3-right-align">441.79</td>
-            <td class="w3-right-align">432.10</td>            
-            <td class="w3-right-align">460.62</td>
-             </tr>
-            
-            <tr>                      
-            <td>7790503198719: dos hermanos - harina de arroz dos hermanos 500 gr</td>
-            <td class="w3-right-align">775.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7794080000175: la morocha - harina de maiz la morocha 500 gr</td>
-            <td class="w3-right-align">312.02</td>
-            <td class="w3-right-align">311.00</td>            
-            <td class="w3-right-align">319.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7790199603207: morixe - harina de maiz morixe 500 gr</td>
-            <td class="w3-right-align">172.45</td>
-            <td class="w3-right-align">157.00</td>            
-            <td class="w3-right-align">201.65</td>
-             </tr>
-            
-            <tr>                      
-            <td>7792590000159: caserita - harina de trigo 000 caserita 1 kg</td>
-            <td class="w3-right-align">319.35</td>
-            <td class="w3-right-align">271.41</td>            
-            <td class="w3-right-align">345.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7799037060011: chacabuco - harina de trigo 000 chacabuco 1 kg</td>
-            <td class="w3-right-align">216.99</td>
-            <td class="w3-right-align">213.55</td>            
-            <td class="w3-right-align">227.65</td>
-             </tr>
-            
-            <tr>                      
-            <td>7790199000013: morixe - harina de trigo 000 morixe 1 kg</td>
-            <td class="w3-right-align">205.26</td>
-            <td class="w3-right-align">203.84</td>            
-            <td class="w3-right-align">217.29</td>
-             </tr>
-            
-            <tr>                      
-            <td>7792180004512: pureza - harina de trigo 000 pureza 1 kg</td>
-            <td class="w3-right-align">228.59</td>
-            <td class="w3-right-align">223.27</td>            
-            <td class="w3-right-align">238.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7792590000227: caserita - harina de trigo 0000 caserita 1 kg</td>
-            <td class="w3-right-align">409.24</td>
-            <td class="w3-right-align">380.41</td>            
-            <td class="w3-right-align">435.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7799037060028: chacabuco - harina de trigo 0000 chacabuco 1 kg</td>
-            <td class="w3-right-align">398.84</td>
-            <td class="w3-right-align">286.50</td>            
-            <td class="w3-right-align">486.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7790199604082: morixe - harina de trigo 0000 fortivac morixe 1 kg</td>
-            <td class="w3-right-align">407.35</td>
-            <td class="w3-right-align">406.00</td>            
-            <td class="w3-right-align">418.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7790199604273: morixe - harina de trigo especial pizzas morixe 1 kg</td>
-            <td class="w3-right-align">423.79</td>
-            <td class="w3-right-align">410.46</td>            
-            <td class="w3-right-align">437.55</td>
-             </tr>
-            
-            <tr>                      
-            <td>7799037060332: chacabuco - harina de trigo granos ancestrales chacabuco 750 gr</td>
-            <td class="w3-right-align">628.28</td>
-            <td class="w3-right-align">625.00</td>            
-            <td class="w3-right-align">669.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7790199603856: morixe - harina de trigo integral morixe 1 kg</td>
-            <td class="w3-right-align">283.16</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7799037060035: chacabuco - harina de trigo leudante chacabuco 1 kg</td>
-            <td class="w3-right-align">462.58</td>
-            <td class="w3-right-align">291.00</td>            
-            <td class="w3-right-align">519.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7792590001156: caserita - harina de trigo para pizzas caserita 1 kg</td>
-            <td class="w3-right-align">419.75</td>
-            <td class="w3-right-align">322.98</td>            
-            <td class="w3-right-align">466.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7799037060325: chacabuco - harina especial para masa madre chacabuco 1 kh</td>
-            <td class="w3-right-align">496.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7792180137258: pureza - harina integral con levadura para pizzas pureza 1 kg</td>
-            <td class="w3-right-align">405.48</td>
-            <td class="w3-right-align">296.00</td>            
-            <td class="w3-right-align">445.97</td>
-             </tr>
-            
-            <tr>                      
-            <td>7799037603003: chacabuco - harina integral con semillas chacabuco 750 gr</td>
-            <td class="w3-right-align">628.16</td>
-            <td class="w3-right-align">625.00</td>            
-            <td class="w3-right-align">669.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7799037060226: chacabuco - harina integral fina chacabuco 1 kg</td>
-            <td class="w3-right-align">454.53</td>
-            <td class="w3-right-align">391.31</td>            
-            <td class="w3-right-align">484.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7792590001064: caserita - harina leudante caserita 1 kg</td>
-            <td class="w3-right-align">462.22</td>
-            <td class="w3-right-align">419.65</td>            
-            <td class="w3-right-align">492.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7790070506924: blancaflor - harina de trigo 0000 fortificada blancaflor 1 kg</td>
-            <td class="w3-right-align">312.90</td>
-            <td class="w3-right-align">300.16</td>            
-            <td class="w3-right-align">343.35</td>
-             </tr>
-            
-            <tr>                      
-            <td>7790070507242: favorita - harina 0000 vitazink favorita 1 kg</td>
-            <td class="w3-right-align">356.94</td>
-            <td class="w3-right-align">283.50</td>            
-            <td class="w3-right-align">401.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7792180139320: cañuelas - harina 000 fortificada con calcio cañuelas 1 kg</td>
-            <td class="w3-right-align">222.17</td>
-            <td class="w3-right-align">213.55</td>            
-            <td class="w3-right-align">227.65</td>
-             </tr>
-            
-            <tr>                      
-            <td>7792180136954: cañuelas - harina 0000 cañuelas 1 kg</td>
-            <td class="w3-right-align">346.57</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7798141971541: primer precio - harina 0000 primer precio 1 kg</td>
-            <td class="w3-right-align">343.35</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7792180139313: pureza - harina 0000 ultrarefinada pureza 1 kg</td>
-            <td class="w3-right-align">275.82</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7792180141941: pureza - harina con masa madres especial para pizza pureza 1 kg</td>
-            <td class="w3-right-align">500.38</td>
-            <td class="w3-right-align">491.00</td>            
-            <td class="w3-right-align">566.04</td>
-             </tr>
-            
-            <tr>                      
-            <td>7790580133955: prestopronta - harina de maiz blanco para arepas prestopronta 1 kg</td>
-            <td class="w3-right-align">604.66</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7792180001528: cañuelas - harina de trigo 000 cañuelas 1 kg</td>
-            <td class="w3-right-align">189.21</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7790070507235: favorita - harina de trigo 000 con vita zinc favorita 1 kg</td>
-            <td class="w3-right-align">226.33</td>
-            <td class="w3-right-align">213.55</td>            
-            <td class="w3-right-align">227.65</td>
-             </tr>
-            
-            <tr>                      
-            <td>7798141971534: primer precio - harina de trigo 000 primer precio 1 kg</td>
-            <td class="w3-right-align">212.55</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7790199000051: morixe - harina de trigo leudante morixe 1 kg</td>
-            <td class="w3-right-align">333.10</td>
-            <td class="w3-right-align">329.00</td>            
-            <td class="w3-right-align">350.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7798141971558: primer precio - harina de trigo leudante primer precio 1 kg</td>
-            <td class="w3-right-align">354.25</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7790070507228: blancaflor - harina leudante blancaflor 1 kg</td>
-            <td class="w3-right-align">442.11</td>
-            <td class="w3-right-align">409.25</td>            
-            <td class="w3-right-align">466.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7798198900037: boniella - harina leudante boniella 1 kg</td>
-            <td class="w3-right-align">358.61</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7792180136961: cañuelas - harina leudante cañuelas 1 kg</td>
-            <td class="w3-right-align">351.26</td>
-            <td class="w3-right-align">205.00</td>            
-            <td class="w3-right-align">399.38</td>
-             </tr>
-            
-            <tr>                      
-            <td>7798198900013: boniella - harina tipo 000 boniella 1 kg</td>
-            <td class="w3-right-align">206.95</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7798198900020: boniella - harina tipo 0000 boniella 1 kg</td>
-            <td class="w3-right-align">347.71</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7793323004079: dicomere - harina de arroz dicomere 1 kg</td>
-            <td class="w3-right-align">1181.56</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7792612000709: tassara - harina 000 tassara 1 kg</td>
-            <td class="w3-right-align">227.65</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7792612000716: tassara - harina 0000 tassara 1 kg</td>
-            <td class="w3-right-align">279.50</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7798125100349: sturla - harina de garbanzo sturla 250 gr</td>
-            <td class="w3-right-align">445.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7798125100424: sturla - harina de lino sturla 250 gr</td>
-            <td class="w3-right-align">532.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7797234000533: sin marca - harina de maiz paraguaya 500 gr</td>
-            <td class="w3-right-align">405.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7798125100301: sturla - harina de quinoa sin tacc sturla 250 gr</td>
-            <td class="w3-right-align">1505.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7798159717254: carrefour - harina de trigo 0000 carrefour 1 kg</td>
-            <td class="w3-right-align">218.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7792180141095: blancaflor - harina integral fina blancaflor 1 kg</td>
-            <td class="w3-right-align">425.53</td>
-            <td class="w3-right-align">423.00</td>            
-            <td class="w3-right-align">445.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7792180004888: pureza - harina leudante ultrarefinada pureza 1 kg</td>
-            <td class="w3-right-align">331.27</td>
-            <td class="w3-right-align">321.55</td>            
-            <td class="w3-right-align">337.91</td>
-             </tr>
-            
-            <tr>                      
-            <td>7790199604099: morixe - harina de trigo leudante fortivac morixe 1 kg</td>
-            <td class="w3-right-align">479.61</td>
-            <td class="w3-right-align">471.45</td>            
-            <td class="w3-right-align">480.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7798125100325: sturla - harina de amaranto sturla 250 gr</td>
-            <td class="w3-right-align">1040.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7799037060349: chacabuco - harina de trigo especial pasteleria chacabuco 1 kg</td>
-            <td class="w3-right-align">499.21</td>
-            <td class="w3-right-align">496.00</td>            
-            <td class="w3-right-align">529.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7793323004017: dicomere - harina de almendras dicomere 200 gr</td>
-            <td class="w3-right-align">2763.16</td>
-            <td class="w3-right-align">2745.83</td>            
-            <td class="w3-right-align">2798.14</td>
-             </tr>
-            
-            <tr>                      
-            <td>7798157743057: secretos orgánicos - harina de arroz blanca organica secretos organicos 500 gr</td>
-            <td class="w3-right-align">996.58</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7798157743064: secretos orgánicos - harina de arroz integral secretos organicos 500 gr</td>
-            <td class="w3-right-align">948.32</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7790199603368: morixe - harina de maiz blanco para arepas morixe 20 un 1 kg</td>
-            <td class="w3-right-align">1058.33</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7790199604075: morix - harina de trigo fortivac 000 morixe 1 kg</td>
-            <td class="w3-right-align">265.15</td>
-            <td class="w3-right-align">251.16</td>            
-            <td class="w3-right-align">290.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7793323004253: dicomere - harina de trigo integral organica dicomere 1 kg</td>
-            <td class="w3-right-align">736.93</td>
-            <td class="w3-right-align">646.00</td>            
-            <td class="w3-right-align">1093.96</td>
-             </tr>
-            
-            <tr>                      
-            <td>7793323004925: dicomere - harina de trigo sarraceno dicomere 450 gr</td>
-            <td class="w3-right-align">1179.68</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7792180136657: pureza - harina leudante sin sal pureza 1 kg</td>
-            <td class="w3-right-align">423.79</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7797234000526: sin marca - harina de garbanzos 250 gr</td>
-            <td class="w3-right-align">295.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7799037060103: catriel - harina de trigo 000 catriel 1 kg</td>
-            <td class="w3-right-align">307.23</td>
-            <td class="w3-right-align">305.00</td>            
-            <td class="w3-right-align">314.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>7798159717261: carrefour - harina de trigo 000 carrefour 1 kg</td>
-            <td class="w3-right-align">206.95</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7790199000020: morixe - harina de trigo 0000 morixe 1 kg</td>
-            <td class="w3-right-align">277.13</td>
-            <td class="w3-right-align">269.00</td>            
-            <td class="w3-right-align">285.50</td>
-             </tr>
-            
-            <tr>                      
-            <td>7798159717278: carrefour - harina leudante carrefour 1 kg</td>
-            <td class="w3-right-align">285.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7790147011504: vea - harina 000 vea 1 kg</td>
-            <td class="w3-right-align">194.14</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7790147011511: vea - harina 0000 vea 1 kg</td>
-            <td class="w3-right-align">352.73</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7790147011528: vea - harina leudante vea 1 kg</td>
-            <td class="w3-right-align">419.91</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7792612000723: tassara - harina leudante tassara 1 kg</td>
-            <td class="w3-right-align">329.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7790199604242: maru botana - harina leudante maru botana 1 kg</td>
-            <td class="w3-right-align">281.97</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-       </tbody>
-       </table><br>
-     </div> <!-- End of tableFixedHeader -->
-   </div>
-</div> <!-- End bar block -->
-</div> <!-- End w3-main -->
+  </div>  
+</div>
 
-<!-- Footer -->
-<footer class="w3-container w3-sand w3-right-align w3-bottom w3-hide-small">
-  <p>Hecho por GIPIS - DIE - FI - UNPSJB</p>
-</footer>
+<div class="header w3-light-gray w3-text-black" id="myHeader">
+  <div class="w3-row">
+      <div class="w3-col l7 m7 s7 w3-center w3-ligth-green">
+        <p>Artículo</p>
+      </div>
+      <div class="w3-col l1 m1 s1 w3-center w3-ligth-green">
+        <p class="w3-right">Precio indicativo</p>
+      </div>
+      <div class="w3-col l1 m1 s1 w3-center w3-ligth-green">
+        <p class="w3-right">Precio mínimo</p>
+      </div>
+      <div class="w3-col l1 m1 s1 w3-center w3-ligth-green">
+        <p class="w3-right">Precio máximo</p>
+      </div>  
+  </div>
+</div>
 
-<script src="/static/js/table.js"></script>   
+<div class="content">
+  <div class="w3-row w3-border-bottom w3-border-black" id="articleTable">
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">blancaflor - harina 000 con vitamina b6 y b12 blancaflor 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">228.17</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">223.27</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">238.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">pureza - harina 100% integral pureza 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">305.70</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">pureza - harina con levadura para pan casero pureza 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">442.81</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">432.10</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">460.62</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">pureza - harina con levadura pizza pureza 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">441.79</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">432.10</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">460.62</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">dos hermanos - harina de arroz dos hermanos 500 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">775.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">la morocha - harina de maiz la morocha 500 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">312.02</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">311.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">319.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">morixe - harina de maiz morixe 500 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">172.45</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">157.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">201.65</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">caserita - harina de trigo 000 caserita 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">319.35</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">271.41</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">345.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">chacabuco - harina de trigo 000 chacabuco 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">216.99</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">213.55</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">227.65</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">morixe - harina de trigo 000 morixe 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">205.26</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">203.84</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">217.29</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">pureza - harina de trigo 000 pureza 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">228.59</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">223.27</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">238.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">caserita - harina de trigo 0000 caserita 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">409.24</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">380.41</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">435.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">chacabuco - harina de trigo 0000 chacabuco 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">398.84</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">286.50</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">486.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">morixe - harina de trigo 0000 fortivac morixe 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">407.35</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">406.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">418.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">morixe - harina de trigo especial pizzas morixe 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">423.79</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">410.46</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">437.55</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">chacabuco - harina de trigo granos ancestrales chacabuco 750 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">628.28</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">625.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">669.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">morixe - harina de trigo integral morixe 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">283.16</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">chacabuco - harina de trigo leudante chacabuco 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">462.58</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">291.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">519.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">caserita - harina de trigo para pizzas caserita 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">419.75</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">322.98</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">466.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">chacabuco - harina especial para masa madre chacabuco 1 kh</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">496.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">pureza - harina integral con levadura para pizzas pureza 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">405.48</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">296.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">445.97</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">chacabuco - harina integral con semillas chacabuco 750 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">628.16</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">625.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">669.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">chacabuco - harina integral fina chacabuco 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">454.53</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">391.31</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">484.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">caserita - harina leudante caserita 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">462.22</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">419.65</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">492.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">blancaflor - harina de trigo 0000 fortificada blancaflor 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">312.90</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">300.16</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">343.35</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">favorita - harina 0000 vitazink favorita 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">356.94</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">283.50</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">401.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">cañuelas - harina 000 fortificada con calcio cañuelas 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">222.17</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">213.55</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">227.65</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">cañuelas - harina 0000 cañuelas 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">346.57</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">primer precio - harina 0000 primer precio 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">343.35</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">pureza - harina 0000 ultrarefinada pureza 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">275.82</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">pureza - harina con masa madres especial para pizza pureza 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">500.38</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">491.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">566.04</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">prestopronta - harina de maiz blanco para arepas prestopronta 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">604.66</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">cañuelas - harina de trigo 000 cañuelas 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">189.21</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">favorita - harina de trigo 000 con vita zinc favorita 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">226.33</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">213.55</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">227.65</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">primer precio - harina de trigo 000 primer precio 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">212.55</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">morixe - harina de trigo leudante morixe 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">333.10</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">329.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">350.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">primer precio - harina de trigo leudante primer precio 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">354.25</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">blancaflor - harina leudante blancaflor 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">442.11</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">409.25</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">466.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">boniella - harina leudante boniella 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">358.61</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">cañuelas - harina leudante cañuelas 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">351.26</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">205.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">399.38</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">boniella - harina tipo 000 boniella 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">206.95</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">boniella - harina tipo 0000 boniella 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">347.71</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">dicomere - harina de arroz dicomere 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1181.56</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">tassara - harina 000 tassara 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">227.65</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">tassara - harina 0000 tassara 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">279.50</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sturla - harina de garbanzo sturla 250 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">445.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sturla - harina de lino sturla 250 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">532.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - harina de maiz paraguaya 500 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">405.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sturla - harina de quinoa sin tacc sturla 250 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1505.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">carrefour - harina de trigo 0000 carrefour 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">218.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">blancaflor - harina integral fina blancaflor 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">425.53</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">423.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">445.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">pureza - harina leudante ultrarefinada pureza 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">331.27</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">321.55</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">337.91</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">morixe - harina de trigo leudante fortivac morixe 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">479.61</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">471.45</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">480.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sturla - harina de amaranto sturla 250 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1040.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">chacabuco - harina de trigo especial pasteleria chacabuco 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">499.21</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">496.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">529.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">dicomere - harina de almendras dicomere 200 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">2763.16</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">2745.83</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">2798.14</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">secretos orgánicos - harina de arroz blanca organica secretos organicos 500 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">996.58</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">secretos orgánicos - harina de arroz integral secretos organicos 500 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">948.32</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">morixe - harina de maiz blanco para arepas morixe 20 un 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1058.33</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">morix - harina de trigo fortivac 000 morixe 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">265.15</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">251.16</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">290.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">dicomere - harina de trigo integral organica dicomere 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">736.93</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">646.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1093.96</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">dicomere - harina de trigo sarraceno dicomere 450 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1179.68</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">pureza - harina leudante sin sal pureza 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">423.79</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - harina de garbanzos 250 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">295.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">catriel - harina de trigo 000 catriel 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">307.23</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">305.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">314.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">carrefour - harina de trigo 000 carrefour 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">206.95</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">morixe - harina de trigo 0000 morixe 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">277.13</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">269.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">285.50</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">carrefour - harina leudante carrefour 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">285.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">vea - harina 000 vea 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">194.14</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">vea - harina 0000 vea 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">352.73</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">vea - harina leudante vea 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">419.91</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">tassara - harina leudante tassara 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">329.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">maru botana - harina leudante maru botana 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">281.97</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+  </div>
+</div>
+<script src="/static/js/table.js"></script>
 </body>
 </html>

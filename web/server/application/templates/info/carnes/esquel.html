@@ -1,330 +1,545 @@
 
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-<title>carnes en Esquel - 2023/10/09</title>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">               
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-<link href="/static/img/favicon.ico" rel="shortcut icon">
 <link rel="stylesheet" href="/static/css/table.css">
 </head>
-<body class="w3-pale-green">
+<body>
 
-<!-- Top container -->
-<div class="w3-bar w3-teal" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-green" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <div class="w3-bar-item w3-hide-small"><img src="/static/img/chakana.svg" width="50"></div>                    
-  <h1 class="w3-bar-item w3-right">Observatorio de precios - FCE - UNPSJB</h1>
-</div>
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <div class="w3-bar-block">
-    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="cerrar menu"><i class="fa fa-remove fa-fw"></i>  Cerrar menú</a>
-    <a href="/info/lacteos/esquel" class="w3-bar-item w3-button w3-padding"> Lácteos</a>
-    <a href="/info/harinas/esquel" class="w3-bar-item w3-button w3-padding"> Harinas</a>
-    <a href="/info/vegetales/esquel" class="w3-bar-item w3-button w3-padding"> Vegetales</a>
-    <a href="/info/carnes/esquel" class="w3-bar-item w3-button w3-padding"> Carnes</a>                      
-    <a href="/info/bebidas_con_alcohol/esquel" class="w3-bar-item w3-button w3-padding"> Bebidas con alcohol</a>
-    <a href="/info/bebidas_sin_alcohol/esquel" class="w3-bar-item w3-button w3-padding"> Bebidas sin alcohol</a>
-    <a href="/info/acba/esquel" class="w3-bar-item w3-button w3-padding"> Artículos de la canasta básica de alimentos</a>
-    <a href="/index" class="w3-bar-item w3-button w3-padding">Volver al índice</a>    
-    <div class="w3-bar-item">
-        <div class="w3-container w3-right">
-          <button onclick="document.getElementById('id01').style.display='block'" 
-                  class="w3-button w3-pale-green">¿Precio indicativo?</button>
-          <div id="id01" class="w3-modal">
-            <div class="w3-modal-content">
-              <div class="w3-container">
-                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                <p>El precio indicativo es el promedio geométrico de los precios observados.</p>
-                <p>Si todos los precios observados son iguales, solo se muestre el precio indicativo.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
+<div class="top-container">
+  <div class="w3-bar w3-teal" style="z-index:4">
+    <button class="w3-bar-item w3-button w3-hover-none w3-hover-text-light-green" onclick="w3_open('mySidebar');"><i class="fa fa-bars"></i>  Menu</button>
+    <div class="w3-bar-item"><img src="/static/img/chakana.svg" width="50"></div>                    
+    <h1 class="w3-bar-item w3-right">Observatorio de precios - FCE - UNPSJB</h1>
+      <div class="w3-bar-item">
+        <header class="w3-sand">
+          <h2 class="w3-center w3-padding-8">Precios carnes en Esquel - 2023/10/09</h2>
+        </header>
+      </div>
+      <div class="w3-bar-item">
+         <input class="w3-input w3-border w3-padding" 
+                type="text" 
+                placeholder="Buscar..." 
+                id="searchInput" 
+                onkeyup="searchArticleTable()">
+      </div>
   </div>
-</nav>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" 
-     onclick="w3_close()" 
-     style="cursor:pointer" 
-     title="Cerrar menú lateral" id="myOverlay">
 </div>
 
-<!-- Header -->
-
-<!-- Main content container -->   
-<div class="w3-main" style="margin-left:300px;margin-top:10px;">
-<div class="w3-bar-block">
-   <div class="w3-bar-item">
-     <header class="w3-sand">
-       <h2 class="w3-center w3-padding-8">Precios carnes en Esquel - 2023/10/09</h2>
-     </header>
-   </div>
-   <div class="w3-bar-item">
-     <div class="w3-row">
-        <div class="w3-twothird">
-           <input class="w3-input w3-border w3-padding" 
-                  type="text" 
-                  placeholder="Buscar..." 
-                  id="searchInput" 
-                  onkeyup="searchArticleTable()">
-        </div>
-        <div class="w3-third">
-        </div>
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close('mySidebar')" class="w3-bar-item w3-large">Cerrar &times;</button>
+  <a href="/info/lacteos/esquel"             class="w3-bar-item w3-button w3-padding"> Lácteos</a>  
+  <a href="/info/harinas/esquel"             class="w3-bar-item w3-button w3-padding"> Harinas</a>  
+  <a href="/info/vegetales/esquel"           class="w3-bar-item w3-button w3-padding"> Vegetales</a>  
+  <a href="/info/carnes/esquel"              class="w3-bar-item w3-button w3-padding"> Carnes</a>                        
+  <a href="/info/bebidas_con_alcohol/esquel" class="w3-bar-item w3-button w3-padding"> Bebidas con alcohol</a>  
+  <a href="/info/bebidas_sin_alcohol/esquel" class="w3-bar-item w3-button w3-padding"> Bebidas sin alcohol</a>  
+  <a href="/info/acba/esquel"                class="w3-bar-item w3-button w3-padding"> Artículos de la canasta básica de alimentos</a>  
+  <a href="/index"                                  class="w3-bar-item w3-button w3-padding">Volver al índice</a>
+  <div class="w3-bar-item">
+     <button onclick="w3_open('id01')" class="w3-button w3-pale-green">¿Precio indicativo?</button>
+     <div id="id01" class="w3-modal">
+       <div class="w3-modal-content">
+         <div class="w3-container">
+           <span onclick="w3_close('id01')" class="w3-button w3-display-topright">Cerrar &times;</span>
+           <p>El precio indicativo es el promedio geométrico de los precios observados.</p>
+           <p>Si todos los precios observados son iguales, solo se muestre el precio indicativo.</p>
+         </div>
+       </div>
      </div>
-   </div>
-   <div class="w3-bar-item">
-     <div class="tableFixedHeader">
-       <table class="w3-table w3-striped w3-border-black w3-hoverable w3-white" 
-              id="articleTable" >
-       <thead class="w3-sand">
-       <tr>
-         <th class="w3-center">
-         <p>Artículo</p></th>
-         <th class="w3-center"><p>Precio indicativo</p></th>
-         <th class="w3-center"><p>Precio mínimo</p></th>
-         <th class="w3-center"><p>Precio máximo</p></th>
-       </tr>
-       </thead>
-       <tbody>
-            
-            <tr>                      
-            <td>9-3-0000000499989: sin marca - carne picada bandeja 1 kg</td>
-            <td class="w3-right-align">1769.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>9-1-0000000499989: sin marca - carne picada bandeja 1 kg</td>
-            <td class="w3-right-align">1719.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>2-1-2035001000009: pollolín - pollo a (comun refrigerado) 01 pollolin 1 kg</td>
-            <td class="w3-right-align">958.75</td>
-            <td class="w3-right-align">929.00</td>            
-            <td class="w3-right-align">989.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>2-1-2035003000007: tres arroyos - pollo comun tres arroyos 1 kg</td>
-            <td class="w3-right-align">959.51</td>
-            <td class="w3-right-align">929.00</td>            
-            <td class="w3-right-align">989.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>10-1-2507200000000: pollolín - pollo del abuelo roberto en bandeja pollolin 1 kg</td>
-            <td class="w3-right-align">1130.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>10-1-2507483000001: sin marca - pollo fresco ls 1 kg</td>
-            <td class="w3-right-align">1015.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>10-1-2507199000005: pollolín - pollo parrillero en bandeja pollolin 1 kg</td>
-            <td class="w3-right-align">1625.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>10-2-2507582000001: sin marca - pollo cuarto trasero a granel 1 kg</td>
-            <td class="w3-right-align">1350.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>10-2-2507153000003: sin marca - pollo cuarto trasero refrigerado carnes carrefour 1 kg</td>
-            <td class="w3-right-align">1415.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>10-2-2506657000007: sin marca - pollo fresco en bandeja marca propia 1 kg</td>
-            <td class="w3-right-align">1220.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>10-2-2507483000001: sin marca - pollo fresco ls 1 kg</td>
-            <td class="w3-right-align">1015.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>10-2-2507199000005: pollolín - pollo parrillero en bandeja pollolin 1 kg</td>
-            <td class="w3-right-align">1625.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>10-1-2507582000001: sin marca - pollo cuarto trasero a granel 1 kg</td>
-            <td class="w3-right-align">1350.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>10-1-2507153000003: sin marca - pollo cuarto trasero refrigerado carnes carrefour 1 kg</td>
-            <td class="w3-right-align">1415.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>10-2-2507200000000: pollolín - pollo del abuelo roberto en bandeja pollolin 1 kg</td>
-            <td class="w3-right-align">1130.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>10-1-2506657000007: sin marca - pollo fresco en bandeja marca propia 1 kg</td>
-            <td class="w3-right-align">1220.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>2-1-2078076000000: best - asado sin hueso envasado al vacio best 1 kg</td>
-            <td class="w3-right-align">1875.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>10-1-2504693000005: sin marca - asado de novillito 1 kg</td>
-            <td class="w3-right-align">4699.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7796953113166: bocatti - lomo horneado bocatti feteado 70 gr</td>
-            <td class="w3-right-align">719.28</td>
-            <td class="w3-right-align">659.00</td>            
-            <td class="w3-right-align">935.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>10-1-2302821000008: sin marca - lomo de cerdo solomillo 1 kg</td>
-            <td class="w3-right-align">4290.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7790625005346: lario - lomo lario a las finas hierbas feteado 120 gr</td>
-            <td class="w3-right-align">1315.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>10-1-2505719000009: sin marca - lomo novillito 1 kg</td>
-            <td class="w3-right-align">6299.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7790079019562: paladini - lomo cocido feteado al vacio paladini 120 gr</td>
-            <td class="w3-right-align">703.57</td>
-            <td class="w3-right-align">605.77</td>            
-            <td class="w3-right-align">935.00</td>
-             </tr>
-            
-            <tr>                      
-            <td>9-3-0000000453165: sin marca - lomo de novillito en bandeja 1 kg</td>
-            <td class="w3-right-align">7645.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>9-3-0000000950251: sin marca - lomo de ternera en bandeja 1 kg</td>
-            <td class="w3-right-align">9005.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7790079019180: labratto - lomo horneado feteado labratto 100 gr</td>
-            <td class="w3-right-align">911.55</td>
-            <td class="w3-right-align">889.18</td>            
-            <td class="w3-right-align">934.49</td>
-             </tr>
-            
-            <tr>                      
-            <td>10-2-2505719000009: sin marca - lomo novillito 1 kg</td>
-            <td class="w3-right-align">6299.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7891167831100: gomes da costa - lomo de atun natural gomes da costa 170 gr</td>
-            <td class="w3-right-align">709.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>9-1-0000000453165: sin marca - lomo de novillito en bandeja 1 kg</td>
-            <td class="w3-right-align">7435.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>10-2-2302821000008: sin marca - lomo de cerdo solomillo 1 kg</td>
-            <td class="w3-right-align">4290.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-            <tr>                      
-            <td>7891167831117: gomes da costa - lomo de atun en aceite gomes da costa 170 gr</td>
-            <td class="w3-right-align">709.00</td>
-            <td class="w3-right-align"></td>            
-            <td class="w3-right-align"></td>
-             </tr>
-            
-       </tbody>
-       </table><br>
-     </div> <!-- End of tableFixedHeader -->
-   </div>
-</div> <!-- End bar block -->
-</div> <!-- End w3-main -->
+  </div>  
+</div>
 
-<!-- Footer -->
-<footer class="w3-container w3-sand w3-right-align w3-bottom w3-hide-small">
-  <p>Hecho por GIPIS - DIE - FI - UNPSJB</p>
-</footer>
+<div class="header w3-light-gray w3-text-black" id="myHeader">
+  <div class="w3-row">
+      <div class="w3-col l7 m7 s7 w3-center w3-ligth-green">
+        <p>Artículo</p>
+      </div>
+      <div class="w3-col l1 m1 s1 w3-center w3-ligth-green">
+        <p class="w3-right">Precio indicativo</p>
+      </div>
+      <div class="w3-col l1 m1 s1 w3-center w3-ligth-green">
+        <p class="w3-right">Precio mínimo</p>
+      </div>
+      <div class="w3-col l1 m1 s1 w3-center w3-ligth-green">
+        <p class="w3-right">Precio máximo</p>
+      </div>  
+  </div>
+</div>
 
-<script src="/static/js/table.js"></script>   
+<div class="content">
+  <div class="w3-row w3-border-bottom w3-border-black" id="articleTable">
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - carne picada bandeja 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1769.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - carne picada bandeja 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1719.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">pollolín - pollo a (comun refrigerado) 01 pollolin 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">958.75</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">929.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">989.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">tres arroyos - pollo comun tres arroyos 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">959.51</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">929.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">989.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">pollolín - pollo del abuelo roberto en bandeja pollolin 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1130.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - pollo fresco ls 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1015.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">pollolín - pollo parrillero en bandeja pollolin 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1625.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - pollo cuarto trasero a granel 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1350.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - pollo cuarto trasero refrigerado carnes carrefour 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1415.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - pollo fresco en bandeja marca propia 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1220.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - pollo fresco ls 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1015.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">pollolín - pollo parrillero en bandeja pollolin 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1625.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - pollo cuarto trasero a granel 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1350.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - pollo cuarto trasero refrigerado carnes carrefour 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1415.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">pollolín - pollo del abuelo roberto en bandeja pollolin 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1130.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - pollo fresco en bandeja marca propia 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1220.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">best - asado sin hueso envasado al vacio best 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1875.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - asado de novillito 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">4699.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">bocatti - lomo horneado bocatti feteado 70 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">719.28</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">659.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">935.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - lomo de cerdo solomillo 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">4290.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">lario - lomo lario a las finas hierbas feteado 120 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">1315.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - lomo novillito 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">6299.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">paladini - lomo cocido feteado al vacio paladini 120 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">703.57</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">605.77</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">935.00</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - lomo de novillito en bandeja 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">7645.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - lomo de ternera en bandeja 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">9005.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">labratto - lomo horneado feteado labratto 100 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">911.55</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">889.18</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">934.49</p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - lomo novillito 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">6299.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">gomes da costa - lomo de atun natural gomes da costa 170 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">709.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - lomo de novillito en bandeja 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">7435.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">sin marca - lomo de cerdo solomillo 1 kg</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">4290.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+      <div class="article">
+        <div class="w3-col l7 m7 s7 w3-pale-gray">
+          <p class="label">gomes da costa - lomo de atun en aceite gomes da costa 170 gr</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right">709.00</p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+        <div class="w3-col l1 m1 s1 w3-pale-gray">
+          <p class="w3-right"></p>
+        </div>
+      </div>
+      
+  </div>
+</div>
+<script src="/static/js/table.js"></script>
 </body>
 </html>
