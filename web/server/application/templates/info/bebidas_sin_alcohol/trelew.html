@@ -13,13 +13,16 @@
 <div class="top-container">
   <div class="w3-bar w3-teal" style="z-index:4">
     <button class="w3-bar-item w3-button w3-hover-none w3-hover-text-light-green" onclick="w3_open('mySidebar');"><i class="fa fa-bars"></i>  Menu</button>
-    <div class="w3-bar-item"><img src="/static/img/chakana.svg" width="50"></div>                    
-    <h1 class="w3-bar-item w3-right w3-hide-small">Observatorio de precios - FCE - UNPSJB</h1>
-    <h1 class="w3-bar-item w3-right w3-hide-medium w3-hide-large">Precios - FCE - UNPSJB</h1>
+    <div class="w3-bar-item"><img src="/static/img/chakana.svg" width="50px">
+    </div>                    
+    <h1 class="w3-bar-item w3-right w3-hide-small">Observatorio de precios - FCE - UNPSJB
+    </h1>
+    <h1 class="w3-bar-item w3-right w3-hide-medium w3-hide-large">Precios - FCE - UNPSJB
+    </h1>
     <div class="w3-bar-item">
-        <header class="w3-sand">
+        <div class="w3-sand">
           <h2 class="w3-center w3-padding-8">Precios bebidas sin alcohol en Trelew - 2023/10/09</h2>
-        </header>
+        </div>
     </div>
     <div class="w3-bar-item">
        <input class="w3-input w3-border w3-padding" 
@@ -33,7 +36,8 @@
 
 <!-- Sidebar -->
 <div class="w3-sidebar w3-bar-block w3-border-right w3-display-topleft" style="display:none" id="mySidebar">
-  <button onclick="w3_close('mySidebar')" class="w3-bar-item w3-large">Cerrar &times;</button>
+  <button onclick="w3_close('mySidebar')" class="w3-bar-item w3-large">Cerrar &times;
+  </button>
   <a href="/info/lacteos/trelew"             class="w3-bar-item w3-button w3-padding"> Lácteos</a>  
   <a href="/info/harinas/trelew"             class="w3-bar-item w3-button w3-padding"> Harinas</a>  
   <a href="/info/vegetales/trelew"           class="w3-bar-item w3-button w3-padding"> Vegetales</a>  
@@ -43,7 +47,8 @@
   <a href="/info/acba/trelew"                class="w3-bar-item w3-button w3-padding"> Artículos de la canasta básica de alimentos</a>  
   <a href="/index"                                  class="w3-bar-item w3-button w3-padding">Volver al índice</a>
   <div class="w3-bar-item">
-     <button onclick="w3_open('id01')" class="w3-button w3-pale-green">¿Precio indicativo?</button>
+     <button onclick="w3_open('id01')" class="w3-button w3-pale-green">¿Precio indicativo?
+     </button>
      <div id="id01" class="w3-modal">
        <div class="w3-modal-content">
          <div class="w3-container">
@@ -59,22 +64,22 @@
 <div class="header w3-light-gray w3-text-black" id="myHeader">
   <div class="w3-row">
     <div class="w3-col l12 m12 s12">
-      <div class="w3-col l9 m9 s9 w3-center w3-ligth-green">
+      <div class="w3-col l9 m9 s9 w3-center w3-light-green">
         Artículo
       </div>
-      <div class="w3-col l2 m2 s2 w3-center w3-ligth-green">
+      <div class="w3-col l2 m2 s2 w3-center w3-light-green">
         Precio indicativo
       </div>  
     </div>
   </div>
 </div>
 
-<div class="content">
-  <div class="w3-row w3-border-bottom w3-border-black" id="articleTable">
+<div class="content w3-container">
+  <div class="w3-row" id="articleTable">
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813777045 7 up - gaseosa 7 up 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 388.00 y un precio máximo de 1000.00</span>
           </p>
@@ -84,9 +89,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813777038 7 up - gaseosa 7 up 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 221.47 y un precio máximo de 550.00</span>
           </p>
@@ -96,9 +101,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913005611 magna - gaseosa agua tonica pet magna 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 649.00</span>
           </p>
@@ -108,9 +113,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813050056 pepsi - gaseosa cola lata pepsi black 354 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 194.00 y un precio máximo de 203.00</span>
           </p>
@@ -120,9 +125,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813555032 pepsi - gaseosa cola pepsi 500 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 221.17 y un precio máximo de 550.00</span>
           </p>
@@ -132,9 +137,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813555056 pepsi - gaseosa cola regular pepsi 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 556.99 y un precio máximo de 625.00</span>
           </p>
@@ -144,9 +149,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895646355 coca cola - gaseosa cola sin azucar cafeina coca cola lata 220 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 190.05 y un precio máximo de 193.00</span>
           </p>
@@ -156,9 +161,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639003888 cunnington - gaseosa cola suave cunnington 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 407.00 y un precio máximo de 426.00</span>
           </p>
@@ -168,9 +173,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913000791 doble cola - gaseosa doble cola 3 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 639.00 y un precio máximo de 659.00</span>
           </p>
@@ -180,9 +185,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813555025 pepsi - gaseosa en lata pepsi 354 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 189.00 y un precio máximo de 203.00</span>
           </p>
@@ -192,9 +197,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813777021 seven up - gaseosa lata seven up 354 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 194.29 y un precio máximo de 204.00</span>
           </p>
@@ -204,9 +209,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895007385 crush - gaseosa lima limon crush 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 248.85 y un precio máximo de 304.50</span>
           </p>
@@ -216,9 +221,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813777069 7 up - gaseosa lima limon regular 7 up 3 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 688.00 y un precio máximo de 701.00</span>
           </p>
@@ -228,9 +233,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895064166 sprite - gaseosa lima limon sprite zero 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 633.15 y un precio máximo de 731.00</span>
           </p>
@@ -240,9 +245,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639003833 cunnington - gaseosa lima limon suave light cunnington 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 453.42</span>
           </p>
@@ -252,9 +257,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913001163 pritty - gaseosa limon cero pritty 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 645.00</span>
           </p>
@@ -264,9 +269,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913001040 pritty - gaseosa limon pritty 3 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 747.00 y un precio máximo de 805.00</span>
           </p>
@@ -276,9 +281,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913005284 doble cola - gaseosa naranja doble cola 3 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 659.00</span>
           </p>
@@ -288,9 +293,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895002335 fanta - gaseosa naranja fanta zero 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 212.52 y un precio máximo de 620.00</span>
           </p>
@@ -300,9 +305,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813420156 mirinda - gaseosa naranja mirinda 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 221.17 y un precio máximo de 233.50</span>
           </p>
@@ -312,9 +317,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813000310 mirinda - gaseosa naranja mirinda lata 354 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 204.00</span>
           </p>
@@ -324,9 +329,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639003840 cunnington - gaseosa naranja suave cunnington 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 453.42</span>
           </p>
@@ -336,9 +341,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813555063 pepsi - gaseosa pepsi 3 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 681.45 y un precio máximo de 695.00</span>
           </p>
@@ -348,9 +353,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813421054 pepsi - gaseosa pepsi black 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 370.00 y un precio máximo de 403.00</span>
           </p>
@@ -360,9 +365,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895007392 crush - gaseosa pomelo crush 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 248.85 y un precio máximo de 304.50</span>
           </p>
@@ -372,9 +377,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913005260 doble cola - gaseosa pomelo doble cola 3 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 613.00 y un precio máximo de 659.00</span>
           </p>
@@ -384,9 +389,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813800750 paso de los toros - gaseosa pomelo lata paso de los toros 269 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 164.34 y un precio máximo de 172.50</span>
           </p>
@@ -396,9 +401,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813421382 paso de los toros - gaseosa pomelo paso de los toros 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 543.16 y un precio máximo de 1000.00</span>
           </p>
@@ -408,9 +413,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813423386 paso de los toros - gaseosa pomelo regular paso de los toros 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 515.00 y un precio máximo de 525.00</span>
           </p>
@@ -420,9 +425,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895010095 schweppes - gaseosa pomelo schweppes zero 2.25 lt pack 6 un
               <span class="w3-text">Para este artículo se observó un precio mínimo de 649.95 y un precio máximo de 735.00</span>
           </p>
@@ -432,9 +437,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895010064 schweppes - gaseosa pomelo schweppes zero 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 258.00 y un precio máximo de 620.00</span>
           </p>
@@ -444,9 +449,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895000225 sprite - gaseosa retornable sprite 2 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 465.00 y un precio máximo de 524.99</span>
           </p>
@@ -456,9 +461,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315101228 levité - gaseosa sabor pomelo fizz levite 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 411.00 y un precio máximo de 543.91</span>
           </p>
@@ -468,9 +473,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895001000 sprite - gaseosa sprite 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 633.15 y un precio máximo de 1520.00</span>
           </p>
@@ -480,9 +485,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895000829 sprite - gaseosa sprite 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 239.50 y un precio máximo de 620.00</span>
           </p>
@@ -492,9 +497,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895064142 sprite - gaseosa sprite zero 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 171.09 y un precio máximo de 620.00</span>
           </p>
@@ -504,9 +509,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813800774 paso de los toros - gaseosa tonica lata paso de los toros 269 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 169.99 y un precio máximo de 172.50</span>
           </p>
@@ -516,9 +521,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813421368 paso de los toros - gaseosa tonica regular paso de los toros 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 439.30 y un precio máximo de 476.00</span>
           </p>
@@ -528,9 +533,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895006715 schweppes - gaseosa tonica schweppes 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 473.47 y un precio máximo de 545.00</span>
           </p>
@@ -540,9 +545,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895003202 schweppes - gaseosa tonica schweppes 6 un 310 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 204.67 y un precio máximo de 250.00</span>
           </p>
@@ -552,9 +557,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813423058 pepsi - gaseosa cola black pepsi 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 553.00 y un precio máximo de 627.78</span>
           </p>
@@ -564,9 +569,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813777052 7 up - gaseosa lima limon 7 up 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 584.49 y un precio máximo de 641.00</span>
           </p>
@@ -576,9 +581,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895002304 fanta - gaseosa naranja con vitamina c fanta zero 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 321.39</span>
           </p>
@@ -588,9 +593,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895000331 fanta - gaseosa naranja envase retornable fanta 2 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 465.00 y un precio máximo de 474.00</span>
           </p>
@@ -600,9 +605,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813421153 mirinda - gaseosa naranja mirinda 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 268.57 y un precio máximo de 276.00</span>
           </p>
@@ -612,9 +617,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895000447 sprite - gaseosa sprite 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 448.00 y un precio máximo de 1150.00</span>
           </p>
@@ -624,9 +629,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895005015 sprite - gaseosa sprite 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 466.00 y un precio máximo de 489.99</span>
           </p>
@@ -636,9 +641,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813420057 pepsi - gaseosa cola pepsi black 500 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 151.00 y un precio máximo de 550.00</span>
           </p>
@@ -648,9 +653,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639003871 cunnington - gaseosa cola suave cunnington 3 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 642.01</span>
           </p>
@@ -660,9 +665,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813421580 7 up - gaseosa descartable 7 up free 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 313.00</span>
           </p>
@@ -672,9 +677,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813900115 7 up - gaseosa descartable 7 up free 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 588.00 y un precio máximo de 666.85</span>
           </p>
@@ -684,9 +689,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813080039 paso de los toros - gaseosa descartable pomelo paso de los toros 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 309.00 y un precio máximo de 349.98</span>
           </p>
@@ -696,9 +701,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895001048 fanta - gaseosa limon dulce botella fanta 500 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 202.00 y un precio máximo de 314.00</span>
           </p>
@@ -708,9 +713,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315101235 levité - gaseosa limon fizz levite 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 411.00 y un precio máximo de 543.91</span>
           </p>
@@ -720,9 +725,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315101198 levité - gaseosa limon fizz levite 575 ml
               <span class="w3-text">Para este artículo se observó un precio uniforme de 170.16</span>
           </p>
@@ -732,9 +737,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639003475 cunnington - gaseosa naranja classic cunnington 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 442.64</span>
           </p>
@@ -744,9 +749,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813423157 mirinda - gaseosa naranja mirinda 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 466.18</span>
           </p>
@@ -756,9 +761,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813333029 mirinda - gaseosa naranja regular mirinda lata 354 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 194.00 y un precio máximo de 201.00</span>
           </p>
@@ -768,9 +773,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813555094 pepsi - gaseosa pepsi 2 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1022.00 y un precio máximo de 1025.00</span>
           </p>
@@ -780,9 +785,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639003451 cunnington - gaseosa pomelo classic cunnington 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 442.64</span>
           </p>
@@ -792,9 +797,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315101181 levité - gaseosa pomelo fizz levite fizz 575 ml
               <span class="w3-text">Para este artículo se observó un precio uniforme de 171.65</span>
           </p>
@@ -804,9 +809,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813423966 mirinda - gaseosa pomelo regular pet mirinda 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 350.98</span>
           </p>
@@ -816,9 +821,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813080022 paso de los toros - gaseosa pomelo sin azucar paso de los toros pet 1 un
               <span class="w3-text">Para este artículo se observó un precio mínimo de 114.50 y un precio máximo de 140.00</span>
           </p>
@@ -828,9 +833,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639003925 cunnington - gaseosa pomelo suave cunnington 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 424.01</span>
           </p>
@@ -840,9 +845,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813424185 mirinda - gaseosa sabor pomelo mirinda 3 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 627.00 y un precio máximo de 639.00</span>
           </p>
@@ -852,9 +857,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639003130 cunnington - gaseosa tonic light cunnington indian 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 347.29 y un precio máximo de 397.30</span>
           </p>
@@ -864,9 +869,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813222057 paso de los toros - gaseosa tonica sin azucar paso de los toros 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 478.00 y un precio máximo de 479.00</span>
           </p>
@@ -876,9 +881,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895067631 coca cola - gaseosa zero coca cola 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 445.00 y un precio máximo de 490.00</span>
           </p>
@@ -888,9 +893,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813555018 pepsi - gaseosa cola pet botella pepsi 250 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 149.00</span>
           </p>
@@ -900,9 +905,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895006128 fanta - gaseosa naranja fanta 1.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 356.00 y un precio máximo de 362.00</span>
           </p>
@@ -912,9 +917,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813420385 paso de los toros - gaseosa pomelo paso de los toros 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 221.17 y un precio máximo de 550.00</span>
           </p>
@@ -924,9 +929,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895011511 schweppes - gaseosa pomelo sin azucar schweppes 2 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 465.00 y un precio máximo de 466.00</span>
           </p>
@@ -936,9 +941,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895068027 sprite - gaseosa sprite 2.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 662.29 y un precio máximo de 685.00</span>
           </p>
@@ -948,9 +953,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895006111 sprite - gaseosa sprite retornable 1.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 356.00</span>
           </p>
@@ -960,9 +965,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102050682 cooperativa - gaseosa cola cero cooperativa 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 194.13</span>
           </p>
@@ -972,9 +977,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639002232 cunnington - gaseosa naranja cunnington light 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 332.45</span>
           </p>
@@ -984,9 +989,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102050712 cooperativa - gaseosa pomelo cero cooperativa 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 194.13</span>
           </p>
@@ -996,9 +1001,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639001396 cunnington - gaseosa pomelo cunnington 1.50 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 236.90</span>
           </p>
@@ -1008,9 +1013,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895006722 schweppes - gaseosa citrus schweppes 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 434.70 y un precio máximo de 436.00</span>
           </p>
@@ -1020,9 +1025,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913001477 doble cola - gaseosa cola doble cola 5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 309.00</span>
           </p>
@@ -1032,9 +1037,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913001859 doble cola - gaseosa doble cola 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 511.00</span>
           </p>
@@ -1044,9 +1049,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791720029954 carrefour classic - gaseosa light naranja carrefour classic 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 419.00</span>
           </p>
@@ -1056,9 +1061,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813777014 seven - gaseosa lima limon seven up 250 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 150.00 y un precio máximo de 150.50</span>
           </p>
@@ -1068,9 +1073,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913000265 pritty - gaseosa limon pritty 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 471.00</span>
           </p>
@@ -1080,9 +1085,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913000746 pritty - gaseosa limon pritty 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 625.00 y un precio máximo de 645.00</span>
           </p>
@@ -1092,9 +1097,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102050729 cooperativa - gaseosa tonica cero cooperativa 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 194.13</span>
           </p>
@@ -1104,9 +1109,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639002010 cunnington - gaseosa cola light cunnington 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 252.27 y un precio máximo de 288.85</span>
           </p>
@@ -1116,9 +1121,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813050582 7 up - gaseosa 7 up free lata 354 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 194.00 y un precio máximo de 204.00</span>
           </p>
@@ -1128,9 +1133,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639003024 cunnington - gaseosa cola light cunnington 3 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 496.49</span>
           </p>
@@ -1140,9 +1145,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895002762 fanta - gaseosa naranja fanta 6 un 310 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 204.67 y un precio máximo de 227.50</span>
           </p>
@@ -1152,9 +1157,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791720029978 carrefour classic - gaseosa light pomelo carrefour classic 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 419.00</span>
           </p>
@@ -1164,9 +1169,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913005246 doble cola - gaseosa lima limon doble cola 3 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 613.00</span>
           </p>
@@ -1176,9 +1181,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813420583 7 up - gaseosa 7 up free 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 141.75 y un precio máximo de 550.00</span>
           </p>
@@ -1188,9 +1193,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813555049 pepsi - gaseosa cola pepsi 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 960.00 y un precio máximo de 1000.00</span>
           </p>
@@ -1200,9 +1205,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895064173 sprite - gaseosa lima limon sprite zero 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 348.00 y un precio máximo de 1150.00</span>
           </p>
@@ -1212,9 +1217,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895000836 fanta - gaseosa naranja fanta 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 590.00 y un precio máximo de 620.00</span>
           </p>
@@ -1224,9 +1229,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813333036 mirinda - gaseosa naranja regular mirinda 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 221.17 y un precio máximo de 470.00</span>
           </p>
@@ -1236,9 +1241,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813420415 paso de los toros - gaseosa pomelo light paso de los toros 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 530.00 y un precio máximo de 550.00</span>
           </p>
@@ -1248,9 +1253,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813050520 7 up - gaseosa 7 up 354 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 194.29</span>
           </p>
@@ -1260,9 +1265,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813420521 7 up - gaseosa 7 up 500 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 221.47</span>
           </p>
@@ -1272,9 +1277,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895642104 coca cola - gaseosa cola sin azucar mini lata 220 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 157.00 y un precio máximo de 160.00</span>
           </p>
@@ -1284,9 +1289,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813421528 7 up - gaseosa lima limon 7 up 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 388.00</span>
           </p>
@@ -1296,9 +1301,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813333043 mirinda - gaseosa naranja regular mirinda 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 268.57</span>
           </p>
@@ -1308,9 +1313,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813424000 pepsi - gaseosa pepsi 3 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 681.45</span>
           </p>
@@ -1320,9 +1325,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813420118 pepsi - gaseosa pepsi 500 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 221.17</span>
           </p>
@@ -1332,9 +1337,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813050117 pepsi - gaseosa pepsi lata 354 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 194.29</span>
           </p>
@@ -1344,9 +1349,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913000623 pritty - gaseosa limon pritty 500 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 308.00</span>
           </p>
@@ -1356,9 +1361,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895010088 schweppes - gaseosa pomelo schweppes zero 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 473.00 y un precio máximo de 501.00</span>
           </p>
@@ -1368,9 +1373,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813424017 7 up - gaseosa 7 up 3 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 688.00</span>
           </p>
@@ -1380,9 +1385,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895642463 sprite - gaseosa lima limon sin azucar mini lata sprite 220 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 157.00</span>
           </p>
@@ -1392,9 +1397,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813333050 mirinda - gaseosa naranja regular mirinda 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 466.18</span>
           </p>
@@ -1404,9 +1409,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895642449 fanta - gaseosa naranja sin azucar mini lata fanta 220 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 157.00 y un precio máximo de 160.00</span>
           </p>
@@ -1416,9 +1421,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813800767 paso de los toros - gaseosa sabor pomelo lata paso de los toros 269 ml
               <span class="w3-text">Para este artículo se observó un precio uniforme de 164.34</span>
           </p>
@@ -1428,9 +1433,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895640896 sprite - gaseosas sprite zero lata sleek 310 ml
               <span class="w3-text">Para este artículo se observó un precio uniforme de 204.67</span>
           </p>
@@ -1440,9 +1445,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895643668 fanta - gaseosa naranja sin azucar pet fanta 2.50 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 685.00</span>
           </p>
@@ -1452,9 +1457,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895648656 coca cola  - gaseosa cola edicion limitada move lata coca cola 473 ml
               <span class="w3-text">Para este artículo se observó un precio uniforme de 309.00</span>
           </p>
@@ -1464,9 +1469,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895643903 schweppes - gaseosa sin azucar schweppes 6 un 310 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 214.00 y un precio máximo de 224.50</span>
           </p>
@@ -1476,9 +1481,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895002601 fanta - gaseosa naranja zero fanta 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 549.00 y un precio máximo de 597.45</span>
           </p>
@@ -1488,9 +1493,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791720029961 carrefour classic - gaseosa light lima limon carrefour classic 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 419.00</span>
           </p>
@@ -1500,9 +1505,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895006951 crush - gaseosa naranja crush 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 262.50</span>
           </p>
@@ -1512,9 +1517,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895000454 fanta - gaseosa naranja fanta 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 448.00</span>
           </p>
@@ -1524,9 +1529,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813000020 mirinda - gaseosa naranja mirinda 3 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 485.80</span>
           </p>
@@ -1536,9 +1541,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813333067 mirinda - gaseosa naranja regular mirinda 3 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 485.80</span>
           </p>
@@ -1548,9 +1553,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895642494 schweppes - gaseosa pomelo schweppes 220 ml
               <span class="w3-text">Para este artículo se observó un precio uniforme de 157.00</span>
           </p>
@@ -1560,9 +1565,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               4005900773821 nivea face - agua micelar bifasica rose care nivea face 400 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 2660.00 y un precio máximo de 3269.00</span>
           </p>
@@ -1572,9 +1577,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7891010251055 neutrógena - agua micelar demaquillante hydro boost neutrogena 400 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 3720.00 y un precio máximo de 4049.00</span>
           </p>
@@ -1584,9 +1589,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7891010253066 neutrógena - agua micelar demaquillante purified skin neutrogena 400 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 3851.88 y un precio máximo de 4049.00</span>
           </p>
@@ -1596,9 +1601,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7891010251031 neutrogena - agua micelar hydro boost bifasica neutrogena 200 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 2625.00 y un precio máximo de 2815.00</span>
           </p>
@@ -1608,9 +1613,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7891010245160 neutrógena - agua micelar purified skin neutrogena 200 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 2115.00 y un precio máximo de 2782.95</span>
           </p>
@@ -1620,9 +1625,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798165050130 orizon - agua mineral natural con gas orizon 500 ml
               <span class="w3-text">Para este artículo se observó un precio uniforme de 244.00</span>
           </p>
@@ -1632,9 +1637,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798165050024 orizon - agua mineral natural de manantial sin gas orizon 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 335.00 y un precio máximo de 464.00</span>
           </p>
@@ -1644,9 +1649,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798165050017 orizon - agua mineral natural de manantial sin gas orizon 500 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 203.00 y un precio máximo de 294.00</span>
           </p>
@@ -1656,9 +1661,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7795930000543 nestlé - agua mineral neste purez vital 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 274.00 y un precio máximo de 304.00</span>
           </p>
@@ -1668,9 +1673,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895647642 benedictino - agua mineral sin gas benedictino 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 168.00 y un precio máximo de 188.00</span>
           </p>
@@ -1680,9 +1685,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895003875 bonaqua - agua mineral sin gas bonaqua 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 297.97 y un precio máximo de 335.00</span>
           </p>
@@ -1692,9 +1697,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895003882 bonaqua - agua mineral sin gas bonaqua 2 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 326.00 y un precio máximo de 372.50</span>
           </p>
@@ -1704,9 +1709,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895008146 bonaqua - agua mineral sin gas bonaqua 2.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 359.00 y un precio máximo de 377.00</span>
           </p>
@@ -1716,9 +1721,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895003868 bonaqua - agua mineral sin gas bonaqua 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 187.00 y un precio máximo de 430.00</span>
           </p>
@@ -1728,9 +1733,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792799000639 eco de los andes - agua mineral sin gas eco de los andes 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 256.92 y un precio máximo de 650.00</span>
           </p>
@@ -1740,9 +1745,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792799000097 eco de los andes - agua mineral sin gas eco de los andes 2 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 298.26 y un precio máximo de 335.00</span>
           </p>
@@ -1752,9 +1757,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7795930002097 eco de los andes - agua mineral sin gas eco de los andes 850 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 233.38 y un precio máximo de 263.00</span>
           </p>
@@ -1764,9 +1769,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792799001032 nestlé - agua mineral sin gas en bidon nestle 6.3 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 693.48 y un precio máximo de 779.00</span>
           </p>
@@ -1776,9 +1781,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792799000905 nestlé - agua mineral sin gas nestle pureza vital 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 138.99 y un precio máximo de 146.43</span>
           </p>
@@ -1788,9 +1793,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792799000899 nestlé - agua mineral sin gas nestle pureza vital 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 194.84 y un precio máximo de 201.00</span>
           </p>
@@ -1800,9 +1805,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798165050086 orizon - agua mineral sin gas orizon 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 400.00 y un precio máximo de 509.00</span>
           </p>
@@ -1812,9 +1817,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798165050093 orizon - agua mineral sin gas orizon 6.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1119.00 y un precio máximo de 1639.00</span>
           </p>
@@ -1824,9 +1829,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639002423 cellier - agua mineralizada con gas cellier favaloro 2 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 349.00 y un precio máximo de 357.00</span>
           </p>
@@ -1836,9 +1841,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639002416 cellier - agua mineralizada sin gas cellier favaloro 2 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 312.00 y un precio máximo de 318.00</span>
           </p>
@@ -1848,9 +1853,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792931000022 glaciar - agua mineralizada sin gas glaciar 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 212.50 y un precio máximo de 239.00</span>
           </p>
@@ -1860,9 +1865,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792931000039 glaciar - agua mineralizada sin gas glaciar 2 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 329.99 y un precio máximo de 383.00</span>
           </p>
@@ -1872,9 +1877,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792931000015 glaciar - agua mineralizada sin gas glaciar 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 198.16 y un precio máximo de 225.50</span>
           </p>
@@ -1884,9 +1889,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062542097 ser - agua saborizada citrus con gas ser we 500 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 171.65</span>
           </p>
@@ -1896,9 +1901,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895008498 aquarius - agua saborizada limonada sin gas aquarius 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 396.90 y un precio máximo de 439.00</span>
           </p>
@@ -1908,9 +1913,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895640483 aquarius - agua saborizada manzana sin gas aquarius 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 396.90 y un precio máximo de 439.00</span>
           </p>
@@ -1920,9 +1925,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895003301 aquarius - agua saborizada manzana sin gas aquarius 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 539.00 y un precio máximo de 608.00</span>
           </p>
@@ -1932,9 +1937,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895640452 aquarius - agua saborizada manzana sin gas aquarius 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 191.94 y un precio máximo de 246.00</span>
           </p>
@@ -1944,9 +1949,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315000880 levité - agua saborizada manzana sin gas levite 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 545.00 y un precio máximo de 620.74</span>
           </p>
@@ -1956,9 +1961,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315001085 levité - agua saborizada manzana sin gas levite cero 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 605.00 y un precio máximo de 696.51</span>
           </p>
@@ -1968,9 +1973,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895003325 aquarius - agua saborizada naranja aquarius 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 502.00 y un precio máximo de 569.00</span>
           </p>
@@ -1980,9 +1985,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895641237 aquarius - agua saborizada naranja sin gas aquarius 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 352.24</span>
           </p>
@@ -1992,9 +1997,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895641213 aquarius - agua saborizada naranja sin gas aquarius 500 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 215.13</span>
           </p>
@@ -2004,9 +2009,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315001054 levité - agua saborizada naranja sin gas levite cero 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 552.00 y un precio máximo de 696.51</span>
           </p>
@@ -2016,9 +2021,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062540291 levité - agua saborizada naranja sin gas villa del sur levite 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 545.00 y un precio máximo de 620.74</span>
           </p>
@@ -2028,9 +2033,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895640476 aquarius - agua saborizada pera sin gas aquarius 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 398.00 y un precio máximo de 760.00</span>
           </p>
@@ -2040,9 +2045,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895003295 aquarius - agua saborizada pera sin gas aquarius 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 518.70 y un precio máximo de 569.00</span>
           </p>
@@ -2052,9 +2057,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895640445 aquarius - agua saborizada pera sin gas aquarius 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 234.00 y un precio máximo de 460.00</span>
           </p>
@@ -2064,9 +2069,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315101105 levite - agua saborizada pera sin gas levite 2.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 655.00</span>
           </p>
@@ -2076,9 +2081,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895640490 aquarius - agua saborizada pomelo sin gas aquarius 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 398.00 y un precio máximo de 460.00</span>
           </p>
@@ -2088,9 +2093,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895003288 aquarius - agua saborizada pomelo sin gas aquarius 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 539.00 y un precio máximo de 608.00</span>
           </p>
@@ -2100,9 +2105,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895640469 aquarius - agua saborizada pomelo sin gas aquarius 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 198.00 y un precio máximo de 460.00</span>
           </p>
@@ -2112,9 +2117,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315101082 levite - agua saborizada pomelo sin gas levite 2.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 625.00 y un precio máximo de 685.00</span>
           </p>
@@ -2124,9 +2129,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315001047 levité - agua saborizada pomelo sin gas levite cero 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 552.00 y un precio máximo de 696.51</span>
           </p>
@@ -2136,9 +2141,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7795930000550 glaciar - agua sin gas bidon glaciar 6.3 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 802.16 y un precio máximo de 909.00</span>
           </p>
@@ -2148,9 +2153,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792798012008 awafrut - agua sin gas manzana awafrut 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 282.32</span>
           </p>
@@ -2160,9 +2165,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               0650240051623 teatrical - agua micelar suavizante teatrical 600 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1525.00 y un precio máximo de 1579.00</span>
           </p>
@@ -2172,9 +2177,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062548655 levité - agua saborizada naranja sin gas villa del sur levite 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 240.50 y un precio máximo de 510.00</span>
           </p>
@@ -2184,9 +2189,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102010044 cooperativa - agua en bidon cooperativa 5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 817.50</span>
           </p>
@@ -2196,9 +2201,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793253005627 ayudín - agua lavandina comun clasica ayudin 4 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 945.00 y un precio máximo de 1235.00</span>
           </p>
@@ -2208,9 +2213,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798140253945 cicatricure - agua micelar limpieza facial 5 en 1 cicatricure 200 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1847.55</span>
           </p>
@@ -2220,9 +2225,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895003943 bonaqua - agua mineral con gas bonaqua 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 190.05 y un precio máximo de 430.00</span>
           </p>
@@ -2232,9 +2237,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792799000073 eco de los andes - agua mineral con gas eco de los andes 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 126.00</span>
           </p>
@@ -2244,9 +2249,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792799000035 eco de los andes - agua mineral con gas eco de los andes 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 193.95 y un precio máximo de 440.00</span>
           </p>
@@ -2256,9 +2261,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062547788 villavicencio - agua mineral con gas villavicencio 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 304.00 y un precio máximo de 660.00</span>
           </p>
@@ -2268,9 +2273,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895647666 benedictino - agua mineral sin gas benedictino 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 221.00 y un precio máximo de 240.50</span>
           </p>
@@ -2280,9 +2285,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792799000059 eco de los andes - agua mineral sin gas eco de los andes 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 234.99 y un precio máximo de 610.00</span>
           </p>
@@ -2292,9 +2297,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792799000011 eco de los andes - agua mineral sin gas eco de los andes 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 161.63 y un precio máximo de 440.00</span>
           </p>
@@ -2304,9 +2309,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062541397 villa del sur - agua mineral sin gas en bidon villa del sur 6.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 520.94 y un precio máximo de 733.02</span>
           </p>
@@ -2316,9 +2321,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7795930000567 glaciar - agua mineral sin gas glaciar 750 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 234.99 y un precio máximo de 245.00</span>
           </p>
@@ -2328,9 +2333,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315000149 villa del sur - agua mineral sin gas villa del sur 1.65 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 185.00 y un precio máximo de 610.00</span>
           </p>
@@ -2340,9 +2345,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062547559 villa del sur - agua mineral sin gas villa del sur 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 287.00 y un precio máximo de 467.61</span>
           </p>
@@ -2352,9 +2357,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315000439 villavicencio - agua mineral sin gas villavicencio 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 254.00 y un precio máximo de 660.00</span>
           </p>
@@ -2364,9 +2369,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315000422 villavicencio - agua mineral sin gas villavicencio 2 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 288.50 y un precio máximo de 419.65</span>
           </p>
@@ -2376,9 +2381,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315000446 villavicencio - agua mineral sin gas villavicencio 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 212.50 y un precio máximo de 480.00</span>
           </p>
@@ -2388,9 +2393,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813420248 h2oh! - agua saborizada citrus con gas h2oh 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 182.99 y un precio máximo de 410.00</span>
           </p>
@@ -2400,9 +2405,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813421603 h2oh! - agua saborizada citrus con gas h2oh! 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 225.50 y un precio máximo de 264.00</span>
           </p>
@@ -2412,9 +2417,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813423591 h2oh! - agua saborizada citrus con gas h2oh! 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 488.61</span>
           </p>
@@ -2424,9 +2429,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062540819 ser - agua saborizada citrus con gas ser 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 358.50</span>
           </p>
@@ -2436,9 +2441,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062542073 ser - agua saborizada citrus con gas ser we 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 250.00</span>
           </p>
@@ -2448,9 +2453,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813421511 h2oh! - agua saborizada con gas naranchelo h2oh! 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 337.30</span>
           </p>
@@ -2460,9 +2465,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062541991 ser - agua saborizada lemon con gas we 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 383.43</span>
           </p>
@@ -2472,9 +2477,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062541946 ser - agua saborizada lemon con gas we 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 450.00</span>
           </p>
@@ -2484,9 +2489,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102050569 cooperativa - agua saborizada limon cero con gas cooperativa 2 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 195.99</span>
           </p>
@@ -2496,9 +2501,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895008504 aquarius - agua saborizada limonada sin gas aquarius 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 513.00 y un precio máximo de 569.00</span>
           </p>
@@ -2508,9 +2513,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813421917 h2oh! - agua saborizada limoneto con gas h2oh! 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 233.00 y un precio máximo de 264.00</span>
           </p>
@@ -2520,9 +2525,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813423911 h2oh! - agua saborizada limoneto con gas h2oh! 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 642.35</span>
           </p>
@@ -2532,9 +2537,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062548709 levité - agua saborizada manzana sin gas levite 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 350.00 y un precio máximo de 865.00</span>
           </p>
@@ -2544,9 +2549,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062548716 levité - agua saborizada manzana sin gas villa del sur levite 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 240.50 y un precio máximo de 510.00</span>
           </p>
@@ -2556,9 +2561,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813423652 h2oh! - agua saborizada naranchelo h2oh! 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 486.85</span>
           </p>
@@ -2568,9 +2573,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062548648 levité - agua saborizada naranja sin gas levite 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 350.00 y un precio máximo de 865.00</span>
           </p>
@@ -2580,9 +2585,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315000934 levité - agua saborizada naranja sin gas levite cero 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 399.00 y un precio máximo de 511.21</span>
           </p>
@@ -2592,9 +2597,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639003031 primer precio - agua saborizada pera primer precio 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 315.01</span>
           </p>
@@ -2604,9 +2609,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062540253 levité - agua saborizada pera sin gas levite 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 350.00 y un precio máximo de 470.88</span>
           </p>
@@ -2616,9 +2621,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062541014 levité - agua saborizada pera sin gas villa del sur levite 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 544.00 y un precio máximo de 620.74</span>
           </p>
@@ -2628,9 +2633,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102050576 cooperativa - agua saborizada pomelo cero con gas cooperativa 2 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 195.99</span>
           </p>
@@ -2640,9 +2645,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790036002125 baggio - agua saborizada pomelo con vitamina c sin gas baggio vida 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 478.51 y un precio máximo de 576.61</span>
           </p>
@@ -2652,9 +2657,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062548679 levité - agua saborizada pomelo sin gas levite 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 350.00 y un precio máximo de 865.00</span>
           </p>
@@ -2664,9 +2669,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315000910 levité - agua saborizada pomelo sin gas levite cero 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 385.00 y un precio máximo de 511.21</span>
           </p>
@@ -2676,9 +2681,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062540284 levité - agua saborizada pomelo sin gas villa del sur levite 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 545.00 y un precio máximo de 620.74</span>
           </p>
@@ -2688,9 +2693,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062548686 levité - agua saborizada pomelo sin gas villa del sur levite 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 240.50 y un precio máximo de 510.00</span>
           </p>
@@ -2700,9 +2705,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639002935 sin marca - agua saborizada sin gas manzana 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 315.01</span>
           </p>
@@ -2712,9 +2717,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790036002132 baggio - agua saborizada sin gas manzana deliciosa vitamina c baggio vida 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 576.61</span>
           </p>
@@ -2724,9 +2729,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792798010974 awafrut - agua saborizada sin gas manzana sin azucar awafrut 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 441.92 y un precio máximo de 480.00</span>
           </p>
@@ -2736,9 +2741,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790036002118 baggio - agua saborizada sin gas naranja dulce vitamina c baggio vida 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 576.61</span>
           </p>
@@ -2748,9 +2753,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792798010998 awafrut - agua saborizada sin gas naranja durazno sin azucar awafrut 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 431.01</span>
           </p>
@@ -2760,9 +2765,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792798010936 awafrut - agua saborizada sin gas naranja durazno sin azucar awafrut 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 178.99 y un precio máximo de 196.00</span>
           </p>
@@ -2772,9 +2777,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792798010929 awafrut - agua saborizada sin gas pomelo sin azucar awafrut 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 178.99 y un precio máximo de 196.00</span>
           </p>
@@ -2784,9 +2789,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315101396 levité - agua saborizada sin gas sabor mango levite 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 317.19</span>
           </p>
@@ -2796,9 +2801,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790036974712 baggio vida - agua saborizorizada naranja sin azucar baggio vida 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 576.61</span>
           </p>
@@ -2808,9 +2813,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790036974736 baggio vida - agua saborizorizada pomelo sin azucar baggio vida 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 576.61</span>
           </p>
@@ -2820,9 +2825,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792798011988 awafrut - agua sin gas naranja durazno awafrut 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 271.98</span>
           </p>
@@ -2832,9 +2837,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792798011995 awafrut - agua sin gas pomelo awafrut 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 261.45 y un precio máximo de 279.00</span>
           </p>
@@ -2844,9 +2849,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792798010981 awafrut - agua sin gas sabor pomelo cero levite 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 510.60</span>
           </p>
@@ -2856,9 +2861,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895648571 schweppes  - agua tonica sin azucar lata schweppes 310 ml
               <span class="w3-text">Para este artículo se observó un precio uniforme de 250.00</span>
           </p>
@@ -2868,9 +2873,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               0650240051647 teatrical - agua micelar humectante teatrical 600 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1519.00 y un precio máximo de 1649.00</span>
           </p>
@@ -2880,9 +2885,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7891010251048 neutrógena - agua micelar hydro boost neutrogena 200 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 2115.00 y un precio máximo de 2365.00</span>
           </p>
@@ -2892,9 +2897,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793742007415 dermaglós - agua micelar facial dermaglos 200 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 3365.00 y un precio máximo de 4022.10</span>
           </p>
@@ -2904,9 +2909,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639002942 primer precio - agua primer precio con gas 2 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 245.25</span>
           </p>
@@ -2916,9 +2921,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813420910 h2oh! - agua saborizada limoneto con gas h2oh 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 176.80 y un precio máximo de 207.00</span>
           </p>
@@ -2928,9 +2933,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639002911 sin marca - agua saborizada sin gas pomelo 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 315.01</span>
           </p>
@@ -2940,9 +2945,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7799155000135 villa del sur - agua de mesa sin gas bidon villa del sur 6.25 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 914.00 y un precio máximo de 917.71</span>
           </p>
@@ -2952,9 +2957,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793742007439 dermaglos - agua micelar 6 en 1 dermaglos 400 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 5020.00 y un precio máximo de 5375.00</span>
           </p>
@@ -2964,9 +2969,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               0650240051630 teatrical - agua micelar detox teatrical 600 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1525.00 y un precio máximo de 1579.00</span>
           </p>
@@ -2976,9 +2981,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791720028292 carrefour - agua mineral carrefour 6.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 931.00</span>
           </p>
@@ -2988,9 +2993,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895003950 bonaqua - agua mineral con gas bonaqua 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 297.97 y un precio máximo de 299.00</span>
           </p>
@@ -3000,9 +3005,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913000814 saldan - agua mineral con gas saldan 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 381.00</span>
           </p>
@@ -3012,9 +3017,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062547801 villavicencio - agua mineral con gas villavicencio 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 218.00 y un precio máximo de 480.00</span>
           </p>
@@ -3024,9 +3029,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798108348324 carrefour - agua mineral sin gas carrefour 2 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 237.00</span>
           </p>
@@ -3036,9 +3041,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798065730033 sierra de los padres - agua mineral sin gas sierra de los padres 2 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 368.00</span>
           </p>
@@ -3048,9 +3053,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062545470 ser - agua mineral sin gas sin tacc ser 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 169.50</span>
           </p>
@@ -3060,9 +3065,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895008481 aquarius - agua saborizada limonada sin gas aquarius 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 233.00 y un precio máximo de 234.00</span>
           </p>
@@ -3072,9 +3077,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913000128 livra - agua saborizada manzana sin gas livra 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 453.00</span>
           </p>
@@ -3084,9 +3089,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913000531 livra - agua saborizada naranja livra 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 453.00</span>
           </p>
@@ -3096,9 +3101,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315101075 levite - agua saborizada naranja sin gas levite 2.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 557.00</span>
           </p>
@@ -3108,9 +3113,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913000159 livra - agua saborizada pera livra 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 453.00</span>
           </p>
@@ -3120,9 +3125,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792798010912 awafrut - agua saborizada sin gas manzana sin azucar awafrut 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 178.99 y un precio máximo de 194.00</span>
           </p>
@@ -3132,9 +3137,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790950143164 fever tree - agua tonica fever tree 200 ml
               <span class="w3-text">Para este artículo se observó un precio uniforme de 735.00</span>
           </p>
@@ -3144,9 +3149,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7896607100099 pitu - aguardiente cachaca pitu 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 2780.00</span>
           </p>
@@ -3156,9 +3161,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798123981315 sin marca - aguarras 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1750.00</span>
           </p>
@@ -3168,9 +3173,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102050552 cooperativa - agua saborizada naranja durazno cero con gas cooperativa 2 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 195.99</span>
           </p>
@@ -3180,9 +3185,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639002928 sin marca - agua saborizada sin gas naranja 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 315.01</span>
           </p>
@@ -3192,9 +3197,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798158709311 la anónima - agua saborizada sabor naranja y durazno con gas la anonima 2 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 429.00</span>
           </p>
@@ -3204,9 +3209,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790639002959 primer precio - agua primer precio 2 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 245.25</span>
           </p>
@@ -3216,9 +3221,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315101112 villa del sur - agua mineral sin gas villa del sur 2.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 336.00</span>
           </p>
@@ -3228,9 +3233,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315058201 villavicencio - agua mineral sin gas villavicencio sport 750 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 279.51 y un precio máximo de 560.00</span>
           </p>
@@ -3240,9 +3245,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315001061 levité - agua saborizada manzana sin gas levite cero 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 385.00 y un precio máximo de 419.61</span>
           </p>
@@ -3252,9 +3257,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913000180 livra - agua saborizada pomelo sin gas livra 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 453.00</span>
           </p>
@@ -3264,9 +3269,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798065733706 sierra de los padres - agua saborizada tonica cero sierra de los padres 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 361.01</span>
           </p>
@@ -3276,9 +3281,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315101099 levite - agua saborizada manzana sin gas levite 2.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 655.00</span>
           </p>
@@ -3288,9 +3293,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895012419 kin - agua de mesa con gas kin 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 165.00 y un precio máximo de 175.00</span>
           </p>
@@ -3300,9 +3305,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895644160 kin - agua mineral con gas kin 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 92.00 y un precio máximo de 93.00</span>
           </p>
@@ -3312,9 +3317,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895012426 kin - agua mineral sin gas botellon kin 6.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 200.00</span>
           </p>
@@ -3324,9 +3329,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895009679 kin - agua mineral sin gas en bidon kin 6 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 200.00</span>
           </p>
@@ -3336,9 +3341,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895000201 kin - agua mineral sin gas kin 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 165.00 y un precio máximo de 175.00</span>
           </p>
@@ -3348,9 +3353,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062540109 villa del sur - agua mineral sin gas villa del sur 600 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 194.50 y un precio máximo de 430.00</span>
           </p>
@@ -3360,9 +3365,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895010675 aquarius - agua saborizada citrus con gas aquarius 500 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 205.00 y un precio máximo de 220.00</span>
           </p>
@@ -3372,9 +3377,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895010750 aquarius - agua saborizada limonada con gas aquarius 500 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 205.00 y un precio máximo de 220.00</span>
           </p>
@@ -3384,9 +3389,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895011634 aquarius - agua saborizada manzana aquarius 500 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 205.00 y un precio máximo de 220.00</span>
           </p>
@@ -3396,9 +3401,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315100184 levité - agua saborizada manzana cero sin gas levite 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 264.20 y un precio máximo de 510.00</span>
           </p>
@@ -3408,9 +3413,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895011627 aquarius - agua saborizada pomelo aquarius 500 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 205.00 y un precio máximo de 220.00</span>
           </p>
@@ -3420,9 +3425,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315100177 levité - agua saborizada pomelo cero sin gas levite 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 283.68 y un precio máximo de 510.00</span>
           </p>
@@ -3432,9 +3437,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062540260 levité - agua saborizada sin gas pera levite villa sur 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 240.50 y un precio máximo de 510.00</span>
           </p>
@@ -3444,9 +3449,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895643705 kin - agua sin gas kin 600 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 92.00 y un precio máximo de 93.00</span>
           </p>
@@ -3456,9 +3461,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               4005900499257 nivea - agua micelar bifasica expert nivea 400 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 2831.69 y un precio máximo de 2885.62</span>
           </p>
@@ -3468,9 +3473,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               4005900940933 nivea - agua micelar energy vitamica c nivea 400 ml
               <span class="w3-text">Para este artículo se observó un precio mínimo de 2505.00 y un precio máximo de 2849.00</span>
           </p>
@@ -3480,9 +3485,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813421245 h2oh! - agua saborizada con gas h2oh! 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 233.00</span>
           </p>
@@ -3492,9 +3497,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062544701 levite - agua saborizada naranja sin gas levite 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 279.64</span>
           </p>
@@ -3504,9 +3509,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062547689 levité - agua saborizada pomelo sin gas levite 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 398.69 y un precio máximo de 406.30</span>
           </p>
@@ -3516,9 +3521,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062547863 villa del sur - agua saborizada sin gas levite 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 398.69 y un precio máximo de 406.30</span>
           </p>
@@ -3528,9 +3533,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798030000093 aqualic - agua de mesa envasada aqualic 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 599.00</span>
           </p>
@@ -3540,9 +3545,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798030000116 aqualic - agua de mesa envasada aqualic 2 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 645.00</span>
           </p>
@@ -3552,9 +3557,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798030000109 aqualic - agua de mesa envasada aqualic 500 ml
               <span class="w3-text">Para este artículo se observó un precio uniforme de 349.00</span>
           </p>
@@ -3564,9 +3569,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               0040232920318 alvura - agua mineral sin gas alvura 6 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 779.00 y un precio máximo de 785.00</span>
           </p>
@@ -3576,9 +3581,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794717000103 la margarita - agua mineral sin gas bidon la margarita 6 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1125.00</span>
           </p>
@@ -3588,9 +3593,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794717000073 las margaritas - agua mineral sin gas las margaritas 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 299.00</span>
           </p>
@@ -3600,9 +3605,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062544718 levite - agua saborizada pomelo sin gas levite 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 263.67</span>
           </p>
@@ -3612,9 +3617,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               0040232846373 alvura - agua mineral sin gas alvura 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 319.00 y un precio máximo de 321.00</span>
           </p>
@@ -3624,9 +3629,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798030000048 aqualic - agua mineral sin gas aqualic 6 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1175.00</span>
           </p>
@@ -3636,9 +3641,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062544695 levite - agua saborizada manzana sin gas levite 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 249.08</span>
           </p>
@@ -3648,9 +3653,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               0040232846359 alvura - agua mineral alvura 500 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 255.00 y un precio máximo de 257.00</span>
           </p>
@@ -3660,9 +3665,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794717000066 las margaritas - agua mineral sin gas las margaritas 500 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 246.00</span>
           </p>
@@ -3672,9 +3677,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793277000660 zulueta - agua de mesa sin gas zulueta 6 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1059.00</span>
           </p>
@@ -3684,9 +3689,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               0040232846397 alvura - agua mineral sin gas alvura 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 369.00</span>
           </p>
@@ -3696,9 +3701,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               4005900359261 nivea - agua micelar piel normal nivea 200 ml
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1885.00</span>
           </p>
@@ -3708,9 +3713,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062540116 villa del sur - agua mineral sin gas en bidon villa del sur 6.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 520.94</span>
           </p>
@@ -3720,9 +3725,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062547870 levite - agua saborizada manzana levite 500 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 284.31</span>
           </p>
@@ -3732,9 +3737,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062547672 levité - agua saborizada pomelo levite 500 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 284.31</span>
           </p>
@@ -3744,9 +3749,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895647635 benedictino - agua mineral con gas benedictino 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 202.00</span>
           </p>
@@ -3756,9 +3761,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315100207 levité - agua saborizada naranja cero sin gas levite 500 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 264.20</span>
           </p>
@@ -3768,9 +3773,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798140254355 genomma - agua micelar carbon activado asepxia 200 ml
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1060.00</span>
           </p>
@@ -3780,9 +3785,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798062542004 ser - agua saborizada limon con gas ser we 500 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 171.65</span>
           </p>
@@ -3792,9 +3797,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315101280 villavicencio - agua mineral sin gas botella reciclada villavicencio 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 280.48</span>
           </p>
@@ -3804,9 +3809,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813423584 h2oh! - agua saborizada lima limon con gas h2oh! 2.25 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 496.31</span>
           </p>
@@ -3816,9 +3821,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790315100276 villa del sur - agua saborizada pomelo levite villa del sur 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 263.67</span>
           </p>
@@ -3828,9 +3833,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7797624086017 hydra - aguarras diluyente mineral hydrarras hydra 1 un
               <span class="w3-text">Para este artículo se observó un precio uniforme de 2589.00</span>
           </p>
@@ -3840,9 +3845,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798158709304 la anónima - agua con gas sabor limonada la anonima 2 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 429.00</span>
           </p>
@@ -3852,9 +3857,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798158709298 la anónima - agua saborizada sabor citrus con gas la anonima 2 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 429.00</span>
           </p>
@@ -3864,9 +3869,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798165050178 orizon - soda de tierras organicas orizon 1. 750 ml
               <span class="w3-text">Para este artículo se observó un precio uniforme de 649.00</span>
           </p>
@@ -3876,9 +3881,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798060140509 ivess - soda sifon descartable menos sodio ivess 1.75 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 509.00 y un precio máximo de 519.00</span>
           </p>
@@ -3888,9 +3893,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792758332009 bio balance - soda bio balance 2 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 490.50</span>
           </p>
@@ -3900,9 +3905,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102010471 cooperativa - soda cooperativa 1.75 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 522.11</span>
           </p>
@@ -3912,9 +3917,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798060140059 ivess - soda en sifon ivess 2 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 569.00 y un precio máximo de 585.00</span>
           </p>
@@ -3924,9 +3929,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913000753 saldan - soda en sifon saldan 2 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 427.00 y un precio máximo de 486.00</span>
           </p>

@@ -13,13 +13,16 @@
 <div class="top-container">
   <div class="w3-bar w3-teal" style="z-index:4">
     <button class="w3-bar-item w3-button w3-hover-none w3-hover-text-light-green" onclick="w3_open('mySidebar');"><i class="fa fa-bars"></i>  Menu</button>
-    <div class="w3-bar-item"><img src="/static/img/chakana.svg" width="50"></div>                    
-    <h1 class="w3-bar-item w3-right w3-hide-small">Observatorio de precios - FCE - UNPSJB</h1>
-    <h1 class="w3-bar-item w3-right w3-hide-medium w3-hide-large">Precios - FCE - UNPSJB</h1>
+    <div class="w3-bar-item"><img src="/static/img/chakana.svg" width="50px">
+    </div>                    
+    <h1 class="w3-bar-item w3-right w3-hide-small">Observatorio de precios - FCE - UNPSJB
+    </h1>
+    <h1 class="w3-bar-item w3-right w3-hide-medium w3-hide-large">Precios - FCE - UNPSJB
+    </h1>
     <div class="w3-bar-item">
-        <header class="w3-sand">
+        <div class="w3-sand">
           <h2 class="w3-center w3-padding-8">Precios acba en Puerto Madryn - 2023/10/09</h2>
-        </header>
+        </div>
     </div>
     <div class="w3-bar-item">
        <input class="w3-input w3-border w3-padding" 
@@ -33,7 +36,8 @@
 
 <!-- Sidebar -->
 <div class="w3-sidebar w3-bar-block w3-border-right w3-display-topleft" style="display:none" id="mySidebar">
-  <button onclick="w3_close('mySidebar')" class="w3-bar-item w3-large">Cerrar &times;</button>
+  <button onclick="w3_close('mySidebar')" class="w3-bar-item w3-large">Cerrar &times;
+  </button>
   <a href="/info/lacteos/puerto_madryn"             class="w3-bar-item w3-button w3-padding"> Lácteos</a>  
   <a href="/info/harinas/puerto_madryn"             class="w3-bar-item w3-button w3-padding"> Harinas</a>  
   <a href="/info/vegetales/puerto_madryn"           class="w3-bar-item w3-button w3-padding"> Vegetales</a>  
@@ -43,7 +47,8 @@
   <a href="/info/acba/puerto_madryn"                class="w3-bar-item w3-button w3-padding"> Artículos de la canasta básica de alimentos</a>  
   <a href="/index"                                  class="w3-bar-item w3-button w3-padding">Volver al índice</a>
   <div class="w3-bar-item">
-     <button onclick="w3_open('id01')" class="w3-button w3-pale-green">¿Precio indicativo?</button>
+     <button onclick="w3_open('id01')" class="w3-button w3-pale-green">¿Precio indicativo?
+     </button>
      <div id="id01" class="w3-modal">
        <div class="w3-modal-content">
          <div class="w3-container">
@@ -59,22 +64,22 @@
 <div class="header w3-light-gray w3-text-black" id="myHeader">
   <div class="w3-row">
     <div class="w3-col l12 m12 s12">
-      <div class="w3-col l9 m9 s9 w3-center w3-ligth-green">
+      <div class="w3-col l9 m9 s9 w3-center w3-light-green">
         Artículo
       </div>
-      <div class="w3-col l2 m2 s2 w3-center w3-ligth-green">
+      <div class="w3-col l2 m2 s2 w3-center w3-light-green">
         Precio indicativo
       </div>  
     </div>
   </div>
 </div>
 
-<div class="content">
-  <div class="w3-row w3-border-bottom w3-border-black" id="articleTable">
+<div class="content w3-container">
+  <div class="w3-row" id="articleTable">
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               2-1-2037104000009 sin marca - cebolla comercial bolsita 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 289.00 y un precio máximo de 399.00</span>
           </p>
@@ -84,9 +89,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               2-1-2037212000007 sin marca - papa comercial bolsita 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 599.00 y un precio máximo de 799.00</span>
           </p>
@@ -96,9 +101,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               2-1-2037302000009 sin marca - tomate comercial chico 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 899.00</span>
           </p>
@@ -108,9 +113,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               2-1-2038121000003 sin marca - manzana grany comercial bolsita 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 799.00 y un precio máximo de 899.00</span>
           </p>
@@ -120,9 +125,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               2-1-2055617000002 la anónima - banana platano la anonima 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1590.00</span>
           </p>
@@ -132,9 +137,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               2-1-2064851000006 best - carnaza de paleta fraccionada best 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1670.00</span>
           </p>
@@ -144,9 +149,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               2-1-2070021000004 sin marca - manzana red comercial bolsita 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 799.00 y un precio máximo de 899.00</span>
           </p>
@@ -156,9 +161,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               2-1-2078058000004 pp best - nalga sin tapa feteada pp best 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 2064.00</span>
           </p>
@@ -168,9 +173,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-1-0000000367936 sin marca - paleta con hueso de novillo patagonica 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 3415.00</span>
           </p>
@@ -180,9 +185,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-1-0000000445368 sin marca - higado fresco 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1065.00</span>
           </p>
@@ -192,9 +197,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-1-0000000453059 sin marca - carnaza comun de novillito en bandeja 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 2449.00</span>
           </p>
@@ -204,9 +209,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-1-0000000453301 sin marca - paleta de novillo en trozo en bandeja 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 4079.00</span>
           </p>
@@ -216,9 +221,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-1-0000000453530 sin marca - tapa de nalga novillito en bandeja 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 3985.00</span>
           </p>
@@ -228,9 +233,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-1-0000000475341 sin marca - tapa de asado enrollada bandeja 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1554.00</span>
           </p>
@@ -240,9 +245,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-1-0000000499989 sin marca - carne picada bandeja 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1719.00</span>
           </p>
@@ -252,9 +257,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-1-0000000953276 sin marca - pechito de cerdo con manta 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 3645.00</span>
           </p>
@@ -264,9 +269,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-3-0000000367936 sin marca - paleta con hueso de novillo patagonica 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 3515.00</span>
           </p>
@@ -276,9 +281,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-3-0000000445368 sin marca - higado fresco 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1095.00</span>
           </p>
@@ -288,9 +293,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-3-0000000453059 sin marca - carnaza comun de novillito en bandeja 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 2519.00</span>
           </p>
@@ -300,9 +305,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-3-0000000453301 sin marca - paleta de novillo en trozo en bandeja 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 4195.00</span>
           </p>
@@ -312,9 +317,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-3-0000000453530 sin marca - tapa de nalga novillito en bandeja 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 4099.00</span>
           </p>
@@ -324,9 +329,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-3-0000000475341 sin marca - tapa de asado enrollada bandeja 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1554.00</span>
           </p>
@@ -336,9 +341,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-3-0000000499989 sin marca - carne picada bandeja 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1769.00</span>
           </p>
@@ -348,9 +353,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-3-0000000951067 sin marca - tapa de nalga ternera en bandeja 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 4475.00</span>
           </p>
@@ -360,9 +365,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               9-3-0000000953276 sin marca - pechito de cerdo con manta 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 3759.00</span>
           </p>
@@ -372,9 +377,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2300453000007 sin marca - banana elegida 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 989.00</span>
           </p>
@@ -384,9 +389,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2301656000009 sin marca - pan frances 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1265.00</span>
           </p>
@@ -396,9 +401,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2301931000007 sin marca - mandarina elegida 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 899.00</span>
           </p>
@@ -408,9 +413,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2302132000001 sin marca - papa blanca lavada 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 949.00</span>
           </p>
@@ -420,9 +425,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2303165000006 dulcor - dulce de batata dulcor 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 709.00</span>
           </p>
@@ -432,9 +437,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2303167000004 esnaola - dulce de batata esnaola 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 840.00</span>
           </p>
@@ -444,9 +449,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2303169000002 esnaola - dulce de batata con cacao en caja esnaola 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 840.00</span>
           </p>
@@ -456,9 +461,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2303296000005 arcor - dulce de batata arcor 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 745.00</span>
           </p>
@@ -468,9 +473,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2303620000008 sin marca - papa blanca cepillada 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 849.00</span>
           </p>
@@ -480,9 +485,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2305633000006 el guri - dulce de batata el guri 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1290.00</span>
           </p>
@@ -492,9 +497,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2306049000000 sin marca - mortadela en trozo 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 2730.00</span>
           </p>
@@ -504,9 +509,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2320005000002 sin marca - naranja de jugo elegida 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 899.00</span>
           </p>
@@ -516,9 +521,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2320006000001 sin marca - naranja de ombligo 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 799.00</span>
           </p>
@@ -528,9 +533,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2320048000007 sin marca - tomate perita 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1290.00</span>
           </p>
@@ -540,9 +545,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2320056000006 sin marca - cebolla 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 372.00</span>
           </p>
@@ -552,9 +557,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2320061000008 sin marca - lechuga capuchina 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 849.00 y un precio máximo de 949.00</span>
           </p>
@@ -564,9 +569,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2320062000007 sin marca - lechuga criolla 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1050.00</span>
           </p>
@@ -576,9 +581,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2320064000005 sin marca - lechuga escarola fina 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 599.00</span>
           </p>
@@ -588,9 +593,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2320066000003 sin marca - lechuga frances 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1699.00 y un precio máximo de 1899.00</span>
           </p>
@@ -600,9 +605,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2320067000002 sin marca - lechuga mantecosa 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1499.00</span>
           </p>
@@ -612,9 +617,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2320082000001 sin marca - acelga 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 599.00 y un precio máximo de 799.00</span>
           </p>
@@ -624,9 +629,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2320103000003 sin marca - manzana red especial 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1190.00</span>
           </p>
@@ -636,9 +641,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2320192000007 sin marca - mandarina murcot 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 899.00</span>
           </p>
@@ -648,9 +653,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2372241000001 sin marca - cebolla morada 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 649.00 y un precio máximo de 699.00</span>
           </p>
@@ -660,9 +665,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2372243000009 sin marca - cebolla blanca 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 699.00</span>
           </p>
@@ -672,9 +677,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2504693000005 sin marca - asado de novillito 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 4699.00</span>
           </p>
@@ -684,9 +689,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2505247000007 lario - mortadela bologna lario 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 4190.00</span>
           </p>
@@ -696,9 +701,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2505271000004 tremblay - queso cuartirolo tremblay 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 2515.00</span>
           </p>
@@ -708,9 +713,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2505636000007 etiqueta negra - jamon cocido barra etiqueta negra vaes 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 4450.00</span>
           </p>
@@ -720,9 +725,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2505708000003 sin marca - paleta novillo 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1670.00</span>
           </p>
@@ -732,9 +737,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2505724000001 sin marca - nalga novillito 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 3799.00</span>
           </p>
@@ -744,9 +749,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2505726000009 sin marca - paleta novillito 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 3099.00</span>
           </p>
@@ -756,9 +761,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2506022000007 sin marca - tapa de asado 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1550.00</span>
           </p>
@@ -768,9 +773,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2506023000006 sin marca - carnaza comun novillito 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 2199.00</span>
           </p>
@@ -780,9 +785,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2506085000006 sin marca - tapa de nalga novillito 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 4399.00</span>
           </p>
@@ -792,9 +797,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2506100000004 sin marca - tapa de nalga 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 4069.00</span>
           </p>
@@ -804,9 +809,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2506103000001 sin marca - nalga en trozo 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 2060.00</span>
           </p>
@@ -816,9 +821,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2506165000001 sin marca - tapa de asado novillito 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 2919.00</span>
           </p>
@@ -828,9 +833,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2506696000006 sin marca - queso cuartirolo don atilio 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 2335.00</span>
           </p>
@@ -840,9 +845,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2507483000001 sin marca - pollo fresco ls 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1015.00</span>
           </p>
@@ -852,9 +857,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2508177000000 sin marca - dulce de batata con vainilla fornero 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1276.00</span>
           </p>
@@ -864,9 +869,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2508181000003 sin marca - dulce de batata con chocolate fornero 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1245.00</span>
           </p>
@@ -876,9 +881,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-1-2508308000008 sin marca - jamon cocido natural bajo sodio en trozo 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 3990.00</span>
           </p>
@@ -888,9 +893,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-2-2302132000001 sin marca - papa blanca lavada 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 949.00</span>
           </p>
@@ -900,9 +905,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-2-2305633000006 el guri - dulce de batata el guri 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1290.00</span>
           </p>
@@ -912,9 +917,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-2-2305635000004 el guri - dulce de batata con cacao el guri 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1150.00</span>
           </p>
@@ -924,9 +929,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-2-2320005000002 sin marca - naranja de jugo elegida 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 899.00</span>
           </p>
@@ -936,9 +941,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-2-2320006000001 sin marca - naranja de ombligo 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 799.00</span>
           </p>
@@ -948,9 +953,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-2-2320056000006 sin marca - cebolla 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 372.00</span>
           </p>
@@ -960,9 +965,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-2-2320066000003 sin marca - lechuga frances 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1699.00</span>
           </p>
@@ -972,9 +977,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-2-2320103000003 sin marca - manzana red especial 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1190.00</span>
           </p>
@@ -984,9 +989,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-2-2372241000001 sin marca - cebolla morada 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 649.00</span>
           </p>
@@ -996,9 +1001,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-2-2387600000004 sin marca - papa blanca 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 449.00</span>
           </p>
@@ -1008,9 +1013,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-2-2505247000007 lario - mortadela bologna lario 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 4190.00</span>
           </p>
@@ -1020,9 +1025,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-2-2505726000009 sin marca - paleta novillito 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 3099.00</span>
           </p>
@@ -1032,9 +1037,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-2-2506100000004 sin marca - tapa de nalga 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 4069.00</span>
           </p>
@@ -1044,9 +1049,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               10-2-2508177000000 sin marca - dulce de batata con vainilla fornero 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1276.00</span>
           </p>
@@ -1056,9 +1061,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               13-1-0000000212252 blason - dulce de batata blason 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1286.20</span>
           </p>
@@ -1068,9 +1073,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               13-1-0000000212255 blason - dulce de batata con chocolate blason 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1286.20</span>
           </p>
@@ -1080,9 +1085,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               13-1-0000000707843 sin marca - dulce de batata con cacao lata 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 879.00</span>
           </p>
@@ -1092,9 +1097,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               13-1-0000000710184 la campagnola - dulce de batata la campagnola 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1773.51</span>
           </p>
@@ -1104,9 +1109,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               13-1-0000000938947 sin marca - dulce de batata dulcor 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1209.90</span>
           </p>
@@ -1116,9 +1121,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               13-1-0000000938955 dulcor - dulce de batata dulcor 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1110.00</span>
           </p>
@@ -1128,9 +1133,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               0076625212296 la peregrina - azucar la peregrina 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 979.91</span>
           </p>
@@ -1140,9 +1145,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               2611343000008 sin marca - lentejas 500 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 750.00</span>
           </p>
@@ -1152,9 +1157,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790036046327 uvita - vino tinto uvita 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1089.00 y un precio máximo de 1145.00</span>
           </p>
@@ -1164,9 +1169,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790036121123 mocoretá - jugo concentrado naranja mocoreta 500 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 703.05</span>
           </p>
@@ -1176,9 +1181,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790036122120 mocoretá - jugo concentrado pomelo rosado mocoreta 500 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 703.05</span>
           </p>
@@ -1188,9 +1193,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790060023684 cocinero - aceite de girasol cocinero 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 695.55</span>
           </p>
@@ -1200,9 +1205,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790070231420 lira - aceite de girasol lira 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1239.00 y un precio máximo de 1393.33</span>
           </p>
@@ -1212,9 +1217,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790070318183 don vicente - fideos guiseros moños don vicente 500 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 661.03</span>
           </p>
@@ -1224,9 +1229,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790070335395 matarazzo - fideos tallarines n° 15 matarazzo 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 396.00 y un precio máximo de 488.00</span>
           </p>
@@ -1236,9 +1241,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790070335517 lucchetti - fideos tallarines n° 15 lucchetti 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 344.00 y un precio máximo de 372.98</span>
           </p>
@@ -1248,9 +1253,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790070335555 matarazzo - fideos tallarines n° 7 matarazzo 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 396.00 y un precio máximo de 488.00</span>
           </p>
@@ -1260,9 +1265,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790070506924 blancaflor - harina de trigo 0000 fortificada blancaflor 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 300.16 y un precio máximo de 343.35</span>
           </p>
@@ -1272,9 +1277,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790070507228 blancaflor - harina leudante blancaflor 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 409.25 y un precio máximo de 466.00</span>
           </p>
@@ -1284,9 +1289,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790070509116 nobleza gaucha - yerba mate con palo suave nobleza gaucha 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1249.00 y un precio máximo de 1415.00</span>
           </p>
@@ -1296,9 +1301,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790072001014 celusal - sal fina en paquete celusal 500 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 272.92</span>
           </p>
@@ -1308,9 +1313,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790072001038 celusal - sal fina en salero celusal 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 735.00 y un precio máximo de 909.00</span>
           </p>
@@ -1320,9 +1325,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790072002080 celusal - sal fina en estuche celusal 500 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 311.83</span>
           </p>
@@ -1332,9 +1337,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790080014686 sancor - queso rallado reggianito sancor 190 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1430.00 y un precio máximo de 1695.00</span>
           </p>
@@ -1344,9 +1349,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790080031867 sancor - dulce de leche clasico pote sancor 400 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 625.00</span>
           </p>
@@ -1356,9 +1361,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790123001109 vigente - pure de tomate vigente 520 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 310.64 y un precio máximo de 324.41</span>
           </p>
@@ -1368,9 +1373,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790130000010 menoyo - vinagre de vino menoyo 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 520.23 y un precio máximo de 530.15</span>
           </p>
@@ -1380,9 +1385,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790130000089 menoyo - vinagre de manzana menoyo 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 737.05 y un precio máximo de 751.09</span>
           </p>
@@ -1392,9 +1397,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790130000317 alcazar - vinagre de manzana alcazar 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 494.14 y un precio máximo de 503.55</span>
           </p>
@@ -1404,9 +1409,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790139003173 casalta - vinagre de alcohol clasico casalta 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 679.00 y un precio máximo de 695.00</span>
           </p>
@@ -1416,9 +1421,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790139003302 casalta - vinagre de vino casalta 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 401.65</span>
           </p>
@@ -1428,9 +1433,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790150211939 la virginia - te comun la virginia 50 un
               <span class="w3-text">Para este artículo se observó un precio mínimo de 358.00 y un precio máximo de 490.41</span>
           </p>
@@ -1440,9 +1445,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790150231258 virgin islands - te clasico en saquitos virgin islands 50 un
               <span class="w3-text">Para este artículo se observó un precio mínimo de 955.06 y un precio máximo de 1356.16</span>
           </p>
@@ -1452,9 +1457,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790170914032 morenita - te en saquitos rapida infusion morenita 50 un
               <span class="w3-text">Para este artículo se observó un precio mínimo de 404.00 y un precio máximo de 422.00</span>
           </p>
@@ -1464,9 +1469,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790199000020 morixe - harina de trigo 0000 morixe 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 269.00 y un precio máximo de 285.50</span>
           </p>
@@ -1476,9 +1481,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790199000051 morixe - harina de trigo leudante morixe 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 329.00 y un precio máximo de 350.00</span>
           </p>
@@ -1488,9 +1493,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790199604242 maru botana - harina leudante maru botana 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 281.97</span>
           </p>
@@ -1500,9 +1505,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790272001029 natura - aceite de girasol natura 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 747.88</span>
           </p>
@@ -1512,9 +1517,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790272004457 cada día - aceite de girasol cada dia 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 939.00 y un precio máximo de 985.00</span>
           </p>
@@ -1524,9 +1529,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790314005695 bistro - vino tinto bistro 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 751.01</span>
           </p>
@@ -1536,9 +1541,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790314057014 resero - vino tinto resero 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 591.00</span>
           </p>
@@ -1548,9 +1553,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790314057076 arizu - vino tinto arizu 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 412.51</span>
           </p>
@@ -1560,9 +1565,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790314071829 toro - vino tinto toro 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 855.00 y un precio máximo de 949.00</span>
           </p>
@@ -1572,9 +1577,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790320019112 primer precio - te en saquitos primer precio 50 un
               <span class="w3-text">Para este artículo se observó un precio uniforme de 379.32</span>
           </p>
@@ -1584,9 +1589,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790387013610 taragui - yerba mate con palo 4flex taragui 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1520.00 y un precio máximo de 1934.20</span>
           </p>
@@ -1596,9 +1601,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790387120349 ytacua - yerba mate con palo ytacua 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1197.16</span>
           </p>
@@ -1608,9 +1613,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790387800142 taragüí - te en saquitos filtro diamantado taragui 50 un
               <span class="w3-text">Para este artículo se observó un precio mínimo de 429.00 y un precio máximo de 538.79</span>
           </p>
@@ -1620,9 +1625,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790398100088 la paulina - manteca calidad extra la paulina 200 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 685.00 y un precio máximo de 746.65</span>
           </p>
@@ -1632,9 +1637,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790398100132 la paulina - queso rallado la paulina 150 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 771.00 y un precio máximo de 919.00</span>
           </p>
@@ -1644,9 +1649,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790398100644 la paulina - leche en polvo entera la paulina 800 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 2267.19</span>
           </p>
@@ -1656,9 +1661,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790411000043 rosamonte - yerba mate con palo rosamonte 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1641.08</span>
           </p>
@@ -1668,9 +1673,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790411000531 rosamonte - yerba mate especial suave rosamonte 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1885.00 y un precio máximo de 1945.00</span>
           </p>
@@ -1680,9 +1685,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790411001941 rosamonte - yerba mate con palo 55 aniversario rosamonte 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1885.00 y un precio máximo de 2009.00</span>
           </p>
@@ -1692,9 +1697,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790480000456 la tranquera - te en saquitos la tranquera 50 un
               <span class="w3-text">Para este artículo se observó un precio uniforme de 320.93</span>
           </p>
@@ -1704,9 +1709,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790480008261 green hills - te en saquitos green hills 50 un
               <span class="w3-text">Para este artículo se observó un precio mínimo de 859.00 y un precio máximo de 889.00</span>
           </p>
@@ -1716,9 +1721,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790499002465 la banda - arvejas secas remojadas brick la banda 340 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 409.00</span>
           </p>
@@ -1728,9 +1733,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790503199082 dos hermanos - arroz largo fino 00000 dos hermanos 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 723.50 y un precio máximo de 989.00</span>
           </p>
@@ -1740,9 +1745,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790503199112 dos hermanos - arroz doble dos hermanos 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1230.60</span>
           </p>
@@ -1752,9 +1757,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790550000164 cabrales - cafe molido torrado en bolsa cabrales 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1645.00 y un precio máximo de 2458.73</span>
           </p>
@@ -1764,9 +1769,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790550000218 big ben - te en saquitos big ben 50 un
               <span class="w3-text">Para este artículo se observó un precio uniforme de 327.84</span>
           </p>
@@ -1776,9 +1781,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790580123437 arcor - mermelada de ciruela arcor 454 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 618.00 y un precio máximo de 692.62</span>
           </p>
@@ -1788,9 +1793,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790580132170 arcor - mermelada de damasco arcor 454 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 464.56</span>
           </p>
@@ -1800,9 +1805,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790580132187 arcor - mermelada de frutilla arcor 454 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 935.00 y un precio máximo de 1039.67</span>
           </p>
@@ -1812,9 +1817,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790580133894 la campagnola - fideos tallarines la campagnola 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 352.00 y un precio máximo de 479.00</span>
           </p>
@@ -1824,9 +1829,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790580138592 salsati - tomate perita pelado lata salsati 400 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 399.00 y un precio máximo de 436.18</span>
           </p>
@@ -1836,9 +1841,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790580138844 arcor - pure de tomate brick arcor 530 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 206.75</span>
           </p>
@@ -1848,9 +1853,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790580567101 arcor - tomate perita cubeteado en lata arcor 400 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 330.00 y un precio máximo de 420.00</span>
           </p>
@@ -1860,9 +1865,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790580660000 arcor - polenta instantanea prestopronta arcor 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 394.00 y un precio máximo de 421.00</span>
           </p>
@@ -1872,9 +1877,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790641000011 colosal - sal fina en paquete colosal 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 75.80 y un precio máximo de 230.00</span>
           </p>
@@ -1884,9 +1889,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790641000196 primer precio - sal fina primer precio 500 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 206.01</span>
           </p>
@@ -1896,9 +1901,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790670002826 green life - arvejas green life 300 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 570.00 y un precio máximo de 680.00</span>
           </p>
@@ -1908,9 +1913,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790742193506 casanto - manteca casanto 200 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 512.54</span>
           </p>
@@ -1920,9 +1925,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790742223203 la serenisima - queso rallado la serenisima 175 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1288.83 y un precio máximo de 1605.00</span>
           </p>
@@ -1932,9 +1937,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790742308801 la serenísima - leche larga vida la serenisima 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 462.99 y un precio máximo de 546.74</span>
           </p>
@@ -1944,9 +1949,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790742331601 armonia - leche en polvo modificada la armonia 800 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1210.00 y un precio máximo de 1305.00</span>
           </p>
@@ -1956,9 +1961,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790742625304 la serenísima - dulce de leche clasico la serenisima 400 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 772.00 y un precio máximo de 899.00</span>
           </p>
@@ -1968,9 +1973,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790787016129 ilolay - queso crema clasico ilolay 300 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 805.00 y un precio máximo de 829.00</span>
           </p>
@@ -1980,9 +1985,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790787018031 ilolay - queso rallado ilolay 115 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 993.00 y un precio máximo de 1255.00</span>
           </p>
@@ -1992,9 +1997,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790787041701 ilolay - yogur descremado frutilla sachet ilolay 900 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 652.91 y un precio máximo de 739.00</span>
           </p>
@@ -2004,9 +2009,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790787041718 ilolay - yogur descremado vainilla sachet ilolay 900 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 652.91 y un precio máximo de 739.00</span>
           </p>
@@ -2016,9 +2021,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790787110223 ilolay - manteca calidad extra fortificado ilolay 200 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 830.00 y un precio máximo de 1109.00</span>
           </p>
@@ -2028,9 +2033,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790787201303 ilolay - leche en polvo descremada ilolay 800 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 3215.50</span>
           </p>
@@ -2040,9 +2045,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790787949595 ilolay - yogur bebible descremado frutilla tetra ilolay 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 625.00 y un precio máximo de 775.00</span>
           </p>
@@ -2052,9 +2057,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790787949601 ilolay - yogur bebible descremado vainilla tetra ilolay 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 625.00 y un precio máximo de 819.00</span>
           </p>
@@ -2064,9 +2069,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790787949823 ilolay - dulce de leche clasico ilolay 405 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 680.00 y un precio máximo de 969.00</span>
           </p>
@@ -2076,9 +2081,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790790120257 inca - arvejas secas remojadas inca 350 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 351.00 y un precio máximo de 360.00</span>
           </p>
@@ -2088,9 +2093,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895000447 sprite - gaseosa sprite 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 448.00 y un precio máximo de 1150.00</span>
           </p>
@@ -2100,9 +2105,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790895006722 schweppes - gaseosa citrus schweppes 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 434.70 y un precio máximo de 436.00</span>
           </p>
@@ -2112,9 +2117,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7790984000051 pico de oro - vino tinto brik pico de oro 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 605.00</span>
           </p>
@@ -2124,9 +2129,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791100000481 chango - azucar tipo a chango 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 860.55</span>
           </p>
@@ -2136,9 +2141,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791100046311 doña dulce - azucar comun tipo a doña dulce 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 860.55</span>
           </p>
@@ -2148,9 +2153,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102044834 cooperativa - leche en polvo cooperativa 800 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 3149.01</span>
           </p>
@@ -2160,9 +2165,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102047200 cooperativa - manteca cooperativa 200 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 735.75</span>
           </p>
@@ -2172,9 +2177,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102047392 cooperativa - vinagre de alcohol cooperativa 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 434.91</span>
           </p>
@@ -2184,9 +2189,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102047408 cooperativa - vinagre de manzana cooperativa 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 936.31</span>
           </p>
@@ -2196,9 +2201,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102047422 cooperativa - vinagre de vino cooperativa 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 757.55</span>
           </p>
@@ -2208,9 +2213,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102051801 cooperativa - mermelada de durazno cooperativa 440 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 914.51</span>
           </p>
@@ -2220,9 +2225,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102051818 cooperativa - mermelada de ciruela frasco cooperativa 440 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 914.51</span>
           </p>
@@ -2232,9 +2237,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102051894 cooperativa - mermelada frutos rojos light cooperativa 400 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 979.91</span>
           </p>
@@ -2244,9 +2249,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102055007 cooperativa - polenta instantanea cooperativa 500 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 190.75</span>
           </p>
@@ -2256,9 +2261,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102055137 cooperativa - arvejas lata cooperativa 300 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 282.31</span>
           </p>
@@ -2268,9 +2273,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791102058039 cooperativa - te en saquitos cooperativa 25 un 50 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 212.55</span>
           </p>
@@ -2280,9 +2285,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791113000935 emeth - mermelada de naranja frasco emeth 450 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1130.00</span>
           </p>
@@ -2292,9 +2297,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791120021558 molinos ala - arroz doble carolina molinos ala 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 586.16 y un precio máximo de 1252.41</span>
           </p>
@@ -2304,9 +2309,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791241962464 la lácteo - leche larga vida con calcio tetra la lacteo 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 450.00 y un precio máximo de 472.00</span>
           </p>
@@ -2316,9 +2321,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791287000045 la nueva - yogur bebible entero frutilla la nueva 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 485.05</span>
           </p>
@@ -2328,9 +2333,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791287000663 la nueva - yogur bebible entero anana la nueva 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 485.05</span>
           </p>
@@ -2340,9 +2345,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791287000670 la nueva - yogur bebible entero banana la nueva 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 485.05</span>
           </p>
@@ -2352,9 +2357,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791287000694 la nueva - yogur bebible entero durazno la nueva 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 485.05</span>
           </p>
@@ -2364,9 +2369,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791337005570 gran compra - yogur entero bebible sabor frutilla en sachet gran compra 900 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 327.33</span>
           </p>
@@ -2376,9 +2381,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791337005693 ser - yogur bebible descremado frutilla sachet ser 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 815.00 y un precio máximo de 953.00</span>
           </p>
@@ -2388,9 +2393,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791337007086 la serenísima - yogur bebible descremado durazno sachet la serenisima 900 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 652.91</span>
           </p>
@@ -2400,9 +2405,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791337007093 la serenísima - yogur bebible descremado banana sachet la serenisima 900 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 582.66 y un precio máximo de 652.91</span>
           </p>
@@ -2412,9 +2417,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791337007673 la serenísima - yogur bebible descremado frutilla sachet la serenisima 900 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 582.66 y un precio máximo de 615.85</span>
           </p>
@@ -2424,9 +2429,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791337060913 casancrem - queso crema clasico casancrem 290 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1007.94</span>
           </p>
@@ -2436,9 +2441,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791351146167 el peoncito - lentejas rojas el peoncito 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1799.00 y un precio máximo de 1845.00</span>
           </p>
@@ -2448,9 +2453,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791476022001 egran - polenta instantanea egran 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 391.00 y un precio máximo de 399.00</span>
           </p>
@@ -2460,9 +2465,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791540053351 termidor - vino tinto tradicional brick termidor 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 459.86</span>
           </p>
@@ -2472,9 +2477,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791620002293 dani fiesta - mayonesa doypack dani fiesta 950 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 707.25 y un precio máximo de 720.71</span>
           </p>
@@ -2484,9 +2489,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791620009810 dánica - margarina clasica danica 500 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1742.91</span>
           </p>
@@ -2496,9 +2501,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791620186962 margadan - margarina en pan margadan 500 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1524.91</span>
           </p>
@@ -2508,9 +2513,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791720017227 carrefour - mermelada de ciruela carrefour 454 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 559.00</span>
           </p>
@@ -2520,9 +2525,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791720017258 carrefour - mermelada de durazno carrefour 454 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 559.00</span>
           </p>
@@ -2532,9 +2537,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791720027868 carrefour classic - yogur bebible descremado vainilla sachet carrefour classic 900 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 385.00</span>
           </p>
@@ -2544,9 +2549,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791720027875 carrefour classic - yogur bebible descremado frutilla sachet carrefour classic 900 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 385.00</span>
           </p>
@@ -2556,9 +2561,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791720027943 carrefour classic - yogur bebible descremado vainilla sachet carrefour classic 900 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 385.00</span>
           </p>
@@ -2568,9 +2573,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791720028490 sin marca - queso crema tradicional classic carrefour 290 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 625.00</span>
           </p>
@@ -2580,9 +2585,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791813555049 pepsi - gaseosa cola pepsi 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 960.00 y un precio máximo de 1000.00</span>
           </p>
@@ -2592,9 +2597,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791866001357 natura - mayonesa doypack natura 950 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 770.00 y un precio máximo de 909.00</span>
           </p>
@@ -2604,9 +2609,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913000265 pritty - gaseosa limon pritty 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 471.00</span>
           </p>
@@ -2616,9 +2621,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7791913000753 saldan - soda en sifon saldan 2 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 427.00 y un precio máximo de 486.00</span>
           </p>
@@ -2628,9 +2633,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792052015912 jumbo - vinagre de vino en botella jumbo 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 421.33</span>
           </p>
@@ -2640,9 +2645,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792180001665 cañuelas - aceite de girasol cañuelas 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 695.55</span>
           </p>
@@ -2652,9 +2657,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792180004888 pureza - harina leudante ultrarefinada pureza 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 321.55 y un precio máximo de 337.91</span>
           </p>
@@ -2664,9 +2669,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792180136657 pureza - harina leudante sin sal pureza 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 423.79</span>
           </p>
@@ -2676,9 +2681,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792180137944 pureza - aceite de girasol pureza 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1195.00 y un precio máximo de 1305.09</span>
           </p>
@@ -2688,9 +2693,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792180141316 mamá cocina - polenta tradicional mama cocina 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 239.63 y un precio máximo de 244.19</span>
           </p>
@@ -2700,9 +2705,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792290000305 tarragona - arvejas secas remojadas tarragona 340 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 239.00</span>
           </p>
@@ -2712,9 +2717,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792350067248 primer precio - arvejas lata primer precio 300 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 271.41</span>
           </p>
@@ -2724,9 +2729,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792360002062 bonafide - cafe molido torrado intenso bonafide 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1750.00 y un precio máximo de 2605.10</span>
           </p>
@@ -2736,9 +2741,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792360002130 bonafide - cafe molido torrado suave bonafide sensaciones 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1750.00 y un precio máximo de 2605.10</span>
           </p>
@@ -2748,9 +2753,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792540111010 sin marca - azucar comun 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 898.91</span>
           </p>
@@ -2760,9 +2765,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792590000227 caserita - harina de trigo 0000 caserita 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 380.41 y un precio máximo de 435.00</span>
           </p>
@@ -2772,9 +2777,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792590001064 caserita - harina leudante caserita 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 419.65 y un precio máximo de 492.00</span>
           </p>
@@ -2784,9 +2789,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792710001516 amanda - arroz doble carolina entero amanda 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1306.91</span>
           </p>
@@ -2796,9 +2801,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792710001523 amanda - arroz largo fino blue bonnet amanda 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 888.35</span>
           </p>
@@ -2808,9 +2813,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792798002115 andes - cerveza rubia andes origen 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 663.00 y un precio máximo de 804.00</span>
           </p>
@@ -2820,9 +2825,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792798007387 quilmes - cerveza rubia cristal quilmes 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 556.50 y un precio máximo de 579.00</span>
           </p>
@@ -2832,9 +2837,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792798007493 brahma - cerveza rubia chopp brahma 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 635.00</span>
           </p>
@@ -2844,9 +2849,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792798007738 quilmes - cerveza rubia quilmes 1890 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 278.99</span>
           </p>
@@ -2856,9 +2861,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792798010561 stella artois - cerveza blanca botella stella artois 975 cc
               <span class="w3-text">Para este artículo se observó un precio mínimo de 943.00 y un precio máximo de 1065.00</span>
           </p>
@@ -2868,9 +2873,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792878000017 dominó - azucar domino 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 679.77 y un precio máximo de 761.91</span>
           </p>
@@ -2880,9 +2885,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792900000206 dos anclas - sal fina en paquete dos anclas 500 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 237.67</span>
           </p>
@@ -2892,9 +2897,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792900092706 dos estrellas - sal fina dos estrellas 500 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 182.50</span>
           </p>
@@ -2904,9 +2909,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792900093246 dos anclas - vinagre de alcohol dos anclas 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 467.61 y un precio máximo de 655.00</span>
           </p>
@@ -2916,9 +2921,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792900634135 dos anclas - sal fina dos anclas 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 542.82 y un precio máximo de 795.00</span>
           </p>
@@ -2928,9 +2933,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7792900634142 dos anclas - sal fina cocina salero dos anclas 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 539.29 y un precio máximo de 785.00</span>
           </p>
@@ -2940,9 +2945,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793046008439 dulcor - mermelada de naranja dulcor 454 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 558.00 y un precio máximo de 616.00</span>
           </p>
@@ -2952,9 +2957,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793046008491 dulcor - mermelada de frutilla frasco dulcor 454 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 755.00 y un precio máximo de 833.00</span>
           </p>
@@ -2964,9 +2969,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793147000899 heineken - cerveza rubia retornable heineken 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 861.83</span>
           </p>
@@ -2976,9 +2981,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793147000981 imperial - cerveza rubia lager imperial 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 669.39</span>
           </p>
@@ -2988,9 +2993,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793147001025 schneider - cerveza rubia retornable schneider 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 478.47 y un precio máximo de 522.65</span>
           </p>
@@ -3000,9 +3005,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793147001056 budweiser - cerveza rubia retornable budweiser 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 719.00 y un precio máximo de 799.00</span>
           </p>
@@ -3012,9 +3017,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793147570088 miller - cerveza rubia miller genuine draft 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 713.85 y un precio máximo de 875.00</span>
           </p>
@@ -3024,9 +3029,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793147572334 salta cautiva - cerveza blanca salta cautiva retornable 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 729.00</span>
           </p>
@@ -3036,9 +3041,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793360000485 la campagnola - pure de tomate en tetrabrik la campagnola 520 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 310.00 y un precio máximo de 350.00</span>
           </p>
@@ -3048,9 +3053,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793360131400 la campagnola - mermelada de durazno la campagnola 454 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 849.00 y un precio máximo de 919.02</span>
           </p>
@@ -3060,9 +3065,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793360131417 la campagnola - mermelada de frutilla la campagnola 454 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 977.00 y un precio máximo de 1225.00</span>
           </p>
@@ -3072,9 +3077,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793360131431 la campagnola - mermelada de naranja la campagnola 454 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 756.00 y un precio máximo de 849.00</span>
           </p>
@@ -3084,9 +3089,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793704000119 yemaype - yerba mate con palo yemaype 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 944.50</span>
           </p>
@@ -3096,9 +3101,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793750009821 piporé - yerba mate con palo tradicional pipore 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1406.10 y un precio máximo de 1765.00</span>
           </p>
@@ -3108,9 +3113,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7793913013405 tregar - queso crema clasico tregar 280 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 491.00 y un precio máximo de 696.86</span>
           </p>
@@ -3120,9 +3125,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794000005730 knorr - caldo de gallina knorr 12 un 114 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 384.59 y un precio máximo de 391.94</span>
           </p>
@@ -3132,9 +3137,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794000006058 hellmanns - mayonesa clasica doypack hellmanns 950 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 881.00 y un precio máximo de 1075.00</span>
           </p>
@@ -3144,9 +3149,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794000006720 knorr - caldo de verduras con vegetales knorr 114 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 445.00 y un precio máximo de 467.87</span>
           </p>
@@ -3156,9 +3161,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794000006737 knorr - caldo de gallina con vegetales knorr 114 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 445.00 y un precio máximo de 467.87</span>
           </p>
@@ -3168,9 +3173,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794000006829 knorr - caldo de gallina balance knorr 114 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 430.00 y un precio máximo de 489.41</span>
           </p>
@@ -3180,9 +3185,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794000006836 knorr - caldo de verduras balance knorr 114 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 449.00 y un precio máximo de 565.71</span>
           </p>
@@ -3192,9 +3197,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794000007086 hellmanns - mayonesa liviana pou hellmann's 950 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 850.00 y un precio máximo de 1055.00</span>
           </p>
@@ -3204,9 +3209,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794396004515 la suipachense - leche larga vida entera la suipachense 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 399.00</span>
           </p>
@@ -3216,9 +3221,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794396046805 la suipachense - leche en polvo entera la suipachense 800 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 169.00</span>
           </p>
@@ -3228,9 +3233,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794480000027 sys - manteca s&s 200 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 746.65</span>
           </p>
@@ -3240,9 +3245,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794510000041 safra - caldo en cubo gallina safra 12 un
               <span class="w3-text">Para este artículo se observó un precio uniforme de 555.90</span>
           </p>
@@ -3252,9 +3257,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794510000058 safra - caldo en cubos verdura safra 12 un
               <span class="w3-text">Para este artículo se observó un precio uniforme de 555.90</span>
           </p>
@@ -3264,9 +3269,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794510000065 safra - caldo en cubos sabor carne safra 12 un
               <span class="w3-text">Para este artículo se observó un precio uniforme de 555.90</span>
           </p>
@@ -3276,9 +3281,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794520025621 los 5 hispanos - cafe molido torrado los 5 hispanos 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1609.00 y un precio máximo de 1659.00</span>
           </p>
@@ -3288,9 +3293,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794710004023 verónica - manteca veronica 200 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 746.65</span>
           </p>
@@ -3300,9 +3305,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794820000601 milkaut - manteca milkaut 200 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 975.00 y un precio máximo de 1065.00</span>
           </p>
@@ -3312,9 +3317,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794820015247 milkaut - queso rallado milkaut 120 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 972.27 y un precio máximo de 1100.00</span>
           </p>
@@ -3324,9 +3329,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7794870001344 primor - arroz largo fino primor 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 617.40 y un precio máximo de 680.61</span>
           </p>
@@ -3336,9 +3341,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7795184005301 noel - mermelada de damasco frasco noel 454 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 429.75</span>
           </p>
@@ -3348,9 +3353,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7795184119756 noel - mermelada durazno noel 454 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 605.00 y un precio máximo de 625.00</span>
           </p>
@@ -3360,9 +3365,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7795184119763 noel - mermelada damasco noel 454 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 429.75</span>
           </p>
@@ -3372,9 +3377,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7795184119770 noel - mermelada naranja noel 454 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 429.75</span>
           </p>
@@ -3384,9 +3389,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7795697431345 miller - cerveza rubia miller 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 713.85</span>
           </p>
@@ -3396,9 +3401,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7795711000052 villa d agri - fideos tallarines villa d agri 500 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 865.00 y un precio máximo de 889.00</span>
           </p>
@@ -3408,9 +3413,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7797470000588 marolio - pure de tomate marolio 520 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 218.11 y un precio máximo de 222.27</span>
           </p>
@@ -3420,9 +3425,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798004727407 primer precio - polenta instantanea primer precio 500 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 184.21</span>
           </p>
@@ -3432,9 +3437,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798033620403 primer precio - dulce de leche clasico primer precio 400 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 381.50</span>
           </p>
@@ -3444,9 +3449,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798039850590 andresito - yerba mate con palo premiun andresito 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 870.91 y un precio máximo de 1839.00</span>
           </p>
@@ -3456,9 +3461,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798048720396 olinto - lentejas olinto 400 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 754.00 y un precio máximo de 921.05</span>
           </p>
@@ -3468,9 +3473,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798048720921 legumbres elio - lentejas elio 400 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 859.00</span>
           </p>
@@ -3480,9 +3485,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798049540313 la abadía - lentejas la abadia 400 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 914.51</span>
           </p>
@@ -3492,9 +3497,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798060850026 tonadita - manteca calidad extra tonadita 200 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 685.00 y un precio máximo de 899.00</span>
           </p>
@@ -3504,9 +3509,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798060852822 tonadita - queso crema cremette tonadita 290 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 637.63 y un precio máximo de 645.00</span>
           </p>
@@ -3516,9 +3521,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798066211579 la huerta - mermelada de durazno la huerta 454 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 936.31</span>
           </p>
@@ -3528,9 +3533,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798066211616 la huerta familiar - mermelada de pera la huerta familiar 454 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 936.31</span>
           </p>
@@ -3540,9 +3545,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798066211630 la huerta - mermelada de manzana la huerta 454 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 936.31</span>
           </p>
@@ -3552,9 +3557,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798066214211 la huerta - mermelada de ciruela la huerta 454 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 936.31</span>
           </p>
@@ -3564,9 +3569,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798066214259 la huerta - mermelada de damasco la huerta 454 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 936.31</span>
           </p>
@@ -3576,9 +3581,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798066214297 la huerta - mermelada de membrillo la huerta 454 cc
               <span class="w3-text">Para este artículo se observó un precio uniforme de 936.31</span>
           </p>
@@ -3588,9 +3593,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798078450126 vanguardia - arroz largo fino 00000 vanguardia 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 535.00 y un precio máximo de 674.71</span>
           </p>
@@ -3600,9 +3605,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798078450423 primer precio - arroz largo fino 0000 primer precio 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 631.11</span>
           </p>
@@ -3612,9 +3617,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798078450478 primer precio - arroz largo fino 00000 primer precio 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 652.91</span>
           </p>
@@ -3624,9 +3629,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798085370080 primer premio - manteca primer premio 200 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 708.50</span>
           </p>
@@ -3636,9 +3641,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798088960073 el brocal - mermelada de naranja el brocal 420 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1017.21 y un precio máximo de 1330.00</span>
           </p>
@@ -3648,9 +3653,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798088960264 el brocal - mermelada de frutos rojos el brocal 420 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 1235.52 y un precio máximo de 1259.04</span>
           </p>
@@ -3660,9 +3665,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798095171363 purísima - leche en polvo entera purisima plus 800 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 3065.00 y un precio máximo de 3775.00</span>
           </p>
@@ -3672,9 +3677,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798095171370 purísima - leche en polvo descremada purisima plus 800 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 3195.00 y un precio máximo de 3689.00</span>
           </p>
@@ -3684,9 +3689,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798096031055 doña pupa - arvejas verdes remojadas doña pupa 350 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 282.00</span>
           </p>
@@ -3696,9 +3701,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798107413924 sin marca - vino tinto patero 1 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 1252.41</span>
           </p>
@@ -3708,9 +3713,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798132920473 alco - pure de tomates alco 520 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 293.20 y un precio máximo de 505.00</span>
           </p>
@@ -3720,9 +3725,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798132920589 canale - pure de tomate brick canale 520 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 535.00 y un precio máximo de 555.00</span>
           </p>
@@ -3732,9 +3737,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798132920763 canale - tomate perita alco 400 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 309.00 y un precio máximo de 448.00</span>
           </p>
@@ -3744,9 +3749,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798132920848 canale - tomate perita lata canale 400 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 479.00 y un precio máximo de 500.00</span>
           </p>
@@ -3756,9 +3761,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798132920930 alco - mermelada de frutilla frasco alco 454 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 959.00</span>
           </p>
@@ -3768,9 +3773,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798132921012 canale - mermelada de durazno canale 454 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 639.00</span>
           </p>
@@ -3780,9 +3785,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798138554603 molto - pure de tomate molto 520 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 226.96</span>
           </p>
@@ -3792,9 +3797,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798141510306 epuyen - filet de merluza sin espina epuyen 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 2178.91 y un precio máximo de 2990.00</span>
           </p>
@@ -3804,9 +3809,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798141710225 carrefour - fideos tallarines carrefour 500 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 449.00</span>
           </p>
@@ -3816,9 +3821,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798141710546 carrefour - filet de merluza natural carrefour 500 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 3340.00</span>
           </p>
@@ -3828,9 +3833,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798141711031 carrefour - pure de tomate carrefour tetrabrik 520 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 289.00</span>
           </p>
@@ -3840,9 +3845,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798141714346 carrefour - tomate perita entero carrefour 400 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 219.00</span>
           </p>
@@ -3852,9 +3857,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798141971558 primer precio - harina de trigo leudante primer precio 1 kg
               <span class="w3-text">Para este artículo se observó un precio uniforme de 354.25</span>
           </p>
@@ -3864,9 +3869,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798159716721 carrefour - lentejas carrefour 400 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 756.00</span>
           </p>
@@ -3876,9 +3881,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798312320017 santa clara - leche en polvo entera santa clara 800 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 2515.00 y un precio máximo de 2599.00</span>
           </p>
@@ -3888,9 +3893,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798312320413 santa clara - manteca santa clara 200 gr
               <span class="w3-text">Para este artículo se observó un precio uniforme de 554.00</span>
           </p>
@@ -3900,9 +3905,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798316700815 legítimo - aceite de girasol legitimo 1.5 lt
               <span class="w3-text">Para este artículo se observó un precio uniforme de 673.01</span>
           </p>
@@ -3912,9 +3917,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798321151312 sancor - yogur bebible descremado sabor vainilla sancor 900 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 749.00 y un precio máximo de 769.00</span>
           </p>
@@ -3924,9 +3929,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798335287007 gandara - dulce de leche clasico gandara 400 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 652.91 y un precio máximo de 816.02</span>
           </p>
@@ -3936,9 +3941,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7798338290912 las tres niñas - leche larga vida entera las tres niñas 1 lt
               <span class="w3-text">Para este artículo se observó un precio mínimo de 425.00 y un precio máximo de 614.86</span>
           </p>
@@ -3948,9 +3953,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7799037060028 chacabuco - harina de trigo 0000 chacabuco 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 286.50 y un precio máximo de 486.00</span>
           </p>
@@ -3960,9 +3965,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7799037060035 chacabuco - harina de trigo leudante chacabuco 1 kg
               <span class="w3-text">Para este artículo se observó un precio mínimo de 291.00 y un precio máximo de 519.00</span>
           </p>
@@ -3972,9 +3977,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7891000345443 maggi - caldo de carne bajo en grasas maggi 114 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 309.00 y un precio máximo de 335.67</span>
           </p>
@@ -3984,9 +3989,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7891000345481 maggi - caldo de gallina maggi 12un 114 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 304.00 y un precio máximo de 342.00</span>
           </p>
@@ -3996,9 +4001,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7891000345528 maggi - caldo de verdura maggi 114 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 304.00 y un precio máximo de 342.00</span>
           </p>
@@ -4008,9 +4013,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               7891000345566 maggi - caldo de verdura cubos maggi 12 un
               <span class="w3-text">Para este artículo se observó un precio mínimo de 292.00 y un precio máximo de 314.00</span>
           </p>
@@ -4020,9 +4025,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               8445290332318 nido - leche en polvo fortigrow lata nido 800 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 3007.31 y un precio máximo de 3529.00</span>
           </p>
@@ -4032,9 +4037,9 @@
         </div>
       </div>
       
-      <div class="w3-col l12 m12 s12 article">
+      <div class="w3-col l12 m12 s12 row">
         <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
-          <p class="label w3-tooltip">
+          <p class="searchThis w3-tooltip">
               8445290419446 svelty - leche en polvo lata svelty 800 gr
               <span class="w3-text">Para este artículo se observó un precio mínimo de 2300.60 y un precio máximo de 2344.40</span>
           </p>
