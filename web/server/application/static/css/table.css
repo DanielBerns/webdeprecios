@@ -25,5 +25,5 @@ html,body,h1,h2,h3,h4,h5 {
 }
 
 .sticky + .content {
-  padding-top: 102px;
+  padding-top: 200px;
 }
