@@ -36,8 +36,7 @@
 
 <!-- Sidebar -->
 <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-  <button onclick="w3_close('mySidebar')" class="w3-bar-item w3-large">Cerrar &times;
-  </button>
+  <button onclick="w3_close('mySidebar')" class="w3-bar-item w3-large">Cerrar &times;</button>
   <a href="/info/lacteos/rada_tilly"             class="w3-bar-item w3-button w3-padding"> Lácteos</a>  
   <a href="/info/harinas/rada_tilly"             class="w3-bar-item w3-button w3-padding"> Harinas</a>  
   <a href="/info/vegetales/rada_tilly"           class="w3-bar-item w3-button w3-padding"> Vegetales</a>  
@@ -47,14 +46,13 @@
   <a href="/info/acba/rada_tilly"                class="w3-bar-item w3-button w3-padding"> Artículos de la canasta básica de alimentos</a>  
   <a href="/index"                                  class="w3-bar-item w3-button w3-padding">Volver al índice</a>
   <div class="w3-bar-item">
-     <button onclick="w3_open('id01')" class="w3-button w3-pale-green">¿Precio indicativo?
+     <button onclick="w3_open('id01')" class="w3-button w3-pale-green">¿Precio de referencia?
      </button>
      <div id="id01" class="w3-modal">
        <div class="w3-modal-content">
          <div class="w3-container">
            <span onclick="w3_close('id01')" class="w3-button w3-display-bottomright">Cerrar &times;</span>
-           <p>El precio indicativo es el promedio geométrico de los precios observados.</p>
-           <p>Si todos los precios observados son iguales, solo se muestre el precio indicativo.</p>
+           <p>El precio de referencia es el promedio geométrico de los precios observados.</p>
          </div>
        </div>
      </div>
@@ -65,14 +63,13 @@
   <div class="w3-row">
     <div class="w3-col l12 m12 s12">
       <div class="w3-col l1 m1 s1 w3-center">
-          <p><button class="w3-bar-item w3-button w3-hover-none w3-hover-text-black" onclick="w3_open('mySidebar');"><i class="fa fa-bars"></i>  Menu</button>
-          </p>
+          <p><button class="w3-bar-item w3-button w3-hover-none w3-hover-text-black" onclick="w3_open('mySidebar');"><i class="fa fa-bars"></i>  Menu</button></p>
       </div>
       <div class="w3-col l9 m9 s9 w3-center">
-        <p>Artículo</p>
+        <p><button class="w3-bar-item w3-button w3-hover-none w3-hover-text-black">Artículo</button></p>
       </div>
       <div class="w3-col l2 m2 s2 w3-center">
-        <p>Precio indicativo</p>
+        <p><button class="w3-bar-item w3-button w3-hover-none w3-hover-text-black">Precio de referencia</button></p>
       </div>  
     </div>
   </div>

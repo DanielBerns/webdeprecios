@@ -1,9 +1,13 @@
 function w3_open(elementId) {
-  document.getElementById(elementId).style.display = "block";
+  element = document.getElementById(elementId)
+  element.style.display = "block";
+  element.style.zIndex = 5;
 }
 
 function w3_close(elementId) {
-  document.getElementById(elementId).style.display = "none";
+  element = document.getElementById(elementId)
+  element.style.display = "none";
+  element.style.zIndex = 0;  
 }
 
 window.onscroll = function() {myFunction()};
