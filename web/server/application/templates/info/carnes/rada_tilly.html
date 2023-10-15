@@ -18,25 +18,15 @@
     <h1 class="w3-bar-item w3-right w3-hide-medium w3-hide-large">Precios - FCE - UNPSJB
     </h1>
     <div class="w3-bar-item">
-        <div class="w3-sand">
-          <h2 class="w3-center w3-padding-8">Precios carnes en Rada Tilly - 2023/10/09</h2>
-        </div>
-    </div>
-    <div class="w3-bar-item">
-       <p>
-       <input class="w3-input w3-border w3-padding" 
-              type="text" 
-              placeholder="Buscar..." 
-              id="searchInput" 
-              onkeyup="searchArticleTable()">
-       </p>
+        <h2 class="w3-center w3-padding-8">Precios carnes en Rada Tilly - 2023/10/09</h2>
     </div>
   </div>
 </div>
 
 <!-- Sidebar -->
 <div class="w3-display-container">
-<div class="w3-sidebar w3-bar-block w3-border-right w3-display-topleft" style="display:none" id="mySidebar">
+<div class="w3-sidebar w3-border-right w3-display-topleft" style="display:none" id="mySidebar">
+<div class="w3-bar-block">
   <button onclick="w3_close('mySidebar')" class="w3-bar-item w3-large">Cerrar &times;</button>
   <a href="/info/lacteos/rada_tilly"             class="w3-bar-item w3-button w3-padding"> Lácteos</a>  
   <a href="/info/harinas/rada_tilly"             class="w3-bar-item w3-button w3-padding"> Harinas</a>  
@@ -46,37 +36,30 @@
   <a href="/info/bebidas_sin_alcohol/rada_tilly" class="w3-bar-item w3-button w3-padding"> Bebidas sin alcohol</a>  
   <a href="/info/acba/rada_tilly"                class="w3-bar-item w3-button w3-padding"> Artículos de la canasta básica de alimentos</a>  
   <a href="/index"                                  class="w3-bar-item w3-button w3-padding">Volver al índice</a>
-  <div class="w3-bar-item">
-     <button onclick="w3_open('id01')" class="w3-button w3-pale-green">¿Precio de referencia?
-     </button>
-     <div id="id01" class="w3-modal">
-       <div class="w3-modal-content">
-         <div class="w3-container">
-           <span onclick="w3_close('id01')" class="w3-button w3-display-bottomright">Cerrar &times;</span>
-           <p>El precio de referencia es el promedio geométrico de los precios observados.</p>
-         </div>
-       </div>
-     </div>
-  </div>  
+</div>
 </div>
 </div>
 
 <div class="header w3-light-green w3-text-black" id="myHeader">
     <div class="w3-row">
-      <div class="w3-col l1 m1 s1">
-        <p>
+      <div class="w3-col l2 m2 s2">
         <button class="w3-button w3-hover-none w3-hover-text-black" onclick="w3_open('mySidebar');"><i class="fa fa-bars"></i>  Menu</button>
-        </p>
       </div>
-      <div class="w3-col l9 m9 s9">
-        <p>
-        <button class="w3-button w3-hover-none w3-hover-text-black">Artículo</button>
-        </p>
+      <div class="w3-col l10 m10 s10">
+         <input class="w3-input w3-border w3-padding" 
+                type="text" 
+                placeholder="Buscar..." 
+                id="searchInput" 
+                onkeyup="searchArticleTable()">
+      </div>
+    </div>
+    <div class="w3-row">
+      <div class="w3-col l10 m10 s10">
+        <p>Artículo</p>
       </div>
       <div class="w3-col l2 m2 s2">
-        <p>
-        <button class="w3-button w3-hover-none w3-hover-text-black">Precio de referencia</button>
-        </p>
+        <p class="w3-tooltip">Precio de referencia 
+        <span class="w3-text">. El precio de referencia es el promedio geométrico de los precios observados.</span></p>
       </div>  
     </div>
 </div>
@@ -85,12 +68,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            9-3-0000000499989 sin marca - carne picada bandeja 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1769.00</span>
+            9-3-0000000499989 sin marca - carne picada bandeja 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1769.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -102,12 +86,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            9-1-0000000499989 sin marca - carne picada bandeja 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1719.00</span>
+            9-1-0000000499989 sin marca - carne picada bandeja 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1719.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -119,12 +104,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            2-1-2035001000009 pollolín - pollo a (comun refrigerado) 01 pollolin 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $929.00 y un precio máximo de $989.00</span>
+            2-1-2035001000009 pollolín - pollo a (comun refrigerado) 01 pollolin 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $929.00 y un precio máximo de $989.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -136,12 +122,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            2-1-2035003000007 tres arroyos - pollo comun tres arroyos 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $929.00 y un precio máximo de $989.00</span>
+            2-1-2035003000007 tres arroyos - pollo comun tres arroyos 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $929.00 y un precio máximo de $989.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -153,12 +140,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-1-2507200000000 pollolín - pollo del abuelo roberto en bandeja pollolin 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1130.00</span>
+            10-1-2507200000000 pollolín - pollo del abuelo roberto en bandeja pollolin 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1130.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -170,12 +158,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-1-2507483000001 sin marca - pollo fresco ls 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1015.00</span>
+            10-1-2507483000001 sin marca - pollo fresco ls 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1015.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -187,12 +176,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-1-2507199000005 pollolín - pollo parrillero en bandeja pollolin 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1625.00</span>
+            10-1-2507199000005 pollolín - pollo parrillero en bandeja pollolin 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1625.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -204,12 +194,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-2-2507582000001 sin marca - pollo cuarto trasero a granel 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1350.00</span>
+            10-2-2507582000001 sin marca - pollo cuarto trasero a granel 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1350.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -221,12 +212,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-2-2507153000003 sin marca - pollo cuarto trasero refrigerado carnes carrefour 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1415.00</span>
+            10-2-2507153000003 sin marca - pollo cuarto trasero refrigerado carnes carrefour 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1415.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -238,12 +230,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-2-2506657000007 sin marca - pollo fresco en bandeja marca propia 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1220.00</span>
+            10-2-2506657000007 sin marca - pollo fresco en bandeja marca propia 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1220.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -255,12 +248,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-2-2507483000001 sin marca - pollo fresco ls 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1015.00</span>
+            10-2-2507483000001 sin marca - pollo fresco ls 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1015.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -272,12 +266,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-2-2507199000005 pollolín - pollo parrillero en bandeja pollolin 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1625.00</span>
+            10-2-2507199000005 pollolín - pollo parrillero en bandeja pollolin 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1625.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -289,12 +284,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-1-2507582000001 sin marca - pollo cuarto trasero a granel 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1350.00</span>
+            10-1-2507582000001 sin marca - pollo cuarto trasero a granel 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1350.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -306,12 +302,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-1-2507153000003 sin marca - pollo cuarto trasero refrigerado carnes carrefour 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1415.00</span>
+            10-1-2507153000003 sin marca - pollo cuarto trasero refrigerado carnes carrefour 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1415.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -323,12 +320,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-2-2507200000000 pollolín - pollo del abuelo roberto en bandeja pollolin 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1130.00</span>
+            10-2-2507200000000 pollolín - pollo del abuelo roberto en bandeja pollolin 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1130.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -340,12 +338,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-1-2506657000007 sin marca - pollo fresco en bandeja marca propia 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1220.00</span>
+            10-1-2506657000007 sin marca - pollo fresco en bandeja marca propia 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1220.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -357,12 +356,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            2-1-2078076000000 best - asado sin hueso envasado al vacio best 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1875.00</span>
+            2-1-2078076000000 best - asado sin hueso envasado al vacio best 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1875.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -374,12 +374,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-1-2504693000005 sin marca - asado de novillito 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $4699.00</span>
+            10-1-2504693000005 sin marca - asado de novillito 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $4699.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -391,12 +392,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7796953113166 bocatti - lomo horneado bocatti feteado 70 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $659.00 y un precio máximo de $935.00</span>
+            7796953113166 bocatti - lomo horneado bocatti feteado 70 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $659.00 y un precio máximo de $935.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -408,12 +410,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-1-2302821000008 sin marca - lomo de cerdo solomillo 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $4290.00</span>
+            10-1-2302821000008 sin marca - lomo de cerdo solomillo 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $4290.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -425,12 +428,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790625005346 lario - lomo lario a las finas hierbas feteado 120 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1315.00</span>
+            7790625005346 lario - lomo lario a las finas hierbas feteado 120 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1315.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -442,12 +446,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-1-2505719000009 sin marca - lomo novillito 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $6299.00</span>
+            10-1-2505719000009 sin marca - lomo novillito 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $6299.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -459,12 +464,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790079019562 paladini - lomo cocido feteado al vacio paladini 120 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $605.77 y un precio máximo de $935.00</span>
+            7790079019562 paladini - lomo cocido feteado al vacio paladini 120 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $605.77 y un precio máximo de $935.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -476,12 +482,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            9-3-0000000453165 sin marca - lomo de novillito en bandeja 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $7645.00</span>
+            9-3-0000000453165 sin marca - lomo de novillito en bandeja 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $7645.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -493,12 +500,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            9-3-0000000950251 sin marca - lomo de ternera en bandeja 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $9005.00</span>
+            9-3-0000000950251 sin marca - lomo de ternera en bandeja 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $9005.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -510,12 +518,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790079019180 labratto - lomo horneado feteado labratto 100 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $889.18 y un precio máximo de $934.49</span>
+            7790079019180 labratto - lomo horneado feteado labratto 100 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $889.18 y un precio máximo de $934.49</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -527,12 +536,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-2-2505719000009 sin marca - lomo novillito 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $6299.00</span>
+            10-2-2505719000009 sin marca - lomo novillito 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $6299.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -544,12 +554,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7891167831100 gomes da costa - lomo de atun natural gomes da costa 170 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $709.00</span>
+            7891167831100 gomes da costa - lomo de atun natural gomes da costa 170 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $709.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -561,12 +572,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            9-1-0000000453165 sin marca - lomo de novillito en bandeja 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $7435.00</span>
+            9-1-0000000453165 sin marca - lomo de novillito en bandeja 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $7435.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -578,12 +590,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            10-2-2302821000008 sin marca - lomo de cerdo solomillo 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $4290.00</span>
+            10-2-2302821000008 sin marca - lomo de cerdo solomillo 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $4290.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -595,12 +608,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7891167831117 gomes da costa - lomo de atun en aceite gomes da costa 170 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $709.00</span>
+            7891167831117 gomes da costa - lomo de atun en aceite gomes da costa 170 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $709.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">

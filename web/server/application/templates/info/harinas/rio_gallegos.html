@@ -18,25 +18,15 @@
     <h1 class="w3-bar-item w3-right w3-hide-medium w3-hide-large">Precios - FCE - UNPSJB
     </h1>
     <div class="w3-bar-item">
-        <div class="w3-sand">
-          <h2 class="w3-center w3-padding-8">Precios harinas en Rio Gallegos - 2023/10/09</h2>
-        </div>
-    </div>
-    <div class="w3-bar-item">
-       <p>
-       <input class="w3-input w3-border w3-padding" 
-              type="text" 
-              placeholder="Buscar..." 
-              id="searchInput" 
-              onkeyup="searchArticleTable()">
-       </p>
+        <h2 class="w3-center w3-padding-8">Precios harinas en Rio Gallegos - 2023/10/09</h2>
     </div>
   </div>
 </div>
 
 <!-- Sidebar -->
 <div class="w3-display-container">
-<div class="w3-sidebar w3-bar-block w3-border-right w3-display-topleft" style="display:none" id="mySidebar">
+<div class="w3-sidebar w3-border-right w3-display-topleft" style="display:none" id="mySidebar">
+<div class="w3-bar-block">
   <button onclick="w3_close('mySidebar')" class="w3-bar-item w3-large">Cerrar &times;</button>
   <a href="/info/lacteos/rio_gallegos"             class="w3-bar-item w3-button w3-padding"> Lácteos</a>  
   <a href="/info/harinas/rio_gallegos"             class="w3-bar-item w3-button w3-padding"> Harinas</a>  
@@ -46,37 +36,30 @@
   <a href="/info/bebidas_sin_alcohol/rio_gallegos" class="w3-bar-item w3-button w3-padding"> Bebidas sin alcohol</a>  
   <a href="/info/acba/rio_gallegos"                class="w3-bar-item w3-button w3-padding"> Artículos de la canasta básica de alimentos</a>  
   <a href="/index"                                  class="w3-bar-item w3-button w3-padding">Volver al índice</a>
-  <div class="w3-bar-item">
-     <button onclick="w3_open('id01')" class="w3-button w3-pale-green">¿Precio de referencia?
-     </button>
-     <div id="id01" class="w3-modal">
-       <div class="w3-modal-content">
-         <div class="w3-container">
-           <span onclick="w3_close('id01')" class="w3-button w3-display-bottomright">Cerrar &times;</span>
-           <p>El precio de referencia es el promedio geométrico de los precios observados.</p>
-         </div>
-       </div>
-     </div>
-  </div>  
+</div>
 </div>
 </div>
 
 <div class="header w3-light-green w3-text-black" id="myHeader">
     <div class="w3-row">
-      <div class="w3-col l1 m1 s1">
-        <p>
+      <div class="w3-col l2 m2 s2">
         <button class="w3-button w3-hover-none w3-hover-text-black" onclick="w3_open('mySidebar');"><i class="fa fa-bars"></i>  Menu</button>
-        </p>
       </div>
-      <div class="w3-col l9 m9 s9">
-        <p>
-        <button class="w3-button w3-hover-none w3-hover-text-black">Artículo</button>
-        </p>
+      <div class="w3-col l10 m10 s10">
+         <input class="w3-input w3-border w3-padding" 
+                type="text" 
+                placeholder="Buscar..." 
+                id="searchInput" 
+                onkeyup="searchArticleTable()">
+      </div>
+    </div>
+    <div class="w3-row">
+      <div class="w3-col l10 m10 s10">
+        <p>Artículo</p>
       </div>
       <div class="w3-col l2 m2 s2">
-        <p>
-        <button class="w3-button w3-hover-none w3-hover-text-black">Precio de referencia</button>
-        </p>
+        <p class="w3-tooltip">Precio de referencia 
+        <span class="w3-text">. El precio de referencia es el promedio geométrico de los precios observados.</span></p>
       </div>  
     </div>
 </div>
@@ -85,12 +68,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790070506917 blancaflor - harina 000 con vitamina b6 y b12 blancaflor 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $223.27 y un precio máximo de $238.00</span>
+            7790070506917 blancaflor - harina 000 con vitamina b6 y b12 blancaflor 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $223.27 y un precio máximo de $238.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -102,12 +86,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792180134516 pureza - harina 100% integral pureza 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $305.70</span>
+            7792180134516 pureza - harina 100% integral pureza 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $305.70</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -119,12 +104,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792180004901 pureza - harina con levadura para pan casero pureza 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $432.10 y un precio máximo de $460.62</span>
+            7792180004901 pureza - harina con levadura para pan casero pureza 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $432.10 y un precio máximo de $460.62</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -136,12 +122,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792180004567 pureza - harina con levadura pizza pureza 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $432.10 y un precio máximo de $460.62</span>
+            7792180004567 pureza - harina con levadura pizza pureza 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $432.10 y un precio máximo de $460.62</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -153,12 +140,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790503198719 dos hermanos - harina de arroz dos hermanos 500 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $775.00</span>
+            7790503198719 dos hermanos - harina de arroz dos hermanos 500 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $775.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -170,12 +158,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7794080000175 la morocha - harina de maiz la morocha 500 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $311.00 y un precio máximo de $319.00</span>
+            7794080000175 la morocha - harina de maiz la morocha 500 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $311.00 y un precio máximo de $319.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -187,12 +176,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790199603207 morixe - harina de maiz morixe 500 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $157.00 y un precio máximo de $201.65</span>
+            7790199603207 morixe - harina de maiz morixe 500 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $157.00 y un precio máximo de $201.65</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -204,12 +194,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792590000159 caserita - harina de trigo 000 caserita 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $271.41 y un precio máximo de $345.00</span>
+            7792590000159 caserita - harina de trigo 000 caserita 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $271.41 y un precio máximo de $345.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -221,12 +212,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7799037060011 chacabuco - harina de trigo 000 chacabuco 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $213.55 y un precio máximo de $227.65</span>
+            7799037060011 chacabuco - harina de trigo 000 chacabuco 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $213.55 y un precio máximo de $227.65</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -238,12 +230,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790199000013 morixe - harina de trigo 000 morixe 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $203.84 y un precio máximo de $217.29</span>
+            7790199000013 morixe - harina de trigo 000 morixe 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $203.84 y un precio máximo de $217.29</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -255,12 +248,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792180004512 pureza - harina de trigo 000 pureza 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $223.27 y un precio máximo de $238.00</span>
+            7792180004512 pureza - harina de trigo 000 pureza 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $223.27 y un precio máximo de $238.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -272,12 +266,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792590000227 caserita - harina de trigo 0000 caserita 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $380.41 y un precio máximo de $435.00</span>
+            7792590000227 caserita - harina de trigo 0000 caserita 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $380.41 y un precio máximo de $435.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -289,12 +284,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7799037060028 chacabuco - harina de trigo 0000 chacabuco 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $286.50 y un precio máximo de $486.00</span>
+            7799037060028 chacabuco - harina de trigo 0000 chacabuco 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $286.50 y un precio máximo de $486.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -306,12 +302,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790199604082 morixe - harina de trigo 0000 fortivac morixe 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $406.00 y un precio máximo de $418.00</span>
+            7790199604082 morixe - harina de trigo 0000 fortivac morixe 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $406.00 y un precio máximo de $418.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -323,12 +320,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790199604273 morixe - harina de trigo especial pizzas morixe 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $410.46 y un precio máximo de $437.55</span>
+            7790199604273 morixe - harina de trigo especial pizzas morixe 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $410.46 y un precio máximo de $437.55</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -340,12 +338,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7799037060332 chacabuco - harina de trigo granos ancestrales chacabuco 750 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $625.00 y un precio máximo de $669.00</span>
+            7799037060332 chacabuco - harina de trigo granos ancestrales chacabuco 750 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $625.00 y un precio máximo de $669.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -357,12 +356,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790199603856 morixe - harina de trigo integral morixe 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $283.16</span>
+            7790199603856 morixe - harina de trigo integral morixe 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $283.16</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -374,12 +374,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7799037060035 chacabuco - harina de trigo leudante chacabuco 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $291.00 y un precio máximo de $519.00</span>
+            7799037060035 chacabuco - harina de trigo leudante chacabuco 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $291.00 y un precio máximo de $519.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -391,12 +392,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792590001156 caserita - harina de trigo para pizzas caserita 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $322.98 y un precio máximo de $466.00</span>
+            7792590001156 caserita - harina de trigo para pizzas caserita 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $322.98 y un precio máximo de $466.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -408,12 +410,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7799037060325 chacabuco - harina especial para masa madre chacabuco 1 kh.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $496.00</span>
+            7799037060325 chacabuco - harina especial para masa madre chacabuco 1 kh.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $496.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -425,12 +428,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792180137258 pureza - harina integral con levadura para pizzas pureza 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $296.00 y un precio máximo de $445.97</span>
+            7792180137258 pureza - harina integral con levadura para pizzas pureza 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $296.00 y un precio máximo de $445.97</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -442,12 +446,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7799037603003 chacabuco - harina integral con semillas chacabuco 750 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $625.00 y un precio máximo de $669.00</span>
+            7799037603003 chacabuco - harina integral con semillas chacabuco 750 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $625.00 y un precio máximo de $669.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -459,12 +464,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7799037060226 chacabuco - harina integral fina chacabuco 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $391.31 y un precio máximo de $484.00</span>
+            7799037060226 chacabuco - harina integral fina chacabuco 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $391.31 y un precio máximo de $484.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -476,12 +482,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792590001064 caserita - harina leudante caserita 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $419.65 y un precio máximo de $492.00</span>
+            7792590001064 caserita - harina leudante caserita 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $419.65 y un precio máximo de $492.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -493,12 +500,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790070506924 blancaflor - harina de trigo 0000 fortificada blancaflor 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $300.16 y un precio máximo de $343.35</span>
+            7790070506924 blancaflor - harina de trigo 0000 fortificada blancaflor 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $300.16 y un precio máximo de $343.35</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -510,12 +518,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790070507242 favorita - harina 0000 vitazink favorita 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $283.50 y un precio máximo de $401.00</span>
+            7790070507242 favorita - harina 0000 vitazink favorita 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $283.50 y un precio máximo de $401.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -527,12 +536,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792180139320 cañuelas - harina 000 fortificada con calcio cañuelas 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $213.55 y un precio máximo de $227.65</span>
+            7792180139320 cañuelas - harina 000 fortificada con calcio cañuelas 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $213.55 y un precio máximo de $227.65</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -544,12 +554,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792180136954 cañuelas - harina 0000 cañuelas 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $346.57</span>
+            7792180136954 cañuelas - harina 0000 cañuelas 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $346.57</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -561,12 +572,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7798141971541 primer precio - harina 0000 primer precio 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $343.35</span>
+            7798141971541 primer precio - harina 0000 primer precio 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $343.35</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -578,12 +590,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792180139313 pureza - harina 0000 ultrarefinada pureza 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $275.82</span>
+            7792180139313 pureza - harina 0000 ultrarefinada pureza 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $275.82</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -595,12 +608,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792180141941 pureza - harina con masa madres especial para pizza pureza 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $491.00 y un precio máximo de $566.04</span>
+            7792180141941 pureza - harina con masa madres especial para pizza pureza 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $491.00 y un precio máximo de $566.04</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -612,12 +626,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790580133955 prestopronta - harina de maiz blanco para arepas prestopronta 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $604.66</span>
+            7790580133955 prestopronta - harina de maiz blanco para arepas prestopronta 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $604.66</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -629,12 +644,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792180001528 cañuelas - harina de trigo 000 cañuelas 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $189.21</span>
+            7792180001528 cañuelas - harina de trigo 000 cañuelas 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $189.21</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -646,12 +662,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790070507235 favorita - harina de trigo 000 con vita zinc favorita 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $213.55 y un precio máximo de $227.65</span>
+            7790070507235 favorita - harina de trigo 000 con vita zinc favorita 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $213.55 y un precio máximo de $227.65</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -663,12 +680,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7798141971534 primer precio - harina de trigo 000 primer precio 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $212.55</span>
+            7798141971534 primer precio - harina de trigo 000 primer precio 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $212.55</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -680,12 +698,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790199000051 morixe - harina de trigo leudante morixe 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $329.00 y un precio máximo de $350.00</span>
+            7790199000051 morixe - harina de trigo leudante morixe 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $329.00 y un precio máximo de $350.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -697,12 +716,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7798141971558 primer precio - harina de trigo leudante primer precio 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $354.25</span>
+            7798141971558 primer precio - harina de trigo leudante primer precio 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $354.25</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -714,12 +734,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790070507228 blancaflor - harina leudante blancaflor 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $409.25 y un precio máximo de $466.00</span>
+            7790070507228 blancaflor - harina leudante blancaflor 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $409.25 y un precio máximo de $466.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -731,12 +752,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7798198900037 boniella - harina leudante boniella 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $358.61</span>
+            7798198900037 boniella - harina leudante boniella 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $358.61</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -748,12 +770,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792180136961 cañuelas - harina leudante cañuelas 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $205.00 y un precio máximo de $399.38</span>
+            7792180136961 cañuelas - harina leudante cañuelas 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $205.00 y un precio máximo de $399.38</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -765,12 +788,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7798198900013 boniella - harina tipo 000 boniella 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $206.95</span>
+            7798198900013 boniella - harina tipo 000 boniella 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $206.95</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -782,12 +806,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7798198900020 boniella - harina tipo 0000 boniella 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $347.71</span>
+            7798198900020 boniella - harina tipo 0000 boniella 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $347.71</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -799,12 +824,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7793323004079 dicomere - harina de arroz dicomere 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1181.56</span>
+            7793323004079 dicomere - harina de arroz dicomere 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1181.56</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -816,12 +842,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792612000709 tassara - harina 000 tassara 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $227.65</span>
+            7792612000709 tassara - harina 000 tassara 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $227.65</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -833,12 +860,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792612000716 tassara - harina 0000 tassara 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $279.50</span>
+            7792612000716 tassara - harina 0000 tassara 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $279.50</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -850,12 +878,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7798125100349 sturla - harina de garbanzo sturla 250 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $445.00</span>
+            7798125100349 sturla - harina de garbanzo sturla 250 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $445.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -867,12 +896,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7798125100424 sturla - harina de lino sturla 250 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $532.00</span>
+            7798125100424 sturla - harina de lino sturla 250 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $532.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -884,12 +914,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7797234000533 sin marca - harina de maiz paraguaya 500 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $405.00</span>
+            7797234000533 sin marca - harina de maiz paraguaya 500 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $405.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -901,12 +932,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7798125100301 sturla - harina de quinoa sin tacc sturla 250 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1505.00</span>
+            7798125100301 sturla - harina de quinoa sin tacc sturla 250 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1505.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -918,12 +950,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7798159717254 carrefour - harina de trigo 0000 carrefour 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $218.00</span>
+            7798159717254 carrefour - harina de trigo 0000 carrefour 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $218.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -935,12 +968,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792180141095 blancaflor - harina integral fina blancaflor 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $423.00 y un precio máximo de $445.00</span>
+            7792180141095 blancaflor - harina integral fina blancaflor 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $423.00 y un precio máximo de $445.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -952,12 +986,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792180004888 pureza - harina leudante ultrarefinada pureza 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $321.55 y un precio máximo de $337.91</span>
+            7792180004888 pureza - harina leudante ultrarefinada pureza 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $321.55 y un precio máximo de $337.91</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -969,12 +1004,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790199604099 morixe - harina de trigo leudante fortivac morixe 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $471.45 y un precio máximo de $480.00</span>
+            7790199604099 morixe - harina de trigo leudante fortivac morixe 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $471.45 y un precio máximo de $480.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -986,12 +1022,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7798125100325 sturla - harina de amaranto sturla 250 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1040.00</span>
+            7798125100325 sturla - harina de amaranto sturla 250 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1040.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1003,12 +1040,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7799037060349 chacabuco - harina de trigo especial pasteleria chacabuco 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $496.00 y un precio máximo de $529.00</span>
+            7799037060349 chacabuco - harina de trigo especial pasteleria chacabuco 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $496.00 y un precio máximo de $529.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1020,12 +1058,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7793323004017 dicomere - harina de almendras dicomere 200 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $2745.83 y un precio máximo de $2798.14</span>
+            7793323004017 dicomere - harina de almendras dicomere 200 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $2745.83 y un precio máximo de $2798.14</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1037,12 +1076,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7798157743057 secretos orgánicos - harina de arroz blanca organica secretos organicos 500 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $996.58</span>
+            7798157743057 secretos orgánicos - harina de arroz blanca organica secretos organicos 500 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $996.58</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1054,12 +1094,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7798157743064 secretos orgánicos - harina de arroz integral secretos organicos 500 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $948.32</span>
+            7798157743064 secretos orgánicos - harina de arroz integral secretos organicos 500 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $948.32</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1071,12 +1112,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790199603368 morixe - harina de maiz blanco para arepas morixe 20 un 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1058.33</span>
+            7790199603368 morixe - harina de maiz blanco para arepas morixe 20 un 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1058.33</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1088,12 +1130,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790199604075 morix - harina de trigo fortivac 000 morixe 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $251.16 y un precio máximo de $290.00</span>
+            7790199604075 morix - harina de trigo fortivac 000 morixe 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $251.16 y un precio máximo de $290.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1105,12 +1148,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7793323004253 dicomere - harina de trigo integral organica dicomere 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $646.00 y un precio máximo de $1093.96</span>
+            7793323004253 dicomere - harina de trigo integral organica dicomere 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $646.00 y un precio máximo de $1093.96</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1122,12 +1166,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7793323004925 dicomere - harina de trigo sarraceno dicomere 450 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $1179.68</span>
+            7793323004925 dicomere - harina de trigo sarraceno dicomere 450 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $1179.68</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1139,12 +1184,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792180136657 pureza - harina leudante sin sal pureza 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $423.79</span>
+            7792180136657 pureza - harina leudante sin sal pureza 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $423.79</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1156,12 +1202,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7797234000526 sin marca - harina de garbanzos 250 gr.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $295.00</span>
+            7797234000526 sin marca - harina de garbanzos 250 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $295.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1173,12 +1220,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7799037060103 catriel - harina de trigo 000 catriel 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $305.00 y un precio máximo de $314.00</span>
+            7799037060103 catriel - harina de trigo 000 catriel 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $305.00 y un precio máximo de $314.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1190,12 +1238,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7798159717261 carrefour - harina de trigo 000 carrefour 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $206.95</span>
+            7798159717261 carrefour - harina de trigo 000 carrefour 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $206.95</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1207,12 +1256,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790199000020 morixe - harina de trigo 0000 morixe 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio mínimo de $269.00 y un precio máximo de $285.50</span>
+            7790199000020 morixe - harina de trigo 0000 morixe 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de $269.00 y un precio máximo de $285.50</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1224,12 +1274,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7798159717278 carrefour - harina leudante carrefour 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $285.00</span>
+            7798159717278 carrefour - harina leudante carrefour 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $285.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1241,12 +1292,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790147011504 vea - harina 000 vea 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $194.14</span>
+            7790147011504 vea - harina 000 vea 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $194.14</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1258,12 +1310,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790147011511 vea - harina 0000 vea 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $352.73</span>
+            7790147011511 vea - harina 0000 vea 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $352.73</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1275,12 +1328,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790147011528 vea - harina leudante vea 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $419.91</span>
+            7790147011528 vea - harina leudante vea 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $419.91</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1292,12 +1346,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7792612000723 tassara - harina leudante tassara 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $329.00</span>
+            7792612000723 tassara - harina leudante tassara 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $329.00</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
@@ -1309,12 +1364,13 @@
       
       <div class="w3-row w3-border-bottom w3-border-black row">      
           <div class="w3-col l1 m1 s1 w3-center">
-              <p>&nbsp;</p>
+            <p>
+            &nbsp;
+            </p>
           </div>    
           <div class="w3-col l9 m9 s9 w3-pale-gray w3-padding">
             <p class="searchThis w3-tooltip">
-            7790199604242 maru botana - harina leudante maru botana 1 kg.&nbsp;
-            <span class="w3-text">Para este artículo se observó un precio uniforme de $281.97</span>
+            7790199604242 maru botana - harina leudante maru botana 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de $281.97</span>
             </p>
           </div>
           <div class="w3-col l2 m2 s2 w3-pale-gray w3-padding">
