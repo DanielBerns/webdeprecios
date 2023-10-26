@@ -1,0 +1,3352 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href="/static/img/favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" href="/static/css/table.css">
+</head>
+<body>
+
+<div class="top-container w3-light-blue">
+  <div class="w3-bar w3-teal" style="z-index:4">
+    <div class="w3-bar-item w3-left"><img src="/static/img/chakana.svg" width="50px"></div>                    
+    <h1 class="w3-bar-item w3-right w3-hide-small">Web de Precios - Observatorio de Economía - FCE
+    </h1>
+    <h1 class="w3-bar-item w3-right w3-hide-medium w3-hide-large">Web de Precios
+    </h1>
+    <div class="w3-bar-item">
+        <h2 class="w3-center w3-padding-8">Precios aseo en Caleta Olivia - 2023/10/26</h2>
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<div class="w3-display-container">
+<div class="w3-sidebar w3-border-right w3-display-topleft" style="display:none" id="mySidebar">
+<div class="w3-bar-block">
+  <button onclick="w3_close('mySidebar')" class="w3-bar-item w3-large">Cerrar &times;</button>
+  <a href="/info/lacteos/caleta_olivia"             class="w3-bar-item w3-button w3-padding"> Lácteos</a>  
+  <a href="/info/harinas/caleta_olivia"             class="w3-bar-item w3-button w3-padding"> Harinas</a>  
+  <a href="/info/vegetales/caleta_olivia"           class="w3-bar-item w3-button w3-padding"> Vegetales</a>  
+  <a href="/info/carnes/caleta_olivia"              class="w3-bar-item w3-button w3-padding"> Carnes</a>                        
+  <a href="/info/bebidas_con_alcohol/caleta_olivia" class="w3-bar-item w3-button w3-padding"> Bebidas con alcohol</a>  
+  <a href="/info/bebidas_sin_alcohol/caleta_olivia" class="w3-bar-item w3-button w3-padding"> Bebidas sin alcohol</a>  
+  <a href="/info/acba/caleta_olivia"                class="w3-bar-item w3-button w3-padding"> Artículos de la canasta básica de alimentos</a>  
+  <a href="/index"                                  class="w3-bar-item w3-button w3-padding">Volver al índice</a>
+</div>
+</div>
+</div>
+
+<div class="header w3-pale-green w3-text-black" id="myHeader">
+    <div class="w3-row-padding">
+      <div class="w3-col w3-left l2 m2 s2">
+        <button class="w3-button w3-hover-none" onclick="w3_open('mySidebar');"><i class="fa fa-bars"></i></button>
+      </div>
+      <div class="w3-col l10 m10 s10">
+         <input class="w3-input w3-border w3-padding" 
+                type="text" 
+                placeholder="Buscar..." 
+                id="searchInput" 
+                onkeyup="searchArticleTable()">
+      </div>
+    </div>
+    <div class="w3-row-padding">
+      <div class="w3-col w3-left l10 m10 s10">
+        <p>Artículo</p>
+      </div>
+      <div class="w3-col w3-left l2 m2 s2">
+        <p class="w3-tooltip">Precio de referencia 
+        <span class="w3-text">. El precio de referencia es el promedio geométrico de los precios observados.</span></p>
+      </div>  
+    </div>
+</div>
+
+<div class="content w3-light-gray" id="articleTable">
+  <div class="w3-container">
+  <table class="w3-table w3-bordered w3-hoverable">
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791274200595 - algabo: acondicionador 0% acai y romero algabo 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 825.61</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">825.61</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791274200601 - algabo: acondicionador 0% oliva y argan algabo 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 825.61</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">825.61</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435191517 - pantene: acondicionador 3 minute colageno pantene 170 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1510.00 y un precio máximo de 1659.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1636.54</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435106412 - pantene: acondicionador 3 minute miracle hidratante extrema pantene 170 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1039.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1039.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435106382 - pantene: acondicionador 3 minute miracle restauracion pantene 170 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1039.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1039.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140256656 - tío nacho: acondicionador aclarante tio nacho 415 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1700.00 y un precio máximo de 1785.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1770.54</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552830637 - fructis: acondicionador aloe fructis 650 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1529.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1529.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140256717 - tío nacho: acondicionador aloe vera reciclado tio nacho 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 980.00 y un precio máximo de 1143.41</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1096.75</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140255826 - tio nacho: acondicionador aloe vera repuesto tio nacho 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1190.00 y un precio máximo de 1259.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1244.89</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552831016 - fructis: acondicionador aloe water fructis 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 639.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">639.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552830620 - fructis: acondicionador aloe water fructis 350 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 709.22</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">709.22</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435212465 - pantene: acondicionador bambu nutre & crece botella pantene 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1539.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1539.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435212601 - pantene: acondicionador bambu pantene 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 901.96</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">901.96</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047669 - sedal: acondicionador bomba argan sedal 190 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 645.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">645.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047676 - sedal: acondicionador bomba argan sedal 340 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 646.00 y un precio máximo de 839.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">735.53</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047683 - sedal: acondicionador bomba argan sedal 650 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1200.00 y un precio máximo de 1575.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1491.63</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435212212 - pantene: acondicionador brillo extremo pantene 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 796.50 y un precio máximo de 1045.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">910.95</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435212229 - pantene: acondicionador brillo extremo pantene 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1675.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1675.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047690 - sedal: acondicionador carbon activo y peonias sedal 190 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 645.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">645.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047706 - sedal: acondicionador carbon activo y peonias sedal 340 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 697.45</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">697.45</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047713 - sedal: acondicionador carbon activo y peonias sedal 650 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1305.00 y un precio máximo de 1575.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1516.86</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045016 - tresemme: acondicionador cauterizacion reparadora tresemme 250 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 785.00 y un precio máximo de 833.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">792.80</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293044965 - tresemme: acondicionador cauterizacion reparadora tresemme 500 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1205.00 y un precio máximo de 1454.64</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1361.68</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791274196980 - algabo: acondicionador ceramidas algabo 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 301.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">301.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045986 - sedal: acondicionador ceramidas hidratante sedal 650 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1575.00 y un precio máximo de 1616.40</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1597.45</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045856 - sedal: acondicionador ceramidas sedal 190 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 523.00 y un precio máximo de 663.81</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">644.50</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045931 - sedal: acondicionador ceramidas sedal 340 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 695.00 y un precio máximo de 839.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">748.43</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293046457 - sedal: acondicionador colageno y vitamina c sedal 190 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 539.00 y un precio máximo de 645.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">625.99</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293046464 - sedal: acondicionador colageno y vitamina c sedal 340 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 685.00 y un precio máximo de 839.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">752.63</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293046471 - sedal: acondicionador colageno y vitamina c sedal 650 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1575.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1575.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790375269722 - bagovit capilar: acondicionador color radiante bagovit 350 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1229.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1229.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552902891 - elvive: acondicionador colorvive elvive 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1889.00 y un precio máximo de 2180.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1940.57</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045993 - sedal: acondicionador crema balance hidratante sedal 650 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1270.00 y un precio máximo de 1616.40</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1567.20</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045863 - sedal: acondicionador crema balance sedal 190 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 523.00 y un precio máximo de 663.81</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">644.55</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435159234 - head & shoulders: acondicionador dermo crece fuerte head & shoulders 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1350.00 y un precio máximo de 1472.14</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1435.84</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435229852 - pantene: acondicionador detox pantene 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1570.00 y un precio máximo de 1729.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1705.34</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552836554 - elvive: acondicionador dream long elvive 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 849.00 y un precio máximo de 965.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">944.62</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552790160 - elvive: acondicionador dream long elvive 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1495.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1495.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552790153 - elvive: acondicionador dream long elvive 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 2220.00 y un precio máximo de 2399.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2362.08</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552843118 - elvive: acondicionador dream long liss elvive 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 928.01</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">928.01</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7792640004519 - capilatis: acondicionador equilibrante purificante capilatis 410 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 3109.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">3109.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435230018 - pantene: acondicionador equilibrio prov pantene 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 2600.00 y un precio máximo de 2769.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2744.20</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740508944 - plusbelle: acondicionador esencia plex reconstruccion plusbelle 700 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 900.00 y un precio máximo de 1176.10</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1088.11</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293046853 - dove: acondicionador factor 50 dove 170 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 965.00 y un precio máximo de 981.57</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">969.71</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293046839 - dove: acondicionador factor 60 dove 170 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1119.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1119.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293046846 - dove: acondicionador factor 80 dove 170 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1005.00 y un precio máximo de 1119.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1099.14</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791199002694 - life quality: acondicionador familiar ceramidas life quality 950 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 736.27</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">736.27</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7891150081093 - dove: acondicionador fuerza + bamboo dove 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1250.00 y un precio máximo de 1485.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1457.46</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740608286 - plusbelle kids: acondicionador fuerza y vitalidad plusbelle kids 350 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 615.00 y un precio máximo de 735.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">709.26</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552823912 - fructis: acondicionador goodbye daños fructis 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 836.00 y un precio máximo de 945.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">925.89</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552844405 - fructis : acondicionador goodbye oleo de babasu fructis 350 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1419.00 y un precio máximo de 1463.80</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1443.26</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552874099 - fructis: acondicionador hair food aguacate fructis 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1665.00 y un precio máximo de 1842.10</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1713.79</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552877106 - fructis: acondicionador hair food aloe fructis 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1665.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1665.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552874174 - fructis: acondicionador hair food banana fructis 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1665.00 y un precio máximo de 1733.10</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1684.18</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552874129 - fructis: acondicionador hair food coco fructis 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1665.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1665.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552874068 - fructis: acondicionador hair food sandia fructis 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1585.00 y un precio máximo de 1665.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1624.51</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140256793 - tío nacho: acondicionador herbolaria milenaria tio nacho 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 980.00 y un precio máximo de 1143.41</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1088.91</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140256779 - tío nacho: acondicionador herbolaria milenaria tio nacho 415 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1700.00 y un precio máximo de 1956.55</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1815.32</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293046433 - sedal: acondicionador hialuronico y vitamina a sedal 340 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 685.00 y un precio máximo de 839.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">746.37</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293046440 - sedal: acondicionador hialuronico y vitamina a sedal 650 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1200.00 y un precio máximo de 1575.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1491.63</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552876420 - elvive: acondicionador hidra hialuronico elvive 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1320.00 y un precio máximo de 1619.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1554.22</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552902341 - elvive: acondicionador hidra hialuronico elvive 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1109.00 y un precio máximo de 1460.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1170.13</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552902358 - elvive: acondicionador hidra hialuronico elvive 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1755.00 y un precio máximo de 1841.01</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1801.40</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552876482 - elvive: acondicionador hidra hialuronico elvive 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 2180.00 y un precio máximo de 2396.91</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2346.61</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552902365 - elvive: acondicionador hidra hialuronico elvive 750 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 2815.00 y un precio máximo de 3425.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2927.62</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552876550 - elvive: acondicionador hidra hialuronico elvive 750 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 3435.00 y un precio máximo de 4139.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">3987.51</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435211963 - pantene: acondicionador hidratacion pantene 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 902.00 y un precio máximo de 946.92</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">939.21</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435211970 - pantene: acondicionador hidratacion pantene 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1445.00 y un precio máximo de 1675.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1615.79</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047720 - sedal: acondicionador jengibre y ricino sedal 190 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 523.00 y un precio máximo de 663.81</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">638.25</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047737 - sedal: acondicionador jengibre y ricino sedal 340 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 695.00 y un precio máximo de 839.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">763.61</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047744 - sedal: acondicionador jengibre y ricino sedal 650 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1575.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1575.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552790252 - elvive: acondicionador kera-liso brillo y sedosidad elvive 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 2380.00 y un precio máximo de 2585.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2542.63</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552902853 - elvive: acondicionador kera-liso mk elvive 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1189.00 y un precio máximo de 1460.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1317.55</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552902860 - elvive: acondicionador kera-liso mk elvive 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1889.00 y un precio máximo de 2180.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1964.08</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552791440 - elvive: acondicionador keraliso sedosidad elvive 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 914.00 y un precio máximo de 1019.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1000.70</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293044958 - tresemme: acondicionador keratina antifrizz tresemme 500 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1255.00 y un precio máximo de 1535.81</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1415.82</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293044811 - tresemme: acondicionador keratina antifrizz tresemme 880 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2489.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2489.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790010002455 - johnson's baby: acondicionador kids fragancia prolongada johnson's baby 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1259.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1259.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790010002462 - johnson's baby: acondicionador kids gotas de brillo johnson's baby 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1120.00 y un precio máximo de 1259.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1229.88</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790010002479 - johnson's baby: acondicionador kids gotas de brillo johnson's baby 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1645.00 y un precio máximo de 1965.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1797.89</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790010002486 - johnson's baby: acondicionador kids hidrat. intensa johnson's baby 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1125.00 y un precio máximo de 1259.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1190.12</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790010002530 - johnson's baby: acondicionador kids rulos ensueã‘o johnson's baby 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1120.00 y un precio máximo de 1259.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1210.85</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293044972 - tresemme: acondicionador liso efecto botox tresemme 500 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1307.45 y un precio máximo de 1454.64</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1342.79</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293046006 - sedal: acondicionador liso perfecto hidratante sedal 650 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1390.00 y un precio máximo de 1575.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1542.54</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045955 - sedal: acondicionador liso perfecto sedal 340 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 695.00 y un precio máximo de 839.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">776.32</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791905023463 - swing: acondicionador liso swing 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 720.24</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">720.24</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791274197000 - algabo: acondicionador manzana algabo 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 301.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">301.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791199002700 - life quality: acondicionador manzana life quality 950 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 736.27</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">736.27</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790010002493 - johnsons baby: acondicionador manzanilla johnsons baby 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1405.00 y un precio máximo de 1411.35</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1408.42</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790010002509 - johnsons baby: acondicionador manzanilla johnsons baby 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1905.00 y un precio máximo de 2278.55</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2207.61</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552816204 - elvive: acondicionador matizador violeta elvive 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1680.00 y un precio máximo de 1859.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1821.74</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7891150081079 - dove: acondicionador nutricion + geranio dove 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1215.00 y un precio máximo de 1485.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1462.05</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740000349 - plusbelle: acondicionador nutricion plusbelle 1000 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 789.00 y un precio máximo de 1055.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">912.36</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552840353 - elvive: acondicionador oleo coco elvive 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 899.00 y un precio máximo de 1005.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">982.84</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552795301 - elvive: acondicionador oleo coco elvive 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2469.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2469.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552791457 - elvive: acondicionador oleo extraordinario elvive 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1305.00 y un precio máximo de 1619.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1561.86</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552791280 - elvive: acondicionador oleo extraordinario nutricion elvive 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 2135.00 y un precio máximo de 2396.91</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2354.55</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047065 - dove: acondicionador oleo nutricion dove 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 808.00 y un precio máximo de 999.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">957.49</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047515 - dove: acondicionador oleo nutricion dove 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1134.00 y un precio máximo de 1515.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1281.79</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047584 - dove: acondicionador oleo nutricion dove 750 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1930.00 y un precio máximo de 2265.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2176.16</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552790504 - elvive: acondicionador oleo rizos elvive 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1495.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1495.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293044989 - tresemme: acondicionador ondas boho tresemme 500 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1215.00 y un precio máximo de 1359.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1333.87</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293044842 - tresemme: acondicionador ondas boho tresemme 880 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2489.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2489.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790010002516 - johnsons baby: acondicionador original johnsons baby 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1155.00 y un precio máximo de 1418.02</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1391.88</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790010002523 - johnsons baby: acondicionador original johnsons baby 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1750.00 y un precio máximo de 2015.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1968.20</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7793350004578 - wassington: acondicionador para cuero incoloro wassinton 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 5689.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">5689.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790520995667 - echo: acondicionador para pisos clasico doypack echo 450 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 601.00 y un precio máximo de 685.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">672.46</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790520993120 - echo: acondicionador para pisos clasico echo 800 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1139.00 y un precio máximo de 1170.76</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1160.08</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790375269746 - bagovit capilar: acondicionador pelo largo sin frizz bagovit 350 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1229.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1229.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740608309 - plusbelle kids: acondicionador ph balanceado botella plusbelle kids 350 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 646.00 y un precio máximo de 735.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">716.27</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740608231 - plusbelle kids: acondicionador ph balanceado plusbelle 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1249.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1249.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790613071117 - suiza: acondicionador pisos lavanda suiza 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 481.78 y un precio máximo de 819.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">628.15</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435138222 - pantene: acondicionador pro-v colageno pantene 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1255.00 y un precio máximo de 1372.25</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1353.91</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435138345 - pantene: acondicionador pro-v colageno pantene 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 2010.00 y un precio máximo de 2207.25</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2185.79</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435138352 - pantene: acondicionador pro-v colageno pantene 700 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 3449.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">3449.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435230070 - pantene: acondicionador pro-v miracles pantene 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1335.00 y un precio máximo de 1545.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1513.09</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435230117 - pantene: acondicionador pro-v miracles pantene 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 2110.00 y un precio máximo de 2475.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2419.22</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435230063 - pantene: acondicionador pro-v miracles pantene750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 3590.00 y un precio máximo de 4215.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">4119.46</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740608293 - plusbelle kids: acondicionador proteccion botella plusbelle kids 350 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 636.00 y un precio máximo de 735.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">714.04</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552903423 - elvive: acondicionador protector filtro uv color elvive 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1195.00 y un precio máximo de 1460.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1254.42</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7891150081086 - dove: acondicionador purificacion + jengibre dove 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1481.31 y un precio máximo de 1485.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1483.77</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047058 - dove: acondicionador reconstruccion completa dove 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 808.00 y un precio máximo de 999.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">975.36</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047072 - dove: acondicionador regeneracion extrema botella dove 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 808.00 y un precio máximo de 1025.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">993.79</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047522 - dove: acondicionador regeneracion extrema dove 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1134.00 y un precio máximo de 1515.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1310.73</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791905023456 - swing: acondicionador reparacion swing 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 720.24</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">720.24</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7898587761925 - loreal: acondicionador reparacion total 5 elvive 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 436.90</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">436.90</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293046013 - sedal: acondicionador restauracion instantanea hidratacion sedal 650 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1575.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1575.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045887 - sedal: acondicionador restauracion instantanea sedal 190 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 645.00 y un precio máximo de 663.81</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">656.91</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045962 - sedal: acondicionador restauracion instantanea sedal 340 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 634.00 y un precio máximo de 839.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">763.86</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435211840 - pantene: acondicionador restauracion pantene 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 796.50 y un precio máximo de 1045.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">911.37</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435211857 - pantene: acondicionador restauracion pantene 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1445.00 y un precio máximo de 1675.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1580.86</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435202732 - head & shoulders: acondicionador revitalizante head & shoulders 300 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1990.00 y un precio máximo de 2619.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2445.20</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047478 - dove: acondicionador ritual de crecimien dove 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1515.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1515.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047041 - dove: acondicionador ritual de reparacion dove 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 718.78</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">718.78</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047492 - dove: acondicionador ritual de reparacion dove 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1134.00 y un precio máximo de 1515.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1232.14</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047607 - dove: acondicionador ritual de reparacion dove 750 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1824.35</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1824.35</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293046020 - sedal: acondicionador rizos definidos hidratados sedal 650 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1200.00 y un precio máximo de 1575.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1505.21</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045979 - sedal: acondicionador rizos definidos sedal 340 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 695.00 y un precio máximo de 839.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">800.42</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435155885 - pantene: acondicionador tratamiento 3 mm bambu pantene 170 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1079.09 y un precio máximo de 1109.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1102.95</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435155908 - pantene: acondicionador tratamiento 3 mm bambu pantene 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1495.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1495.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791274199905 - algabo kids: acondicionador zero piojos y liendres algabo kids 500 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1213.73</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1213.73</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740000318 - plusbelle: acondicionador brillo plusbelle 1000 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 789.00 y un precio máximo de 1055.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">890.53</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740000363 - plusbelle: acondicionador proteccion plusbell 1000 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 789.00 y un precio máximo de 1055.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">886.23</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047508 - dove: acondicionador reconstruccion completa dove 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1134.00 y un precio máximo de 1336.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1212.18</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047591 - dove: acondicionador regeneracion extrema dove 750 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2265.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2265.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435147583 - head & shoulders: acondicionador coco head & shoulders 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1200.00 y un precio máximo de 1345.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1270.43</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045948 - sedal: acondicionador crema balance sedal 340 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 634.00 y un precio máximo de 839.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">725.54</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293044996 - tresemme: acondicionador detox capilar tresemme 500 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1205.00 y un precio máximo de 1359.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1318.75</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140256731 - tío nacho: acondicionador engrosador tio nacho 415 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1700.00 y un precio máximo de 1785.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1763.36</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140257745 - tio nacho: acondicionador herbolaria doypack tio nacho 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1580.00 y un precio máximo de 1803.95</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1759.24</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140253839 - tío nacho: acondicionador aclarante recargabler doypack tio nacho 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1197.91</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1197.91</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293044606 - suave: acondicionador aloe detox suave 930 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 761.91</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">761.91</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740000356 - plusbelle: acondicionador balance plusbelle 1 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 789.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">789.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790064007048 - estrella baby: acondicionador cabellos claros estrella baby 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 767.37 y un precio máximo de 810.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">781.32</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790064007109 - estrella baby: acondicionador cabellos claros estrella baby 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1168.66 y un precio máximo de 1250.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1195.17</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790064007031 - estrella baby: acondicionador cabellos suaves estrella baby 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 767.37 y un precio máximo de 810.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">781.32</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790064007093 - estrella baby: acondicionador cabellos suaves estrella baby 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1168.66 y un precio máximo de 1250.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1195.17</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045900 - sedal: acondicionador ceramidas hidratante doypack sedal 300 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 801.15</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">801.15</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552816136 - elvive: acondicionador color vive elvive 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1219.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1219.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045917 - sedal: acondicionador crema balance hidratante doypack sedal 300 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 801.15</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">801.15</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293044644 - suave: acondicionador crema nutricion suave 930 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 658.00 y un precio máximo de 761.91</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">748.07</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140257752 - tio nacho: acondicionador engrosador doypack tio nacho 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1580.00 y un precio máximo de 1803.95</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1725.98</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140253815 - tío nacho: acondicionador engrosador recargable doypack tio nacho 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1197.91</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1197.91</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140256755 - tío nacho: acondicionador engrosador tio nacho 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1143.41</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1143.41</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790064007055 - estrella baby: acondicionador equilibrio estrella baby 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 767.37 y un precio máximo de 810.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">781.32</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790064007116 - estrella baby: acondicionador equilibrio estrella baby 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1168.66 y un precio máximo de 1250.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1195.17</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740000677 - plusbelle: acondicionador esencia largo aminomax doypack plusbelle 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 424.00 y un precio máximo de 517.75</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">485.30</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740000684 - plusbelle: acondicionador esencia restauracion aminomax doypack plusbelle 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 446.00 y un precio máximo de 517.75</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">508.19</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740000325 - plusbelle: acondicionador frescura plusbell 1 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 789.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">789.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435211918 - pantene: acondicionador fuerza y reconstruccion pantene 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1445.00 y un precio máximo de 1523.82</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1507.72</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140253792 - tío nacho: acondicionador herbolaria milenaria recargable doypack tio nacho 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1258.95</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1258.95</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435212083 - pantene: acondicionador hidratacion extrema pantene 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 902.00 y un precio máximo de 903.61</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">903.29</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435212090 - pantene: acondicionador hidratacion extrema pantene 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1435.00 y un precio máximo de 1523.82</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1493.62</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047546 - dove: acondicionador hidratacion intensa dove 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1134.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1134.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552791303 - elvive: acondicionador kera-liso brillo elvive 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1425.00 y un precio máximo de 1710.21</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1589.67</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552902815 - elvive: acondicionador keratin rt5+ elvive 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2015.41</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2015.41</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552902471 - elvive: acondicionador keratin rt5+ elvive 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 2640.00 y un precio máximo de 2990.48</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2868.77</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798008963986 - otowil: acondicionador keratina otowil 250 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2069.91</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2069.91</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740000493 - plusbelle: acondicionador largo saludable amino max plusbelle 970 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1105.00 y un precio máximo de 1219.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1179.11</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047560 - dove: acondicionador largos fuertes y flexibles dove 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1134.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1134.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045023 - tresemme: acondicionador liso efecto botox tresemme 250 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 771.00 y un precio máximo de 979.91</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">904.64</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798008964068 - otowil: acondicionador minuto cero otowil 250 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2069.91</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2069.91</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552823820 - fructis: acondicionador oil repair liso coco fructis 350 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1257.80 y un precio máximo de 1270.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1263.89</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552823875 - fructis: acondicionador oil repair recarga nutritiva fructis 350 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1257.80</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1257.80</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552790443 - elvive: acondicionador oleo extraordinario coco elvive 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1044.89 y un precio máximo de 1539.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1138.78</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552790108 - elvive: acondicionador reparacion total 5 con kerat elvive 750 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2072.37</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2072.37</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552790139 - elvive: acondicionador reparacion total 5+ elvive.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1279.95</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1279.95</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740000486 - plusbelle: acondicionador restauracion amino max plusbelle 970 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1197.91 y un precio máximo de 1199.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1198.15</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045924 - sedal: acondicionador restauracion repuesto sedal 300 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 801.15</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">801.15</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047485 - dove: acondicionador ritual de fortalecim dove 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1134.00 y un precio máximo de 1135.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1134.33</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552902440 - elvive: acondicionador rt extremo elvive 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1841.01</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1841.01</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293044637 - suave: acondicionador suavidad cuidado suave 930 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 761.91</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">761.91</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740000332 - plusbelle: acondicionador suavidad plusbelle 1000 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 816.41</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">816.41</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140256472 - tío nacho: acondicionador ylang ylang tio nacho 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1143.41</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1143.41</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140256465 - tío nacho: acondicionador ylang ylang tio nacho 415 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1710.00 y un precio máximo de 1956.55</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1870.65</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552791396 - elvive: acondicionador arcilla purificante elvive 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 949.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">949.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552790474 - elvive: acondicionador arcilla purificante elvive 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1249.00 y un precio máximo de 1495.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1408.04</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791905023432 - swing: acondicionador brillo swing 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 720.24</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">720.24</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293044828 - tresemme: acondicionador cauterizacion reparadora tresemme 880 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 2475.00 y un precio máximo de 2489.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2485.49</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791905023449 - swing: acondicionador hidratacion swing 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 720.24</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">720.24</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740508951 - plusbelle: acondicionador oleos esencia plusbelle 700 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 900.00 y un precio máximo de 1045.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1006.69</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552849677 - fructis: acondicionador recarga nutritiva fructis 650 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1745.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1745.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047577 - dove: acondicionador reconstruccion completa dove 750 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1930.00 y un precio máximo de 2265.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2147.33</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293042848 - sedal: acondicionador bomba de nutricion sedal 340 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 456.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">456.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791274196683 - primer precio: acondicionador ceramidas primer precio 900cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 741.20</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">741.20</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552816167 - elvive: acondicionador color vive elvive 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 744.45</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">744.45</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293044613 - suave: acondicionador fuerza nutritiva suave 930 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 761.91</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">761.91</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791274188688 - primer precio: acondicionador manzana primer precio 900 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 741.20</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">741.20</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293047539 - dove: acondicionador nutricion oleo micelar dove 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1134.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1134.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790010540223 - johnson baby: acondicionador original johnson baby 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 652.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">652.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140256670 - tío nacho: acondicionador aclarante tio nacho 200 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 985.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">985.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791720018538 - carrefour: acondicionador algas hidratante carrefour 500 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 401.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">401.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791199002687 - life quality: acondicionador algas life quality 950 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 736.27</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">736.27</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140256694 - tío nacho: acondicionador aloe vera tio nacho 415 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1930.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1930.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791905024651 - polyana: acondicionador balance polyana 12 un 900 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 760.17</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">760.17</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791274199493 - algabo: acondicionador brillo eco doypack algabo 930 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 982.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">982.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791905023395 - swing: acondicionador brillo swing 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 442.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">442.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7798140256915 - tío nacho: acondicionador celulas madres tio nacho 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 995.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">995.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791720018545 - carrefour: acondicionador ceramidas fortalecimiento carrefour 500 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 401.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">401.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791905024620 - polyana: acondicionador ceramidas polyana 12 un 900 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 760.17</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">760.17</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            0000077982728 - sedal: acondicionador ceramidas sachet sedal 10 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 29.38</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">29.38</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791274196997 - algabo: acondicionador coco algabo 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 454.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">454.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791274199486 - algabo: acondicionador coco y leche eco-pack algabo 930 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 982.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">982.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435212267 - pantene: acondicionador control caida pantene 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1339.61 y un precio máximo de 1375.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1351.30</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            0000077982735 - sedal: acondicionador crema balance sachet sedal 10 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 29.38</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">29.38</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552843101 - elvive: acondicionador dream long liss elvive 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 686.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">686.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552843125 - elvive: acondicionador dream long liss elvive 750 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1579.17</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1579.17</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740608217 - plusbelle kids: acondicionador fuerza plusbelle kids 700 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1100.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1100.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791274199479 - algabo: acondicionador hidratacion doypack algabo 930 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 982.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">982.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435211987 - pantene: acondicionador hidratacion pantene 750 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2460.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2460.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791905024644 - polyana: acondicionador hidratacion polyana 12 un 900 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 760.17</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">760.17</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045009 - tresemme: acondicionador keratina antifrizz tresemme 250 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 877.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">877.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791905023425 - swing: acondicionador liso swing 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 442.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">442.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791905023500 - swing: acondicionador liso swing 600 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1124.44</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1124.44</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791905024699 - polyana: acondicionador manzana polyana 12 un 900 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 762.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">762.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791905024637 - polyana: acondicionador nutricion polyana 12 un 900 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 760.17</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">760.17</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552791402 - elvive: acondicionador oleo curls elvive 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 815.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">815.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293045030 - tresemme: acondicionador ondas boho tresemme 250 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 832.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">832.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791720027172 - carrefour essential: acondicionador para pisos clasico doypack carrefour essential 900 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 881.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">881.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791720027165 - carrefour essential: acondicionador para pisos lavanda doypack carrefour essential 900 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 881.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">881.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791720027189 - carrefour essential: acondicionador para pisos pino doypack carrefour essential 900 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 881.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">881.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791720018569 - carrefour: acondicionador proteinas trigo nut carrefour 500 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 401.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">401.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791905023418 - swing: acondicionador reparacion swing 200 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 442.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">442.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435211864 - pantene: acondicionador restauracion pantene 750 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2460.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2460.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7500435212274 - pantene: acondicionador rizos definidos pantene 400 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1330.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1330.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7509552902488 - elvive: acondicionador rt extremo 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2455.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2455.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791274198922 - algabo baby: acondicionador sandia dulce trolls 2 algabo kids 750 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2360.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2360.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791199003004 - life quality: acondicionador trigo life quality 950 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 736.27</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">736.27</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790010540254 - johnson baby: acondicionador manzanilla johnson baby 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 966.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">966.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790740000479 - plusbelle: acondicionador control frizz plusbelle 970 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1219.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">1219.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7791293044835 - tresemme: acondicionador liso efecto botox tresemme 880 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2489.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">2489.00</span>
+            </p>
+          </td>
+      </tr>
+      
+      <tr class="row">      
+          <td>
+            <p class="searchThis w3-tooltip">
+            7790520993472 - echo: acondicionador pisos con brillo lavanda echo 800 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 759.00</span>
+            </p>
+          </td>
+          <td>
+            <p>
+            <span class="w3-right">759.00</span>
+            </p>
+          </td>
+      </tr>
+      
+  </table>
+  </div>
+</div>
+<script src="/static/js/table.js"></script>
+</body>
+</html>
