@@ -2,32 +2,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-<link href="/static/img/favicon.ico" rel="shortcut icon">
-<link rel="stylesheet" href="/static/css/table.css">
 </head>
 <body>
 
-<div class="top-container w3-light-blue w3-hide-small w3-hide-medium">
-  <div class="w3-bar w3-teal" style="z-index:4">
-    <div class="w3-bar-item w3-left"><img src="/static/img/chakana.svg" width="50px"></div>                    
-    <h1 class="w3-bar-item w3-right w3-hide-small">Web de Precios - Observatorio de Economía - FCE
-    </h1>
-    <h1 class="w3-bar-item w3-right w3-hide-medium w3-hide-large">Web de Precios
-    </h1>
-    <div class="w3-bar-item">
-        <h2 class="w3-center w3-padding-8">Precios limpieza en Esquel - 2023/10/26</h2>
-    </div>
-  </div>
-</div>
-
-<!-- Sidebar -->
-<div class="w3-display-container">
-<div class="w3-sidebar w3-border-right w3-display-topleft" style="display:none" id="mySidebar">
-<div class="w3-bar-block">
-  <button onclick="w3_close('mySidebar')" class="w3-bar-item w3-large">Cerrar &times;</button>
+<!-- theSidebar -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="theSidebar">
+  <button class="w3-bar-item w3-button" onclick="closeTheSidebar()">Cerrar <i class="fa fa-remove"></i></button>
   <a href="/info/lacteos/esquel"             class="w3-bar-item w3-button w3-padding"> Lácteos</a>  
   <a href="/info/harinas/esquel"             class="w3-bar-item w3-button w3-padding"> Harinas</a>  
   <a href="/info/vegetales/esquel"           class="w3-bar-item w3-button w3-padding"> Vegetales</a>  
@@ -38,1331 +24,1453 @@
   <a href="/info/limpieza/esquel"                class="w3-bar-item w3-button w3-padding"> Artículos de limpieza</a>    
   <a href="/info/acba/esquel"                class="w3-bar-item w3-button w3-padding"> Artículos de la canasta básica de alimentos</a>  
   <a href="/index"                                  class="w3-bar-item w3-button w3-padding">Volver al índice</a>
-</div>
-</div>
+</nav>
+
+<!-- theHeader -->
+<header class="w3-container w3-theme w3-padding" id="theHeader">
+  <i onclick="openTheSidebar()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <div class="w3-center">
+  <h4>Web de precios</h4>
+  <h1 class="w3-xxxlarge w3-animate-bottom">limpieza en Esquel - 2023/10/26</h1>
+    <div class="w3-padding-32">
+      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('modal01').style.display='block'" style="font-weight:900;">
+      Buscar
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Modal -->
+<div id="modal01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <header class="w3-container w3-theme-l1"> 
+        <div onclick="document.getElementById('modal01').style.display='none'"
+             class="w3-button w3-display-topright">Cerrar</div>
+        <p>limpieza en Esquel - 2023/10/26</p>
+      </header>
+      <div class="w3-padding">
+          <input class="w3-input" oninput="w3.filterHTML('#search', 'article', this.value)" 
+                 placeholder="Buscar artículos y precios..">
+      </div>
+      <footer class="w3-container w3-theme-l1">
+        <p><i class="fa fa-smile-o"></i></p>
+      </footer>
+    </div>
 </div>
 
-<div class="header w3-pale-green w3-text-black w3-mobile" id="myHeader">
-    <div class="w3-row w3-mobile">
-      <div class="w3-col w3-center w3-hide-large m12 s12">
-        <p class="w3-center w3-padding-8">Precios limpieza en Esquel - 2023/10/26</p>
-      </div>
-      <div class="w3-col w3-left l2 m2 s2">
-        <button class="w3-button w3-hover-none" onclick="w3_open('mySidebar');"><i class="fa fa-bars"></i></button>
-      </div>
-      <div class="w3-col l10 m10 s10">
-         <input class="w3-input w3-border w3-padding" 
-                type="text" 
-                placeholder="Buscar..." 
-                id="searchInput" 
-                onkeyup="searchArticleTable()">
-      </div>
-    </div>
-    <div class="w3-row w3-mobile">
-      <div class="w3-col l10 m10 s10">
-        <p>Artículo</p>
-      </div>
-      <div class="w3-col l2 m2 s2">
-        <p class="w3-tooltip">Referencia 
-        <span class="w3-text">. El precio de referencia es el promedio geométrico de los precios observados.</span></p>
-      </div>  
-    </div>
-</div>
-
-<div class="content w3-light-gray w3-mobile" id="articleTable">
-  <div class="w3-container">
-  <table class="w3-table w3-bordered w3-hoverable">
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+<div class="w3-card w3-container" style="min-height:460px">
+<br>
+<input class="w3-input" oninput="w3.filterHTML('#search', 'article', this.value)" placeholder="Buscar">
+<br>
+<div class="w3-container" id="search">
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791130962841 - finish: detergente en polvo lavavajilla finish 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 2169.10 y un precio máximo de 2215.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$2186.20</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $2186.20
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791130963312 - finish: detergente en tabletas para maquina lavavajilla finish 15 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 3625.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$3625.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $3625.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791290794108 - cif: detergente liquido bioactive lima cif 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 430.00 y un precio máximo de 509.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$466.76</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $466.76
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791290794115 - cif: detergente liquido bioactive lima cif 500 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 583.50 y un precio máximo de 730.50</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$657.53</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $657.53
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791290794092 - cif: detergente liquido bioactive lima doypack cif 450 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 645.00 y un precio máximo de 652.91</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$650.92</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $650.92
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791290794054 - cif: detergente liquido bioactive limon cif 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 430.00 y un precio máximo de 509.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$464.98</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $464.98
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791290794061 - cif: detergente liquido bioactive limon cif 500 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 583.50 y un precio máximo de 730.50</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$657.53</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $657.53
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791290794078 - cif: detergente liquido bioactive limon cif 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1295.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1295.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1295.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791290794276 - ala: detergente liquido concentrado limon ala 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 393.00 y un precio máximo de 439.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$432.39</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $432.39
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791130001250 - woolite: detergente liquido ropa fina oscura doypack woolite 450 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 639.00 y un precio máximo de 670.35</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$655.91</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $655.91
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798184581639 - multimax: detergente liquido ultra aloe vera multimax 100 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 160.00 y un precio máximo de 222.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$211.85</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $211.85
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798184581646 - multimax: detergente liquido ultra glicerina multimax 100 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 222.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$222.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $222.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791290794269 - ala: detergente liquido ultra limon doyoack ala 450 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 476.00 y un precio máximo de 519.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$511.57</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $511.57
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7500435216517 - magistral: detergente liquido ultra limon magistral 1.4 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2639.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$2639.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $2639.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7500435216555 - magistral: detergente liquido ultra limon magistral 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 503.50 y un precio máximo de 615.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$556.04</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $556.04
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7500435216548 - magistral: detergente liquido ultra limon magistral 500 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 844.00 y un precio máximo de 1025.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$918.01</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $918.01
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7500435216494 - magistral: detergente liquido ultra marina magistral 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 503.50 y un precio máximo de 579.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$567.56</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $567.56
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7500435216487 - magistral: detergente liquido ultra marina magistral 500 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 844.00 y un precio máximo de 969.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$897.43</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $897.43
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798131250458 - heroe: detergente manzana heroe 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 457.00 y un precio máximo de 506.85</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$486.63</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $486.63
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791130962407 - woolite: detergente para ropa fina lavado a mano bebe doypack woolite 450 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 558.00 y un precio máximo de 655.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$620.92</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $620.92
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791130962414 - woolite: detergente ropa fina lavado a mano seda doypack woolite 450 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 556.00 y un precio máximo de 655.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$620.18</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $620.18
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             3059946160139 - finish: detergente tabletas para maquinas de lavar doypack 30 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 4135.00 y un precio máximo de 5385.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$5107.92</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $5107.92
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791130003643 - woolite: detergente para ropa doypack woolite 900 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1085.00 y un precio máximo de 1188.09</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1160.81</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1160.81
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798184581622 - multimax: detergente liquido ultra limon multimax 100 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 138.60 y un precio máximo de 216.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$197.66</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $197.66
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791290792630 - cif: detergente bioactive lima cif 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1019.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1019.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1019.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798131250533 - héroe: detergente cremoso limon heroe 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 428.00 y un precio máximo de 434.91</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$432.59</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $432.59
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791290794085 - cif: detergente liquido bioactive limon doypack cif 450 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 645.00 y un precio máximo de 652.91</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$651.77</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $651.77
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798083817693 - primer precio: detergente liquido para ropa doypack primer precio 800 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 696.51</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$696.51</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $696.51
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791130001182 - woolite: detergente liquido para ropa fina clasic woolite 450 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 670.35</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$670.35</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $670.35
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791290794283 - ala: detergente liquido ultra limon ala 500 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 496.16</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$496.16</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $496.16
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7500435216531 - magistral: detergente liquido ultra limon magistral 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1235.00 y un precio máximo de 1413.38</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1381.95</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1381.95
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7500435216524 - magistral: detergente liquido ultra limon magistral 900 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1779.00 y un precio máximo de 1797.41</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1791.25</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1791.25
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791290009752 - ala: detergente para ropa alta espuma ropa fina ala camellito 450 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 408.32</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$408.32</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $408.32
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798083817730 - primer precio: detergente ultra manzana primer precio 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 456.71</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$456.71</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $456.71
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798083817754 - primer precio: detergente ultra ocean primer precio 300 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 456.71</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$456.71</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $456.71
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798141716425 - carrefour: detergente cremoso con colageno carrefour 4 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1654.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1654.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1654.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791905023548 - vencedor: detergente limon vencedor 600 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 581.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$581.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $581.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791290794122 - cif: detergente liquido bioactive lima cif 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1135.00 y un precio máximo de 1295.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1212.36</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1212.36
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790990002209 - zorro: detergente liquido blue power doypack zorro 1.4 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1275.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1275.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1275.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790990002179 - zorro: detergente liquido plus doypack zorro 1.4 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1275.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1275.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1275.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7500435216449 - magistral: detergente liquido ultra fragancia aloe magistral 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1167.75</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1167.75</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1167.75
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7500435216470 - magistral: detergente liquido ultra marina magistral 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1245.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1245.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1245.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791720027080 - carrefour expert: detergente ultra glicerina carrefour expert 600 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 576.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$576.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $576.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793699002105 - primer precio: detergente con limon primer precio 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 267.05</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$267.05</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $267.05
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798131250380 - héroe: lavandina aditivada naranja heroe 1 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 364.00 y un precio máximo de 372.78</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$368.76</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $368.76
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798131250397 - héroe: lavandina aditivada naranja heroe 2 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 669.00 y un precio máximo de 685.61</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$677.25</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $677.25
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253003784 - ayudín: lavandina anti-splash tradicional ayudin 2 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 576.00 y un precio máximo de 719.87</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$682.20</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $682.20
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253004439 - ayudín: lavandina clasica ayudin 1 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 313.44</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$313.44</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $313.44
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253004446 - ayudín: lavandina clasica ayudin 2 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 592.48</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$592.48</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $592.48
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791905000020 - querubín: lavandina clasica querubin 1 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 318.83</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$318.83</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $318.83
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791905023227 - sin marca: lavandina comun 4 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 905.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$905.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $905.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791905023203 - odex: lavandina comun odex 1 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 272.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$272.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $272.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791905023210 - odex: lavandina comun odex 2 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 439.00 y un precio máximo de 473.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$455.68</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $455.68
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253003746 - ayudín: lavandina glaciar triple poder ayudin 1 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 275.50 y un precio máximo de 353.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$301.79</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $301.79
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253003753 - ayudín: lavandina glaciar triple poder ayudin 2 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 507.50 y un precio máximo de 649.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$573.91</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $573.91
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253003760 - ayudín: lavandina glaciar triple poder ayudin 4 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1279.00 y un precio máximo de 1297.09</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1289.82</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1289.82
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798184581059 - multimax: lavandina granulada multimax 40 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 320.30 y un precio máximo de 549.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$483.82</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $483.82
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253003722 - ayudín: lavandina lavanda triple poder ayudin 2 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 507.50 y un precio máximo de 649.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$588.19</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $588.19
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253003739 - ayudín: lavandina lavanda triple poder ayudin 4 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1279.00 y un precio máximo de 1297.09</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1285.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1285.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798131250564 - héroe: lavandina liquida multiaccion heroe 1 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 361.00 y un precio máximo de 365.15</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$362.84</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $362.84
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798131250571 - héroe: lavandina liquida multiaccion heroe 2 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 659.00 y un precio máximo de 696.51</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$679.20</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $679.20
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791905000372 - querubín: lavandina tradicional querubin 4 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1265.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1265.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1265.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253003715 - ayudín: lavandina lavanda triple accion ayudin 1 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 275.50 y un precio máximo de 353.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$284.56</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $284.56
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798131250601 - héroe: lavandina clasica heroe 4 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1306.91</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1306.91</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1306.91
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253005863 - ayudín: lavandina en gel citrica ayudin 500 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 365.08</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$365.08</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $365.08
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253005818 - ayudín: lavandina en gel citrica botella ayudin 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 468.00 y un precio máximo de 554.80</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$539.29</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $539.29
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253005849 - ayudín: lavandina en gel lavanda botella ayudin 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 554.80</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$554.80</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $554.80
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253005832 - ayudín: lavandina en gel menta botella ayudin 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 468.00 y un precio máximo de 554.80</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$524.21</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $524.21
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253005801 - ayudín: lavandina en gel original botella ayudin 750 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 468.00 y un precio máximo de 554.80</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$541.48</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $541.48
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253003234 - ayudín: lavandina para ropa ayudin 400 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 433.75</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$433.75</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $433.75
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253002589 - ayudín: lavandina ayudin ropa blanca 450 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1269.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1269.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1269.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793699002259 - primer precio: lavandina tradicional primer precio 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 539.54</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$539.54</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $539.54
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791905024248 - odex: lavandina aditivada en gel original odex 700 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 445.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$445.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $445.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791905000037 - querubín: lavandina clasica concentrada querubin 2 lt.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 603.76</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$603.76</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $603.76
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793253005856 - ayudín: lavandina en gel original ayudin 500 ml.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 391.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$391.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $391.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798158709953 - best: trapo de piso bicolor best 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 954.45</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$954.45</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $954.45
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             0754697468697 - glow: trapo de piso blanco 48x62 cm glow 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1259.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1259.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1259.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798136921766 - media naranja: trapo de piso blanco compacto g media naranja 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1109.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1109.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1109.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790927812932 - media naranja: trapo de piso blanco reforzado mediano media naranja 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1289.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1289.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1289.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798158702572 - best: trapo de piso blanco tejido de 48 cm 54 cm best 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 897.75</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$897.75</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $897.75
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             0754697468741 - glow: trapo de piso gris 48x62 cm glow 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 679.00 y un precio máximo de 757.55</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$741.14</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $741.14
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790528003036 - banderita: trapo de piso gris banderita 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1549.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1549.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1549.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798136921742 - media naranja: trapo de piso gris compacto g media naranja 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 849.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$849.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $849.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790927812901 - media naranja: trapo de piso gris mediano reforzado media naranja 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 999.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$999.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $999.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790927812918 - media naranja: trapo de piso gris reforzado grande media naranja 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1155.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1155.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1155.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798158702565 - best: trapo de piso gris tejido de 48 cm 54 cm best 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 719.25</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$719.25</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $719.25
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790528008246 - sin marca: trapo de piso nido de abeja 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1835.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1835.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1835.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798158702589 - best: trapo de piso nido de abeja de 48 cm 58 cm best 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 960.75</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$960.75</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $960.75
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790528003302 - banderita: trapo de piso nido de abeja de 60 cm 70 cm banderita 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2899.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$2899.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $2899.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790528003203 - banderita: trapo de piso rayado banderita 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1969.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1969.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1969.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798136921704 - media naranja: trapo rejilla americana tejido liviano media naranja 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 535.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$535.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $535.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798136921698 - media naranja: trapo rejilla doble reforzada media naranja 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 745.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$745.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $745.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798136921681 - media naranja: trapo rejilla multiuso media naranja 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 519.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$519.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $519.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791053005267 - costero: trapo de piso blanco reforzado costero 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 860.01</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$860.01</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $860.01
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794321000032 - task: trapo de piso gris task 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 969.01</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$969.01</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $969.01
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794440005369 - virulana: trapo de piso gris virulana 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 637.65</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$637.65</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $637.65
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798035495290 - primer precio: trapo para piso gris primer precio 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 511.21</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$511.21</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $511.21
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798035492190 - primer precio: trapo rejilla para coche primer precio 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 413.11</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$413.11</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $413.11
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794321000025 - task: trapo piso tradicional task 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 642.01</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$642.01</span>
-            </p>
-          </td>
-      </tr>
-      
-  </table>
-  </div>
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $642.01
+        </p>
+        </div>
+        
+    </article>
+    
 </div>
-<script src="/static/js/table.js"></script>
+</div>
+
+<footer class="w3-container w3-theme">
+  <p class="w3-opacity">Hecho por Gipis - DIE - FI - UNPSJB</p>
+</footer>
+
+<script>
+// Side navigation
+function openTheSidebar() {
+  var x = document.getElementById("theSidebar");
+  x.style.width = "100%";
+  // x.style.fontSize = "20px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+function closeTheSidebar() {
+  document.getElementById("theSidebar").style.display = "none";
+}
+</script>
+
+<script src="https://www.w3schools.com/lib/w3.js"></script>
 </body>
-</html>
+</html> 

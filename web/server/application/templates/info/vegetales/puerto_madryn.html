@@ -2,32 +2,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-<link href="/static/img/favicon.ico" rel="shortcut icon">
-<link rel="stylesheet" href="/static/css/table.css">
 </head>
 <body>
 
-<div class="top-container w3-light-blue w3-hide-small w3-hide-medium">
-  <div class="w3-bar w3-teal" style="z-index:4">
-    <div class="w3-bar-item w3-left"><img src="/static/img/chakana.svg" width="50px"></div>                    
-    <h1 class="w3-bar-item w3-right w3-hide-small">Web de Precios - Observatorio de Economía - FCE
-    </h1>
-    <h1 class="w3-bar-item w3-right w3-hide-medium w3-hide-large">Web de Precios
-    </h1>
-    <div class="w3-bar-item">
-        <h2 class="w3-center w3-padding-8">Precios vegetales en Puerto Madryn - 2023/10/26</h2>
-    </div>
-  </div>
-</div>
-
-<!-- Sidebar -->
-<div class="w3-display-container">
-<div class="w3-sidebar w3-border-right w3-display-topleft" style="display:none" id="mySidebar">
-<div class="w3-bar-block">
-  <button onclick="w3_close('mySidebar')" class="w3-bar-item w3-large">Cerrar &times;</button>
+<!-- theSidebar -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="theSidebar">
+  <button class="w3-bar-item w3-button" onclick="closeTheSidebar()">Cerrar <i class="fa fa-remove"></i></button>
   <a href="/info/lacteos/puerto_madryn"             class="w3-bar-item w3-button w3-padding"> Lácteos</a>  
   <a href="/info/harinas/puerto_madryn"             class="w3-bar-item w3-button w3-padding"> Harinas</a>  
   <a href="/info/vegetales/puerto_madryn"           class="w3-bar-item w3-button w3-padding"> Vegetales</a>  
@@ -38,1695 +24,1845 @@
   <a href="/info/limpieza/puerto_madryn"                class="w3-bar-item w3-button w3-padding"> Artículos de limpieza</a>    
   <a href="/info/acba/puerto_madryn"                class="w3-bar-item w3-button w3-padding"> Artículos de la canasta básica de alimentos</a>  
   <a href="/index"                                  class="w3-bar-item w3-button w3-padding">Volver al índice</a>
-</div>
-</div>
+</nav>
+
+<!-- theHeader -->
+<header class="w3-container w3-theme w3-padding" id="theHeader">
+  <i onclick="openTheSidebar()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <div class="w3-center">
+  <h4>Web de precios</h4>
+  <h1 class="w3-xxxlarge w3-animate-bottom">vegetales en Puerto Madryn - 2023/10/26</h1>
+    <div class="w3-padding-32">
+      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('modal01').style.display='block'" style="font-weight:900;">
+      Buscar
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Modal -->
+<div id="modal01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <header class="w3-container w3-theme-l1"> 
+        <div onclick="document.getElementById('modal01').style.display='none'"
+             class="w3-button w3-display-topright">Cerrar</div>
+        <p>vegetales en Puerto Madryn - 2023/10/26</p>
+      </header>
+      <div class="w3-padding">
+          <input class="w3-input" oninput="w3.filterHTML('#search', 'article', this.value)" 
+                 placeholder="Buscar artículos y precios..">
+      </div>
+      <footer class="w3-container w3-theme-l1">
+        <p><i class="fa fa-smile-o"></i></p>
+      </footer>
+    </div>
 </div>
 
-<div class="header w3-pale-green w3-text-black w3-mobile" id="myHeader">
-    <div class="w3-row w3-mobile">
-      <div class="w3-col w3-center w3-hide-large m12 s12">
-        <p class="w3-center w3-padding-8">Precios vegetales en Puerto Madryn - 2023/10/26</p>
-      </div>
-      <div class="w3-col w3-left l2 m2 s2">
-        <button class="w3-button w3-hover-none" onclick="w3_open('mySidebar');"><i class="fa fa-bars"></i></button>
-      </div>
-      <div class="w3-col l10 m10 s10">
-         <input class="w3-input w3-border w3-padding" 
-                type="text" 
-                placeholder="Buscar..." 
-                id="searchInput" 
-                onkeyup="searchArticleTable()">
-      </div>
-    </div>
-    <div class="w3-row w3-mobile">
-      <div class="w3-col l10 m10 s10">
-        <p>Artículo</p>
-      </div>
-      <div class="w3-col l2 m2 s2">
-        <p class="w3-tooltip">Referencia 
-        <span class="w3-text">. El precio de referencia es el promedio geométrico de los precios observados.</span></p>
-      </div>  
-    </div>
-</div>
-
-<div class="content w3-light-gray w3-mobile" id="articleTable">
-  <div class="w3-container">
-  <table class="w3-table w3-bordered w3-hoverable">
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+<div class="w3-card w3-container" style="min-height:460px">
+<br>
+<input class="w3-input" oninput="w3.filterHTML('#search', 'article', this.value)" placeholder="Buscar">
+<br>
+<div class="w3-container" id="search">
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             2-1-2037212000007 - sin marca: papa comercial bolsita 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 880.90</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$880.90</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $880.90
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790310984161 - pehuamar: papas fritas acanaladas pehuamar 245 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 733.82</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$733.82</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $733.82
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790310984147 - pehuamar: papas fritas acanaladas pehuamar 80 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 373.50</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$373.50</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $373.50
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790310984734 - lays: papas fritas clasicas lays 230 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1975.00 y un precio máximo de 2192.54</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$2103.31</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $2103.31
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790310985588 - lays: papas fritas clasicas lays 330 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 2365.00 y un precio máximo de 2435.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$2424.87</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $2424.87
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790310985366 - pehuamar: papas fritas clasicas pehuamar 135 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 936.00 y un precio máximo de 1006.17</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$983.36</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $983.36
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790310985373 - pehuamar: papas fritas clasicas pehuamar 230 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1535.00 y un precio máximo de 1589.87</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1562.19</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1562.19
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790310984802 - pehuamar: papas fritas clasicas pehuamar 75 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 612.00 y un precio máximo de 655.29</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$647.17</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $647.17
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794520868815 - krachitos: papas fritas corte americano krachitos 115 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 615.00 y un precio máximo de 819.75</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$700.82</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $700.82
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794520868822 - krachitos: papas fritas corte americano krachitos 170 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 805.00 y un precio máximo de 1106.41</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$960.57</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $960.57
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794520868839 - krachitos: papas fritas corte americano krachitos 270 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1115.00 y un precio máximo de 1476.66</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1288.79</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1288.79
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794520868808 - krachitos: papas fritas corte americano krachitos 55 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 374.00 y un precio máximo de 494.87</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$460.06</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $460.06
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798052360922 - nikitos: papas fritas corte americano nikitos 70 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 431.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$431.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $431.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794520868761 - krachitos: papas fritas corte tradicional krachitos 115 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 615.00 y un precio máximo de 857.99</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$737.48</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $737.48
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794520868853 - krachitos: papas fritas jamon serrano krachitos 90 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 655.00 y un precio máximo de 808.18</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$720.65</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $720.65
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790310985618 - lays: papas fritas jamon serrano lays 122 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1290.00 y un precio máximo de 1329.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1319.14</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1319.14
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798052362902 - nikitos: papas fritas jamon serrano nikitos 65 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 492.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$492.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $492.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794520868891 - krachitos: papas fritas ketchup krachitos 90 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 625.00 y un precio máximo de 838.86</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$698.28</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $698.28
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794520868921 - krachitos: papas fritas pay krachitos 150 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 818.00 y un precio máximo de 859.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$850.64</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $850.64
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794520868914 - krachitos: papas fritas pay krachitos 55 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 374.00 y un precio máximo de 494.87</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$438.82</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $438.82
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798332890347 - julicroc: papas fritas sabor cheddar julicroc 70 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 438.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$438.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $438.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794520868877 - krachitos: papas fritas sabor cheddar krachitos 90 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 655.00 y un precio máximo de 838.86</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$772.46</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $772.46
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             0038000184949 - pringles: papas fritas sabor crema y cebolla pringles 124 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1529.00 y un precio máximo de 1754.15</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1600.64</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1600.64
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798052361950 - nikitos: papas fritas sabor ketchup/barbacoa nikitos 65 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 492.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$492.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $492.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794520868945 - krachitos: papas fritas sin sal krachitos 55 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 374.00 y un precio máximo de 413.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$393.02</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $393.02
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793706000957 - julicroc: papas fritas sin tacc julicroc 160 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 799.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$799.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $799.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794520868778 - krachitos: papas fritas tradicionales krachitos 170 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 763.00 y un precio máximo de 1091.75</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$945.93</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $945.93
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794520868785 - krachitos: papas fritas tradicionales krachitos 270 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1035.00 y un precio máximo de 1496.91</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1266.14</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1266.14
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794520868754 - krachitos: papas fritas tradicionales krachitos 55 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 374.00 y un precio máximo de 504.29</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$442.98</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $442.98
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790079021503 - paladini: papas baston paladini 380 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 869.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$869.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $869.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790079021459 - paladini: papas baston paladini 700 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1499.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1499.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1499.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791102051771 - cooperativa: papas corte americano cooperativa 150 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 969.01</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$969.01</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $969.01
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7797906054628 - mc cain: papas crinkle mc cain 400 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1000.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1000.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1000.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798304851536 - simplot: papas extra crunch corte tradicional sin tacc simplot 700 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 999.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$999.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $999.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790310985076 - lays: papas fritas sabor cheddar lays 85 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 607.48</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$607.48</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $607.48
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790310983942 - lay's: papas fritas sabor jamon serrano lay's 85 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 607.48</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$607.48</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $607.48
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             0038000184932 - pringles: papas fritas sabor original pringles 124 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1529.00 y un precio máximo de 1754.15</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1637.71</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1637.71
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             0038000184956 - pringles: papas fritas sabor queso pringles 124 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 1529.00 y un precio máximo de 1754.15</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1658.98</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1658.98
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7797906000199 - golden longs: papas prefritas supercongeladas golden longs 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1579.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1579.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1579.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790079021497 - paladini: papas rusticas paladini 700 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1589.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1589.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1589.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791102051764 - cooperativa: papas tradicionales cooperativa 250 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1274.21</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1274.21</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1274.21
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798304851475 - simplot: papas congeladas rusticas simplot 700 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 999.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$999.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $999.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2303620000008 - sin marca: papa blanca cepillada 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 849.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$849.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $849.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2302132000001 - sin marca: papa blanca lavada 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 949.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$949.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $949.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             2658628000001 - sin marca: papa frita corte español 100 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 401.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$401.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $401.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2387600000004 - sin marca: papa negra 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 599.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$599.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $599.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2305960000007 - sin marca: papa roja fraccionada 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 699.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$699.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $699.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798304851512 - simplot: papas extra crunch corte fino simplot 700 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 986.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$986.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $986.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798066075409 - slices: papas fritas al pesto terra slices 65 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 510.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$510.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $510.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791720028520 - carrefour: papas fritas carrefour 65 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 343.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$343.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $343.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798066075539 - slices: papas fritas cheddar slices 250 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1600.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1600.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1600.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791720028247 - carrefour classic: papas fritas corte tradicional classic 150 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 639.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$639.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $639.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791720028230 - carrefour classic: papas fritas corte tradicional classic 250 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1049.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1049.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1049.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791720028254 - carrefour classic: papas fritas corte tradicional classic 50 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 261.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$261.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $261.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798304851321 - simplot: papas fritas corte tradicional simplot 700 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 819.00 y un precio máximo de 833.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$825.97</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $825.97
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798181040184 - trym's: papas fritas sabor cebolla morada trym's 60 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 560.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$560.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $560.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798066075423 - slices: papas fritas slices 150 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 870.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$870.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $870.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798066075416 - slices: papas fritas slices 250 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1400.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1400.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1400.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791720025833 - carrefour: papas noisette carrefour 500 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 833.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$833.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $833.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798066070756 - chil: papas pay slices chil 140 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 780.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$780.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $780.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798304851703 - simplot: papas baston congeladas corte fino simplot 2.25 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1583.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1583.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1583.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             5412588061079 - simplot: papas baston corte tradicional simplot 2.5 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1399.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1399.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1399.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798304851581 - simplot: papas congeladas tradicional simplot 2 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2399.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$2399.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $2399.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790310984000 - lay's: papas fritas clasicas lay's 145 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 901.04</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$901.04</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $901.04
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790310984031 - lay's: papas fritas clasicas lay's 94 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 585.83</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$585.83</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $585.83
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794520868259 - krachitos: papas fritas corte americano krachitos 110 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 329.18</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$329.18</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $329.18
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7797906000700 - mc cain: papas prefritas supercongeladas mc cain 400 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 649.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$649.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $649.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             5412588001204 - simplot: papas rusticas en gajos simplot 2 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 2749.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$2749.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $2749.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             2-1-2037104000009 - sin marca: cebolla comercial bolsita 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 362.73</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$362.73</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $362.73
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790150440360 - alicante: cebolla deshidratada alicante 50 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 352.00 y un precio máximo de 483.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$455.36</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $455.36
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7796373113500 - la parmesana: cebolla deshidratada la parmesana 25 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 317.00 y un precio máximo de 323.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$322.14</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $322.14
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             2-1-2037915000007 - sin marca: cebolla en tubo 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 449.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$449.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $449.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             2-1-2037100000003 - la anónima: cebolla verdeo la anonima 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 880.90</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$880.90</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $880.90
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7794000006119 - knorr: cebolla deshidratada knorr 100 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 481.00 y un precio máximo de 569.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$517.15</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $517.15
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791584000649 - primer precio: cebolla deshidratada primer precio 25 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 271.41</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$271.41</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $271.41
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2320056000006 - sin marca: cebolla 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 372.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$372.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $372.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2372243000009 - sin marca: cebolla blanca 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 699.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$699.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $699.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2320093000007 - sin marca: cebolla de verdeo 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 729.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$729.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $729.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             2920724300003 - sin marca: cebolla en escamas 50 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 380.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$380.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $380.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7792900990576 - dos anclas: cebolla en escamas dos anclas 50 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 405.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$405.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $405.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2304650000006 - sin marca: cebolla fraccionada 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 30.25</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$30.25</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $30.25
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             2-1-2070928000008 - sin marca: zanahoria comercial bolsita 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 329.65</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$329.65</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $329.65
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791102055212 - cooperativa: zanahoria en cubos lata cooperativa 300 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 354.25</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$354.25</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $354.25
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791102055229 - cooperativa: zanahoria y arvejas cooperativa 300 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 354.25</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$354.25</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $354.25
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2320055000007 - sin marca: zanahoria 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 349.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$349.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $349.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2304841000006 - sin marca: zanahoria eco fraccionado 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 48.60</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$48.60</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $48.60
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             2-1-2037330000002 - la anónima: zapallo criollo la anonima 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 439.90</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$439.90</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $439.90
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2320054000008 - sin marca: zapallo anco especial fraccionado 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 359.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$359.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $359.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2320180000002 - sin marca: zapallo japones 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 399.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$399.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $399.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             2-1-2037297000008 - la anónima: zapallo anco en rodajas la anonima 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 528.32</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$528.32</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $528.32
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             2-1-2038291000001 - la anónima: zapallo anco fraccionado la anonima 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 459.15</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$459.15</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $459.15
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798132920879 - canale: tomate cubeteado canale 400 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 384.00 y un precio máximo de 595.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$545.10</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $545.10
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793360105944 - la campagnola: tomate cubeteado la campagnola 400 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 438.00 y un precio máximo de 471.06</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$452.73</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $452.73
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790790120738 - inca: tomate pelado perita inca 400 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 545.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$545.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $545.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798132920763 - canale: tomate perita alco 400 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio mínimo de 315.01 y un precio máximo de 470.40</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$379.96</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $379.96
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790580567101 - arcor: tomate perita cubeteado en lata arcor 400 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 424.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$424.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $424.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798132920848 - canale: tomate perita lata canale 400 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 502.95</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$502.95</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $502.95
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798144510464 - inca: tomate triturado botella inca 910 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1375.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1375.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1375.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798050150495 - cialpil: tomate triturado cialpil 970 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 969.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$969.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $969.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798050159177 - cialpil: tomate triturado cialpil 970 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 829.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$829.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $829.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791876048571 - corper: tomate triturado sin tacc botella corper 910 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1019.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1019.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1019.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7795184003901 - noel: tomate pelado entero comun noel 400 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 273.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$273.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $273.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793360000089 - la campagnola: tomate pelado perita en lata la campagnola 400 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 284.05</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$284.05</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $284.05
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790696000011 - abeto: tomate triturado abeto 950 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 839.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$839.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $839.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798180890018 - cerro blanco: tomate triturado cerro blanco 970 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 914.51</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$914.51</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $914.51
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790645000352 - gentleman: tomate triturado gentleman 950 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 849.11</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$849.11</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $849.11
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798156760956 - primer precio: tomate triturado primer precio 950 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 860.01</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$860.01</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $860.01
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791102046609 - cooperativa: tomate triturado sin tacc cooperativa 950 cc.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 870.91</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$870.91</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $870.91
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             2646650000007 - sin marca: tomate desecado 100 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 911.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$911.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $911.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2320048000007 - sin marca: tomate perita 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1290.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1290.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1290.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791720027721 - carrefour: tomate perita cubeteados carrefour 400 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 261.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$261.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $261.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798141714346 - carrefour: tomate perita entero carrefour 400 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 230.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$230.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $230.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791720030189 - bulnez: tomate perita entero lata bulnez 400 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 206.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$206.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $206.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7791720026540 - carrefour: tomate triturado doypack carrefour 970 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 563.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$563.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $563.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793046015024 - dulcor: tomate triturado dulcor 960 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 973.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$973.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $973.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7793360000287 - salsati: tomate pelado cubeteado salsati 400 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 241.88</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$241.88</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $241.88
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790123001383 - vigente: tomate triturado tetra vigente 500 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 236.66</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$236.66</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $236.66
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7790580567903 - arcor: tomate pelado perita en lata arcor 400 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 200.06</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$200.06</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $200.06
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             2-1-2037192000004 - la anónima: lechuga francesa la anonima 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 880.90</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$880.90</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $880.90
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798377180021 - sin marca: lechuga hidroponica mantecosa 1 un.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 660.40</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$660.40</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $660.40
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798149701034 - sin marca: lechuga mantecosa envasada 200 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 799.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$799.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $799.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             2-1-2037194000002 - la anónima: lechuga mantecosa la anonima 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 799.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$799.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $799.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             7798149701041 - sin marca: lechuga morada envasada 250 gr.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 799.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$799.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $799.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2320061000008 - sin marca: lechuga capuchina 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 949.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$949.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $949.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2320064000005 - sin marca: lechuga escarola fina 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 599.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$599.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $599.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2320066000003 - sin marca: lechuga frances 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1899.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1899.00</span>
-            </p>
-          </td>
-      </tr>
-      
-      <tr class="row">      
-          <td>
-            <p class="searchThis w3-tooltip">
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1899.00
+        </p>
+        </div>
+        
+    </article>
+    
+    <article class="w3-row">
+        <div class="w3-twothird w3-pale-blue">            
+            <p class="w3-tooltip w3-left">
             10-1-2320067000002 - sin marca: lechuga mantecosa 1 kg.&nbsp;<span class="w3-text">Para este artículo se observó un precio uniforme de 1499.00</span>
             </p>
-          </td>
-          <td>
-            <p>
-            <span class="w3-right">$1499.00</span>
-            </p>
-          </td>
-      </tr>
-      
-  </table>
-  </div>
+        </div>
+        <div class="w3-third w3-pale-green">
+        <p class="w3-left">
+        $1499.00
+        </p>
+        </div>
+        
+    </article>
+    
 </div>
-<script src="/static/js/table.js"></script>
+</div>
+
+<footer class="w3-container w3-theme">
+  <p class="w3-opacity">Hecho por Gipis - DIE - FI - UNPSJB</p>
+</footer>
+
+<script>
+// Side navigation
+function openTheSidebar() {
+  var x = document.getElementById("theSidebar");
+  x.style.width = "100%";
+  // x.style.fontSize = "20px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+function closeTheSidebar() {
+  document.getElementById("theSidebar").style.display = "none";
+}
+</script>
+
+<script src="https://www.w3schools.com/lib/w3.js"></script>
 </body>
-</html>
+</html> 
