@@ -38,7 +38,7 @@ class T:
     REPEAT_PASSWORD = 'Repeat password'
     ABOUT_ME = 'About me'
     INVALID_USERNAME_OR_PASSWORD = 'Invalid username or password'
-    SIGN_IN = 'Sign in',
+    SIGN_IN = 'Sign in'
     REGISTER = 'Register user'
     BETWEEN_10_to_32_CHARACTERS = 'Input must be 10 to 32 characters long'
     MESSAGES = 'Messages'
