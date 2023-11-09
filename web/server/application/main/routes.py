@@ -1,5 +1,5 @@
 from flask import render_template
-from flask_login import current_user
+from flask_login import current_user, login_required
 from application import db, t, T
 
 from application.main import bp
