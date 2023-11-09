@@ -1,6 +1,6 @@
 from flask import jsonify, request, url_for, abort, current_app
-from application import db
-from application.models import User, Message, Post
+from application import db, t, T
+from application.models import User, Post, Message, Store, save_image
 from application.api import bp
 from application.api.auth import token_auth
 from application.api.errors import bad_request
@@ -14,6 +14,15 @@ import uuid
 def get_current_user():
     current_user = token_auth.current_user()
     return jsonify(current_user.to_dict())
+
+
+@bp.route('/users/all', methods=['GET'])
+@token_auth.login_required
+def get_users():
+    page = request.args.get('page', 1, type=int)
+    per_page = min(request.args.get('per_page', 10, type=int), 100)
+    data = User.to_collection_dict(User.query, page, per_page, 'api.get_users')
+    return jsonify(data)
 
 
 @bp.route('/users/<int:id>', methods=['GET'])
@@ -31,19 +40,39 @@ def update_user(id):
     data = request.get_json() or {}
     if 'username' in data and data['username'] != user.username and \
             User.query.filter_by(username=data['username']).first():
-        return bad_request('please use a different username')
+        return bad_request(t(DIFFERENT_USERNAME))
     user.from_dict(data, new_user=False)
     db.session.commit()
     return jsonify(user.to_dict())
+
+
+@bp.route('/users/followers/<int:id>', methods=['GET'])
+@token_auth.login_required
+def get_followers(id):
+    user = User.query.get_or_404(id)
+    page = request.args.get('page', 1, type=int)
+    per_page = min(request.args.get('per_page', 10, type=int), 100)
+    data = User.to_collection_dict(user.followers, page, per_page, 'api.get_followers', id=id)
+    return jsonify(data)
+
+
+@bp.route('/users/followed/<int:id>', methods=['GET'])
+@token_auth.login_required
+def get_followed(id):
+    user = User.query.get_or_404(id)
+    page = request.args.get('page', 1, type=int)
+    per_page = min(request.args.get('per_page', 10, type=int), 100)
+    data = User.to_collection_dict(user.followed, page, per_page, 'api.get_followed', id=id)
+    return jsonify(data)
 
 
 @bp.route('/users', methods=['POST'])
 def create_user():
     data = request.get_json() or {}
     if 'username' not in data or 'password' not in data:
-        return bad_request('must include username and password fields:' + str(data))
+        return bad_request(NO_USER_CREDENTIALS)
     if User.query.filter_by(username=data['username']).first():
-        return bad_request('please use a different username')
+        return bad_request(t(DIFFERENT_USERNAME))
     user = User()
     user.from_dict(data, new_user=True)
     db.session.add(user)
@@ -54,13 +83,11 @@ def create_user():
     return response
 
 
-
 @bp.route('/messages/all', methods=['GET'])
 @token_auth.login_required
 def all_the_messages():
     current_user = token_auth.current_user()
     current_user.last_message_read_time = datetime.utcnow()
-    # current_user.add_notification('unread_message_count', 0)
     db.session.commit()
     page = request.args.get('page', 1, type=int)
     per_page = request.args.get('per_page', 5, type=int)
@@ -76,7 +103,6 @@ def delete_all_the_messages():
     current_user = token_auth.current_user()
     if user == current_user:    
         current_user.last_message_read_time = datetime.utcnow()
-        current_user.add_notification('unread_message_count', 0)
         db.session.commit()
         messages = current_user.messages_received.order_by(Message.timestamp.desc())
         if messages:
@@ -101,10 +127,9 @@ def get_message(id):
     else:
         return bad_request("current user can not request this message")
     
-
 @bp.route('/posts', methods=['POST'])
 @token_auth.login_required
-def publish():
+def publish_post():
     current_user = token_auth.current_user()
     data = request.get_json() or {}
     try:
@@ -115,4 +140,3 @@ def publish():
     db.session.add(new_post)
     db.session.commit()
     return jsonify(current_user.to_dict())
-

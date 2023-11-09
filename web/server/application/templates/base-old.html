@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>{{ title }}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href="/static/img/favicon.ico" rel="shortcut icon">
+</head>
+<body>
+<div class="w3-container w3-teal">
+<header class="w3-container w3-theme w3-padding">
+<div class="w3-row">
+  <div class="w3-col m1">
+  <img src="/static/img/chakana.svg" width="50" height="50" onclick="w3_open()">  
+  </div>
+  <div class="w3-col w3-rest w3-center">
+  <h1 class="w3-xxxlarge">Web de Precios - Observatorio de Economía - FCE</h1>
+  <h2 class="w3-animate-bottom">El sur de la información</h2>
+  </div>
+</div>
+</header>
+
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-right w3-center" style="display:none;right:0;" id="sidebar">
+  <h1 class="w3-text-theme">Vos sabes que hacer</h1>
+  <button class="w3-bar-item w3-button" onclick="w3_close()">Cerrar<i class="fa fa-remove"></i></button>
+  <a href="#" class="w3-bar-item w3-button">Editores</a>
+  <a href="#" class="w3-bar-item w3-button">Colaboradores</a>
+</nav>
+
+<div class="w3-container w3-light-gray">
+{% block content %}
+{% endblock %}
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme w3-padding">
+  <div class="w3-row">
+    <div class="w3-col w3-right">
+    <p class="w3-right">Hecho por GIPIS - DIE - FI - UNPSJB</p>   
+    </div>
+  </div>
+</footer>
+
+</div>
+<script src="/static/js/base.js"></script>
+</body>
+</html>
+ 
