@@ -30,7 +30,7 @@ class T:
     MESSAGE_SENT = 'Message sent'
     SEND_MESSAGE = 'Send message'
     MESSAGES = 'Messages'
-    MESSAGES_LIST = 'Messages list',
+    MESSAGES_LIST = 'Messages list'
     SEND = 'Send'
     ACCEPT = 'Accept'
     USER = 'User'
