@@ -65,7 +65,7 @@ es = {T.LOGIN_MESSAGE: 'Por favor, acceda a esta página con usuario y contrase�
       T.SEND: 'Enviar',
       T.ACCEPT: 'Aceptar',
       T.USER: 'Usuario',
-      T.PASSWORD: 'contraseña',
+      T.PASSWORD: 'Contraseña',
       T.REPEAT_PASSWORD: 'Repetir contraseña',
       T.ABOUT_ME: 'Sobre mi',
       T.INVALID_USERNAME_OR_PASSWORD: 'Usuario o contraseña invalidos',
@@ -87,7 +87,7 @@ T.lan = "es"
 migrate = Migrate()
 login = LoginManager()
 login.login_view = 'auth.login'
-login.login_message = 'Please log in to access this page.'
+login.login_message = t(T.LOGIN_MESSAGE)
 
 
 def create_app(config_class=Config):
