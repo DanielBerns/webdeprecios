@@ -39,9 +39,9 @@ def post_create():
         return redirect(url_for('main.post_create', page=1))
     page = request.args.get('page', 1, type=int)
     posts = current_user.followed_posts().paginate(
-        page, 
-        current_app.config['POSTS_PER_PAGE'], 
-        False)
+        page=page, 
+        per_page=current_app.config['POSTS_PER_PAGE'], 
+        error_out=False)
     
     next_url = url_for('main.post_create', page=posts.next_num) if posts.has_next else None
     prev_url = url_for('main.post_create', page=posts.prev_num) if posts.has_prev else None
