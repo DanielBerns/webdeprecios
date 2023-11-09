@@ -8,6 +8,8 @@ from application.models import User
 
 
 
+# 20231109
+
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
