@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 
 from flask import render_template
 from flask_login import current_user, login_required
