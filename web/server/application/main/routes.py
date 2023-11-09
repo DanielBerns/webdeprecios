@@ -48,7 +48,7 @@ def post_create():
     next_url = url_for('main.post_create', page=posts.next_num) if posts.has_next else None
     prev_url = url_for('main.post_create', page=posts.prev_num) if posts.has_prev else None
     
-    return render_template('post_create.html', 
+    return render_template('main/post_create.html', 
                            title=t(T.INDEX), 
                            form=form,
                            posts=posts.items, 
