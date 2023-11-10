@@ -99,7 +99,7 @@ def posts_allofthem():
 
 @bp.route('/message/<recipient>', methods=['GET', 'POST'])
 @login_required
-def message_recipient(recipient):
+def message_create(recipient):
     user = User.query.filter_by(username=recipient).first_or_404()
     form = MessageForm()
     if form.validate_on_submit():
@@ -110,7 +110,7 @@ def message_recipient(recipient):
         db.session.commit()
         flash(t(T.MESSAGE_SENT))
         return redirect(url_for('main.posts_followed', username=recipient))
-    return render_template('main/message_send.html', 
+    return render_template('main/message_create.html', 
                            title=t(T.SEND_MESSAGE),
                            form=form, 
                            recipient=recipient)

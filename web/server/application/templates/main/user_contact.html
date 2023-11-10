@@ -18,7 +18,7 @@
     <hr>
     {% if user != current_user %}
             <p>
-              <a href="{{ url_for('main.message_recipient', recipient=user.username) }}">Enviar mensaje privado</a>
+              <a href="{{ url_for('main.message_create', recipient=user.username) }}">Enviar mensaje privado</a>
             </p>
             <hr>
                 {% if not current_user.is_following(user) %}
