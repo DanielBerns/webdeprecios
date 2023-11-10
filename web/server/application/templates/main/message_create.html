@@ -13,7 +13,7 @@
       <a class="w3-bar-item w3-left" href="{{ url_for('main.index') }}">Indice</a>
       <a class="w3-bar-item w3-left" href="{{ url_for('main.posts_allofthem') }}">Todas las publicaciones</a>              
       <a class="w3-bar-item w3-left" href="{{ url_for('main.posts_followed', username=current_user.username) }}">Las publicaciones que sigo</a>
-      {% include 'nav_messages.html' %}
+      {% include 'main/message_nav.html' %}
       <a class="w3-bar-item w3-right" href="{{ url_for('auth.logout') }}">Salir</a>
   {% endif %}
   </div>
