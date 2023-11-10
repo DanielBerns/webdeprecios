@@ -86,7 +86,9 @@ def posts_followed(username):
 def posts_allofthem():
    page = request.args.get('page', 1, type=int)
    posts = Post.query.order_by(Post.timestamp.desc()).paginate(
-       page, current_app.config['POSTS_PER_PAGE'], False)
+       page=page, 
+       per_page=current_app.config['POSTS_PER_PAGE'], 
+       error_out=False)
    next_url = url_for('main.posts_allofthem', page=posts.next_num) \
        if posts.has_next else None
    prev_url = url_for('main.posts_allofthem', page=posts.prev_num) \
@@ -124,9 +126,9 @@ def messages():
     page = request.args.get('page', 1, type=int)
     messages = current_user.messages_received.order_by(
         Message.timestamp.desc()).paginate(
-            page, 
-            current_app.config['POSTS_PER_PAGE'], 
-            False)
+            page=page, 
+            per_page=current_app.config['POSTS_PER_PAGE'], 
+            error_out=False)
     next_url = url_for('main.messages', page=messages.next_num) \
         if messages.has_next else None
     prev_url = url_for('main.messages', page=messages.prev_num) \
