@@ -10,7 +10,7 @@
   {% else %}
       <a class="w3-bar-item w3-left" href="{{ url_for('main.help') }}">Ayuda</a>              
       <a class="w3-bar-item w3-left" href="{{ url_for('main.index') }}">Indice</a>
-      <a class="w3-bar-item w3-left" href="{{ url_for('main.all_the_posts') }}">Todas las publicaciones</a>              
+      <a class="w3-bar-item w3-left" href="{{ url_for('main.posts_allofthem') }}">Todas las publicaciones</a>              
       {% include 'nav_messages.html' %}
       <a class="w3-bar-item w3-right" href="{{ url_for('auth.logout') }}">Salir</a>
   {% endif %}

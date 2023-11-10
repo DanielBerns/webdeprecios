@@ -34,7 +34,8 @@ def help():
 def post_create():
     form = PostForm()
     if form.validate_on_submit():
-        new_post = Post(content=form.content.data, author=current_user)
+        new_post = Post(content=form.content.data, 
+                        author=current_user)
         db.session.add(new_post)
         db.session.commit()
         flash(t(T.YOUR_POST_IS_LIVE_NOW))
@@ -54,3 +55,134 @@ def post_create():
                            posts=posts.items, 
                            next_url=next_url,
                            prev_url=prev_url)
+
+
+@bp.route('/posts/followed/<username>')
+@login_required
+def posts_followed(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    page = request.args.get('page', 1, type=int)
+    posts = user.followed_posts().paginate(
+        page=page, 
+        per_page=current_app.config['POSTS_PER_PAGE'], 
+        error_out=False)
+    
+    next_url = url_for('main.posts_followed', 
+                       username=username, 
+                       page=posts.next_num) if posts.has_next else None
+    prev_url = url_for('main.posts_followed', 
+                       username=username, 
+                       page=posts.prev_num) if posts.has_prev else None
+    
+    return render_template('main/posts_followed.html', 
+                           user=user, 
+                           posts=posts.items,
+                           next_url=next_url, 
+                           prev_url=prev_url)
+
+@bp.route('/posts/allofthem')
+@login_required
+def posts_allofthem():
+   page = request.args.get('page', 1, type=int)
+   posts = Post.query.order_by(Post.timestamp.desc()).paginate(
+       page, current_app.config['POSTS_PER_PAGE'], False)
+   next_url = url_for('main.posts_allofthem', page=posts.next_num) \
+       if posts.has_next else None
+   prev_url = url_for('main.posts_allofthem', page=posts.prev_num) \
+       if posts.has_prev else None
+   return render_template("main/posts_allofthem.html", 
+                          title=t(T.ALL_THE_POSTS), 
+                          posts=posts.items,
+                          next_url=next_url, 
+                          prev_url=prev_url)
+
+
+@bp.route('/message/<recipient>', methods=['GET', 'POST'])
+@login_required
+def message_recipient(recipient):
+    user = User.query.filter_by(username=recipient).first_or_404()
+    form = MessageForm()
+    if form.validate_on_submit():
+        a_message = Message(author=current_user, 
+                      recipient=user,
+                      content=form.message.data)
+        db.session.add(a_message)
+        db.session.commit()
+        flash(t(T.MESSAGE_SENT))
+        return redirect(url_for('main.posts_followed', username=recipient))
+    return render_template('main/message_send.html', 
+                           title=t(T.SEND_MESSAGE),
+                           form=form, 
+                           recipient=recipient)
+
+@bp.route('/messages')
+@login_required
+def messages():
+    current_user.last_message_read_time = datetime.utcnow()
+    db.session.commit()
+    page = request.args.get('page', 1, type=int)
+    messages = current_user.messages_received.order_by(
+        Message.timestamp.desc()).paginate(
+            page, 
+            current_app.config['POSTS_PER_PAGE'], 
+            False)
+    next_url = url_for('main.messages', page=messages.next_num) \
+        if messages.has_next else None
+    prev_url = url_for('main.messages', page=messages.prev_num) \
+        if messages.has_prev else None
+    return render_template('main/messages.html', 
+                           title=t(T.MESSAGES),
+                           nav_h1=t(T.MESSAGES_LIST),
+                           messages=messages.items,
+                           next_url=next_url, 
+                           prev_url=prev_url)
+
+
+@bp.route('/user/follow/<username>', methods=['POST'])
+@login_required
+def follow(username):
+    form = EmptyForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=username).first()
+        if user is None:
+            flash(t(USER_NOT_FOUND) + f' {username:s}')
+            return redirect(url_for('main.index'))
+        if user == current_user:
+            flash(t(EACH_USER_FOLLOWS_HER_POSTS))
+            return redirect(url_for('main.user_contact', username=username))
+        current_user.follow(user)
+        db.session.commit()
+        flash(t(T.NOW_YOU_ARE_FOLLOWING_THE_POSTS_BY) + username)
+        return redirect(url_for('main.user_contact', username=username))
+    else:
+        return redirect(url_for('main.index'))
+
+
+@bp.route('/user/unfollow/<username>', methods=['POST'])
+@login_required
+def unfollow(username):
+    form = EmptyForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=username).first()
+        if user is None:
+            flash(t(T.USER_NOT_FOUND) + username)
+            return redirect(url_for('main.index'))
+        if user == current_user:
+            flash(t(T.EACH_USER_FOLLOWS_HER_POSTS))
+            return redirect(url_for('main.user', username=username))
+        current_user.unfollow(user)
+        db.session.commit()
+        flash(t(T.YOU_HAVE_STOPPED_FOLLOWING_THE_POST_BY) + username)
+        return redirect(url_for('main.user_contact', username=username))
+    else:
+        return redirect(url_for('main.index'))
+
+
+@bp.route('/user/contact/<username>')
+@login_required
+def user_contact(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    form = EmptyForm()
+    return render_template('main/user_contact.html', 
+                           user=user, 
+                           form=form)
