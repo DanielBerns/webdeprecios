@@ -8,6 +8,7 @@ from application import db, t, T
 
 from application.main import bp
 from application.main.forms import PostForm, MessageForm, EmptyForm
+from application.models import User, Post, Message
 
 @bp.before_app_request
 def before_request():
