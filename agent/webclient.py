@@ -22,7 +22,7 @@ with open(log_switches, "w") as target:
                 )
 
 
-create_bot_url: str = f"{website:s}/api/users"
+create_user_url: str = f"{website:s}/api/users"
 tokens_url: str = f"{website:s}/api/tokens"
 current_user_url: str = f"{website:s}/api/users/current"
 all_the_messages_url: str = f"{website:s}/api/messages/all"
@@ -30,11 +30,11 @@ empty_messages_url: str = f"{website:s}/api/messages/empty"
 publish_post_url: str = f"{website:s}/api/posts"
 
 
-def create_bot(username: str, password: str) -> Response:
+def create_user(username: str, password: str) -> Response:
     payload: Dict[str, str] = {"username": username, 
                                "password": password}
     response = requests.post(
-        create_bot_url, 
+        create_user_url, 
         json=payload)
     return response
 
@@ -158,7 +158,7 @@ def get_auth_headers(username: str) -> AuthHeaders:
             raise ValueError("password unexpected null value")
         if  register == "yes":
             print("Register")
-            response = create_bot(username, password)
+            response = create_user(username, password)
             report(response)
             secret_data["user"] = response.json()
             secret_data["register"] = "no"

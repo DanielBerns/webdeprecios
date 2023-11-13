@@ -70,9 +70,9 @@ def get_followed(id):
 def create_user():
     data = request.get_json() or {}
     if 'username' not in data or 'password' not in data:
-        return bad_request(NO_USER_CREDENTIALS)
+        return bad_request(t(T.NO_USER_CREDENTIALS))
     if User.query.filter_by(username=data['username']).first():
-        return bad_request(t(DIFFERENT_USERNAME))
+        return bad_request(t(T.DIFFERENT_USERNAME))
     user = User()
     user.from_dict(data, new_user=True)
     db.session.add(user)
