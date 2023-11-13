@@ -1,9 +1,9 @@
 from typing import Optional, Generic, TypeVar, Callable
 
 T = TypeVar('T')
+U = TypeVar('U')
 
-
-class Maybe(Generic[T]):
+class Monad(Generic[T]):
     def __init__(self, value: Optional[T] = None) -> None:
         self._value: Optional[T] = value
         
@@ -11,10 +11,10 @@ class Maybe(Generic[T]):
     def value(self) -> Optional[T]:
         return self._value
 
-    def bind(self, function: Callable[[T], T]) -> 'Maybe':
+    def bind(self, function: Callable[[T], Monad[U]]) -> Monad[U]:
         result = self
         if self.value:
-            result = Maybe.wrap(function(self.value))
+            result = Monad.wrap(function(self.value))
         return result
 
     def unwrap(self) -> Optional[T]:
@@ -24,8 +24,8 @@ class Maybe(Generic[T]):
         return f"Maybe({self.value})"
     
     @staticmethod
-    def wrap(value: Optional[T]) -> 'Maybe':
-        return Maybe(value)
+    def wrap(value: Optional[T]) -> Monad[T]:
+        return Monad(value)
 
 # if __name__ == '__main__':
 #     maybe = Maybe.wrap(4).bind(lambda x: 2*x).bind(lambda y: y+1)

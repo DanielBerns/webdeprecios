@@ -9,6 +9,7 @@ import requests
 AuthHeaders = requests.structures.CaseInsensitiveDict
 Response = requests.Response
 
+
 identifier: str = os.environ.get("ATHENA_IDENTIFIER") or "random"
 website: str = os.environ.get("ATHENA_WEBSITE") or "http://127.0.0.1:5000"
 
