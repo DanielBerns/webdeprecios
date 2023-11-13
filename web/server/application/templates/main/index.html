@@ -7,7 +7,11 @@
       <div class="w3-panel w3-pale-green" style="min-height:460px">
           <h3>Precios indicativos</h3><br>
           <p>Aquí mostramos los precios indicativos de la canasta básica de alimentos.</p>
-          
+          <p>El precio indicativo de un artículo es el promedio geométrico de los precios observados,
+             y permite determinar aproximadamente que es barato y que es caro. </p>
+          <p>Como es un promedio, el precio indicativo es mayor que el precio mínimo y menor que 
+          el precio máximo. Entonces nos permite comparar el precio que encontramos recorriendo la ciudad
+          y determinar si queremos seguir buscando una oferta mejor. </p>
           <button onclick="menu('chubut')" class="w3-btn w3-block w3-teal w3-left-align">
               Chubut</button>
           <div id="chubut" class="w3-container w3-hide">
@@ -39,9 +43,9 @@
       <h3>Información por categorías</h3><br>
       <ul class="w3-ul">
       <li><a href="{{ url_for('info.cba') }}">Canasta básica (alimentaria y total)</a></li>
-      <li><a href="{{ url_for('info.industrias') }}">Precios industriales</a></li>
+      <!--<li><a href="{{ url_for('info.industrias') }}">Precios industriales</a></li>
       <li><a href="{{ url_for('info.casas') }}">Precios de servicios públicos para casas</a></li>
-      <li><a href="{{ url_for('info.noticias') }}">Análisis de noticias</a></li>    
+      <li><a href="{{ url_for('info.noticias') }}">Análisis de noticias</a></li> -->   
       </ul>
       </div>
     </div>
@@ -52,7 +56,11 @@
         <p>Aquí compartimos información sobre los sucesos cotidianos
         de la ciudad y la región, con los aportes de cada uno de nosotros.</p>
         <p>Ir a <a href="{{ url_for('info.comunidad') }}">comunidad</a></p>  
-        </div>
+      </div>
+      <div class="w3-panel w3-pale-green" style="min-height:460px">
+        <h3>Noticias del observatorio de Economía</h3><br>
+        <p>Ir a <a href="{{ url_for('info.observatorio') }}">Observatorio</a></p>  
+      </div>
     </div>
 
 

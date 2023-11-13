@@ -32,6 +32,35 @@ def noticias():
 def comunidad():
     return render_template('info/community.html')
 
+@bp.route('/observatorio', methods=['GET'])
+def observatorio():
+    username = "observatorio"
+    user = User.query.filter_by(username=username).first_or_404()
+    page = request.args.get('page', 1, type=int)
+    posts = user.followed_posts().paginate(
+        page=page, 
+        per_page=current_app.config['POSTS_PER_PAGE'], 
+        error_out=False)
+    next_url = url_for('info.observatorio', 
+                       username=username, 
+                       page=posts.next_num) if posts.has_next else None
+    prev_url = url_for('info.observatorio', 
+                       username=username, 
+                       page=posts.prev_num) if posts.has_prev else None
+
+    return render_template('info/observatorio.html', 
+                           user=user, 
+                           posts=posts.items,
+                           next_url=next_url, 
+                           prev_url=prev_url)
+
+    
+    
+    
+    
+    
+    return render_template('info/observatorio.html')
+
 @bp.route('/sobre_nosotros', methods=['GET'])
 def sobre_nosotros():
     return render_template('info/about_us.html')

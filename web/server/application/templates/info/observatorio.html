@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="w3-container">
+    <h3>Usuario: {{ user.username }}</h3>
+    {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+    {% include '_list_posts.html' %}
+</section>
+{% endblock %}
