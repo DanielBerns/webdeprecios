@@ -3,7 +3,7 @@ from flask_login import current_user, login_required
 from markupsafe import escape
 
 from application import db
-
+from application.models import User
 from application.info import bp
 
 @bp.route('/<string:category>/<string:city>', methods=['GET'])
