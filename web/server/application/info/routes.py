@@ -54,12 +54,6 @@ def observatorio():
                            next_url=next_url, 
                            prev_url=prev_url)
 
-    
-    
-    
-    
-    
-    return render_template('info/observatorio.html')
 
 @bp.route('/sobre_nosotros', methods=['GET'])
 def sobre_nosotros():
