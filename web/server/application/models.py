@@ -198,7 +198,6 @@ class Message(PaginatedAPIMixin, db.Model):
 FILESYSTEM_DEPTH = 2
 FILES_PER_FOLDER = 256
 
-
 class Store(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
@@ -242,3 +241,9 @@ def save_image(image, store):
     except Exception as message:
         current_app.logger.error(f'4 save_image {_name:s} crash: {str(message):s}')        
         abort(500)
+
+
+class HTMLContent(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    key = db.Column(db.Integer)
+    filename = db.Column(db.String(1024))
