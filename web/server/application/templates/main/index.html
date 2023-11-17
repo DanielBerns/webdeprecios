@@ -34,22 +34,19 @@
             </ul>              
           </div>
           <br>
+          <button onclick="menu('tierradelfuego')" class="w3-btn w3-block w3-teal w3-left-align">
+              Tierra del Fuego</button>
+          <div id="tierradelfuego" class="w3-container w3-hide">
+            <ul class="w3-ul">          
+            <li>Próximamente, encontrará aquí la información correspondiente a Tierra del Fuego</li>                            
+            </ul>              
+          </div>
+          <br>
           <p></p>
       </div>
     </div>
 
-    <div class="w3-third">
-      <div class="w3-panel w3-pale-green" style="min-height:460px">
-      <h3>Información por categorías</h3><br>
-      <ul class="w3-ul">
-      <li><a href="{{ url_for('info.cba') }}">Canasta básica (alimentaria y total)</a></li>
-      <!--<li><a href="{{ url_for('info.industrias') }}">Precios industriales</a></li>
-      <li><a href="{{ url_for('info.casas') }}">Precios de servicios públicos para casas</a></li>
-      <li><a href="{{ url_for('info.noticias') }}">Análisis de noticias</a></li> -->   
-      </ul>
-      </div>
-    </div>
-    
+   
     <div class="w3-third">
       <div class="w3-panel w3-pale-green" style="min-height:460px">
         <h3>Noticias</h3>
@@ -65,6 +62,17 @@
       </div>
     </div>
 
+    <div class="w3-third">
+      <div class="w3-panel w3-pale-green" style="min-height:460px">
+      <h3>Información por categorías</h3><br>
+      <ul class="w3-ul">
+      <li><a href="{{ url_for('info.cba') }}">Canasta básica (alimentaria y total)</a></li>
+      <!--<li><a href="{{ url_for('info.industrias') }}">Precios industriales</a></li>
+      <li><a href="{{ url_for('info.casas') }}">Precios de servicios públicos para casas</a></li>
+      <li><a href="{{ url_for('info.noticias') }}">Análisis de noticias</a></li> -->   
+      </ul>
+      </div>
+    </div>
 
 </div>
 
