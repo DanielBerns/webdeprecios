@@ -45,6 +45,7 @@ class T:
     MESSAGE = 'Message'
     MESSAGES_LIST = 'Messages list'
     WRITE = 'Write'
+    CONTENT = 'Content'
     
 es = {T.LOGIN_MESSAGE: 'Por favor, acceda a esta página con usuario y contraseña.',
       T.DIFFERENT_USERNAME: 'Por favor, use un nombre de usuario distinto.',
@@ -75,7 +76,8 @@ es = {T.LOGIN_MESSAGE: 'Por favor, acceda a esta página con usuario y contrase�
       T.MESSAGES: 'Mensajes',
       T.MESSAGE: 'Mensaje',
       T.MESSAGES_LIST: 'Lista de mensajes',
-      T.WRITE: 'Escribe'
+      T.WRITE: 'Escribe',
+      T.CONTENT: 'Contenido'
      }
     
 def t(key):
