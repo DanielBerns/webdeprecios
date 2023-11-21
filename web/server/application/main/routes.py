@@ -189,3 +189,4 @@ def user_contact(username):
     return render_template('main/user_contact.html', 
                            user=user, 
                            form=form)
+
