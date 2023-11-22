@@ -76,6 +76,7 @@ def posts_followed(username):
                        page=posts.prev_num) if posts.has_prev else None
     
     return render_template('main/posts_followed.html', 
+                           title=t(T.SOME_POSTS),
                            user=user, 
                            posts=posts.items,
                            next_url=next_url, 

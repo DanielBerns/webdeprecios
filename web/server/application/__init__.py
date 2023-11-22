@@ -26,6 +26,7 @@ class T:
     NOW_YOU_ARE_FOLLOWING_THE_POSTS_BY = 'Now, you are following the posts by '
     USER_NOT_FOUND = 'User not found '
     YOU_HAVE_STOPPED_FOLLOWING_THE_POST_BY = 'You have stopped following the posts by '
+    SOME_POSTS = 'Some posts'
     ALL_THE_POSTS = 'All the posts'
     MESSAGE_SENT = 'Message sent'
     SEND_MESSAGE = 'Send message'
@@ -58,6 +59,7 @@ es = {T.LOGIN_MESSAGE: 'Por favor, acceda a esta p√°gina con usuario y contrase√
       T.NOW_YOU_ARE_FOLLOWING_THE_POSTS_BY : 'Ahora estas observando las publicaciones de ',
       T.USER_NOT_FOUND : 'Usuario no encontrado: ',
       T.YOU_HAVE_STOPPED_FOLLOWING_THE_POST_BY : 'Has dejado de observar las publicaciones de ',
+      T.SOME_POSTS: 'Publicaciones seleccionadas',
       T.ALL_THE_POSTS : 'Todas las publicaciones',
       T.MESSAGE_SENT: 'El mensaje ha sido enviado',
       T.SEND_MESSAGE: 'Enviar mensaje',
