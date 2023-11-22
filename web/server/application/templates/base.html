@@ -7,9 +7,9 @@
 {% else %}
 <title>Athena</title>
 {% endif %}
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/static/css/w3.css">
+<link rel="stylesheet" href="/static/css/w3-theme-teal.css">
+<link rel="stylesheet" href="/static/css/font-awesome.min.css">
 <link href="/static/img/favicon.ico" rel="shortcut icon">
 </head>
 <body class="w3-light-gray">
@@ -56,25 +56,20 @@ sigo</a>
   </div>
 </nav>
     
+{% with flashes = get_flashed_messages() %}
+{% if flashes %}
+<article class="w3-container">
+<ul>
+    {% for a_flash in flashes %}
+    <li>{{ a_flash }}</li>
+    {% endfor %}
+</ul>
+</article>
+{% endif %}
+{% endwith %}
     
-    
-    
-    
-    
-    
-    
-    {% with flashes = get_flashed_messages() %}
-    {% if flashes %}
-    <article class="w3-container">
-    <ul>
-        {% for a_flash in flashes %}
-        <li>{{ a_flash }}</li>
-        {% endfor %}
-    </ul>
-    </article>
-    {% endif %}
-    {% endwith %}
-    {% block content %}{% endblock %}
+{% block content %}{% endblock %}
+
 <script src="/static/js/base.js"></script>
 </body>
 </html>
