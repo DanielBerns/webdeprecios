@@ -11,6 +11,8 @@ from PIL import Image
 import io
 from pathlib import Path 
 
+CONTENT_LENGTH = 512
+
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))
@@ -50,7 +52,7 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
     password_hash = db.Column(db.String(128))
-    about_me = db.Column(db.String(140))
+    about_me = db.Column(db.String(CONTENT_LENGTH))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     token = db.Column(db.String(32), index=True, unique=True)
     token_expiration = db.Column(db.DateTime)
@@ -175,7 +177,7 @@ class Post(db.Model):
 
 class Message(PaginatedAPIMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.String(140))
+    content = db.Column(db.String(CONTENT_LENGTH))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     sender_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     recipient_id = db.Column(db.Integer, db.ForeignKey('user.id'))
