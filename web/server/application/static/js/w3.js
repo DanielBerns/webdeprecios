@@ -274,11 +274,12 @@ w3.displayHttp = function (id, file) {
   });
 };
 w3.http = function (target, readyfunc, xml, method) {
+  var httpObj;
   if (!method) {method = "GET"; }
   if (window.XMLHttpRequest) {
-    Const httpObj = new XMLHttpRequest();
+    httpObj = new XMLHttpRequest();
   } else if (window.ActiveXObject) {
-    const httpObj = new ActiveXObject("Microsoft.XMLHTTP");
+    httpObj = new ActiveXObject("Microsoft.XMLHTTP");
   }
   if (httpObj) {
     if (readyfunc) {httpObj.onreadystatechange = readyfunc;}

@@ -7,13 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/static/css/w3.css">
     <link rel="stylesheet" href="/static/css/w3-theme-teal.css">
-    <link rel="stylesheet" href="/static/css/font-awesome.min.css">            
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">  
+    <script src="/static/js/w3.js"></script>    
     
 </head>
 <body>
 <div class="w3-container w3-pale-green">
 
-<ul class="w3-ul w3-border w3-hoverable"">
+<input oninput="w3.filterHTML('#patterns', 'li', this.value)" class="w3-input w3-light-gray" placeholder="Búsqueda de artículos...">
+
+<ul id="patterns" class="w3-ul w3-border w3-hoverable"">
 
     <li class="w3-pale-blue"><a href="/static/html/precios_claros/20240227154250/puerto_madryn/000/000000.html">abrillantador</a></li>
 
