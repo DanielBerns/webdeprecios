@@ -3,8 +3,47 @@
 {% block content %}
 <div class="w3-row-padding w3-margin-top">
 
+   
     <div class="w3-third">
       <div class="w3-panel w3-pale-green" style="min-height:460px">
+        <h3>Noticias</h3>
+        <!--
+        <p>Aquí compartimos información sobre los sucesos cotidianos
+        de la ciudad y la región, con los aportes de cada uno de nosotros.</p>        
+        <br>
+        <h4>Comunidad de usuarios</h4>
+        <p>Ir a <a href="{{ url_for('info.comunidad') }}">Comunidad</a></p>  
+        <br>
+        -->
+        <h4>Observatorio de Economía</h4><br>
+        <p>Ir a <a href="{{ url_for('info.observatorio') }}">Observatorio</a></p>  
+        <br>
+        
+        
+        <h4>Nueva versión</h4><br>
+        <p>Ir a <a href="/static/html/precios_claros/20240227154250/comodoro_rivadavia/index.html">Comodoro Rivadavia</a></p>  
+        <br>
+        <p>Ir a <a href="/static/html/precios_claros/20240227154250/puerto_madryn/index.html">Puerto Madryn</a></p>  
+        <br>
+        <p>Ir a <a href="/static/html/precios_claros/20240227154250/trelew/index.html">Trelew</a></p>  
+        <br>
+        <p>Ir a <a href="/static/html/precios_claros/20240227154250/rio_gallegos/index.html">Río Gallegos</a></p>  
+        <br>        
+      </div>
+    </div>
+
+    <div class="w3-third">
+      <div class="w3-panel w3-pale-green" style="min-height:460px">
+      <h3>Información por categorías</h3><br>
+      <ul class="w3-ul">
+      <li><a href="{{ url_for('info.cba') }}">Canasta básica (alimentaria y total)</a></li>
+      </ul>
+      </div>
+    </div>
+
+    <div class="w3-third">
+      <div class="w3-panel w3-pale-green" style="min-height:460px">
+      <!--
           <h3>Precios indicativos</h3><br>
           <p>Aquí mostramos los precios indicativos de la canasta básica de alimentos.</p>
           <p>El precio indicativo de un artículo es el promedio geométrico de los precios observados,
@@ -43,64 +82,10 @@
           </div>
           <br>
           <p></p>
+          -->
       </div>
     </div>
-
-   
-    <div class="w3-third">
-      <div class="w3-panel w3-pale-green" style="min-height:460px">
-        <h3>Noticias</h3>
-        <p>Aquí compartimos información sobre los sucesos cotidianos
-        de la ciudad y la región, con los aportes de cada uno de nosotros.</p>        
-        <br>
-        <h4>Comunidad de usuarios</h4>
-        <p>Ir a <a href="{{ url_for('info.comunidad') }}">Comunidad</a></p>  
-        <br>
-        <h4>Observatorio de Economía</h4><br>
-        <p>Ir a <a href="{{ url_for('info.observatorio') }}">Observatorio</a></p>  
-        <br>
-        
-        
-        <h4>Nueva versión</h4><br>
-        <p>Ir a <a href="/static/html/precios_claros/20240227154250/comodoro_rivadavia/index.html">Comodoro Rivadavia</a></p>  
-        <br>
-        <p>Ir a <a href="/static/html/precios_claros/20240227154250/puerto_madryn/index.html">Puerto Madryn</a></p>  
-        <br>
-        <p>Ir a <a href="/static/html/precios_claros/20240227154250/trelew/index.html">Trelew</a></p>  
-        <br>
-        <p>Ir a <a href="/static/html/precios_claros/20240227154250/rio_gallegos/index.html">Río Gallegos</a></p>  
-        <br>        
-      </div>
-    </div>
-
-    <div class="w3-third">
-      <div class="w3-panel w3-pale-green" style="min-height:460px">
-      <h3>Información por categorías</h3><br>
-      <ul class="w3-ul">
-      <li><a href="{{ url_for('info.cba') }}">Canasta básica (alimentaria y total)</a></li>
-
-      <li><a href="/static/html/delta_caleta_olivia.html">Variación de precios entre el 11 de diciembre de 2023 y el 11 de enero de 2024, Caleta Olivia</a></li>   
-
-      <li><a href="/static/html/delta_comodoro_rivadavia.html">Variación de precios entre el 11 de diciembre de 2023 y el 11 de enero de 2024, Comodoro Rivadavia</a></li>   
-
-      <li><a href="/static/html/delta_comodoro_rivadavia.html">Variación de precios entre el 11 de diciembre de 2023 y el 11 de enero de 2024, Comodoro Rivadavia</a></li>   
-
-      <li><a href="/static/html/delta_esquel.html">Variación de precios entre el 11 de diciembre de 2023 y el 11 de enero de 2024, Esquel</a></li>   
-
-      <li><a href="/static/html/delta_puerto_madryn.html">Variación de precios entre el 11 de diciembre de 2023 y el 11 de enero de 2024, Puerto Madryn</a></li>   
-
-      <li><a href="/static/html/delta_rada_tilly.html">Variación de precios entre el 11 de diciembre de 2023 y el 11 de enero de 2024, Rada Tilly</a></li>   
-
-      <li><a href="/static/html/delta_rawson.html">Variación de precios entre el 11 de diciembre de 2023 y el 11 de enero de 2024, Rawson</a></li>   
-
-      <li><a href="/static/html/delta_rio_gallegos.html">Variación de precios entre el 11 de diciembre de 2023 y el 11 de enero de 2024, Río Gallegos</a></li>   
-
-      <li><a href="/static/html/delta_trelew.html">Variación de precios entre el 11 de diciembre de 2023 y el 11 de enero de 2024, Trelew</a></li>   
-         
-      </ul>
-      </div>
-    </div>
-
+    
 </div>
 
 <!--
