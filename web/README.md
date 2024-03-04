@@ -13,6 +13,7 @@ $ pip install flask flask-login requests pillow
 $ pip install flask-wtf flask-sqlalchemy flask-migrate python-dotenv
 $ pip install FLASK-Mail email-validator Flask-JWT
 $ pip install Flask-HTTPAuth
+$ pip install markdown2
 
 ## Start
 
