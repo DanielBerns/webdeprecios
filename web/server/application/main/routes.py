@@ -4,6 +4,8 @@ from flask import render_template, flash, redirect, url_for, request, current_ap
 from flask_login import current_user, login_required
 from application import db, t, T
 
+from markdown2 import markdown
+
 # 202311091936
 
 from application.main import bp
@@ -35,8 +37,10 @@ def help():
 def post_create():
     form = PostForm()
     if form.validate_on_submit():
-        new_post = Post(content=form.content.data, 
-                        author=current_user)
+        new_post = Post(
+            content=form.content.data, 
+            author=current_user
+        )
         db.session.add(new_post)
         db.session.commit()
         flash(t(T.YOUR_POST_IS_LIVE_NOW))
@@ -45,7 +49,8 @@ def post_create():
     posts = current_user.followed_posts().paginate(
         page=page, 
         per_page=current_app.config['POSTS_PER_PAGE'], 
-        error_out=False)
+        error_out=False
+    )
     
     next_url = url_for('main.post_create', page=posts.next_num) if posts.has_next else None
     prev_url = url_for('main.post_create', page=posts.prev_num) if posts.has_prev else None
