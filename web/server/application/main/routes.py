@@ -37,8 +37,9 @@ def help():
 def post_create():
     form = PostForm()
     if form.validate_on_submit():
+        new_content = markdown(form.content.data)
         new_post = Post(
-            content=form.content.data, 
+            content= new_content if new_content else "error",
             author=current_user
         )
         db.session.add(new_post)
