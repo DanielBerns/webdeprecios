@@ -111,9 +111,6 @@ def create_app(config_class=Config):
     from application.main import bp as main_bp
     app.register_blueprint(main_bp)
 
-    from application.info import bp as info_bp
-    app.register_blueprint(info_bp, url_prefix='/info')
-
     from application.api import bp as api_bp
     app.register_blueprint(api_bp, url_prefix='/api')
 
