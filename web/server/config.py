@@ -17,7 +17,7 @@ class Config:
     STORE_PATH = store_path
     LOGS_PATH = logs_path
     PICTURES = Storage.container(store_path, 'pictures')
-    PRECIOS_CLAROS = Storage.info('precios_claros')    
+    PRECIOS_CLAROS = Storage.container(store_path, 'precios_claros')    
     SECRET_KEY = os.environ.get('SECRET_KEY') or '1123581235711'
     LOGGING_LEVEL = os.environ.get('LOGGING_LEVEL') or 'DEBUG'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
