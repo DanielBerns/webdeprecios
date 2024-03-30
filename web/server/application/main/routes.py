@@ -206,7 +206,6 @@ def user_contact(username):
                            form=form)
 
 @bp.route('/precios_claros/index/<timestamp>/<place>', methods=['GET'])
-@login_required
 def precios_claros_index(timestamp, place):
     directory = Path(
         current_app.config['PRECIOS_CLAROS'],
@@ -220,7 +219,6 @@ def precios_claros_index(timestamp, place):
         return redirect(url_for('main.index'))
         
 @bp.route('/precios_claros/category/<timestamp>/<place>/<folder>/<name>', methods=['GET'])
-@login_required
 def precios_claros_category(timestamp, place, folder, name):
     directory = Path(
         current_app.config['PRECIOS_CLAROS'],
