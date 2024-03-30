@@ -59,6 +59,8 @@ def get_custom_keys(file_identifier):
 
 class Storage:
     
+        
+    
     @staticmethod
     def home_path(base: str, identifier: str) -> Path:
         _path = Path('~', 'Data', base, identifier).expanduser()
@@ -70,6 +72,10 @@ class Storage:
         _path = Path(root, identifier)
         _path.mkdir(mode=0o700, parents=True, exist_ok=True)
         return _path
+
+    @staticmethod
+    def info() -> Path:
+        return Storage.container('~', 'Info').expanduser()
     
     @staticmethod
     def dotenv(home_path: Path) -> Path:

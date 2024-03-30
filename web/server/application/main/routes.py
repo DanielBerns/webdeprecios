@@ -197,3 +197,32 @@ def user_contact(username):
                            user=user, 
                            form=form)
 
+@bp.route('/precios_claros/index/<timestamp>/<place>', methods=['GET'])
+@login_required
+def precios_claros_index(timestamp, place):
+    directory = Path(
+        current_app.config['PRECIOS_CLAROS'],
+        timestamp,
+        place
+    )
+    if directory.exists():
+        return send_from_directory(directory, 'index.html')
+    else:
+        flash(f'Error: {timestamp:s}/{place:s} - {str(directory):s}')
+        return redirect(url_for('main.index'))
+        
+@bp.route('/precios_claros/category/<timestamp>/<place>/<folder>/<name>', methods=['GET'])
+@login_required
+def precios_claros_category(timestamp, place, folder, name):
+    directory = Path(
+        current_app.config['PRECIOS_CLAROS'],
+        timestamp,
+        place,
+        folder
+    )
+    if directory.exists():
+        return send_from_directory(directory, f'{name:s}.html')
+    else:
+        flash('Error: {timestamp:s}/{place:s}/{folder:s}/{name:s}')
+        return redirect(url_for('main.index'))
+
