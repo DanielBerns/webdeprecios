@@ -205,7 +205,7 @@ def user_contact(username):
                            user=user, 
                            form=form)
 
-@bp.route('/news', methods=['GET'])
+@bp.route('/precios_claros/news', methods=['GET'])
 def news_index(timestamp, place):
     directory = Path(
         current_app.config['PRECIOS_CLAROS'],
