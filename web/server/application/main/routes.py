@@ -205,6 +205,18 @@ def user_contact(username):
                            user=user, 
                            form=form)
 
+@bp.route('/news', methods=['GET'])
+def news_index(timestamp, place):
+    directory = Path(
+        current_app.config['PRECIOS_CLAROS'],
+    )
+    if directory.exists():
+        return send_from_directory(directory, 'news.html')
+    else:
+        flash(f'Error: news - {str(directory):s}')
+        return redirect(url_for('main.index'))
+
+
 @bp.route('/precios_claros/index/<timestamp>/<place>', methods=['GET'])
 def precios_claros_index(timestamp, place):
     directory = Path(
