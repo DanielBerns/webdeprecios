@@ -97,7 +97,6 @@ def posts_followed(username):
                            prev_url=prev_url)
 
 @bp.route('/posts/allofthem')
-@login_required
 def posts_allofthem():
    page = request.args.get('page', 1, type=int)
    posts = Post.query.order_by(Post.timestamp.desc()).paginate(
