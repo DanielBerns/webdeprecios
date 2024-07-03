@@ -148,15 +148,20 @@ def publish_post():
 
 @bp.route('/posts/<int:nbr>', methods=['GET'])
 @token_auth.login_required
-def get_post(nbr):
-    the_post = Post.query.filter(id==nbr).first_or_404()
-    return jsonify(the_post)
+def get_post(id):
+    the_post = Post.query.get_or_404(id)
+    return jsonify({"ok": "1"})
 
+@bp.route('/posts/all', methods=['GET'])
+@token_auth.login_required
+def get_post(id):
+    the_post = Post.query.get_or_404(id)
+    return jsonify(the_post)
 
 @bp.route('/posts/<int:id>', methods=['DELETE'])
 @token_auth.login_required
-def delete_post(id):
-    the_post = Post.query.filter_by(id=id).first_or_404()
+def delete_post(nbr):
+    the_post = Post.query.filter_by(id==nbr).first_or_404()
     db.session.delete(the_post)
     db.session.commit()
     return jsonify({"Post.deleted": str(id)})
