@@ -151,7 +151,7 @@ def publish_post():
 def get_post(id):
     posts = Post.query.all()
     info = {str(p.id): "1" for p in posts}
-    return jsonify({"ok": str(id)})
+    return jsonify(info)
 
 
 @bp.route('/posts/<int:id>', methods=['DELETE'])
