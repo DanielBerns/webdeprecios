@@ -153,7 +153,11 @@ def get_post(id):
     # info = {str(p.id): "1" for p in posts}
     # return jsonify(info)
     the_post = Post.query.get_or_404(id)
-    return jsonify(the_post)
+    info = {"id": the_post.id,
+            "content": the_post.content,
+            "timestamp": str(the_post.timestamp)
+    }
+    return jsonify(info)
 
 
 @bp.route('/posts/<int:id>', methods=['DELETE'])
