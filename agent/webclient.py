@@ -74,7 +74,9 @@ def publish_post(auth_headers: AuthHeaders, content: str) -> Response:
     return response
 
 def get_post(auth_headers: AuthHeaders, id_: int) -> Response:
-    return requests.post(get_post_url(id_), headers=auth_headers)
+    the_url = get_post_url(id_)
+    response = requests.get(the_url, headers=auth_headers)
+    return response
 
 def empty_data(file_identifier: Path) -> Dict[str, str]:
     custom_data = {"username": "", "password": "", "register": ""}

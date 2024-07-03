@@ -146,10 +146,10 @@ def publish_post():
     db.session.commit()
     return jsonify(current_user.to_dict())
 
-@bp.route('/posts/<int:id>', methods=['GET'])
+@bp.route('/posts/<int:nbr>', methods=['GET'])
 @token_auth.login_required
-def get_post(id):
-    the_post = Post.query.filter(id=id).first_or_404()
+def get_post(nbr):
+    the_post = Post.query.filter(id==nbr).first_or_404()
     return jsonify(the_post)
 
 
