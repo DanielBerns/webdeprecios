@@ -11,7 +11,8 @@ Response = requests.Response
 
 
 identifier: str = os.environ.get("ATHENA_IDENTIFIER") or "random"
-website: str = os.environ.get("ATHENA_WEBSITE") or "http://127.0.0.1:5000"
+password: str = os.environ.get("ATHENA_PASSWORD") or "1123581321"
+website: str = "https://webdeprecios.unp.edu.ar"
 
 store_path: Path = Path("~", "Info", "athena", "webclient", "store", identifier).expanduser()
 store_path.mkdir(mode=0o700, parents=True, exist_ok=True)
@@ -28,6 +29,8 @@ current_user_url: str = f"{website:s}/api/users/current"
 all_the_messages_url: str = f"{website:s}/api/messages/all"
 empty_messages_url: str = f"{website:s}/api/messages/empty"
 publish_post_url: str = f"{website:s}/api/posts"
+get_post_url = lambda id_: f"{website:s}/api/posts/{id_:d}"
+delete_post_url = lambda id_: f"{website:s}/api/posts/{id_:d}"
 
 
 def create_user(username: str, password: str) -> Response:
@@ -70,7 +73,9 @@ def publish_post(auth_headers: AuthHeaders, content: str) -> Response:
                              json=payload)
     return response
 
-    
+def get_post(auth_headers: AuthHeaders, id_: int) -> Response:
+    return requests.post(get_post_url(id_), headers=auth_headers)
+
 def empty_data(file_identifier: Path) -> Dict[str, str]:
     custom_data = {"username": "", "password": "", "register": ""}
     with open(file_identifier, "w") as target:
@@ -128,6 +133,8 @@ def get_secret_fields(secret_data: Dict[str, str]) -> Tuple[str, str, str]:
 def get_all_the_messages(auth_headers: AuthHeaders) -> Response:
     return requests.get(all_the_messages_url, headers=auth_headers)
 
+def get_all_the_posts(auth_headers: AuthHeaders) -> Response:
+    return requests.get(all_the_posts_url, headers=auth_headers)
 
 def clear_message_queue(auth_headers: AuthHeaders) -> Response:
     return requests.get(empty_messages_url, headers=auth_headers)
@@ -180,6 +187,7 @@ def get_auth_headers(username: str) -> AuthHeaders:
             print("Got the token", token)
             auth_headers = get_token_headers(token)
     return auth_headers
+
 
 def get_messages(auth_headers: AuthHeaders) -> Generator[Dict[str, str], None, None]:    
     if auth_headers:

@@ -12,7 +12,8 @@ from producers import Producer
 
 def execute(identifier: str, 
             consumer: Consumer, 
-            producer: Producer) -> None:
+            producer: Producer
+    ) -> None:
     auth_headers = get_auth_headers(identifier)
     if auth_headers:
         message_count = 0

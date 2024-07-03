@@ -136,7 +136,26 @@ def publish_post():
         content = data['content']
     except KeyError:
         content = '\n'.join([f'{str(k):s}: {str(v)}' for k, v in data.items()])
-    new_post = Post(content=content, author=current_user)
+    html_content = markdown(form.content.data)
+    new_post = Post(
+        content=html_content if html_content else "error"
+        author=current_user
+    )
     db.session.add(new_post)
     db.session.commit()
     return jsonify(current_user.to_dict())
+
+@bp.route('/posts/<int:id>', methods=['GET'])
+@token_auth.login_required
+def get_post(id):
+    the_post = Post.query.filter(id=id).first_or_404()
+    return jsonify(the_post)
+
+
+@bp.route('/posts/<int:id>', methods=['DELETE'])
+@token_auth.login_required
+def delete_post(id):
+    the_post = Post.query.filter_by(id=id).first_or_404()
+    db.session.delete(the_post)
+    db.session.commit()
+    return jsonify({"Post.deleted": str(id)})
