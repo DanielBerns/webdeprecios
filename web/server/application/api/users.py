@@ -138,7 +138,7 @@ def publish_post():
         content = '\n'.join([f'{str(k):s}: {str(v)}' for k, v in data.items()])
     html_content = markdown(form.content.data)
     new_post = Post(
-        content=html_content if html_content else "error"
+        content=html_content if html_content else "error",
         author=current_user
     )
     db.session.add(new_post)
