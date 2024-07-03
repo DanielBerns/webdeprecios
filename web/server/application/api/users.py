@@ -149,8 +149,8 @@ def publish_post():
 @bp.route('/posts/<int:id>', methods=['GET'])
 @token_auth.login_required
 def get_post(id):
-    the_post = Post.query.get_or_404(id)
-    return jsonify({"ok": "1"})
+    # the_post = Post.query.get_or_404(id)
+    return jsonify({"ok": str(id)})
 
 
 @bp.route('/posts/<int:id>', methods=['DELETE'])
