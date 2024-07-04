@@ -78,6 +78,11 @@ def get_post(auth_headers: AuthHeaders, id_: int) -> Response:
     response = requests.get(the_url, headers=auth_headers)
     return response
 
+def delete_post(auth_headers: AuthHeaders, id_: int) -> Response:
+    the_url = delete_post_url(id_)
+    response = requests.delete(the_url, headers=auth_headers)
+    return response
+
 def empty_data(file_identifier: Path) -> Dict[str, str]:
     custom_data = {"username": "", "password": "", "register": ""}
     with open(file_identifier, "w") as target:
@@ -144,7 +149,7 @@ def clear_message_queue(auth_headers: AuthHeaders) -> Response:
 
 def get_auth_headers(username: str) -> AuthHeaders:
     if username == "random":
-        username = "randombot"
+        #username = "randombot"
         secret_data_file_identifier = Path(store_path, username + ".json")
         if secret_data_file_identifier.exists():
             secret_data = load_data(secret_data_file_identifier)

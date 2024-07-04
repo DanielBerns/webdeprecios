@@ -8,6 +8,8 @@ from application.api.errors import bad_request
 from datetime import datetime
 import uuid
 
+from markdown2 import markdown
+
 
 @bp.route('/users/current', methods=['GET'])
 @token_auth.login_required
