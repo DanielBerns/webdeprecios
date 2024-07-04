@@ -138,7 +138,7 @@ def publish_post():
         content = data['content']
     except KeyError:
         content = '\n'.join([f'{str(k):s}: {str(v)}' for k, v in data.items()])
-    html_content = markdown(form.content.data)
+    html_content = markdown(content)
     post_content = html_content if html_content else "error"
     new_post = Post(
         content=post_content,
