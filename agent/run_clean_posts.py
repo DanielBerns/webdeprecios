@@ -1,4 +1,5 @@
 import pdb
+from markdown2 import markdown
 
 from webclient import (
     identifier, password, login_bot, get_token_headers, 
@@ -28,6 +29,8 @@ with open(dirty_posts_txt, "w") as target, \
         link = origin.readline()
         skip = origin.readline()
         content = f"{title:s}\nInforme: {link:s}\n\n"
+        html_content = markdown(content)
         print(content)
+        print(html_content)
         published = publish_post(auth_headers, content)
         target.write(f"{published.text:s}\n")        

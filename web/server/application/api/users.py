@@ -148,6 +148,13 @@ def publish_post():
     db.session.commit()
     return jsonify(current_user.to_dict())
 
+@bp.route('/posts/all', methods=['GET'])
+@token_auth.login_required
+def all_the_posts():
+    posts = Post.query.all()
+    info = {str(p.id): "1" for p in posts}
+    return jsonify(info)
+    
 @bp.route('/posts/<int:id>', methods=['GET'])
 @token_auth.login_required
 def get_post(id):
