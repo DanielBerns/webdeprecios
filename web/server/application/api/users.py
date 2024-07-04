@@ -42,7 +42,7 @@ def update_user(id):
     data = request.get_json() or {}
     if 'username' in data and data['username'] != user.username and \
             User.query.filter_by(username=data['username']).first():
-        return bad_request(t(DIFFERENT_USERNAME))
+        return bad_request(t(T.DIFFERENT_USERNAME))
     user.from_dict(data, new_user=False)
     db.session.commit()
     return jsonify(user.to_dict())
