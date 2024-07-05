@@ -146,7 +146,13 @@ def publish_post():
     )
     db.session.add(new_post)
     db.session.commit()
-    return jsonify(current_user.to_dict())
+    info = {"id": the_post.id,
+            "content": the_post.content,
+            "timestamp": str(the_post.timestamp),
+            "author": current_user.username
+    }
+    return jsonify(info)
+
 
 @bp.route('/posts/all', methods=['GET'])
 @token_auth.login_required

@@ -29,6 +29,7 @@ current_user_url: str = f"{website:s}/api/users/current"
 all_the_messages_url: str = f"{website:s}/api/messages/all"
 empty_messages_url: str = f"{website:s}/api/messages/empty"
 publish_post_url: str = f"{website:s}/api/posts"
+all_the_posts_url: str = f"{website:s}/api/posts/all"
 get_post_url = lambda id_: f"{website:s}/api/posts/{id_:d}"
 delete_post_url = lambda id_: f"{website:s}/api/posts/{id_:d}"
 
