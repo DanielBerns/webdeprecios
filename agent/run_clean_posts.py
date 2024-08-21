@@ -10,15 +10,14 @@ from webclient import (
 ) 
 
 
-
 dirty_posts_txt = "/home/dberns/Info/athena/webclient/dirty_posts.txt"
 clean_posts_txt = "/home/dberns/Info/athena/webclient/clean_posts.txt"
 
+pdb.set_trace()
 bot = login_bot(identifier, password)
 token_json = bot.json()
 token = token_json["token"]
 auth_headers = get_token_headers(token)
-pdb.set_trace()
 with open(dirty_posts_txt, "w") as target:
     response = get_all_the_posts(auth_headers)
     all_the_posts = response.json()
@@ -29,6 +28,7 @@ with open(dirty_posts_txt, "w") as target:
         deleted = delete_post(auth_headers, id_)
         target.write(f"{deleted.text:s}\n")
 
+pdb.set_trace()
 with open(clean_posts_txt, "r") as origin:        
     for line in origin:
         title, link = line.split("|")

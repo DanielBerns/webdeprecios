@@ -146,9 +146,9 @@ def publish_post():
     )
     db.session.add(new_post)
     db.session.commit()
-    info = {"id": the_post.id,
-            "content": the_post.content,
-            "timestamp": str(the_post.timestamp),
+    info = {"id": new_post.id,
+            "content": new_post.content,
+            "timestamp": str(new_post.timestamp),
             "author": current_user.username
     }
     return jsonify(info)
