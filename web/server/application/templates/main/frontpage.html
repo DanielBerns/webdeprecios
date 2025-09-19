@@ -1,42 +1,92 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Portada</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/static/css/w3.css">
-<link href="/static/img/favicon.ico" rel="shortcut icon">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image:url('./static/img/unpsjb-cr.jpg');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-</style>
-</head>
-<body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Observatorio de Economía - Comodoro Rivadavia - 2025" />
+        <meta name="author" content="Yamil Cruz" />
+        <title>Observatorio FCE</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico" />
 
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    <img src="./static/img/chakana.svg" width="100" height="100">
-  </div>
-  <div>
-    <h1 class="w3-Jumbo w3-animate-top w3-center" style="text-shadow:2px 2px 0 #000">Web de Precios</h1>
-    <h2 class="w3-Jumbo w3-animate-top w3-center" style="text-shadow:2px 2px 0 #000">Observatorio de Economía</h2>    
-    <h2 class="w3-Jumbo w3-animate-top w3-center" style="text-shadow:2px 2px 0 #000">FCE - UNPSJB</h1>    
-    <hr class="w3-border-grey" style="margin:auto;width:40%">
-    <p class="w3-large w3-center" style="text-shadow:2px 2px 0 #000">
-        <a href="{{ url_for('main.index') }}">Ingresar</a>
-    </p>
-  </div>
-  <div class="w3-display-bottomleft w3-padding-large">
-    Hecho por Gipis - DIE - FI - UNPSJB
-  </div>
-</div>
-
-</body>
+        <!-- Font Awesome icons (free version)-->
+        <script src="/static/js/all.js" defer></script>
+        <!-- load main.js -->
+        <script src="/static/js/main.js" defer></script>
+        
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="/static/css/styles.css" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+        <nav id="sidebar-wrapper" style="background-color: #009688;">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="#page-top"><span class="mx-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="40px" viewBox="0 0 325 325" enable-background="new 0 0 325 325" xml:space="preserve">
+    <path fill="#FFFFFF" opacity="1.000000" stroke="none" d=" M185.000000,326.000000   C123.333359,326.000000 62.166710,326.000000 1.000049,326.000000   C1.000033,217.666733 1.000033,109.333458 1.000016,1.000136   C109.333229,1.000091 217.666458,1.000091 325.999756,1.000046   C325.999847,109.333191 325.999847,217.666382 325.999939,325.999786   C279.166656,326.000000 232.333328,326.000000 185.000000,326.000000  M198.406418,294.499939   C198.406418,281.567535 198.406418,268.635101 198.406418,255.259781   C218.619247,255.259781 238.208054,255.259781 258.417725,255.259781   C258.417725,235.108765 258.417725,215.398102 258.417725,195.306015   C278.655792,195.306015 298.267792,195.306015 318.154419,195.306015   C318.154419,172.246155 318.154419,149.582214 318.154419,126.359528   C297.997833,126.359528 278.275299,126.359528 258.107056,126.359528   C258.107056,106.214439 258.107056,86.627853 258.107056,66.599548   C238.065430,66.599548 218.476456,66.599548 198.264648,66.599548   C198.264648,46.445908 198.264648,26.734789 198.264648,6.999182   C175.087097,6.999182 152.541489,6.999182 129.547409,6.999182   C129.547409,26.987921 129.547409,46.576141 129.547409,66.787476   C109.392670,66.787476 89.681557,66.787476 69.535034,66.787476   C69.535034,87.000565 69.535034,106.588699 69.535034,126.799858   C49.380039,126.799858 29.668917,126.799858 10.031433,126.799858   C10.031433,149.978287 10.031433,172.524384 10.031433,195.517105   C30.052994,195.517105 49.641914,195.517105 69.851982,195.517105   C69.851982,215.673218 69.851982,235.384216 69.851982,255.529480   C90.065613,255.529480 109.654510,255.529480 129.864380,255.529480   C129.864380,275.685822 129.864380,295.396484 129.864380,314.936279   C153.043701,314.936279 175.590576,314.936279 198.406860,314.936279   C198.406860,308.145294 198.406860,301.822540 198.406418,294.499939  z"/>
+    <path fill="#FFFF00" opacity="1.000000" stroke="none" d=" M198.406647,294.999878   C198.406860,301.822540 198.406860,308.145294 198.406860,314.936279   C175.590576,314.936279 153.043701,314.936279 129.864380,314.936279   C129.864380,295.396484 129.864380,275.685822 129.864380,255.529480   C109.654510,255.529480 90.065613,255.529480 69.851982,255.529480   C69.851982,235.384216 69.851982,215.673218 69.851982,195.517105   C49.641914,195.517105 30.052994,195.517105 10.031433,195.517105   C10.031433,172.524384 10.031433,149.978287 10.031433,126.799858   C29.668917,126.799858 49.380039,126.799858 69.535034,126.799858   C69.535034,106.588699 69.535034,87.000565 69.535034,66.787476   C89.681557,66.787476 109.392670,66.787476 129.547409,66.787476   C129.547409,46.576141 129.547409,26.987921 129.547409,6.999182   C152.541489,6.999182 175.087097,6.999182 198.264648,6.999182   C198.264648,26.734789 198.264648,46.445908 198.264648,66.599548   C218.476456,66.599548 238.065430,66.599548 258.107056,66.599548   C258.107056,86.627853 258.107056,106.214439 258.107056,126.359528   C278.275299,126.359528 297.997833,126.359528 318.154419,126.359528   C318.154419,149.582214 318.154419,172.246155 318.154419,195.306015   C298.267792,195.306015 278.655792,195.306015 258.417725,195.306015   C258.417725,215.398102 258.417725,235.108765 258.417725,255.259781   C238.208054,255.259781 218.619247,255.259781 198.406418,255.259781   C198.406418,268.635101 198.406418,281.567535 198.406647,294.999878  M140.543777,306.352509   C156.787003,306.352509 173.030212,306.352509 189.895996,306.352509   C189.895996,286.280304 189.895996,266.571655 189.895996,246.432648   C210.104721,246.432648 229.691238,246.432648 249.895172,246.432648   C249.895172,226.281174 249.895172,206.572464 249.895172,186.229828   C270.078094,186.229828 289.639587,186.229828 308.960876,186.229828   C308.960876,169.013672 308.960876,152.457001 308.960876,135.322433   C288.929565,135.322433 269.530975,135.322433 249.567139,135.322433   C249.567139,115.176399 249.567139,95.604515 249.567139,75.284485   C229.305527,75.284485 209.608765,75.284485 189.323395,75.284485   C189.323395,54.988853 189.323395,35.445637 189.323395,15.985071   C172.149490,15.985071 155.585419,15.985071 138.578766,15.985071   C138.578766,35.956902 138.578766,55.543541 138.578766,75.749947   C118.429947,75.749947 98.721024,75.749947 78.578796,75.749947   C78.578796,95.956863 78.578796,115.543503 78.578796,135.749908   C58.430012,135.749908 38.721050,135.749908 19.003448,135.749908   C19.003448,152.924866 19.003448,169.470093 19.003448,186.591248   C38.977077,186.591248 58.546734,186.591248 78.688988,186.591248   C78.688988,206.736389 78.688988,226.308731 78.688988,246.456741   C98.955147,246.456741 118.646767,246.456741 138.593750,246.456741   C138.593750,264.855164 138.564804,282.666229 138.636078,300.476837   C138.643646,302.371094 139.237778,304.262970 140.543777,306.352509  z"/>
+    <path fill="#FF0000" opacity="1.000000" stroke="none" d=" M140.051788,306.254211   C139.237778,304.262970 138.643646,302.371094 138.636078,300.476837   C138.564804,282.666229 138.593750,264.855164 138.593750,246.456741   C118.646767,246.456741 98.955147,246.456741 78.688988,246.456741   C78.688988,226.308731 78.688988,206.736389 78.688988,186.591248   C58.546734,186.591248 38.977077,186.591248 19.003448,186.591248   C19.003448,169.470093 19.003448,152.924866 19.003448,135.749908   C38.721050,135.749908 58.430012,135.749908 78.578796,135.749908   C78.578796,115.543503 78.578796,95.956863 78.578796,75.749947   C98.721024,75.749947 118.429947,75.749947 138.578766,75.749947   C138.578766,55.543541 138.578766,35.956902 138.578766,15.985071   C155.585419,15.985071 172.149490,15.985071 189.323395,15.985071   C189.323395,35.445637 189.323395,54.988853 189.323395,75.284485   C209.608765,75.284485 229.305527,75.284485 249.567139,75.284485   C249.567139,95.604515 249.567139,115.176399 249.567139,135.322433   C269.530975,135.322433 288.929565,135.322433 308.960876,135.322433   C308.960876,152.457001 308.960876,169.013672 308.960876,186.229828   C289.639587,186.229828 270.078094,186.229828 249.895172,186.229828   C249.895172,206.572464 249.895172,226.281174 249.895172,246.432648   C229.691238,246.432648 210.104721,246.432648 189.895996,246.432648   C189.895996,266.571655 189.895996,286.280304 189.895996,306.352509   C173.030212,306.352509 156.787003,306.352509 140.051788,306.254211  M164.380325,175.999313   C173.368027,175.832565 178.239655,168.369583 178.733566,160.890854   C179.242020,153.191696 171.330078,146.021896 163.496017,146.031143   C155.151093,146.040985 148.976608,152.567978 149.000534,161.354218   C149.023468,169.772079 155.010559,175.810043 164.380325,175.999313  z"/>
+    <path fill="#000000" opacity="1.000000" stroke="none" d=" M163.951355,175.999390   C155.010559,175.810043 149.023468,169.772079 149.000534,161.354218   C148.976608,152.567978 155.151093,146.040985 163.496017,146.031143   C171.330078,146.021896 179.242020,153.191696 178.733566,160.890854   C178.239655,168.369583 173.368027,175.832565 163.951355,175.999390  z"/>
+</svg></span>Observatorio</a></li>
+                <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
+                <!-- <li class="sidebar-nav-item"><a href="#about">About</a></li>
+                <li class="sidebar-nav-item"><a href="#services">Services</a></li> -->
+                <li class="sidebar-nav-item"><a href="#portfolio">Portfolio</a></li>
+                <li class="sidebar-nav-item"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Header-->
+        <header class="masthead d-flex align-items-center">
+            <div class="container px-4 px-lg-5 text-center">
+                <h1 class="mb-1">Facultad de Ciencias Económicas</h1>
+                <h3 class="mb-5"><em>Observatorio de Economía</em></h3>
+                <a class="btn btn-primary btn-xl" href="#portfolio">Portafolio</a>
+            </div>
+        </header>
+        <!-- Portfolio-->
+        <section class="content-section" id="portfolio">
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading text-center">
+                    <h3 class="text-secondary mb-0">Portafolio</h3>
+                    <h2 class="mb-5">Paginas web</h2>
+                </div>
+                <div id="list-apps" class="row gx-0">
+                </div>
+            </div>
+        </section>
+        <!-- Map-->
+        <div class="map" id="contact">
+            <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=Universidad+Nacional+de+la+Patagonia+San+Juan+Bosco,+Ruta+3+Km+4,+Comodoro+Rivadavia,+Argentina&amp;ie=UTF8&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+            <br />
+            <small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=Universidad+Nacional+de+la+Patagonia+San+Juan+Bosco,+Ruta+3+Km+4,+Comodoro+Rivadavia,+Argentina&amp;ie=UTF8&amp;t=m&amp;z=15&amp;iwloc=A"></a></small>
+        </div>
+        
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container px-4 px-lg-5">
+                <ul class="list-inline mb-5">
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="tel:2975372525"><i class="icon-phone"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="https://www.instagram.com/observatoriofce.unpsjb" target="_parent"><i class="icon-social-instagram"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white" href="mailto:observatorioFCE@gmail.com"><i class="icon-social-google"></i></a>
+                    </li>
+                </ul>
+                <p class="text-muted small mb-0">&copy; 2025 ObservatorioFCE. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        <!-- Bootstrap core JS-->
+        <script src="/static/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="/static/js/scripts.js"></script>
+    </body>
 </html>

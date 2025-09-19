@@ -1,0 +1,19 @@
+[
+
+  {
+    "title": "Buscador de productos",
+    "url": "https://buscador-productos.vercel.app/",
+    "image": "/static/assets/img/buscador-productos.jpg"
+  },
+  {
+    "title": "Buscador de Materiales - Beta",
+    "url": "https://buscador-productos.vercel.app/materiales/",
+    "image": "/static/assets/img/buscador-materiales.jpg"
+  },
+  {
+    "title": "SurEnPrecios",
+    "url": "https://miraprecios.pythonanywhere.com/",
+    "image": "/static/assets/img/sur-en-precios.jpg"
+  }
+
+]
