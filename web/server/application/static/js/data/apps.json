@@ -1,19 +1,24 @@
 [
 
   {
+    "title": "SurEnPrecios",
+    "url": "https://surenprecios.pythonanywhere.com/",
+    "image":"/static/assets/img/surEnPrecios.jpg"
+  },
+  {
     "title": "Buscador de productos",
     "url": "https://buscador-productos.vercel.app/",
-    "image": "/static/assets/img/buscador-productos.jpg"
+    "image":"/static/assets/img/buscador-productos.jpg"
+  },
+  {
+    "title": "Informes",
+    "url": "https://sites.google.com/view/pdfsderuthprueba?usp=sharing ",
+    "image":"/static/assets/img/portafolio-informes.jpg"
   },
   {
     "title": "Buscador de Materiales - Beta",
     "url": "https://buscador-productos.vercel.app/materiales/",
-    "image": "/static/assets/img/buscador-materiales.jpg"
-  },
-  {
-    "title": "Informes Observatorio FCE",
-    "url": "https://sites.google.com/view/pdfsderuthprueba?usp=sharing",
-    "image": "/static/assets/img/sur-en-precios.jpg"
+    "image":"/static/assets/img/buscador-materiales.jpg"
   }
 
 ]
