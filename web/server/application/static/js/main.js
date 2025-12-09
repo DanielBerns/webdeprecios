@@ -50,5 +50,5 @@ async function renderAppsFromJSON(jsonPath) {
 
 // Ejecutar al cargar la página.
 document.addEventListener("DOMContentLoaded", () => {
-  renderAppsFromJSON("/js/data/apps.json"); // Ruta relativa al archivo JSON
+  renderAppsFromJSON("/data/apps.json"); // Ruta relativa al archivo JSON
 });
