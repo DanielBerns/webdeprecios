@@ -7,22 +7,40 @@ async function renderAppsFromJSON(jsonPath) {
     const container = document.getElementById("list-apps");
     container.innerHTML = ""; // Limpia contenido previo
 
-    // load all app find in the apps.json
+    // Cargar todas las apps desde apps.json
     apps.forEach(app => {
       const col = document.createElement("div");
       col.className = "col-lg-6";
 
-      col.innerHTML = `
-        <a class="portfolio-item" href="${app.url}" target="_blank">
-          <div class="caption">
-            <div class="caption-content">
-              <div class="h2">${app.title}</div>
-            </div>
-          </div>
-          <img class="img-fluid" src="${app.image}" alt="..." />
-        </a>
-      `;
+      // Crear el enlace
+      const link = document.createElement("a");
+      link.className = "portfolio-item";
+      link.href = app.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer"; // Seguridad adicional
 
+      // Crear el contenedor de texto
+      const caption = document.createElement("div");
+      caption.className = "caption";
+
+      const captionContent = document.createElement("div");
+      captionContent.className = "caption-content";
+
+      const title = document.createElement("h2"); // Semántica mejorada
+      title.textContent = app.title;
+
+      // Crear imagen
+      const image = document.createElement("img");
+      image.className = "img-fluid";
+      image.src = app.image;
+      image.alt = `Captura de ${app.title}`; // Mejora de accesibilidad
+
+      // Ensamblar estructura
+      captionContent.appendChild(title);
+      caption.appendChild(captionContent);
+      link.appendChild(caption);
+      link.appendChild(image);
+      col.appendChild(link);
       container.appendChild(col);
     });
   } catch (err) {
@@ -32,5 +50,5 @@ async function renderAppsFromJSON(jsonPath) {
 
 // Ejecutar al cargar la página.
 document.addEventListener("DOMContentLoaded", () => {
-  renderAppsFromJSON("/static/js/data/apps.json"); // Ruta relativa al archivo JSON
+  renderAppsFromJSON("/js/data/apps.json"); // Ruta relativa al archivo JSON
 });

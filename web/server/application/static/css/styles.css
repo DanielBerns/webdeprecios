@@ -10828,6 +10828,7 @@ body,
 html {
   width: 100%;
   height: 100%;
+
 }
 
 .content-section {
@@ -11014,7 +11015,7 @@ footer.footer .social-link:hover {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("/static/assets/img/bg-home.jpg");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/bg-home.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11038,13 +11039,14 @@ footer.footer .social-link:hover {
   position: relative;
   overflow: hidden;
   max-width: 530px;
+  height: 300px;
   margin: auto auto 1rem;
 }
 .portfolio-item .caption {
   display: flex;
   height: 100%;
   width: 100%;
-  background-color: rgba(33, 37, 41, 0.2);
+  background-color: rgba(33, 37, 41, 0.5);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -11056,12 +11058,20 @@ footer.footer .social-link:hover {
 }
 .portfolio-item .caption .caption-content h2, .portfolio-item .caption .caption-content .h2 {
   font-size: 0.8rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
   text-transform: uppercase;
 }
 .portfolio-item .caption .caption-content p {
   font-weight: 300;
   font-size: 1.2rem;
 }
+.portfolio-item img {
+  width: 100%;
+  height: 100%; /* ← clave para que la imagen no supere su contenedor*/
+  object-fit: cover;
+  display: block;
+}
+
 @media (min-width: 992px) {
   .portfolio-item {
     max-width: none;
