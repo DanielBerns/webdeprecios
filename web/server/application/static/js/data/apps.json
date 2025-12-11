@@ -11,6 +11,11 @@
     "image":"/static/assets/img/buscador-productos.jpg"
   },
   {
+    "title": "Modulo San Jorge",
+    "url": "https://oefce-msj.streamlit.app/",
+    "image":"/static/assets/img/modulo-san-jorge.jpg"
+  },
+  {
     "title": "Informes",
     "url": "https://sites.google.com/view/pdfsderuthprueba?usp=sharing ",
     "image":"/static/assets/img/portafolio-informes.jpg"
